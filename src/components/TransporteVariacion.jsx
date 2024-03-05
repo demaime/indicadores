@@ -18,7 +18,7 @@ export default function TransporteVariacion({ data }) {
         {data === "tren" && trenMensual}
       </div>
       <div className="text-white border-white border flex flex-col items-center justify-evenly text-6xl">
-        <span className="text-sm">Variación Anual</span> %
+        <span className="text-sm">Variación Anual</span>%{" "}
         {data === "subte" && subteAnual}
         {data === "colectivo" && colectivoAnual}
         {data === "tren" && trenAnual}

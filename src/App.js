@@ -40,19 +40,19 @@ export default function App() {
           <div className="h-1/5 flex justify-evenly items-center">
             <button
               onClick={() => setDataTransporteVariacion("subte")}
-              className="bg-gray-700 w-32 h-12 rounded bg-[#8884d8]"
+              className=" w-32 h-12 rounded bg-[#8884d8]"
             >
               SUBTE
             </button>
             <button
               onClick={() => setDataTransporteVariacion("tren")}
-              className="bg-gray-700 w-32 h-12 rounded bg-[#82ca9d]"
+              className=" w-32 h-12 rounded bg-[#82ca9d]"
             >
               TREN
             </button>
             <button
               onClick={() => setDataTransporteVariacion("colectivo")}
-              className="bg-gray-700 w-32 h-12 rounded bg-[#ff8080]"
+              className=" w-32 h-12 rounded bg-[#ff8080]"
             >
               COLECTIVO
             </button>

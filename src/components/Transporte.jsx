@@ -50,7 +50,7 @@ const data = [
 
 export default function Transporte() {
   return (
-    <>
+    <div>
       <AreaChart
         className="p-2"
         width={730}
@@ -99,6 +99,6 @@ export default function Transporte() {
           fill="url(#colorcolectivo)"
         />
       </AreaChart>
-    </>
+    </div>
   );
 }

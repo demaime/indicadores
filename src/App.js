@@ -4,7 +4,6 @@ import Transporte from "./components/Transporte.jsx";
 
 export default function App() {
   const [dataInflacion, setDataInflacion] = useState("nacional");
-
   return (
     <div className="w-full h-full">
       <h1 className="p-2 text-center w-full text-3xl font-bold underline">
@@ -29,8 +28,9 @@ export default function App() {
           <Inflacion data={dataInflacion} />
         </div>
       </section>
-      <h2 className="text-center font-bold">Boletos mínimos</h2>
+
       <section className="w-full h-96 bg-gray-900 flex items-center">
+        <Transporte />
         <Transporte />
       </section>
     </div>

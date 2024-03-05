@@ -34,7 +34,7 @@ export default function Inflacion({ data }) {
       </text>
     );
   };
-
+  const formatValue = (value) => `${value}%`;
   return (
     <>
       <h2 className="text-center p-2 text-xl font -bold text-[#8884d8]">
@@ -47,7 +47,7 @@ export default function Inflacion({ data }) {
           data={data === "nacional" ? nacional : caba}
         >
           <XAxis dataKey="mes" />
-          <YAxis />
+          <YAxis tickFormatter={formatValue} />
           <Tooltip />
           <Bar dataKey="valor" fill="#8884d8" label={<CustomLabel />} />
         </BarChart>

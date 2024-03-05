@@ -47,6 +47,7 @@ const data = [
     colectivo: 345,
   },
 ];
+const formatValue = (value) => `$${value}`;
 
 export default function Transporte() {
   return (
@@ -73,7 +74,7 @@ export default function Transporte() {
           </linearGradient>
         </defs>
         <XAxis dataKey="mes" />
-        <YAxis />
+        <YAxis tickFormatter={formatValue} />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Legend verticalAlign="bottom" height={36} />

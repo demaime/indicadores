@@ -26,7 +26,8 @@ export default function Inflacion({ data }) {
       <text
         x={x + width / 2}
         y={y + height / 2}
-        fill="#FFFFFF"
+        fill={data === "nacional" ? "white" : "black"}
+        className="font-semibold"
         textAnchor="middle"
         dominantBaseline="middle"
       >
@@ -37,19 +38,20 @@ export default function Inflacion({ data }) {
   const formatValue = (value) => `${value}%`;
   return (
     <>
-      <h2 className="text-center p-2 text-xl font -bold text-[#8884d8]">
-        Inflación
-      </h2>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center pt-4">
         <BarChart
-          width={1200}
-          height={150}
+          width={1500}
+          height={350}
           data={data === "nacional" ? nacional : caba}
         >
           <XAxis dataKey="mes" />
-          <YAxis tickFormatter={formatValue} />
+          <YAxis tickFormatter={formatValue} domain={[0, 100]} />
           <Tooltip />
-          <Bar dataKey="valor" fill="#8884d8" label={<CustomLabel />} />
+          <Bar
+            dataKey="valor"
+            fill={data === "nacional" ? "#818cf8" : "#facc15"}
+            label={<CustomLabel />}
+          />
         </BarChart>
       </div>
     </>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Inflacion from "./components/Inflacion.jsx";
 import Transporte from "./components/Transporte.jsx";
 import TransporteVariacion from "./components/TransporteVariacion.jsx";
+import Banner from "./components/Banner.jsx";
 
 export default function App() {
   const [dataInflacion, setDataInflacion] = useState("nacional");
@@ -10,30 +11,28 @@ export default function App() {
 
   return (
     <div className="w-full h-full">
-      <h1 className="p-2 text-center w-full text-3xl font-bold underline">
-        Indicadores de Realidad
-      </h1>
-      <section className="w-full h-52 flex">
-        <div className="w-1/6 h-full bg-green-500 flex flex-col items-center justify-around">
+      <Banner />
+      <section className="w-full h-96 flex">
+        <div className="w-1/6 h-full flex flex-col items-center justify-around border-r">
           <button
-            className="p-2 rounded-xl bg-green-200 w-32"
+            className="p-2 text-3xl rounded-xl w-48 h-24 bg-indigo-400 text-white"
             onClick={() => setDataInflacion("nacional")}
           >
             Nacional
           </button>
           <button
-            className="p-2 rounded-xl bg-green-200 w-32"
+            className="p-2 rounded-xl text-3xl w-48 h-24 bg-yellow-400"
             onClick={() => setDataInflacion("caba")}
           >
             CABA
           </button>
         </div>
-        <div className="w-5/6 h-full bg-green-200">
+        <div className="w-5/6 h-full ">
           <Inflacion data={dataInflacion} />
         </div>
       </section>
 
-      <section className="w-full h-96 bg-gray-900 flex items-center">
+      <section className="w-full h-96 bg-gray-800 flex items-center">
         <Transporte />
         <div className="w-full h-full flex flex-col justify-around p-2">
           <TransporteVariacion data={dataTransporteVariacion} />

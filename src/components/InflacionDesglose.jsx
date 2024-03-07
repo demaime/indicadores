@@ -11,30 +11,30 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Bienes y servicios", enero: 32.7, febrero: 44.4 },
-  { name: "Transporte", enero: 31.7, febrero: 26.3 },
-  { name: "Comunicación", enero: 15.6, febrero: 25.1 },
-  { name: "Recreación y cultura", enero: 20.2, febrero: 24 },
+  { name: "Bienes y servicios", diciembre: 32.7, enero: 44.4 },
+  { name: "Transporte", diciembre: 31.7, enero: 26.3 },
+  { name: "Comunicación", diciembre: 15.6, enero: 25.1 },
+  { name: "Recreación y cultura", diciembre: 20.2, enero: 24 },
   {
     name: "Equipamiento y mantenimiento del hogar",
-    enero: 30.7,
-    febrero: 22.3,
+    diciembre: 30.7,
+    enero: 22.3,
   },
-  { name: "Bebidas alcohólicas y tabaco", enero: 20.2, febrero: 21 },
-  { name: "Salud", enero: 32.6, febrero: 20.5 },
-  { name: "Alimentos y bebidas no alcohólicas", enero: 29.7, febrero: 20.4 },
-  { name: "Restaurantes y hoteles", enero: 21.6, febrero: 19.4 },
+  { name: "Bebidas alcohólicas y tabaco", diciembre: 20.2, enero: 21 },
+  { name: "Salud", diciembre: 32.6, enero: 20.5 },
+  { name: "Alimentos y bebidas no alcohólicas", diciembre: 29.7, enero: 20.4 },
+  { name: "Restaurantes y hoteles", diciembre: 21.6, enero: 19.4 },
   {
     name: "Vivienda, agua, electricidad, gas y otros combustibles",
-    enero: 13.8,
-    febrero: 14,
+    diciembre: 13.8,
+    enero: 14,
   },
-  { name: "Prendas de vestir y calzado", enero: 17.2, febrero: 11.9 },
-  { name: "Educación", enero: 6.2, febrero: 0.9 },
+  { name: "Prendas de vestir y calzado", diciembre: 17.2, enero: 11.9 },
+  { name: "Educación", diciembre: 6.2, enero: 0.9 },
   {
     name: "Cuidado personal, protección social y otros",
-    enero: 44.4,
-    febrero: 32.7,
+    diciembre: 44.4,
+    enero: 32.7,
   },
 ];
 

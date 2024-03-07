@@ -1,0 +1,117 @@
+import React, { useState } from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  CartesianGrid,
+} from "recharts";
+
+const data = [
+  { name: "Bienes y servicios", enero: 32.7, febrero: 44.4 },
+  { name: "Transporte", enero: 31.7, febrero: 26.3 },
+  { name: "Comunicación", enero: 15.6, febrero: 25.1 },
+  { name: "Recreación y cultura", enero: 20.2, febrero: 24 },
+  {
+    name: "Equipamiento y mantenimiento del hogar",
+    enero: 30.7,
+    febrero: 22.3,
+  },
+  { name: "Bebidas alcohólicas y tabaco", enero: 20.2, febrero: 21 },
+  { name: "Salud", enero: 32.6, febrero: 20.5 },
+  { name: "Alimentos y bebidas no alcohólicas", enero: 29.7, febrero: 20.4 },
+  { name: "Restaurantes y hoteles", enero: 21.6, febrero: 19.4 },
+  {
+    name: "Vivienda, agua, electricidad, gas y otros combustibles",
+    enero: 13.8,
+    febrero: 14,
+  },
+  { name: "Prendas de vestir y calzado", enero: 17.2, febrero: 11.9 },
+  { name: "Educación", enero: 6.2, febrero: 0.9 },
+  {
+    name: "Cuidado personal, protección social y otros",
+    enero: 44.4,
+    febrero: 32.7,
+  },
+];
+
+export default function InflacionDesglose() {
+  const [selectedItem, setSelectedItem] = useState(data[0]);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const febreroEneroDiff = selectedItem.febrero - selectedItem.enero;
+
+  return (
+    <div className="w-full h-96 flex flex-col items-center">
+      <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
+        INFLACION
+      </h1>
+      <div className="w-full h-full flex">
+        <div className="w-1/6 h-full flex flex-col items-center justify-evenly relative">
+          <h2 className="absolute top-1 font-bold text-md w-full text-center text-gray-800">
+            VARIACIONES
+          </h2>
+          <div className="h-16 w-36 bg-yellow-500 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 rounded flex flex-col items-center justify-around text-2xl">
+            <span className="text-xs">MENSUAL</span>
+            {febreroEneroDiff.toFixed(1)}%
+          </div>
+          <div className="h-16 w-36 bg-yellow-500 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 rounded flex flex-col items-center justify-around text-2xl">
+            <span className="text-xs">ANUAL</span>
+            +xxx%
+          </div>
+        </div>
+        <div className="w-7/12 bg-yellow-200 h-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={300}
+              data={[
+                { name: "Enero", value: selectedItem.enero },
+                { name: "Febrero", value: selectedItem.febrero },
+              ]}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#8884d8"
+                dot={{ stroke: "#8884d8", strokeWidth: 2 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="w-3/12 bg-yellow-400 h-full">
+          <ul className="w-full flex flex-col justify-around h-full text-xs">
+            {data.map((item) => (
+              <li
+                key={item.name}
+                onClick={() => handleItemClick(item)}
+                className={`text-center cursor-pointer ${
+                  item === selectedItem ? "font-bold" : ""
+                }`}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}

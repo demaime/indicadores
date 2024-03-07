@@ -1,19 +1,20 @@
 import { useState } from "react";
-import Inflacion from "./components/Inflacion.jsx";
+import InflacionDesglose from "./components/InflacionDesglose.jsx";
 import Transporte from "./components/Transporte.jsx";
 import TransporteVariacion from "./components/TransporteVariacion.jsx";
 import Banner from "./components/Banner.jsx";
 
 export default function App() {
-  const [dataInflacion, setDataInflacion] = useState("nacional");
+  // const [dataInflacion, setDataInflacion] = useState("nacional");
   const [dataTransporteVariacion, setDataTransporteVariacion] =
     useState("subte");
 
   return (
     <div className="w-full h-full">
       <Banner />
-      <section className="w-full h-96 flex">
-        <div className="w-1/6 h-full flex flex-col items-center justify-around border-r">
+      <InflacionDesglose />
+      {/* <section className="w-full h-96 flex">
+        <div className="w-1/6 h-full flex flex-col items-center justify-evenly border-r-2">
           <button
             className="p-2 text-3xl rounded-xl w-48 h-24 bg-indigo-400 text-white"
             onClick={() => setDataInflacion("nacional")}
@@ -30,7 +31,7 @@ export default function App() {
         <div className="w-5/6 h-full ">
           <Inflacion data={dataInflacion} />
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full h-96 bg-gray-800 flex items-center">
         <Transporte />

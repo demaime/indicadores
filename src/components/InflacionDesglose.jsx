@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import { FaRegArrowAltCircleDown } from "react-icons/fa";
 
 const data = [
   { name: "Bienes y servicios", diciembre: 32.7, enero: 44.4 },
@@ -45,7 +47,7 @@ export default function InflacionDesglose() {
     setSelectedItem(item);
   };
 
-  const febreroEneroDiff = selectedItem.febrero - selectedItem.enero;
+  const febreroEneroDiff = selectedItem.enero - selectedItem.diciembre;
 
   return (
     <div className="w-full h-96 flex flex-col items-center">
@@ -59,7 +61,15 @@ export default function InflacionDesglose() {
           </h2>
           <div className="h-16 w-36 bg-yellow-500 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 rounded flex flex-col items-center justify-around text-2xl">
             <span className="text-xs">MENSUAL</span>
-            {febreroEneroDiff.toFixed(1)}%
+            <span className="flex items-center w-full justify-evenly">
+              {" "}
+              {febreroEneroDiff < 0 ? (
+                <FaRegArrowAltCircleUp />
+              ) : (
+                <FaRegArrowAltCircleDown />
+              )}
+              {febreroEneroDiff.toFixed(1)}%
+            </span>
           </div>
           <div className="h-16 w-36 bg-yellow-500 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 rounded flex flex-col items-center justify-around text-2xl">
             <span className="text-xs">ANUAL</span>
@@ -72,6 +82,7 @@ export default function InflacionDesglose() {
               width={500}
               height={300}
               data={[
+                { name: "Diciembre", value: selectedItem.diciembre },
                 { name: "Enero", value: selectedItem.enero },
                 { name: "Febrero", value: selectedItem.febrero },
               ]}

@@ -9,8 +9,11 @@ export default function App() {
       <Banner />
       <InflacionDesglose />
 
-      <section className="w-full h-96 bg-gray-800 flex items-center">
-        <Dolar />
+      <section className="w-full h-96 bg-gray-800 flex items-center text-white">
+        <div className="w-2/3 h-full">
+          <Dolar />
+        </div>
+        <div>ACA LE MANDO UNOS DATOS</div>
       </section>
     </div>
   );

@@ -7,6 +7,7 @@ import {
   Line,
   Legend,
   CartesianGrid,
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
@@ -33,7 +34,7 @@ const formatValue = (value) => `$${value}`;
 
 export default function Dolar() {
   return (
-    <div>
+    <ResponsiveContainer className="p-2">
       <LineChart
         className="p-2 font-bold text-white"
         width={1030}
@@ -53,6 +54,6 @@ export default function Dolar() {
         <Line type="monotone" dataKey="Blue" stroke="#8884d8" />
         <Line type="monotone" dataKey="MEP" stroke="#ff8080" />
       </LineChart>
-    </div>
+    </ResponsiveContainer>
   );
 }

@@ -82,9 +82,9 @@ export default function InflacionDesglose() {
     if (foundItem) {
       setSelectedItem(foundItem);
     } else {
-      setSelectedItem(newData[0]); // Si no se encuentra, seleccionamos el primer elemento del nuevo array
+      setSelectedItem(newData[0]);
     }
-  }, [dataInflacion]);
+  }, [dataInflacion, selectedItem.name]);
 
   const febreroEneroDiff = selectedItem.enero - selectedItem.diciembre;
 
@@ -121,7 +121,6 @@ export default function InflacionDesglose() {
                 ? "bg-yellow-500 border-yellow-700"
                 : "bg-[#f57b6dff] border-pink-600"
             }`}
-            // "h-16 w-36  text-white font-bold py-2 px-4 border-b-4 border-yellow-700 rounded flex flex-col items-center justify-around text-2xl"
           >
             <span className="text-xs">MENSUAL</span>
             <span className="flex items-center w-full justify-evenly">

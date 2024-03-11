@@ -5,7 +5,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
@@ -48,6 +47,22 @@ export default function InflacionDesglose() {
   };
 
   const febreroEneroDiff = selectedItem.enero - selectedItem.diciembre;
+
+  const CustomizedLabel = ({ x, y, stroke, value }) => {
+    return (
+      <text
+        x={x}
+        y={y}
+        dy={-10}
+        dx={12}
+        fill={stroke}
+        fontSize={12}
+        textAnchor="middle"
+      >
+        {`%${value}`}
+      </text>
+    );
+  };
 
   return (
     <div className="w-full h-96 flex flex-col items-center">
@@ -95,14 +110,15 @@ export default function InflacionDesglose() {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis domain={[0, 50]} />
               <Tooltip />
-              <Legend />
+
               <Line
                 type="monotone"
                 dataKey="value"
                 stroke="#8884d8"
-                dot={{ stroke: "#8884d8", strokeWidth: 2 }}
+                dot={{ stroke: "#8884d8", strokeWidth: 5 }}
+                label={<CustomizedLabel />}
               />
             </LineChart>
           </ResponsiveContainer>

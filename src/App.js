@@ -5,7 +5,6 @@ import TransporteVariacion from "./components/TransporteVariacion.jsx";
 import Banner from "./components/Banner.jsx";
 
 export default function App() {
-  // const [dataInflacion, setDataInflacion] = useState("nacional");
   const [dataTransporteVariacion, setDataTransporteVariacion] =
     useState("subte");
 
@@ -13,25 +12,6 @@ export default function App() {
     <div className="w-full h-full">
       <Banner />
       <InflacionDesglose />
-      {/* <section className="w-full h-96 flex">
-        <div className="w-1/6 h-full flex flex-col items-center justify-evenly border-r-2">
-          <button
-            className="p-2 text-3xl rounded-xl w-48 h-24 bg-indigo-400 text-white"
-            onClick={() => setDataInflacion("nacional")}
-          >
-            Nacional
-          </button>
-          <button
-            className="p-2 rounded-xl text-3xl w-48 h-24 bg-yellow-400"
-            onClick={() => setDataInflacion("caba")}
-          >
-            CABA
-          </button>
-        </div>
-        <div className="w-5/6 h-full ">
-          <Inflacion data={dataInflacion} />
-        </div>
-      </section> */}
 
       <section className="w-full h-96 bg-gray-800 flex items-center">
         <Transporte />

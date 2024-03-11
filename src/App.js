@@ -2,6 +2,7 @@ import InflacionDesglose from "./components/InflacionDesglose.jsx";
 
 import Banner from "./components/Banner.jsx";
 import Dolar from "./components/Dolar.jsx";
+import DolarDesglose from "./components/DolarDesglose.jsx";
 
 export default function App() {
   return (
@@ -13,7 +14,9 @@ export default function App() {
         <div className="w-2/3 h-full">
           <Dolar />
         </div>
-        <div>ACA LE MANDO UNOS DATOS</div>
+        <div>
+          <DolarDesglose />
+        </div>
       </section>
     </div>
   );

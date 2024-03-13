@@ -19,3 +19,24 @@
   background-clip: content-box;
   background-color: rgb(253 224 71);
 }
+
+.full-container {
+  position: relative;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  height: 100dvh;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100dvh;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -105,7 +105,7 @@ export default function InflacionDesglose() {
   };
 
   return (
-    <div className="w-full h-[28rem] flex flex-col items-center">
+    <div className="w-full h-full flex flex-col items-center">
       <div className="w-full h-full flex">
         <div className="w-1/6 h-full flex flex-col items-center justify-evenly relative border-r-2 border-y">
           <h2 className="absolute top-1 font-bold text-md w-full text-center text-gray-800">

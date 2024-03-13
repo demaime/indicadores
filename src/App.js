@@ -6,17 +6,21 @@ import DolarDesglose from "./components/DolarDesglose.jsx";
 
 export default function App() {
   return (
-    <div className="w-full h-full">
+    <div className="full-container">
       <Banner />
-      <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
-        INFLACION
-      </h1>
-      <InflacionDesglose />
-
-      <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
-        DOLAR
-      </h1>
-      <section className="w-full h-96 bg-gray-800 flex items-center text-white">
+      <section className="section" id="inflacion">
+        <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
+          INFLACION
+        </h1>
+        <InflacionDesglose />
+      </section>
+      <section
+        className="section h-96 bg-gray-800 flex items-center text-white"
+        id="dolar"
+      >
+        <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
+          DOLAR
+        </h1>
         <div className="w-2/3 h-full">
           <Dolar />
         </div>

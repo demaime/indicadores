@@ -8,7 +8,7 @@ const data = [
 ];
 
 export default function DolarDesglose() {
-  const [selectedMonth, setSelectedMonth] = useState(data[0].mes);
+  const [selectedMonth, setSelectedMonth] = useState(data[data.length - 1].mes);
 
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
@@ -17,7 +17,6 @@ export default function DolarDesglose() {
   const selectedData = data.find((item) => item.mes === selectedMonth);
   const selectedIndex = data.findIndex((item) => item.mes === selectedMonth);
 
-  // Calcular variación mensual
   let variationOficial = 0;
   let variationBlue = 0;
   let variationMep = 0;

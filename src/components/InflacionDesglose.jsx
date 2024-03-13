@@ -245,8 +245,12 @@ export default function InflacionDesglose() {
               <Line
                 type="monotone"
                 dataKey="Inflación"
-                stroke="#8884d8"
-                dot={{ stroke: "#8884d8", strokeWidth: 5 }}
+                stroke="#1f2937"
+                dot={{
+                  stroke:
+                    dataInflacion === "nacional" ? "#f57b6dff" : "#facc15",
+                  strokeWidth: 5,
+                }}
                 label={<CustomizedLabel />}
               />
             </LineChart>

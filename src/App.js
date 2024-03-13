@@ -14,7 +14,7 @@ export default function App() {
         <Encabezado content={"INFLACION"} />
         <InflacionDesglose />
       </section>
-      <section className="section h-96 bg-gray-800 text-white" id="dolar">
+      <section className="section bg-gray-800 text-white" id="dolar">
         <Encabezado content={"DOLAR"} />
         <div className="w-full h-2/3 flex">
           <div className="w-2/3">
@@ -27,6 +27,10 @@ export default function App() {
         <div className="h-1/3 w-full bg-gray-700">
           <DolarVivo />
         </div>
+      </section>
+      <section className="section" id="transporte">
+        <Encabezado content={"TRANSPORTE"} />
+        <div className="h-full w-full">TRANSPORTE</div>
       </section>
     </div>
   );

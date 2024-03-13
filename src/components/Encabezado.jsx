@@ -51,10 +51,10 @@ export default function Encabezado({ content }) {
                   DOLAR
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#transporte">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 1
+                  TRANSPORTE
                 </li>
               </a>
               <a href="#inflacion">

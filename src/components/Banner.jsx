@@ -31,13 +31,13 @@ export default function Banner() {
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#transporte"
           >
-            EJEMPLO 1
+            TRANSPORTE
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#transporte"
           >
             EJEMPLO 2
           </a>

@@ -55,13 +55,15 @@ export default function DolarVivo() {
 
   return (
     <>
-      <div className="w-full text-xl text-center text-gray-300 bg-gray-600 font-bold tracking-wider">
-        <p>COTIZACION EN VIVO</p>
-        <p className="text-xs bg-gray-800">
+      <div className="w-full text-xl text-center text-gray-300 bg-gray-600 font-bold tracking-wider h-1/5">
+        <p className="h-3/5 flex items-center justify-center">
+          COTIZACION EN VIVO
+        </p>
+        <p className="h-2/5 text-xs bg-gray-800 flex items-center justify-center text-yellow-400">
           Última actualización: {formattedDateTime}
         </p>
       </div>
-      <div className="w-full py-6 flex justify-evenly items-center">
+      <div className="w-full h-4/5 flex justify-evenly items-center">
         {" "}
         <div className="h-28 w-[15rem] border border-white rounded-xl flex flex-col justify-between">
           <span className="h-8 text-xl justify-center bg-green-400 rounded-t-xl text-gray-900 items-center flex">

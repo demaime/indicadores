@@ -147,7 +147,6 @@ export default function InflacionDesglose() {
 
   const monthDiff = selectedItem.febrero - selectedItem.enero;
   const acumuladoAnual = selectedItem.enero + selectedItem.febrero;
-  const valorMensual = selectedItem.febrero;
 
   // Obtener el dato de "GENERAL" para el mes actual
   const generalData = data.find((item) => item.name === "GENERAL");
@@ -220,7 +219,25 @@ export default function InflacionDesglose() {
             {acumuladoAnual.toFixed(1)}%
           </div>
         </div>
-        <div className="w-7/12 h-full flex items-center justify-evenly pt-8 flex-col">
+        <div className="w-7/12 h-full flex items-center justify-between py-4 flex-col">
+          <div className="w-full h-14 justify-evenly flex ">
+            <button
+              onClick={() => setDataInflacion("caba")}
+              className={`h-full rounded h-14 bg-yellow-300 p-2 w-1/3 justify-center flex items-center border-2  border-yellow-600 ${
+                dataInflacion === "caba" ? "font-bold" : ""
+              }`}
+            >
+              CABA
+            </button>
+            <button
+              onClick={() => setDataInflacion("nacional")}
+              className={`h-full rounded h-14 bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2  border-pink-400 ${
+                dataInflacion === "nacional" ? "font-bold" : ""
+              }`}
+            >
+              NACIONAL
+            </button>
+          </div>
           <ResponsiveContainer width="100%" height="80%">
             <LineChart
               width={500}
@@ -255,24 +272,6 @@ export default function InflacionDesglose() {
               />
             </LineChart>
           </ResponsiveContainer>
-          <div className="w-full h-8 justify-evenly flex ">
-            <button
-              onClick={() => setDataInflacion("caba")}
-              className={`h-full rounded h-8 bg-yellow-300 p-2 w-1/3 justify-center flex items-center border-2  border-yellow-600 ${
-                dataInflacion === "caba" ? "font-bold" : ""
-              }`}
-            >
-              CABA
-            </button>
-            <button
-              onClick={() => setDataInflacion("nacional")}
-              className={`h-full rounded h-8 bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2  border-pink-400 ${
-                dataInflacion === "nacional" ? "font-bold" : ""
-              }`}
-            >
-              NACIONAL
-            </button>
-          </div>
         </div>
         <div
           className={`w-3/12 h-full ${

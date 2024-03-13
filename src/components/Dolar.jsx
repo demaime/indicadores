@@ -33,6 +33,10 @@ const data = [
 const formatValue = (value) => `$${value}`;
 
 export default function Dolar() {
+  const textStyle = {
+    fill: "white",
+  };
+
   return (
     <ResponsiveContainer className="p-2">
       <LineChart
@@ -44,9 +48,12 @@ export default function Dolar() {
         style={{ color: "white" }}
       >
         <defs></defs>
-        <XAxis dataKey="mes" />
-        <YAxis tickFormatter={formatValue} domain={[500, "dataMax"]} />
-
+        <XAxis dataKey="mes" tick={textStyle} />
+        <YAxis
+          tickFormatter={formatValue}
+          domain={[500, "dataMax"]}
+          tick={textStyle}
+        />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Legend verticalAlign="bottom" height={36} />

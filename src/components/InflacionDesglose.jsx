@@ -8,8 +8,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import { FaRegArrowAltCircleUp } from "react-icons/fa";
-import { FaRegArrowAltCircleDown } from "react-icons/fa";
+import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from "react-icons/fa";
 
 const dataNacion = [
   { name: "Bienes y servicios", diciembre: 32.7, enero: 44.4 },
@@ -107,9 +106,6 @@ export default function InflacionDesglose() {
 
   return (
     <div className="w-full h-[28rem] flex flex-col items-center">
-      <h1 className="font-bold py-1 bg-gray-700 text-white text-2xl w-full text-center">
-        INFLACION
-      </h1>
       <div className="w-full h-full flex">
         <div className="w-1/6 h-full flex flex-col items-center justify-evenly relative border-r-2 border-y">
           <h2 className="absolute top-1 font-bold text-md w-full text-center text-gray-800">

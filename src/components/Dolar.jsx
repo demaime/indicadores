@@ -57,9 +57,14 @@ export default function Dolar() {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Legend verticalAlign="bottom" height={36} />
-        <Line type="monotone" dataKey="Oficial" stroke="#4ade80" />
-        <Line type="monotone" dataKey="Blue" stroke="#60a5fa" />
-        <Line type="monotone" dataKey="MEP" stroke="#f87171" />
+        <Line
+          type="monotone"
+          dataKey="Oficial"
+          stroke="#4ade80"
+          strokeWidth={2}
+        />
+        <Line type="monotone" dataKey="Blue" stroke="#60a5fa" strokeWidth={2} />
+        <Line type="monotone" dataKey="MEP" stroke="#f87171" strokeWidth={2} />
       </LineChart>
     </ResponsiveContainer>
   );

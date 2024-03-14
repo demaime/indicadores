@@ -5,6 +5,7 @@ import Dolar from "./components/Dolar.jsx";
 import DolarVivo from "./components/DolarVivo.jsx";
 import DolarDesglose from "./components/DolarDesglose.jsx";
 import Encabezado from "./components/Encabezado.jsx";
+import Transporte from "./components/Transporte.jsx";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
       </section>
       <section className="section" id="transporte">
         <Encabezado content={"TRANSPORTE"} />
-        <div className="h-full w-full">TRANSPORTE</div>
+        <Transporte />
       </section>
     </div>
   );

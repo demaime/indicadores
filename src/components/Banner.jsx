@@ -37,13 +37,13 @@ export default function Banner() {
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#transporte"
+            href="#canasta-salario"
           >
-            EJEMPLO 2
+            CANASTA VS SALARIO
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#canasta-salario"
           >
             EJEMPLO 3
           </a>

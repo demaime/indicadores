@@ -57,10 +57,10 @@ export default function Encabezado({ content }) {
                   TRANSPORTE
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#canasta-salario">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 2
+                  CANASTA vs SALARIO
                 </li>
               </a>
               <a href="#inflacion">

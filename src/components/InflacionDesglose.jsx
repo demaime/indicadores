@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const dataNacion = [
   { name: "GENERAL", diciembre: 25.5, enero: 20.6, febrero: 13.2 },
@@ -113,6 +113,7 @@ export default function InflacionDesglose() {
   const [dataInflacion, setDataInflacion] = useState("nacional");
   let data = dataInflacion === "nacional" ? dataNacion : dataCaba;
   const [selectedItem, setSelectedItem] = useState(data[0]);
+  const [mesSeleccionado, setMesSeleccionado] = useState("febrero");
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -146,50 +147,120 @@ export default function InflacionDesglose() {
   };
 
   const monthDiff = selectedItem.febrero - selectedItem.enero;
-  const acumuladoAnual = selectedItem.enero + selectedItem.febrero;
 
-  // Obtener el dato de "GENERAL" para el mes actual
   const generalData = data.find((item) => item.name === "GENERAL");
-  const valorMensualGeneral = generalData.febrero;
-  const monthDiffGeneral = generalData.febrero - generalData.enero;
-  const acumuladoAnualGeneral = generalData.enero + generalData.febrero;
+  const valorMensualGeneral = generalData[mesSeleccionado];
+  const monthKeys = Object.keys(generalData);
+  const currentIndex = monthKeys.indexOf(mesSeleccionado);
+  const previousMonthKey = monthKeys[currentIndex - 1];
+  const monthDiffGeneral =
+    generalData[mesSeleccionado] - generalData[previousMonthKey];
+
+  const acumuladoAnualGeneral = Object.keys(generalData)
+    .filter((key) => key !== "name") // Filtrar las propiedades que no sean 'name'
+    .reduce((sum, key) => sum + generalData[key], 0); // Sumar los valores de las propiedades
+
+  const handleMonthChange = (increment) => {
+    const dataKeys = Object.keys(selectedItem);
+    const currentIndex = dataKeys.indexOf(mesSeleccionado);
+    let newIndex = currentIndex + increment;
+
+    // Verificar si el nuevo índice está dentro de los límites del arreglo de meses
+    if (newIndex < 0) {
+      newIndex = 0; // No permitir navegación hacia atrás desde "Diciembre"
+    } else if (newIndex >= dataKeys.length) {
+      newIndex = dataKeys.length - 1; // No permitir navegación más allá del último mes
+    }
+
+    setMesSeleccionado(dataKeys[newIndex]);
+  };
+
+  const handleSelectChange = (event) => {
+    setMesSeleccionado(event.target.value);
+  };
 
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="bg-gray-200 border-b border-gray-800 w-full h-1/3 flex items-center justify-evenly">
-        <div
-          className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
-            dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
-          }`}
-        >
-          <span className="w-full text-center text-gray-200 text-xs">
-            Valor Mensual
-          </span>{" "}
-          {valorMensualGeneral}%
+      <div className="bg-gray-200 border-b border-gray-800 w-full h-1/3 flex flex-col items-center justify-evenly">
+        <div className="relative">
+          <button
+            onClick={() => handleMonthChange(-1)}
+            disabled={mesSeleccionado === "diciembre"}
+            className={`absolute left-0 top-0 bottom-0 w-8 bg-gray-700 text-white flex items-center justify-center rounded-r ${
+              mesSeleccionado === "diciembre" ? "text-gray-800" : "text-white"
+            }`}
+          >
+            <FaChevronLeft />
+          </button>
+          <select
+            onChange={handleSelectChange}
+            value={mesSeleccionado}
+            className="bg-gray-600 w-64 h-8 text-center rounded text-white"
+          >
+            <option value="diciembre">Diciembre</option>
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+          </select>
+          <button
+            onClick={() => handleMonthChange(1)}
+            disabled={
+              mesSeleccionado === Object.keys(selectedItem).slice(-1)[0]
+            }
+            className={`absolute right-0 top-0 bottom-0 w-8 bg-gray-700 text-white flex items-center justify-center rounded-r ${
+              mesSeleccionado === Object.keys(selectedItem).slice(-1)[0]
+                ? "text-gray-800"
+                : "text-white"
+            }`}
+          >
+            <FaChevronRight />
+          </button>
         </div>
-        <div
-          className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
-            dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
-          }`}
-        >
-          <span className="w-full text-center text-gray-200 text-xs">
-            Variación Mensual
-          </span>{" "}
-          {monthDiffGeneral.toFixed(1)}pp
-        </div>
-        <div
-          className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
-            dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
-          }`}
-        >
-          <span className="w-full text-center text-gray-200 text-xs">
-            Acumulado Anual
-          </span>
-          {acumuladoAnualGeneral.toFixed(1)}%
+        <div className="flex w-full justify-evenly items-center ">
+          <div
+            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+              dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
+            }`}
+          >
+            <span className="w-full text-center text-gray-200 text-xs">
+              Valor Mensual
+            </span>{" "}
+            {valorMensualGeneral}%
+          </div>
+          <div
+            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+              dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
+            }`}
+          >
+            <span className="w-full text-center text-gray-200 text-xs">
+              Variación Mensual
+            </span>{" "}
+            {mesSeleccionado === "diciembre"
+              ? "Sin datos"
+              : monthDiffGeneral.toFixed(1) + "pp"}
+          </div>
+          <div
+            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+              dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
+            }`}
+          >
+            <span className="w-full text-center text-gray-200 text-xs">
+              Acumulado Anual
+            </span>
+            {mesSeleccionado === "diciembre"
+              ? "Sin datos"
+              : acumuladoAnualGeneral.toFixed(1) + "%"}
+          </div>
         </div>
       </div>
       <div className="w-full h-full flex">
         <div className="w-1/6 h-full flex flex-col items-center justify-evenly relative border-r-2 border-y">
+          <div
+            className={`h-8 w-40 border-gray-500 bg-gray-900 font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${
+              dataInflacion === "caba" ? "text-yellow-500" : "text-[#f57b6dff]"
+            }`}
+          >
+            <span className="text-xs text-center">MES ACTUAL</span>
+          </div>
           <div
             className={`h-20 w-40 text-white font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${
               dataInflacion === "caba"
@@ -199,15 +270,10 @@ export default function InflacionDesglose() {
           >
             <span className="text-xs text-center">VARIACION MENSUAL</span>
             <span className="flex items-center w-full justify-evenly">
-              {" "}
-              {monthDiff < 0 ? (
-                <FaRegArrowAltCircleUp />
-              ) : (
-                <FaRegArrowAltCircleDown />
-              )}
               {monthDiff.toFixed(1)}pp
             </span>
           </div>
+
           <div
             className={`h-20 w-40 text-white font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${
               dataInflacion === "caba"
@@ -216,7 +282,7 @@ export default function InflacionDesglose() {
             }`}
           >
             <span className="text-xs text-center">ACUMULADO ANUAL</span>
-            {acumuladoAnual.toFixed(1)}%
+            {acumuladoAnualGeneral.toFixed(1)}%
           </div>
         </div>
         <div className="w-7/12 h-full flex items-center justify-between py-4 flex-col">

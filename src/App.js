@@ -6,6 +6,7 @@ import DolarVivo from "./components/DolarVivo.jsx";
 import DolarDesglose from "./components/DolarDesglose.jsx";
 import Encabezado from "./components/Encabezado.jsx";
 import Transporte from "./components/Transporte.jsx";
+import CanastaSalario from "./components/CanastaSalario.jsx";
 
 export default function App() {
   return (
@@ -32,6 +33,10 @@ export default function App() {
       <section className="section" id="transporte">
         <Encabezado content={"TRANSPORTE"} />
         <Transporte />
+      </section>
+      <section className="section" id="canasta-salario">
+        <Encabezado content={"Canasta vs Salario"} />
+        <CanastaSalario />
       </section>
     </div>
   );

@@ -157,8 +157,14 @@ export default function InflacionDesglose() {
     generalData[mesSeleccionado] - generalData[previousMonthKey];
 
   const acumuladoAnualGeneral = Object.keys(generalData)
-    .filter((key) => key !== "name") // Filtrar las propiedades que no sean 'name'
-    .reduce((sum, key) => sum + generalData[key], 0); // Sumar los valores de las propiedades
+    .filter(
+      (key) =>
+        key !== "name" &&
+        key !== "diciembre" &&
+        Object.keys(generalData).indexOf(key) <=
+          Object.keys(generalData).indexOf(mesSeleccionado)
+    )
+    .reduce((sum, key) => sum + generalData[key], 0);
 
   const handleMonthChange = (increment) => {
     const dataKeys = Object.keys(selectedItem);
@@ -235,7 +241,7 @@ export default function InflacionDesglose() {
               Variación Mensual
             </span>{" "}
             {mesSeleccionado === "diciembre"
-              ? "Sin datos"
+              ? "-"
               : monthDiffGeneral.toFixed(1) + "pp"}
           </div>
           <div
@@ -247,7 +253,7 @@ export default function InflacionDesglose() {
               Acumulado Anual
             </span>
             {mesSeleccionado === "diciembre"
-              ? "Sin datos"
+              ? "-"
               : acumuladoAnualGeneral.toFixed(1) + "%"}
           </div>
         </div>
@@ -255,11 +261,11 @@ export default function InflacionDesglose() {
       <div className="w-full h-full flex">
         <div className="w-1/6 h-full flex flex-col items-center justify-evenly relative border-r-2 border-y">
           <div
-            className={`h-8 w-40 border-gray-500 bg-gray-900 font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${
+            className={`h-12 w-52 absolute top-5 border-gray-500 bg-gray-900 font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${
               dataInflacion === "caba" ? "text-yellow-500" : "text-[#f57b6dff]"
             }`}
           >
-            <span className="text-xs text-center">MES ACTUAL</span>
+            <span className="text-lg text-center">MES ACTUAL</span>
           </div>
           <div
             className={`h-20 w-40 text-white font-bold py-2 px-4 border-b-4 rounded flex flex-col items-center justify-around text-2xl ${

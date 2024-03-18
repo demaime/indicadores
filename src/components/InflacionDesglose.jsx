@@ -156,15 +156,17 @@ export default function InflacionDesglose() {
   const monthDiffGeneral =
     generalData[mesSeleccionado] - generalData[previousMonthKey];
 
-  const acumuladoAnualGeneral = Object.keys(generalData)
-    .filter(
-      (key) =>
-        key !== "name" &&
-        key !== "diciembre" &&
-        Object.keys(generalData).indexOf(key) <=
-          Object.keys(generalData).indexOf(mesSeleccionado)
-    )
-    .reduce((sum, key) => sum + generalData[key], 0);
+const variacionAcumulada = {enero: "20.6%",febrero: "36.6%" }
+
+const monthKeysExceptDecember = Object.keys(selectedItem).filter(
+  (key) => key !== "name" && key !== "diciembre"
+);
+
+const acumuladoAnual = monthKeysExceptDecember.reduce(
+  (total, monthKey) => total + selectedItem[monthKey],
+  0
+);
+
 
   const handleMonthChange = (increment) => {
     const dataKeys = Object.keys(selectedItem);
@@ -250,11 +252,11 @@ export default function InflacionDesglose() {
             }`}
           >
             <span className="w-full text-center text-gray-200 text-xs">
-              Acumulado Anual
+              Variación Acumulada
             </span>
             {mesSeleccionado === "diciembre"
               ? "-"
-              : acumuladoAnualGeneral.toFixed(1) + "%"}
+              : variacionAcumulada[mesSeleccionado]}
           </div>
         </div>
       </div>
@@ -288,7 +290,7 @@ export default function InflacionDesglose() {
             }`}
           >
             <span className="text-xs text-center">ACUMULADO ANUAL</span>
-            {acumuladoAnualGeneral.toFixed(1)}%
+            {acumuladoAnual.toFixed(1)}%
           </div>
         </div>
         <div className="w-7/12 h-full flex items-center justify-between py-4 flex-col">

@@ -193,7 +193,7 @@ export default function InflacionDesglose() {
             onClick={() => handleMonthChange(-1)}
             disabled={mesSeleccionado === "diciembre"}
             className={`absolute left-0 top-0 bottom-0 w-8 bg-gray-700 text-white flex items-center justify-center rounded-r ${
-              mesSeleccionado === "diciembre" ? "text-gray-800" : "text-white"
+              mesSeleccionado === "diciembre" ? "text-gray-500" : "text-white"
             }`}
           >
             <FaChevronLeft />
@@ -214,7 +214,7 @@ export default function InflacionDesglose() {
             }
             className={`absolute right-0 top-0 bottom-0 w-8 bg-gray-700 text-white flex items-center justify-center rounded-r ${
               mesSeleccionado === Object.keys(selectedItem).slice(-1)[0]
-                ? "text-gray-800"
+                ? "text-gray-500"
                 : "text-white"
             }`}
           >

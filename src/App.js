@@ -16,6 +16,10 @@ export default function App() {
         <Encabezado content={"INFLACION"} />
         <InflacionDesglose />
       </section>
+      <section className="section" id="canasta-salario">
+        <Encabezado content={"Salario mínimo - Canasta básica"} />
+        <CanastaSalario />
+      </section>
       <section className="section bg-gray-800 text-white" id="dolar">
         <Encabezado content={"DOLAR"} />
         <div className="w-full h-2/3 flex">
@@ -33,10 +37,6 @@ export default function App() {
       <section className="section" id="transporte">
         <Encabezado content={"TRANSPORTE"} />
         <Transporte />
-      </section>
-      <section className="section" id="canasta-salario">
-        <Encabezado content={"Canasta vs Salario"} />
-        <CanastaSalario />
       </section>
     </div>
   );

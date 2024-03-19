@@ -25,6 +25,12 @@ export default function Banner() {
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            href="#canasta-salario"
+          >
+            SALARIO VS CANASTA
+          </a>
+          <a
+            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#dolar"
           >
             DOLAR
@@ -34,12 +40,6 @@ export default function Banner() {
             href="#transporte"
           >
             TRANSPORTE
-          </a>
-          <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#canasta-salario"
-          >
-            CANASTA VS SALARIO
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"

@@ -45,6 +45,12 @@ export default function Encabezado({ content }) {
                   INFLACION
                 </li>
               </a>
+              <a href="#canasta-salario">
+                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
+                  <IoArrowRedoCircleOutline className="mr-4" />
+                  SALARIO vs CANASTA
+                </li>
+              </a>
               <a href="#dolar">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
@@ -55,12 +61,6 @@ export default function Encabezado({ content }) {
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
                   TRANSPORTE
-                </li>
-              </a>
-              <a href="#canasta-salario">
-                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
-                  <IoArrowRedoCircleOutline className="mr-4" />
-                  CANASTA vs SALARIO
                 </li>
               </a>
               <a href="#inflacion">

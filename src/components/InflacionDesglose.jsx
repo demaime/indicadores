@@ -314,7 +314,7 @@ export default function InflacionDesglose() {
             </button>
             <button
               onClick={() => setDataInflacion("nacional")}
-              className={`h-full rounded h-14 bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2  border-pink-400 ${
+              className={`h-full rounded h-14 bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2  border-[#f57b6dff] ${
                 dataInflacion === "nacional" ? "font-bold" : ""
               }`}
             >

@@ -56,8 +56,9 @@ export default function DolarVivo() {
   return (
     <>
       <div className="w-full text-xl text-center text-gray-300 bg-gray-600 font-bold tracking-wider h-1/5">
-        <p className="h-3/5 flex items-center justify-center">
-          COTIZACION EN VIVO
+        <p className="h-3/5 flex items-center justify-center p-4">
+          <span>COTIZACION EN VIVO</span>
+          <img className="h-4 ml-2" src="/assets/live.gif"></img>
         </p>
         <p className="h-2/5 text-xs bg-gray-800 flex items-center justify-center text-yellow-400">
           Última actualización: {formattedDateTime}

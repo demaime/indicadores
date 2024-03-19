@@ -16,7 +16,7 @@ export default function Banner() {
           </div>
           <img src="/assets/dgioc.png" alt="logo-dgioc " className="w-1/12" />
         </div>
-        <div className="w-full text-white flex flex-col items-center justify-evenly h-4/5">
+        <div className="w-full text-white flex flex-col items-center justify-evenly h-5/6">
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#inflacion"

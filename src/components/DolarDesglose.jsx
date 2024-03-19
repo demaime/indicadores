@@ -58,22 +58,22 @@ export default function DolarDesglose() {
       </div>
       <div className="h-4/5  w-full flex">
         <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-green-400">Oficial</div>
-            <div>${selectedData.oficial}</div>
+            <div className="text-3xl">${selectedData.oficial}</div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-blue-400">Blue</div>
-            <div>${selectedData.blue}</div>
+            <div className="text-3xl">${selectedData.blue}</div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-red-400">MEP</div>
-            <div>${selectedData.mep}</div>
+            <div className="text-3xl">${selectedData.mep}</div>
           </div>
         </div>
         <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
-            <div className="font-bold text-green-400 flex flex items-center justify-evenly h-full w-full">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
+            <div className="text-2xl font-bold text-green-400 flex flex items-center justify-evenly h-full w-full">
               {variationOficial > 0 ? (
                 <FaRegArrowAltCircleUp className="text-white" />
               ) : (
@@ -82,8 +82,8 @@ export default function DolarDesglose() {
               {variationOficial.toFixed(2)}%
             </div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
-            <div className="font-bold text-blue-400 flex flex items-center justify-evenly h-full w-full">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
+            <div className="text-2xl font-bold text-blue-400 flex flex items-center justify-evenly h-full w-full">
               {variationBlue > 0 ? (
                 <FaRegArrowAltCircleUp className="text-white" />
               ) : (
@@ -92,8 +92,8 @@ export default function DolarDesglose() {
               {variationBlue.toFixed(2)}%
             </div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
-            <div className="font-bold text-red-400 flex flex items-center justify-evenly h-full w-full">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
+            <div className="text-2xl font-bold text-red-400 flex flex items-center justify-evenly h-full w-full">
               {variationMep > 0 ? (
                 <FaRegArrowAltCircleUp className="text-white" />
               ) : (
@@ -104,17 +104,17 @@ export default function DolarDesglose() {
           </div>
         </div>
         <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-green-400 flex flex items-center justify-evenly h-full w-full">
               +-XX%
             </div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-blue-400 flex flex items-center justify-evenly h-full w-full">
               +-XX%
             </div>
           </div>
-          <div className="p-2 w-32 h-16 border rounded flex flex-col items-center justify-between">
+          <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-red-400 flex flex items-center justify-evenly h-full w-full">
               +-XX%
             </div>

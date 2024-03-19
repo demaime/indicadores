@@ -141,14 +141,17 @@ export default function Transporte() {
             AUMENTO ACUMULADO ANUAL
           </div>
           <div className="w-full h-5/6 flex items-center justify-evenly">
-            <div className="h-36 w-36 text-3xl font-bold rounded-full bg-green-600 flex items-center justify-center text-white">
-              51.13 %
+            <div className="w-1/3 h-full text-[#16a34a] flex flex-col items-center justify-evenly">
+              <img className="h-24" src="/assets/subte.png" alt="" />
+              <p className="text-4xl font-bold">51.13%</p>
             </div>
-            <div className="h-36 w-36 text-3xl font-bold rounded-full bg-blue-600 flex items-center justify-center text-white">
-              245 %
+            <div className="w-1/3 h-full text-[#2563eb] flex flex-col items-center justify-evenly">
+              <img className="h-24" src="/assets/tren.png" alt="" />
+              <p className="text-4xl font-bold">245%</p>
             </div>
-            <div className="h-36 w-36 text-3xl font-bold rounded-full bg-red-600 flex items-center justify-center text-white">
-              296.25 %
+            <div className="w-1/3 h-full text-[#dc2626] flex flex-col items-center justify-evenly">
+              <img className="h-24" src="/assets/bondi.png" alt="" />
+              <p className="text-4xl font-bold">296.25%</p>
             </div>
           </div>
         </div>
@@ -156,3 +159,13 @@ export default function Transporte() {
     </div>
   );
 }
+
+// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-green-600 flex items-center justify-center text-white">
+// 51.13 %
+// </div>
+// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-blue-600 flex items-center justify-center text-white">
+// 245 %
+// </div>
+// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-red-600 flex items-center justify-center text-white">
+// 296.25 %
+// </div>

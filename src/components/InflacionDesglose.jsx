@@ -156,17 +156,16 @@ export default function InflacionDesglose() {
   const monthDiffGeneral =
     generalData[mesSeleccionado] - generalData[previousMonthKey];
 
-const variacionAcumulada = {enero: "20.6%",febrero: "36.6%" }
+  const variacionAcumulada = { enero: "20.6%", febrero: "36.6%" };
 
-const monthKeysExceptDecember = Object.keys(selectedItem).filter(
-  (key) => key !== "name" && key !== "diciembre"
-);
+  const monthKeysExceptDecember = Object.keys(selectedItem).filter(
+    (key) => key !== "name" && key !== "diciembre"
+  );
 
-const acumuladoAnual = monthKeysExceptDecember.reduce(
-  (total, monthKey) => total + selectedItem[monthKey],
-  0
-);
-
+  const acumuladoAnual = monthKeysExceptDecember.reduce(
+    (total, monthKey) => total + selectedItem[monthKey],
+    0
+  );
 
   const handleMonthChange = (increment) => {
     const dataKeys = Object.keys(selectedItem);
@@ -198,7 +197,11 @@ const acumuladoAnual = monthKeysExceptDecember.reduce(
               mesSeleccionado === "diciembre" ? "text-gray-500" : "text-white"
             }`}
           >
-            <FaChevronLeft />
+            <FaChevronLeft
+              className={
+                mesSeleccionado === "diciembre" ? "text-gray-500" : "text-white"
+              }
+            />
           </button>
           <select
             onChange={handleSelectChange}
@@ -220,7 +223,13 @@ const acumuladoAnual = monthKeysExceptDecember.reduce(
                 : "text-white"
             }`}
           >
-            <FaChevronRight />
+            <FaChevronRight
+              className={
+                mesSeleccionado === Object.keys(selectedItem).slice(-1)[0]
+                  ? "text-gray-500"
+                  : "text-white"
+              }
+            />
           </button>
         </div>
         <div className="flex w-full justify-evenly items-center ">

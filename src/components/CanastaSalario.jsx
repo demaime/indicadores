@@ -83,7 +83,13 @@ export default function CanastaSalario() {
             }`}
           >
             {meses.map((mes, index) => (
-              <option key={index} value={mes}>
+              <option
+                className={
+                  dataCanasta === "nacional" ? "bg-pink-200" : "bg-yellow-200"
+                }
+                key={index}
+                value={mes}
+              >
                 {mes.toUpperCase()}
               </option>
             ))}

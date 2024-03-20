@@ -79,7 +79,7 @@ export default function CanastaSalario() {
             value={mesSeleccionado}
             onChange={handleMesChange}
             className={`text-2xl w-full h-full flex items-center justify-center appearance-none outline-none text-center p-1 ${
-              dataCanasta === "nacional" ? "bg-[#f57b6dff]" : "bg-yellow-400"
+              dataCanasta === "nacional" ? "bg-pink-200" : "bg-yellow-200"
             }`}
           >
             {meses.map((mes, index) => (
@@ -94,7 +94,7 @@ export default function CanastaSalario() {
               </option>
             ))}
           </select>
-          <MdKeyboardArrowDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-2xl" />
+          <MdKeyboardArrowDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-800 text-2xl" />
         </div>
       </div>
       <div className="w-full h-[95%] flex">

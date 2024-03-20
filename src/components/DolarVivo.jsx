@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { IoIosHelpCircleOutline } from "react-icons/io";
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css"; // Importar los estilos de react-tippy
 
 export default function DolarVivo() {
   const [dolarOficial, setDolarOficial] = useState();
@@ -67,8 +70,18 @@ export default function DolarVivo() {
       <div className="w-full h-4/5 flex justify-evenly items-center">
         {" "}
         <div className="h-28 w-[15rem] border border-white rounded-xl flex flex-col justify-between">
-          <span className="h-8 text-xl justify-center bg-green-400 rounded-t-xl text-gray-900 items-center flex">
+          <span className="h-8 text-xl justify-center bg-green-400 rounded-t-xl text-gray-900 items-center flex relative">
             OFICIAL
+            <Tooltip
+              title="Corresponde al valor del dolar nación"
+              position="top"
+              trigger="mouseenter"
+              arrow={true}
+              theme="light"
+              defaultStyles={{ background: "#f0f0f0", color: "#333" }}
+            >
+              <IoIosHelpCircleOutline className="absolute top-1 right-2" />
+            </Tooltip>
           </span>
           <span className="h-full flex justify-center items-center text-4xl">
             $ {dolarOficial && dolarOficial.venta}

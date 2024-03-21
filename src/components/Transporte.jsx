@@ -12,7 +12,7 @@ import {
   Line,
 } from "recharts";
 
-const CustomizedLabel = ({ x, y, stroke, value }) => {
+const CustomizedLabelBarras = ({ x, y, stroke, value }) => {
   return (
     <text
       x={x}
@@ -56,6 +56,35 @@ const data = [
   },
 ];
 
+const CustomizedLabelTransporte = ({ x, y, stroke, value, index }) => {
+  let variation = 0;
+  if (index < data.length - 1) {
+    const currentValue = data[index][value];
+    const nextValue = data[index + 1][value];
+    if (currentValue !== 0) {
+      variation = ((nextValue - currentValue) / currentValue) * 100;
+    }
+  }
+  const formattedVariation = isNaN(variation)
+    ? "0%"
+    : variation.toFixed(2) + "%";
+
+  return (
+    <text
+      x={x}
+      y={y}
+      dy={"2%"}
+      dx={"15%"}
+      fill={stroke}
+      fontSize={12}
+      className="font-bold"
+      textAnchor="middle"
+    >
+      {`$${formattedVariation}`}
+    </text>
+  );
+};
+
 export default function Transporte() {
   return (
     <div className="h-full w-full flex">
@@ -66,7 +95,11 @@ export default function Transporte() {
             <BarChart width={150} height={40} data={data}>
               <XAxis dataKey="Mes" />
               <YAxis />
-              <Bar dataKey="Subte" fill="#facc15" label={<CustomizedLabel />} />
+              <Bar
+                dataKey="Subte"
+                fill="#facc15"
+                label={<CustomizedLabelBarras />}
+              />
               <Tooltip />
             </BarChart>
           </ResponsiveContainer>
@@ -77,7 +110,11 @@ export default function Transporte() {
             <BarChart width={150} height={40} data={data}>
               <XAxis dataKey="Mes" />
               <YAxis />
-              <Bar dataKey="Tren" fill="#facc15" label={<CustomizedLabel />} />
+              <Bar
+                dataKey="Tren"
+                fill="#facc15"
+                label={<CustomizedLabelBarras />}
+              />
               <Tooltip />
             </BarChart>
           </ResponsiveContainer>
@@ -91,7 +128,7 @@ export default function Transporte() {
               <Bar
                 dataKey="Colectivo"
                 fill="#facc15"
-                label={<CustomizedLabel />}
+                label={<CustomizedLabelBarras />}
               />
               <Tooltip />
             </BarChart>
@@ -109,30 +146,33 @@ export default function Transporte() {
               margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               style={{ color: "white" }}
             >
-              <defs></defs>
-              <XAxis dataKey="mes" />
+              <defs />
+              <XAxis dataKey="Mes" interval={0} tick={{ fontSize: 12 }} />
               <YAxis tickFormatter={(value) => `$${value}`} />
               <CartesianGrid strokeDasharray="3 3" />
               <Tooltip />
               <Legend verticalAlign="bottom" height={36} />
-              <Line
-                type="monotone"
-                dataKey="Subte"
-                stroke="#16a34a"
-                strokeWidth={2}
-              />
-              <Line
-                type="monotone"
-                dataKey="Tren"
-                stroke="#2563eb"
-                strokeWidth={2}
-              />
-              <Line
-                type="monotone"
-                dataKey="Colectivo"
-                stroke="#dc2626"
-                strokeWidth={2}
-              />
+              {Object.keys(data[0])
+                .filter((key) => key !== "Mes")
+                .map((key, index) => (
+                  <Line
+                    type="monotone"
+                    dataKey={key}
+                    stroke={["#16a34a", "#2563eb", "#dc2626"][index]}
+                    strokeWidth={2}
+                    dot={{
+                      stroke: ["#16a34a", "#2563eb", "#dc2626"][index],
+                      strokeWidth: 2,
+                    }}
+                    label={
+                      <CustomizedLabelTransporte
+                        stroke={["#16a34a", "#2563eb", "#dc2626"][index]}
+                        value={key}
+                        index={index}
+                      />
+                    }
+                  />
+                ))}
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -159,13 +199,3 @@ export default function Transporte() {
     </div>
   );
 }
-
-// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-green-600 flex items-center justify-center text-white">
-// 51.13 %
-// </div>
-// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-blue-600 flex items-center justify-center text-white">
-// 245 %
-// </div>
-// <div className="h-36 w-36 text-3xl font-bold rounded-full bg-red-600 flex items-center justify-center text-white">
-// 296.25 %
-// </div>

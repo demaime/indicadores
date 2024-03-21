@@ -317,8 +317,9 @@ export default function CanastaSalario() {
                   <XAxis dataKey="mes" tick={{ fill: "white" }} />
                   <YAxis
                     tick={{ fill: "white" }}
+                    tickFormatter={formatNumber}
                     interval={0}
-                    domain={[0, "dataMax + 100000"]}
+                    domain={[0, "dataMax + 50000"]}
                   />
                   <Tooltip />
                   <Line

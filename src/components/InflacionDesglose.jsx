@@ -193,7 +193,7 @@ export default function InflacionDesglose() {
 
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="bg-gray-200 border-b border-gray-800 w-full h-1/3 flex flex-col items-center justify-evenly">
+      <div className="bg-gray-200 border-b-2 border-gray-800 w-full h-1/3 flex flex-col items-center justify-evenly">
         <div className="relative">
           <button
             onClick={() => handleMonthChange(-1)}
@@ -266,7 +266,7 @@ export default function InflacionDesglose() {
             }`}
           >
             <span className="w-full text-center text-gray-200 text-xs">
-              Variación Acumulada
+              Variación Acumulada Anual (2024)
             </span>
             {mesSeleccionado === "diciembre"
               ? "-"

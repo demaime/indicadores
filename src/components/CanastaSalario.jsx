@@ -52,9 +52,12 @@ export default function CanastaSalario() {
     return number.toLocaleString();
   };
 
-  const xAxisDomainMax = Math.max(
+  const xAxisDomainMaxAlimentaria = Math.max(
     ...canastaAlimentariaNacio.map((item) => item.valor),
-    ...canastaAlimentariaCaba.map((item) => item.valor),
+    ...canastaAlimentariaCaba.map((item) => item.valor)
+  );
+
+  const xAxisDomainMaxTotal = Math.max(
     ...canastaTotalNacio.map((item) => item.valor),
     ...canastaTotalCaba.map((item) => item.valor)
   );
@@ -109,7 +112,7 @@ export default function CanastaSalario() {
           <div className="w-full h-full flex flex-col justify-between">
             <div className="h-1/2 p-2">
               <h1 className="bg-gray-700 text-white px-2">
-                CANASTA BASICA ALIMENTARIA
+                CANASTA BASICA ALIMENTARIA (HOGAR 4 INTEGRANTES)
               </h1>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
@@ -125,7 +128,7 @@ export default function CanastaSalario() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis
                     type="number"
-                    domain={[0, xAxisDomainMax]}
+                    domain={[0, xAxisDomainMaxAlimentaria]}
                     tickFormatter={formatNumber}
                   />
                   <YAxis
@@ -150,7 +153,9 @@ export default function CanastaSalario() {
             </div>
             <div className="h-1/2 p-2">
               {" "}
-              <h1 className="bg-gray-400 px-2">CANASTA BASICA TOTAL</h1>
+              <h1 className="bg-gray-400 px-2">
+                CANASTA BASICA TOTAL (HOGAR 4 INTEGRANTES)
+              </h1>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
                   className="p-2 font-bold text-white"
@@ -165,7 +170,7 @@ export default function CanastaSalario() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis
                     type="number"
-                    domain={[0, xAxisDomainMax]}
+                    domain={[0, xAxisDomainMaxTotal]}
                     tickFormatter={formatNumber}
                   />
                   <YAxis

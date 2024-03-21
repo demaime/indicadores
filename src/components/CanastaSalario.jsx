@@ -52,6 +52,13 @@ export default function CanastaSalario() {
     return number.toLocaleString();
   };
 
+  const xAxisDomainMax = Math.max(
+    ...canastaAlimentariaNacio.map((item) => item.valor),
+    ...canastaAlimentariaCaba.map((item) => item.valor),
+    ...canastaTotalNacio.map((item) => item.valor),
+    ...canastaTotalCaba.map((item) => item.valor)
+  );
+
   return (
     <div className="w-full h-full flex flex-col bg-gray-200">
       <div className="w-full flex items-center h-[5 %]">
@@ -116,7 +123,11 @@ export default function CanastaSalario() {
                   margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis type="number" tickFormatter={formatNumber} />
+                  <XAxis
+                    type="number"
+                    domain={[0, xAxisDomainMax]}
+                    tickFormatter={formatNumber}
+                  />
                   <YAxis
                     dataKey="mes"
                     type="category"
@@ -152,7 +163,11 @@ export default function CanastaSalario() {
                   margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis type="number" tickFormatter={formatNumber} />
+                  <XAxis
+                    type="number"
+                    domain={[0, xAxisDomainMax]}
+                    tickFormatter={formatNumber}
+                  />
                   <YAxis
                     dataKey="mes"
                     type="category"

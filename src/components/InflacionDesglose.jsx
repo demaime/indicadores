@@ -156,7 +156,12 @@ export default function InflacionDesglose() {
   const monthDiffGeneral =
     generalData[mesSeleccionado] - generalData[previousMonthKey];
 
-  const variacionAcumulada = { enero: "20.6%", febrero: "36.6%" };
+  const variacionAcumuladaNacion = { enero: "20.6%", febrero: "36.6%" };
+  const variacionAcumuladaCaba = { enero: "21.7%", febrero: "38.9%" };
+  let variacionAcumulada =
+    dataInflacion === "nacional"
+      ? variacionAcumuladaNacion
+      : variacionAcumuladaCaba;
 
   const monthKeysExceptDecember = Object.keys(selectedItem).filter(
     (key) => key !== "name" && key !== "diciembre"

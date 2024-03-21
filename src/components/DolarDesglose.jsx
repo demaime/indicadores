@@ -36,6 +36,11 @@ export default function DolarDesglose() {
       100;
   }
 
+  const pesoDifferenceOficial =
+    selectedData.oficial - data[selectedIndex - 1].oficial;
+  const pesoDifferenceBlue = selectedData.blue - data[selectedIndex - 1].blue;
+  const pesoDifferenceMep = selectedData.mep - data[selectedIndex - 1].mep;
+
   return (
     <div className="h-full w-full flex flex-col items-center">
       <div className="w-full h-1/5 flex items-center justify-center">
@@ -53,8 +58,8 @@ export default function DolarDesglose() {
       </div>
       <div className="w-full h-4 text-xs grid grid-cols-3 items-center justify-center">
         <p className="text-center">{""}</p>
-        <p className="text-center">VARIACION MENSUAL</p>
-        <p className="text-center">VARIACION ANUAL</p>
+        <p className="text-center">VARIACION PORCENTUAL</p>
+        <p className="text-center">VARIACION EN PESOS</p>
       </div>
       <div className="h-4/5  w-full flex">
         <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
@@ -103,20 +108,26 @@ export default function DolarDesglose() {
             </div>
           </div>
         </div>
-        <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
+        <div className="h-full flex flex-col justify-evenly w-1/3 items-center text-2xl">
           <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-green-400 flex flex items-center justify-evenly h-full w-full">
-              +-XX%
+              {`${pesoDifferenceOficial > 0 ? "+" : "-"}$${Math.abs(
+                pesoDifferenceOficial.toFixed(2)
+              )}`}
             </div>
           </div>
           <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-blue-400 flex flex items-center justify-evenly h-full w-full">
-              +-XX%
+              {`${pesoDifferenceBlue > 0 ? "+" : "-"}$${Math.abs(
+                pesoDifferenceBlue.toFixed(2)
+              )}`}
             </div>
           </div>
           <div className="p-2 w-48 h-24 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-red-400 flex flex items-center justify-evenly h-full w-full">
-              +-XX%
+              {`${pesoDifferenceMep > 0 ? "+" : "-"}$${Math.abs(
+                pesoDifferenceMep.toFixed(2)
+              )}`}
             </div>
           </div>
         </div>

@@ -52,15 +52,27 @@ export default function CanastaSalario() {
     return number.toLocaleString();
   };
 
-  const xAxisDomainMaxAlimentaria = Math.max(
-    ...canastaAlimentariaNacio.map((item) => item.valor),
-    ...canastaAlimentariaCaba.map((item) => item.valor)
-  );
+  const xAxisDomainMaxAlimentaria =
+    Math.ceil(
+      Math.max(
+        ...canastaAlimentariaNacio.map((item) => item.valor),
+        ...canastaAlimentariaCaba.map((item) => item.valor)
+      ) / 100000
+    ) * 100000;
 
-  const xAxisDomainMaxTotal = Math.max(
-    ...canastaTotalNacio.map((item) => item.valor),
-    ...canastaTotalCaba.map((item) => item.valor)
-  );
+  const xAxisDomainMaxTotal =
+    Math.ceil(
+      Math.max(
+        ...canastaTotalNacio.map((item) => item.valor),
+        ...canastaTotalCaba.map((item) => item.valor)
+      ) / 100000
+    ) * 100000;
+
+  // Calcula el valor máximo de los datos
+  const yAxisDataMax = Math.max(...smvm.map((item) => item.salario));
+
+  // Calcula el siguiente número redondeado del máximo
+  const yAxisDomainMax = Math.ceil(yAxisDataMax / 50000) * 50000;
 
   return (
     <div className="w-full h-full flex flex-col bg-gray-200">
@@ -339,7 +351,7 @@ export default function CanastaSalario() {
                     tick={{ fill: "white" }}
                     tickFormatter={formatNumber}
                     interval={0}
-                    domain={[0, "dataMax + 50000"]}
+                    domain={[0, yAxisDomainMax]}
                   />
                   <Tooltip />
                   <Line
@@ -347,7 +359,7 @@ export default function CanastaSalario() {
                       fill: "silver",
                       fontSize: 12,
                       fontWeight: "bold",
-                      position: "bottom",
+                      position: "left",
                       formatter: formatNumber,
                     }}
                     type="monotone"

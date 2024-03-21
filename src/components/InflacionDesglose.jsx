@@ -54,12 +54,6 @@ const dataNacion = [
     febrero: 7.2,
   },
   { name: "Educación", diciembre: 6.2, enero: 0.9, febrero: 9.9 },
-  {
-    name: "Cuidado personal, protección social y otros",
-    diciembre: 44.4,
-    enero: 32.7,
-    febrero: 21.6,
-  },
 ];
 
 const dataCaba = [

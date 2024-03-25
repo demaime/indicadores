@@ -71,7 +71,7 @@ const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "%";
+    : variation.toFixed(2) + "pp";
 
   return (
     <text
@@ -84,7 +84,7 @@ const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
       className="font-bold"
       textAnchor="middle"
     >
-      {`$${formattedVariation}`}
+      {`${formattedVariation}`}
     </text>
   );
 };
@@ -102,7 +102,7 @@ const CustomizedLabelTren = ({ x, y, stroke, value, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "%";
+    : variation.toFixed(2) + "pp";
 
   return (
     <text
@@ -115,7 +115,7 @@ const CustomizedLabelTren = ({ x, y, stroke, value, index }) => {
       className="font-bold"
       textAnchor="middle"
     >
-      {`$${formattedVariation}`}
+      {`${formattedVariation}`}
     </text>
   );
 };
@@ -133,7 +133,7 @@ const CustomizedLabelColectivo = ({ x, y, stroke, value, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "%";
+    : variation.toFixed(2) + "pp";
 
   return (
     <text
@@ -146,7 +146,7 @@ const CustomizedLabelColectivo = ({ x, y, stroke, value, index }) => {
       className="font-bold"
       textAnchor="middle"
     >
-      {`$${formattedVariation}`}
+      {`${formattedVariation}`}
     </text>
   );
 };

@@ -100,7 +100,7 @@ export default function CanastaSalario() {
           <select
             value={mesSeleccionado}
             onChange={handleMesChange}
-            className={`text-2xl w-full h-full flex items-center justify-center appearance-none outline-none text-center p-1 ${
+            className={`text-2xl w-full h-full font-semibold flex items-center justify-center appearance-none outline-none text-center p-1 ${
               dataCanasta === "nacional" ? "bg-pink-200" : "bg-yellow-200"
             }`}
           >

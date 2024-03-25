@@ -43,15 +43,15 @@ export default function Banner() {
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#canasta-salario"
+            href="#servicios"
           >
-            EJEMPLO 3
+            SERVICIOS
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#monotributo"
           >
-            EJEMPLO 4
+            MONOTRIBUTO
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"

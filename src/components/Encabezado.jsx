@@ -63,16 +63,16 @@ export default function Encabezado({ content }) {
                   TRANSPORTE
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#servicios">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 3
+                  SERVICIOS
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#monotributo">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 4
+                  MONOTRIBUTO
                 </li>
               </a>
               <a href="#inflacion">

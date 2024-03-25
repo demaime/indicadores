@@ -7,6 +7,8 @@ import DolarDesglose from "./components/DolarDesglose.jsx";
 import Encabezado from "./components/Encabezado.jsx";
 import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
+import Servicios from "./components/Servicios.jsx";
+import Monotributo from "./components/Monotributo.jsx";
 
 export default function App() {
   return (
@@ -17,7 +19,7 @@ export default function App() {
         <InflacionDesglose />
       </section>
       <section className="section" id="canasta-salario">
-        <Encabezado content={"Salario mínimo - Canasta básica"} />
+        <Encabezado content={"CANASTA BASICA - SALARIO MINIMO"} />
         <CanastaSalario />
       </section>
       <section className="section bg-gray-800 text-white" id="dolar">
@@ -37,6 +39,15 @@ export default function App() {
       <section className="section" id="transporte">
         <Encabezado content={"TRANSPORTE"} />
         <Transporte />
+      </section>
+
+      <section className="section" id="servicios">
+        <Encabezado content={"SERVICIOS"} />
+        <Servicios />
+      </section>
+      <section className="section" id="monotributo">
+        <Encabezado content={"MONOTRIBUTO"} />
+        <Monotributo />
       </section>
     </div>
   );

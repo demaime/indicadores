@@ -20,6 +20,9 @@ export default function DolarDesglose() {
   let variationOficial = 0;
   let variationBlue = 0;
   let variationMep = 0;
+  let pesoDifferenceOficial = 0;
+  let pesoDifferenceBlue = 0;
+  let pesoDifferenceMep = 0;
 
   if (selectedIndex > 0) {
     variationOficial =
@@ -34,13 +37,12 @@ export default function DolarDesglose() {
       ((selectedData.mep - data[selectedIndex - 1].mep) /
         data[selectedIndex - 1].mep) *
       100;
+
+    pesoDifferenceOficial =
+      selectedData.oficial - data[selectedIndex - 1].oficial;
+    pesoDifferenceBlue = selectedData.blue - data[selectedIndex - 1].blue;
+    pesoDifferenceMep = selectedData.mep - data[selectedIndex - 1].mep;
   }
-
-  const pesoDifferenceOficial =
-    selectedData.oficial - data[selectedIndex - 1].oficial;
-  const pesoDifferenceBlue = selectedData.blue - data[selectedIndex - 1].blue;
-  const pesoDifferenceMep = selectedData.mep - data[selectedIndex - 1].mep;
-
   return (
     <div className="h-full w-full flex flex-col items-center">
       <div className="w-full h-1/5 flex items-center justify-center">

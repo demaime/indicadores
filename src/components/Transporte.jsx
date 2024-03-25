@@ -56,11 +56,77 @@ const data = [
   },
 ];
 
-const CustomizedLabelTransporte = ({ x, y, stroke, value, index }) => {
+const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
   let variation = 0;
   if (index < data.length - 1) {
-    const currentValue = data[index][value];
-    const nextValue = data[index + 1][value];
+    const validKeys = Object.keys(data[index]).filter((key) => key !== "Mes");
+    const currentValue = data[index][validKeys[0]];
+
+    const nextValue = data[index + 1][validKeys[0]];
+    if (currentValue !== 0) {
+      (variation = ((nextValue - currentValue) / currentValue) * 100).toFixed(
+        2
+      );
+    }
+  }
+  const formattedVariation = isNaN(variation)
+    ? "0%"
+    : variation.toFixed(2) + "%";
+
+  return (
+    <text
+      x={x}
+      y={y}
+      dy={"-8%"}
+      dx={"15%"}
+      fill={stroke}
+      fontSize={12}
+      className="font-bold"
+      textAnchor="middle"
+    >
+      {`$${formattedVariation}`}
+    </text>
+  );
+};
+
+const CustomizedLabelTren = ({ x, y, stroke, value, index }) => {
+  let variation = 0;
+  if (index < data.length - 1) {
+    const validKeys = Object.keys(data[index]).filter((key) => key !== "Mes");
+    const currentValue = data[index][validKeys[1]];
+
+    const nextValue = data[index + 1][validKeys[1]];
+    if (currentValue !== 0) {
+      variation = ((nextValue - currentValue) / currentValue) * 100;
+    }
+  }
+  const formattedVariation = isNaN(variation)
+    ? "0%"
+    : variation.toFixed(2) + "%";
+
+  return (
+    <text
+      x={x}
+      y={y}
+      dy={"2%"}
+      dx={"15%"}
+      fill={stroke}
+      fontSize={12}
+      className="font-bold"
+      textAnchor="middle"
+    >
+      {`$${formattedVariation}`}
+    </text>
+  );
+};
+
+const CustomizedLabelColectivo = ({ x, y, stroke, value, index }) => {
+  let variation = 0;
+  if (index < data.length - 1) {
+    const validKeys = Object.keys(data[index]).filter((key) => key !== "Mes");
+    const currentValue = data[index][validKeys[2]];
+
+    const nextValue = data[index + 1][validKeys[2]];
     if (currentValue !== 0) {
       variation = ((nextValue - currentValue) / currentValue) * 100;
     }
@@ -152,27 +218,36 @@ export default function Transporte() {
               <CartesianGrid strokeDasharray="3 3" />
               <Tooltip />
               <Legend verticalAlign="bottom" height={36} />
-              {Object.keys(data[0])
-                .filter((key) => key !== "Mes")
-                .map((key, index) => (
-                  <Line
-                    type="monotone"
-                    dataKey={key}
-                    stroke={["#16a34a", "#2563eb", "#dc2626"][index]}
-                    strokeWidth={2}
-                    dot={{
-                      stroke: ["#16a34a", "#2563eb", "#dc2626"][index],
-                      strokeWidth: 2,
-                    }}
-                    label={
-                      <CustomizedLabelTransporte
-                        stroke={["#16a34a", "#2563eb", "#dc2626"][index]}
-                        value={key}
-                        index={index}
-                      />
-                    }
-                  />
-                ))}
+
+              {/* Línea para la serie "Subte" */}
+              <Line
+                type="monotone"
+                dataKey="Subte"
+                stroke="#16a34a"
+                strokeWidth={2}
+                dot={{ stroke: "#16a34a", strokeWidth: 2 }}
+                label={<CustomizedLabelSubte stroke="#16a34a" />}
+              />
+
+              {/* Línea para la serie "Tren" */}
+              <Line
+                type="monotone"
+                dataKey="Tren"
+                stroke="#2563eb"
+                strokeWidth={2}
+                dot={{ stroke: "#2563eb", strokeWidth: 2 }}
+                label={<CustomizedLabelTren stroke="#2563eb" />}
+              />
+
+              {/* Línea para la serie "Colectivo" */}
+              <Line
+                type="monotone"
+                dataKey="Colectivo"
+                stroke="#dc2626"
+                strokeWidth={2}
+                dot={{ stroke: "#dc2626", strokeWidth: 2 }}
+                label={<CustomizedLabelColectivo stroke="#dc2626" />}
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>

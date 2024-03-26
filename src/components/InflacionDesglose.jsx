@@ -152,8 +152,12 @@ export default function InflacionDesglose() {
 
   const variacionAcumuladaNacion = { enero: "20.6%", febrero: "36.6%" };
   const variacionAcumuladaCaba = { enero: "21.7%", febrero: "38.9%" };
+  const variacionAnualNacion = { enero: "254.2%", febrero: "276.2%" };
+  const variacionAnualCaba = { enero: "238.5%", febrero: "264.5%" };
 
   //ACA TENGO QUE CREAR LAS VARIABLES PARA VARIACION INTERANUAL. BUSCAR LA DATA
+  let variacionAnual =
+    dataInflacion === "nacional" ? variacionAnualNacion : variacionAnualCaba;
 
   let variacionAcumulada =
     dataInflacion === "nacional"
@@ -236,7 +240,7 @@ export default function InflacionDesglose() {
         </div>
         <div className="flex w-full justify-evenly items-center ">
           <div
-            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+            className={`bg-gray-700 rounded w-64 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
               dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
             }`}
           >
@@ -246,7 +250,7 @@ export default function InflacionDesglose() {
             {valorMensualGeneral}%
           </div>
           <div
-            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+            className={`bg-gray-700 rounded w-64 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
               dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
             }`}
           >
@@ -258,7 +262,7 @@ export default function InflacionDesglose() {
               : monthDiffGeneral.toFixed(1) + "pp"}
           </div>
           <div
-            className={`bg-gray-700 rounded w-96 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+            className={`bg-gray-700 rounded w-64 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
               dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
             }`}
           >
@@ -268,6 +272,18 @@ export default function InflacionDesglose() {
             {mesSeleccionado === "diciembre"
               ? "-"
               : variacionAcumulada[mesSeleccionado]}
+          </div>
+          <div
+            className={`bg-gray-700 rounded w-64 h-24 flex flex-col justify-between p-4 text-5xl text-center items-center ${
+              dataInflacion === "caba" ? "text-yellow-400" : "text-pink-200"
+            }`}
+          >
+            <span className="w-full text-center text-gray-200 text-xs">
+              Variación Interanual (vs {mesSeleccionado} 2023)
+            </span>
+            {mesSeleccionado === "diciembre"
+              ? "-"
+              : variacionAnual[mesSeleccionado]}
           </div>
         </div>
       </div>

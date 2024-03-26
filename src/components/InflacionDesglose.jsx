@@ -152,6 +152,9 @@ export default function InflacionDesglose() {
 
   const variacionAcumuladaNacion = { enero: "20.6%", febrero: "36.6%" };
   const variacionAcumuladaCaba = { enero: "21.7%", febrero: "38.9%" };
+
+  //ACA TENGO QUE CREAR LAS VARIABLES PARA VARIACION INTERANUAL. BUSCAR LA DATA
+
   let variacionAcumulada =
     dataInflacion === "nacional"
       ? variacionAcumuladaNacion

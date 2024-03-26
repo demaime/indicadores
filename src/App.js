@@ -9,6 +9,7 @@ import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Servicios from "./components/Servicios.jsx";
 import Monotributo from "./components/Monotributo.jsx";
+import Comparativa from "./components/Comparativa.jsx";
 
 export default function App() {
   return (
@@ -48,6 +49,10 @@ export default function App() {
       <section className="section" id="monotributo">
         <Encabezado content={"MONOTRIBUTO"} />
         <Monotributo />
+      </section>
+      <section className="section" id="comparativa">
+        <Encabezado content={"COMPARATIVA"} />
+        <Comparativa />
       </section>
     </div>
   );

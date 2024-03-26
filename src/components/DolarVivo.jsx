@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { Tooltip } from "react-tippy";
-import "react-tippy/dist/tippy.css"; // Importar los estilos de react-tippy
+import "react-tippy/dist/tippy.css";
 
 export default function DolarVivo() {
   const [dolarOficial, setDolarOficial] = useState();

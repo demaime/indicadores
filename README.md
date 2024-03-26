@@ -15,3 +15,5 @@ starbucks/martinez
 buscar consumo de carne
 (https://es.statista.com/estadisticas/1281474/consumo-por-persona-de-carne-en-argentina-por-tipo/)
 abl
+
+### FALTAN FORMULAS DE ACUMULACION ANUAL EN : MONOTRIBUTO, TRANSPORTE (SOLO SUMA TODAS),

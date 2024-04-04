@@ -10,11 +10,16 @@ import CanastaSalario from "./components/CanastaSalario.jsx";
 import Servicios from "./components/Servicios.jsx";
 import Monotributo from "./components/Monotributo.jsx";
 import Comparativa from "./components/Comparativa.jsx";
+import TESTINGinflacion from "./components/TESTINGinflacion.jsx";
 
 export default function App() {
   return (
     <div className="full-container">
       <Banner />
+      <section className="section" id="inflacion">
+        <Encabezado content={"***** TEST INFLACION ****** (ignorar)"} />
+        <TESTINGinflacion />
+      </section>
       <section className="section" id="inflacion">
         <Encabezado content={"INFLACION"} />
         <InflacionDesglose />

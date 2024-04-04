@@ -1,26 +1,25 @@
 import React, { useState, useRef, useEffect } from "react";
+import data from "../fulldata.js";
+import {
+  LineChart,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Line,
+  Legend,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 
 function Comparativa() {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [selectedOptions1, setSelectedOptions1] = useState([]);
-  const [selectedOptions2, setSelectedOptions2] = useState([]);
+  const [selectedOption1, setSelectedOption1] = useState(null);
+  const [selectedOption2, setSelectedOption2] = useState(null);
   const dropdownRef1 = useRef(null);
   const dropdownRef2 = useRef(null);
-
-  const options1 = [
-    { id: 1, label: "Opción 1" },
-    { id: 2, label: "Opción 2" },
-    { id: 3, label: "Opción 3" },
-    // Agrega más opciones según sea necesario
-  ];
-
-  const options2 = [
-    { id: 4, label: "Opción 4" },
-    { id: 5, label: "Opción 5" },
-    { id: 6, label: "Opción 6" },
-    // Agrega más opciones según sea necesario
-  ];
+  const [chartData1, setChartData1] = useState([]);
+  const [chartData2, setChartData2] = useState([]);
 
   const toggleDropdown1 = () => {
     setIsOpen1(!isOpen1);
@@ -30,32 +29,17 @@ function Comparativa() {
     setIsOpen2(!isOpen2);
   };
 
-  const handleOptionClick1 = (optionId) => {
-    setSelectedOptions1([optionId]);
+  const handleOptionClick1 = (optionName) => {
+    setSelectedOption1(optionName);
     setIsOpen1(false);
   };
 
-  const handleOptionClick2 = (optionId) => {
-    if (selectedOptions2.includes(optionId)) {
-      setSelectedOptions2(selectedOptions2.filter((id) => id !== optionId));
-    } else {
-      setSelectedOptions2([...selectedOptions2, optionId]);
-    }
+  const handleOptionClick2 = (optionName) => {
+    setSelectedOption2(optionName);
+    setIsOpen2(false);
   };
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (
-        dropdownRef1.current &&
-        !dropdownRef1.current.contains(event.target) &&
-        dropdownRef2.current &&
-        !dropdownRef2.current.contains(event.target)
-      ) {
-        setIsOpen1(false);
-        setIsOpen2(false);
-      }
-    };
-
     document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
@@ -63,38 +47,61 @@ function Comparativa() {
     };
   }, []);
 
+  useEffect(() => {
+    if (selectedOption1) {
+      setChartData1(data[selectedOption1]);
+    }
+  }, [selectedOption1]);
+
+  useEffect(() => {
+    if (selectedOption2) {
+      setChartData2(data[selectedOption2]);
+    }
+  }, [selectedOption2]);
+
+  const handleOutsideClick = (event) => {
+    if (dropdownRef1.current && !dropdownRef1.current.contains(event.target)) {
+      setIsOpen1(false);
+    }
+    if (dropdownRef2.current && !dropdownRef2.current.contains(event.target)) {
+      setIsOpen2(false);
+    }
+  };
+
   return (
-    <div className="h-full w-full">
-      <div className="w-full h-18 flex">
+    <div className="h-full w-full relative">
+      <div className="w-full h-18 flex relative z-10">
         <div
           ref={dropdownRef1}
-          className="w-1/2 h-full bg-gray-300 text-gray-500 text-2xl pl-6"
+          className={`w-1/2 h-full border-r border-gray-600 bg-gray-300 text-gray-500 text-xl pl-6 relative ${
+            isOpen1 ? "z-20" : ""
+          }`}
           onClick={toggleDropdown1}
         >
-          <button className="text-gray-800">
-            {selectedOptions1.length > 0
-              ? `Opción ${selectedOptions1[0]}`
-              : "Seleccione opción"}
+          <button className="font-semibold p-2">
+            {selectedOption1 ? selectedOption1 : "Seleccione opción"}
           </button>
+
           {isOpen1 && (
-            <ul>
-              {options1.map((option) => (
-                <li key={option.id} className="border-b p-1 border-gray-700">
+            <ul className="absolute left-0 w-full bg-gray-300 border border-gray-300 shadow">
+              {Object.keys(data).map((key, index) => (
+                <li key={index} className="border-b p-1 border-gray-700">
                   <label
-                    htmlFor={option.id}
-                    className="option-label"
-                    onClick={() => handleOptionClick1(option.id)}
+                    htmlFor={index}
+                    className="option-label hover:bg-gray-400 block cursor-pointer flex items-center"
+                    onClick={() => handleOptionClick1(key)}
                   >
                     <input
                       type="radio"
-                      id={option.id}
+                      id={index}
                       name="option1"
-                      value={option.id}
-                      checked={selectedOptions1.includes(option.id)}
+                      value={key}
+                      checked={selectedOption1 === key}
                       onChange={() => {}}
+                      className="mr-2 h-5 w-5"
                     />
                     <span className="checkmark"></span>
-                    {option.label}
+                    {key}
                   </label>
                 </li>
               ))}
@@ -103,41 +110,90 @@ function Comparativa() {
         </div>
         <div
           ref={dropdownRef2}
-          className="dropdown w-1/2 h-full bg-blue-200 text-blue-500"
+          className={`w-1/2 h-full bg-gray-600 text-gray-200 text-xl pl-6 relative ${
+            isOpen2 ? "z-20" : ""
+          }`}
           onClick={toggleDropdown2}
         >
-          <button className="dropdown-toggle">
-            {selectedOptions2.length > 0
-              ? selectedOptions2.length === 1
-                ? `Opción ${selectedOptions2[0]}`
-                : `Opción ${selectedOptions2[0]} + ${
-                    selectedOptions2.length - 1
-                  } más`
-              : "Seleccione opciones"}
+          <button className="font-semibold p-2">
+            {selectedOption2 ? selectedOption2 : "Seleccione opción"}
           </button>
+
           {isOpen2 && (
-            <ul className="dropdown-menu">
-              {options2.map((option) => (
-                <li key={option.id}>
+            <ul className="absolute  left-0 w-full bg-gray-600 border-gray-400 shadow">
+              {Object.keys(data).map((key, index) => (
+                <li
+                  key={index}
+                  className="border-b p-1 border-gray-200 bg-gray-600"
+                >
                   <label
-                    htmlFor={option.id}
-                    className="option-label"
-                    onClick={() => handleOptionClick2(option.id)}
+                    htmlFor={index}
+                    className="option-label hover:bg-gray-400 block cursor-pointer flex items-center"
+                    onClick={() => handleOptionClick2(key)}
                   >
                     <input
-                      type="checkbox"
-                      id={option.id}
-                      value={option.id}
-                      checked={selectedOptions2.includes(option.id)}
+                      type="radio"
+                      id={index}
+                      name="option2"
+                      value={key}
+                      checked={selectedOption2 === key}
                       onChange={() => {}}
+                      className="mr-2 h-5 w-5"
                     />
                     <span className="checkmark"></span>
-                    {option.label}
+                    {key}
                   </label>
                 </li>
               ))}
             </ul>
           )}
+        </div>
+      </div>
+      <div className="w-full h-[92%] flex justify-center relative z-0">
+        <div className="w-1/2 h-full flex items-center justify-center border-r border-gray-600">
+          <ResponsiveContainer width="95%" height="100%">
+            <LineChart
+              className="p-2 font-bold text-white"
+              data={chartData1}
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+              style={{ color: "white" }}
+            >
+              <XAxis dataKey="mes" />
+              <YAxis domain={[500, "dataMax"]} />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Tooltip />
+              -r
+              <Legend verticalAlign="bottom" height={36} />
+              <Line
+                type="monotone"
+                dataKey="valor"
+                stroke="#facc15"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="w-1/2 h-full flex items-center justify-center">
+          <ResponsiveContainer width="95%" height="100%">
+            <LineChart
+              className="p-2 font-bold text-white"
+              data={chartData2}
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+              style={{ color: "white" }}
+            >
+              <XAxis dataKey="mes" />
+              <YAxis domain={[500, "dataMax"]} />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Tooltip />
+              <Legend verticalAlign="bottom" height={36} />
+              <Line
+                type="monotone"
+                dataKey="valor"
+                stroke="#f57b6dff"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </div>

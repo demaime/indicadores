@@ -203,6 +203,9 @@ export default function InflacionDesglose() {
 
   return (
     <div className="w-full h-full flex flex-col items-center">
+      <div className="fixed top-5 text-3xl p-4 rounded-xl z-50 bg-red-700  shadow-xl text-white">
+        SLIDE EN TESTEO - IGNORAR
+      </div>
       <div className="bg-gray-200 border-b-2 border-gray-800 w-full h-1/3 flex flex-col items-center justify-evenly">
         <div className="relative">
           <button

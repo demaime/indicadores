@@ -12,7 +12,7 @@ export default function ServiciosMes() {
   return (
     <div className="w-full h-full flex flex-col relative">
       <div className="absolute top-1/4 w-full h-32 text-white bg-red-600 flex items-center justify-center text-5xl text-center">
-        SLIDE EN DESARROLLO. DATOS DESDE MARZO
+        SLIDE EN DESARROLLO.
       </div>
       <div className="h-1/2 w-full flex">
         <div className="h-full w-1/2 bg-gray-100 flex">

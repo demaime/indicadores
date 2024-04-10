@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 const dataNacion = [
@@ -120,8 +121,44 @@ const dataCaba = [
   },
 ];
 
+const coloresCategorias = {
+  GENERAL: "#FF0000",
+  "Bienes y servicios": "#00FF00",
+  Transporte: "#0000FF",
+  Comunicación: "#FFFF00",
+  "Recreación y cultura": "#00FFFF",
+  "Equipamiento y mantenimiento del hogar": "#FF00FF",
+  "Bebidas alcohólicas y tabaco": "#FFA500",
+  Salud: "#800080",
+  "Alimentos y bebidas no alcohólicas": "#008000",
+  "Restaurantes y hoteles": "#800000",
+  "Vivienda, agua, electricidad, gas y otros combustibles": "#000080",
+  "Prendas de vestir y calzado": "#FFC0CB",
+  Educación: "#CBEE27",
+  "Cuidado personal, protección social y otros": "#8A2BE2",
+};
+
+const CustomizedLabel = ({ x, y, stroke, value }) => {
+  return (
+    <text
+      x={x}
+      y={y}
+      dy={-10}
+      dx={12}
+      fill={stroke}
+      fontSize={12}
+      className="font-bold"
+      textAnchor="middle"
+    >
+      {`%${value}`}
+    </text>
+  );
+};
+
 export default function InflacionDesglose() {
-  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
+  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([
+    "GENERAL",
+  ]);
   const [dataInflacion, setDataInflacion] = useState("nacional");
   let data = dataInflacion === "nacional" ? dataNacion : dataCaba;
 
@@ -150,33 +187,45 @@ export default function InflacionDesglose() {
       <div className="w-full h-1/5 bg-gray-500 text-white items-center justify-center flex"></div>
 
       <div className="w-full h-4/5 flex">
-        <div className="h-full w-3/4 bg-blue-100">
-          <LineChart
-            width={800}
-            height={400}
-            data={graficoData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Mes" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            {categoriasSeleccionadas.map((categoria) => (
-              <Line
-                type="monotone"
-                dataKey={categoria}
-                key={categoria}
-                stroke={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-              />
-            ))}
-          </LineChart>
+        <div className="h-full w-3/4 flex items-center justify-center">
+          <ResponsiveContainer width={"95%"} height={"80%"}>
+            <LineChart
+              width={800}
+              height={400}
+              data={graficoData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="Mes" />
+              <YAxis domain={[0, 50]} />
+              <Tooltip />
+
+              {categoriasSeleccionadas.map((categoria) => (
+                <Line
+                  type="monotone"
+                  dataKey={categoria}
+                  key={categoria}
+                  label={
+                    <CustomizedLabel color={coloresCategorias[categoria]} />
+                  }
+                  strokeWidth={2}
+                  stroke={coloresCategorias[categoria]} // Usar el color preestablecido
+                />
+              ))}
+            </LineChart>
+          </ResponsiveContainer>
         </div>
-        <div className="h-full w-1/4">
+        <div
+          className={`h-full w-1/4 border-l-2 ${
+            dataInflacion === "caba"
+              ? "bg-yellow-50 border-yellow-400"
+              : "bg-pink-50 border-pink-400"
+          }`}
+        >
           <div className="w-full h-16 p-4 justify-evenly flex ">
             <button
               onClick={() => setDataInflacion("caba")}
-              className={`h-full rounded h-14 bg-yellow-300 p-2 w-1/3 justify-center flex items-center border-2  border-yellow-600 ${
+              className={`h-full rounded h-14 bg-yellow-300 p-2 w-1/3 justify-center flex items-center border-2 border-yellow-600 ${
                 dataInflacion === "caba" ? "font-bold" : ""
               }`}
             >
@@ -184,24 +233,42 @@ export default function InflacionDesglose() {
             </button>
             <button
               onClick={() => setDataInflacion("nacional")}
-              className={`h-full rounded h-14 bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2  border-[#f57b6dff] ${
+              className={`h-full rounded h-[5%] bg-pink-200 p-2 w-1/3 justify-center flex items-center border-2 border-[#f57b6dff] ${
                 dataInflacion === "nacional" ? "font-bold" : ""
               }`}
             >
               NACIONAL
             </button>
-          </div>{" "}
-          {categorias.map((categoria) => (
-            <div key={categoria}>
-              <input
-                type="checkbox"
-                id={categoria}
-                checked={categoriasSeleccionadas.includes(categoria)}
-                onChange={() => handleCategoriaSeleccionada(categoria)}
-              />
-              <label htmlFor={categoria}>{categoria}</label>
-            </div>
-          ))}
+          </div>
+          <div className="w-full h-[90%] flex flex-col justify-evenly items-center">
+            {categorias.map((categoria) => (
+              <div key={categoria} className="flex ml-4 items-center ">
+                <input
+                  type="checkbox"
+                  id={categoria}
+                  checked={categoriasSeleccionadas.includes(categoria)}
+                  onChange={() => handleCategoriaSeleccionada(categoria)}
+                  className="hidden" // Oculta el checkbox real
+                />
+                <label
+                  className={`w-[25rem] text-center text-xs font-semibold relative cursor-pointer  rounded-xl py-1 ${
+                    dataInflacion === "nacional"
+                      ? "hover:bg-pink-100"
+                      : "hover:bg-yellow-100"
+                  }`}
+                  // "w-[26rem] text-center text-xs font-bold relative cursor-pointer hover:bg-yellow-100 rounded-xl py-1"
+                  htmlFor={categoria}
+                  style={{
+                    "--checkbox-color": coloresCategorias[categoria],
+                  }}
+                >
+                  <div className="checkbox"></div>{" "}
+                  {/* Este div será estilizado como el checkbox */}
+                  {categoria.toUpperCase()}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

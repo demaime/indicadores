@@ -40,3 +40,21 @@
   justify-content: center;
   align-items: center;
 }
+
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: -28px; /* Ajusta la posición según tu diseño */
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  border: 2px solid #000;
+  border-radius: 50%; /* Hace el checkbox circular */
+  background-color: transparent;
+}
+
+/* Establece el color del checkbox cuando está seleccionado */
+input[type="checkbox"]:checked + label .checkbox {
+  background-color: var(
+    --checkbox-color
+  ); /* Utiliza una variable CSS para establecer el color */
+}

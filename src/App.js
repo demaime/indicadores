@@ -1,6 +1,5 @@
 import InflacionDesglose from "./components/InflacionDesglose.jsx";
-
-import Banner from "./components/Banner.jsx";
+import Portada from "./components/Portada.jsx";
 import Dolar from "./components/Dolar.jsx";
 import DolarVivo from "./components/DolarVivo.jsx";
 import DolarDesglose from "./components/DolarDesglose.jsx";
@@ -10,16 +9,11 @@ import CanastaSalario from "./components/CanastaSalario.jsx";
 import Servicios from "./components/Servicios.jsx";
 import Monotributo from "./components/Monotributo.jsx";
 import Comparativa from "./components/Comparativa.jsx";
-import TESTINGinflacion from "./components/TESTINGinflacion.jsx";
 
 export default function App() {
   return (
     <div className="full-container">
-      <Banner />
-      <section className="section" id="inflacion">
-        <Encabezado content={"***** TEST INFLACION ****** (ignorar)"} />
-        <TESTINGinflacion />
-      </section>
+      <Portada />
       <section className="section" id="inflacion">
         <Encabezado content={"INFLACION"} />
         <InflacionDesglose />

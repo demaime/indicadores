@@ -75,19 +75,19 @@ export default function Encabezado({ content }) {
                   MONOTRIBUTO
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#comparativa">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 5
+                  COMPARATIVA
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
                   EJEMPLO 6
                 </li>
               </a>
-              <a href="#inflacion">
+              <a href="#">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
                   EJEMPLO 7

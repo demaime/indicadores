@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React from "react";
 
-export default function Banner() {
+export default function Portada() {
   return (
     <div className="section" id="home">
       <div className="w-full h-full flex flex-col jusitfy-between  bg-gray-800">
@@ -55,19 +55,19 @@ export default function Banner() {
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#comparativa"
           >
-            EJEMPLO 5
+            COMPARATIVA
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#"
           >
             EJEMPLO 6
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#dolar"
+            href="#"
           >
             EJEMPLO 7
           </a>

@@ -44,7 +44,7 @@
 .checkbox {
   position: absolute;
   top: 0;
-  left: -28px; /* Ajusta la posición según tu diseño */
+  left: 5px; /* Ajusta la posición según tu diseño */
   width: 20px; /* Ajusta el tamaño según tu diseño */
   height: 20px; /* Ajusta el tamaño según tu diseño */
   border: 2px solid #000;
@@ -57,4 +57,19 @@ input[type="checkbox"]:checked + label .checkbox {
   background-color: var(
     --checkbox-color
   ); /* Utiliza una variable CSS para establecer el color */
+}
+
+/* .arrow-right {
+  width: 0;
+  height: 100%;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid var(--arrow-color);
+} */
+
+.arrow-right {
+  border-top: 67px solid transparent;
+  border-bottom: 67px solid transparent;
+
+  border-left: 60px solid var(--arrow-color);
 }

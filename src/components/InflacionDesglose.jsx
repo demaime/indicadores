@@ -124,18 +124,18 @@ const dataCaba = [
 const coloresCategorias = {
   GENERAL: "#FF0000",
   "Bienes y servicios": "#00FF00",
-  Transporte: "#0000FF",
-  Comunicación: "#FFFF00",
-  "Recreación y cultura": "#00FFFF",
-  "Equipamiento y mantenimiento del hogar": "#FF00FF",
+  Transporte: "#6b6ff2",
+  Comunicación: "#eefa48", // Amarillo dorado para contraste
+  "Recreación y cultura": "#20B2AA", // Turquesa para contraste
+  "Equipamiento y mantenimiento del hogar": "#f765b3", // Rosa intenso para contraste
   "Bebidas alcohólicas y tabaco": "#FFA500",
-  Salud: "#800080",
-  "Alimentos y bebidas no alcohólicas": "#008000",
-  "Restaurantes y hoteles": "#800000",
+  Salud: "#F6905F",
+  "Alimentos y bebidas no alcohólicas": "#32a852",
+  "Restaurantes y hoteles": "#b80208",
   "Vivienda, agua, electricidad, gas y otros combustibles": "#000080",
   "Prendas de vestir y calzado": "#FFC0CB",
-  Educación: "#CBEE27",
-  "Cuidado personal, protección social y otros": "#8A2BE2",
+  Educación: "#ADC2E2",
+  "Cuidado personal, protección social y otros": "#a464d1",
 };
 
 const variacionAcumuladaNacion = { Enero: "20.6%", Febrero: "36.6%" };
@@ -348,7 +348,13 @@ export default function InflacionDesglose() {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="Mes" />
               <YAxis domain={[0, 50]} />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "rgba(60, 60, 60, 1)",
+                  border: "none",
+                  borderRadius: "15px",
+                }}
+              />
 
               {categoriasSeleccionadas.map((categoria) => (
                 <Line

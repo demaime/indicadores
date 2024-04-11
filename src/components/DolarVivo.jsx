@@ -9,6 +9,7 @@ export default function DolarVivo() {
   const [dolarOficial, setDolarOficial] = useState();
   const [dolarBlue, setDolarBlue] = useState();
   const [dolarMep, setDolarMep] = useState();
+  const [dolarTarjeta, setDolarTarjeta] = useState();
 
   useEffect(() => {
     axios
@@ -43,6 +44,17 @@ export default function DolarVivo() {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("https://dolarapi.com/v1/dolares/tarjeta")
+      .then((response) => {
+        setDolarTarjeta(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener datos:", error);
+      });
+  }, []);
+
   const date = new Date(dolarOficial && dolarOficial.fechaActualizacion);
 
   const options = {
@@ -61,9 +73,9 @@ export default function DolarVivo() {
       <div className="w-full text-xl text-center text-gray-300 bg-gray-600 font-bold tracking-wider h-1/5">
         <p className="h-3/5 flex items-center justify-center p-4">
           <span>COTIZACION EN VIVO</span>
-          <img className="h-4 ml-2" src="/assets/live.gif"></img>
+          <img className="h-4 ml-2" src="/assets/live.gif" alt="LIVE!"></img>
         </p>
-        <p className="h-2/5 text-xs bg-gray-800 flex items-center justify-center text-yellow-400">
+        <p className="h-2/5 text-xs bg-gray-800 flex items-center justify-center text-gray-100">
           Última actualización: {formattedDateTime}
         </p>
       </div>
@@ -101,6 +113,14 @@ export default function DolarVivo() {
           </span>
           <span className="h-full flex justify-center items-center text-4xl">
             $ {dolarMep && dolarMep.venta}
+          </span>
+        </div>
+        <div className="h-28 w-[15rem] border border-white rounded-xl flex flex-col justify-between">
+          <span className="h-8 text-xl justify-center bg-yellow-400 rounded-t-xl text-gray-900 items-center flex">
+            TARJETA
+          </span>
+          <span className="h-full flex justify-center items-center text-4xl">
+            $ {dolarTarjeta && dolarTarjeta.venta}
           </span>
         </div>
       </div>

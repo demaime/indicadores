@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri"; // Importa las flechas de React Icons
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 const dataNacion = [
   {
@@ -125,9 +125,9 @@ const coloresCategorias = {
   GENERAL: "#FF0000",
   "Bienes y servicios": "#00FF00",
   Transporte: "#6b6ff2",
-  Comunicación: "#eefa48", // Amarillo dorado para contraste
-  "Recreación y cultura": "#20B2AA", // Turquesa para contraste
-  "Equipamiento y mantenimiento del hogar": "#f765b3", // Rosa intenso para contraste
+  Comunicación: "#eefa48",
+  "Recreación y cultura": "#20B2AA",
+  "Equipamiento y mantenimiento del hogar": "#f765b3",
   "Bebidas alcohólicas y tabaco": "#FFA500",
   Salud: "#F6905F",
   "Alimentos y bebidas no alcohólicas": "#32a852",
@@ -238,7 +238,6 @@ export default function InflacionDesglose() {
               className="text-white cursor-pointer"
               onClick={() => cambiarMes("anterior")}
             />{" "}
-            {/* Flecha izquierda para mes anterior */}
             <select
               value={Object.keys(data[mesSeleccionadoIndex])[0]}
               onChange={(e) =>
@@ -260,7 +259,6 @@ export default function InflacionDesglose() {
               className="text-white cursor-pointer"
               onClick={() => cambiarMes("siguiente")}
             />{" "}
-            {/* Flecha derecha para mes siguiente */}
           </div>
           <div className="w-full h-4/5 bg-gray-500 flex items-center justify-evenly">
             <div
@@ -321,7 +319,11 @@ export default function InflacionDesglose() {
               }`}
             >
               <span className="h-1/3 text-xs border-b flex items-center justify-center w-full text-gray-200">
-                Variación Interanual (vs febrero 2023)
+                Variación Interanual (vs{" "}
+                {mesSeleccionadoIndex === 0
+                  ? "Dic"
+                  : Object.keys(data[mesSeleccionadoIndex])[0].slice(0, 3)}{" "}
+                {mesSeleccionadoIndex === 0 ? "2022" : "2023"})
               </span>
               <span className="h-2/3 text-2xl flex items-center justify-center w-full">
                 {mesSeleccionadoIndex === 0
@@ -365,7 +367,7 @@ export default function InflacionDesglose() {
                     <CustomizedLabel color={coloresCategorias[categoria]} />
                   }
                   strokeWidth={2}
-                  stroke={coloresCategorias[categoria]} // Usar el color preestablecido
+                  stroke={coloresCategorias[categoria]}
                 />
               ))}
             </LineChart>
@@ -407,7 +409,7 @@ export default function InflacionDesglose() {
                   id={categoria}
                   checked={categoriasSeleccionadas.includes(categoria)}
                   onChange={() => handleCategoriaSeleccionada(categoria)}
-                  className="hidden" // Oculta el checkbox real
+                  className="hidden"
                 />
                 <label
                   className={`w-full text-center text-[10px] font-semibold relative cursor-pointer rounded-xl py-1 ${

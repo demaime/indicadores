@@ -12,25 +12,29 @@ import {
 } from "recharts";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-const meses = ["enero", "febrero"];
+const meses = ["enero", "febrero", "marzo"];
 
 const canastaAlimentariaNacio = [
   { mes: "enero", valor: 285561, variacion: 18.6, acumulada: 18.6 },
   { mes: "febrero", valor: 322851, variacion: 13.1, acumulada: 34.4 },
+  { mes: "marzo", valor: 358049, variacion: 10.9, acumulada: 48.8 },
 ];
 const canastaTotalNacio = [
   { mes: "enero", valor: 596823, variacion: 20.4, acumulada: 20.4 },
   { mes: "febrero", valor: 690902, variacion: 15.8, acumulada: 39.4 },
+  { mes: "marzo", valor: 773385, variacion: 11.94, acumulada: 56 },
 ];
 
 const canastaAlimentariaCaba = [
   { mes: "enero", valor: 350564, variacion: 20.7, acumulada: 20.7 },
   { mes: "febrero", valor: 402752, variacion: 14.9, acumulada: 38.7 },
+  { mes: "marzo", valor: 442239, variacion: 9.8, acumulada: 52.3 },
 ];
 
 const canastaTotalCaba = [
   { mes: "enero", valor: 590042, variacion: 19.3, acumulada: 19.3 },
   { mes: "febrero", valor: 684115, variacion: 15.9, acumulada: 38.3 },
+  { mes: "marzo", valor: 766146, variacion: 11.99, acumulada: 54.9 },
 ];
 
 const smvm = [
@@ -41,7 +45,9 @@ const smvm = [
 ];
 
 export default function CanastaSalario() {
-  const [mesSeleccionado, setMesSeleccionado] = useState("febrero");
+  const [mesSeleccionado, setMesSeleccionado] = useState(
+    meses[meses.length - 1]
+  );
   const [dataCanasta, setDataCanasta] = useState("nacional");
 
   const handleMesChange = (event) => {
@@ -51,14 +57,6 @@ export default function CanastaSalario() {
   const formatNumber = (number) => {
     return number.toLocaleString();
   };
-
-  const xAxisDomainMaxAlimentaria =
-    Math.ceil(
-      Math.max(
-        ...canastaAlimentariaNacio.map((item) => item.valor),
-        ...canastaAlimentariaCaba.map((item) => item.valor)
-      ) / 100000
-    ) * 100000;
 
   const xAxisDomainMaxTotal =
     Math.ceil(
@@ -140,7 +138,7 @@ export default function CanastaSalario() {
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis
                     type="number"
-                    domain={[0, xAxisDomainMaxAlimentaria]}
+                    domain={[0, xAxisDomainMaxTotal]} // Usar xAxisDomainMaxTotal en lugar de xAxisDomainMaxAlimentaria
                     tickFormatter={formatNumber}
                   />
                   <YAxis

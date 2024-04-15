@@ -62,6 +62,23 @@ const dataNacion = [
       Educación: 9.9,
     },
   },
+  {
+    Marzo: {
+      GENERAL: 11,
+      "Bienes y servicios": 9.6,
+      Transporte: 13,
+      Comunicación: 15.9,
+      "Recreación y cultura": 8.5,
+      "Equipamiento y mantenimiento del hogar": 5,
+      "Bebidas alcohólicas y tabaco": 12.3,
+      Salud: 12.2,
+      "Alimentos y bebidas no alcohólicas": 10.5,
+      "Restaurantes y hoteles": 8.3,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 13.3,
+      "Prendas de vestir y calzado": 10.9,
+      Educación: 36.8,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -119,6 +136,24 @@ const dataCaba = [
       "Cuidado personal, protección social y otros": 14.3,
     },
   },
+  {
+    Marzo: {
+      GENERAL: 13.2,
+      "Bienes y servicios": 15,
+      Transporte: 8.5,
+      Comunicación: 24.5,
+      "Recreación y cultura": 6,
+      "Equipamiento y mantenimiento del hogar": 8.6,
+      "Bebidas alcohólicas y tabaco": 13.1,
+      Salud: 16.9,
+      "Alimentos y bebidas no alcohólicas": 11,
+      "Restaurantes y hoteles": 7.6,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 17.9,
+      "Prendas de vestir y calzado": 11.5,
+      Educación: 36.8,
+      "Cuidado personal, protección social y otros": 10,
+    },
+  },
 ];
 
 const coloresCategorias = {
@@ -138,10 +173,26 @@ const coloresCategorias = {
   "Cuidado personal, protección social y otros": "#a464d1",
 };
 
-const variacionAcumuladaNacion = { Enero: "20.6%", Febrero: "36.6%" };
-const variacionAcumuladaCaba = { Enero: "21.7%", Febrero: "38.9%" };
-const variacionAnualNacion = { Enero: "254.2%", Febrero: "276.2%" };
-const variacionAnualCaba = { Enero: "238.5%", Febrero: "264.5%" };
+const variacionAcumuladaNacion = {
+  Enero: "20.6%",
+  Febrero: "36.6%",
+  Marzo: "51.6%",
+};
+const variacionAcumuladaCaba = {
+  Enero: "21.7%",
+  Febrero: "38.9%",
+  Marzo: "57.3%",
+};
+const variacionAnualNacion = {
+  Enero: "254.2%",
+  Febrero: "276.2%",
+  Marzo: "287.9%",
+};
+const variacionAnualCaba = {
+  Enero: "238.5%",
+  Febrero: "264.5%",
+  Marzo: "285.3%",
+};
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {
   return (
@@ -209,13 +260,6 @@ export default function InflacionDesglose() {
       );
     }
   };
-
-  console.log("Mes seleccionado:", Object.keys(data[mesSeleccionadoIndex])[0]);
-  console.log("Variación acumulada:", variacionAcumulada);
-  console.log(
-    "Valor de variación acumulada:",
-    variacionAcumulada[Object.keys(data[mesSeleccionadoIndex])[0]]
-  );
 
   return (
     <div className="w-full h-full flex flex-col items-center">

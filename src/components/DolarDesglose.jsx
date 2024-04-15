@@ -2,9 +2,34 @@ import React, { useState } from "react";
 import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from "react-icons/fa";
 
 const data = [
-  { mes: "Diciembre", oficial: 695.64, blue: 990.52, mep: 965.58 },
-  { mes: "Enero", oficial: 863.1, blue: 1165.25, mep: 1153.54 },
-  { mes: "Febrero", oficial: 880.4, blue: 1117.5, mep: 1128.79 },
+  {
+    mes: "Diciembre",
+    oficial: 687.8,
+    blue: 990.53,
+    mep: 965.09,
+    tarjeta: 1249.09,
+  },
+  {
+    mes: "Enero",
+    oficial: 864.19,
+    blue: 1157.5,
+    mep: 1251.67,
+    tarjeta: 1382.71,
+  },
+  {
+    mes: "Febrero",
+    oficial: 881.56,
+    blue: 1113.68,
+    mep: 1119.02,
+    tarjeta: 1410.49,
+  },
+  {
+    mes: "Marzo",
+    oficial: 895.61,
+    blue: 1018.16,
+    mep: 1019.85,
+    tarjeta: 1432.97,
+  },
 ];
 
 export default function DolarDesglose() {
@@ -20,9 +45,11 @@ export default function DolarDesglose() {
   let variationOficial = 0;
   let variationBlue = 0;
   let variationMep = 0;
+  let variationTarjeta = 0;
   let pesoDifferenceOficial = 0;
   let pesoDifferenceBlue = 0;
   let pesoDifferenceMep = 0;
+  let pesoDifferenceTarjeta = 0;
 
   if (selectedIndex > 0) {
     variationOficial =
@@ -37,11 +64,17 @@ export default function DolarDesglose() {
       ((selectedData.mep - data[selectedIndex - 1].mep) /
         data[selectedIndex - 1].mep) *
       100;
+    variationTarjeta =
+      ((selectedData.tarjeta - data[selectedIndex - 1].tarjeta) /
+        data[selectedIndex - 1].tarjeta) *
+      100;
 
     pesoDifferenceOficial =
       selectedData.oficial - data[selectedIndex - 1].oficial;
     pesoDifferenceBlue = selectedData.blue - data[selectedIndex - 1].blue;
     pesoDifferenceMep = selectedData.mep - data[selectedIndex - 1].mep;
+    pesoDifferenceTarjeta =
+      selectedData.tarjeta - data[selectedIndex - 1].tarjeta;
   }
   return (
     <div className="h-full w-full flex flex-col items-center">
@@ -79,7 +112,7 @@ export default function DolarDesglose() {
           </div>
           <div className="p-2 w-48 h-20 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-yellow-400">Tarjeta</div>
-            <div className="text-3xl">$FALTA</div>
+            <div className="text-3xl">${selectedData.tarjeta}</div>
           </div>
         </div>
         <div className="h-full flex flex-col justify-evenly w-1/3 items-center">
@@ -120,7 +153,7 @@ export default function DolarDesglose() {
               ) : (
                 <FaRegArrowAltCircleDown className="text-white" />
               )}
-              FALTA%
+              {variationTarjeta.toFixed(2)}%
             </div>
           </div>
         </div>
@@ -148,7 +181,9 @@ export default function DolarDesglose() {
           </div>
           <div className="p-2 w-48 h-20 border rounded flex flex-col items-center justify-evenly">
             <div className="font-bold text-yellow-400 flex flex items-center justify-evenly h-full w-full">
-              FALTA
+              {`${pesoDifferenceTarjeta > 0 ? "+" : "-"}$${Math.abs(
+                pesoDifferenceTarjeta.toFixed(2)
+              )}`}
             </div>
           </div>
         </div>

@@ -47,23 +47,18 @@ export default function Portada() {
           >
             SERVICIOS
           </a>
-          <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#monotributo"
-          >
-            MONOTRIBUTO
-          </a>
-          <a
+
+          {/* <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#comparativa"
           >
             COMPARATIVA
-          </a>
+          </a> */}
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#"
+            href="#alquiler"
           >
-            EJEMPLO 6
+            ALQUILER
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"

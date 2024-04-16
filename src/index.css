@@ -58,18 +58,3 @@ input[type="checkbox"]:checked + label .checkbox {
     --checkbox-color
   ); /* Utiliza una variable CSS para establecer el color */
 }
-
-/* .arrow-right {
-  width: 0;
-  height: 100%;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  border-left: 60px solid var(--arrow-color);
-} */
-
-.arrow-right {
-  border-top: 67px solid transparent;
-  border-bottom: 67px solid transparent;
-
-  border-left: 60px solid var(--arrow-color);
-}

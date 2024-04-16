@@ -69,22 +69,16 @@ export default function Encabezado({ content }) {
                   SERVICIOS
                 </li>
               </a>
-              <a href="#monotributo">
-                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
-                  <IoArrowRedoCircleOutline className="mr-4" />
-                  MONOTRIBUTO
-                </li>
-              </a>
-              <a href="#comparativa">
+              {/* <a href="#comparativa">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
                   COMPARATIVA
                 </li>
-              </a>
-              <a href="#">
+              </a> */}
+              <a href="#alquiler">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  EJEMPLO 6
+                  ALQUILER
                 </li>
               </a>
               <a href="#">

@@ -7,8 +7,8 @@ import Encabezado from "./components/Encabezado.jsx";
 import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Servicios from "./components/Servicios.jsx";
-import Monotributo from "./components/Monotributo.jsx";
-import Comparativa from "./components/Comparativa.jsx";
+import Alquiler from "./components/Alquiler.jsx";
+// import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
 export default function App() {
   return (
@@ -45,13 +45,14 @@ export default function App() {
         <Encabezado content={"SERVICIOS"} />
         <Servicios />
       </section>
-      <section className="section" id="monotributo">
-        <Encabezado content={"MONOTRIBUTO"} />
-        <Monotributo />
-      </section>
-      <section className="section" id="comparativa">
+
+      {/* <section className="section" id="comparativa">
         <Encabezado content={"COMPARATIVA"} />
         <Comparativa />
+      </section> */}
+      <section className="section" id="alquiler">
+        <Encabezado content={"ALQUILER"} />
+        <Alquiler />
       </section>
     </div>
   );

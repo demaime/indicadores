@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FaExchangeAlt } from "react-icons/fa";
-
 import {
   BarChart,
   Bar,
@@ -34,9 +32,6 @@ const data = [
 
 export default function Alquiler() {
   const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
-  const [compararCaba, setCompararCaba] = useState(true);
-  const [compararNorte, setCompararNorte] = useState(0);
-  const [compararSur, setCompararSur] = useState(0);
 
   // Función para avanzar al siguiente mes
   const nextMonth = () => {
@@ -131,21 +126,21 @@ export default function Alquiler() {
           </div>
         </div>
         <div className="w-full h-4/5 flex">
-          <div className="w-1/3 h-full text-xs">
-            <div className="w-full h-1/2 flex items-center justify-evenly">
+          <div className="w-1/3 h-full ">
+            <div className="w-full h-full flex items-center justify-evenly">
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center  bg-[#8884d8] text-black">
                   Variación mes anterior
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
-                  {calculateMonthlyVariation("caba", currentMonthIndex)}%
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
+                  {calculateMonthlyVariation("caba", currentMonthIndex)} %
                 </span>
               </div>
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#8884d8] text-black">
                   Variación acumulada
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
                   {calculateAnnualCumulativeVariation(
                     "caba",
                     currentMonthIndex
@@ -154,72 +149,22 @@ export default function Alquiler() {
                 </span>
               </div>
             </div>
-            <div className="w-full h-1/2 flex items-center justify-center">
-              {compararCaba ? (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#82ca9d] text-black">
-                    Vs GBA NORTE
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
-                    {(
-                      ((data[currentMonthIndex].caba -
-                        data[currentMonthIndex].norte) /
-                        data[currentMonthIndex].norte) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].caba -
-                        data[currentMonthIndex].norte) /
-                        data[currentMonthIndex].norte) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              ) : (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#ffc658] text-black">
-                    Vs GBA SUR/OESTE
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
-                    {(
-                      ((data[currentMonthIndex].caba -
-                        data[currentMonthIndex].suroeste) /
-                        data[currentMonthIndex].suroeste) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].caba -
-                        data[currentMonthIndex].suroeste) /
-                        data[currentMonthIndex].suroeste) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              )}
-              <FaExchangeAlt
-                size={20}
-                onClick={() => setCompararCaba((prevState) => !prevState)}
-                className="animate-pulse cursor-pointer"
-              />
-            </div>
           </div>
-          <div className="w-1/3 h-full text-xs">
-            <div className="w-full h-1/2 flex items-center justify-evenly">
+          <div className="w-1/3 h-full ">
+            <div className="w-full h-full flex items-center justify-evenly">
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#82ca9d] text-black">
                   Variación mes anterior
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
                   {calculateMonthlyVariation("norte", currentMonthIndex)} %
                 </span>
               </div>
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#82ca9d] text-black">
                   Variación acumulada
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
                   {calculateAnnualCumulativeVariation(
                     "norte",
                     currentMonthIndex
@@ -228,72 +173,22 @@ export default function Alquiler() {
                 </span>
               </div>
             </div>
-            <div className="w-full h-1/2 flex items-center justify-center">
-              {compararNorte ? (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#8884d8] text-black">
-                    Vs CABA
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg ">
-                    {(
-                      ((data[currentMonthIndex].norte -
-                        data[currentMonthIndex].caba) /
-                        data[currentMonthIndex].caba) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].norte -
-                        data[currentMonthIndex].caba) /
-                        data[currentMonthIndex].caba) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              ) : (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#ffc658] text-black">
-                    Vs GBA SUR/OESTE
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
-                    {(
-                      ((data[currentMonthIndex].norte -
-                        data[currentMonthIndex].suroeste) /
-                        data[currentMonthIndex].suroeste) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].norte -
-                        data[currentMonthIndex].suroeste) /
-                        data[currentMonthIndex].suroeste) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              )}
-              <FaExchangeAlt
-                size={20}
-                onClick={() => setCompararNorte((prevState) => !prevState)}
-                className="animate-pulse cursor-pointer"
-              />
-            </div>
           </div>
-          <div className="w-1/3 h-full text-xs">
-            <div className="w-full h-1/2 flex items-center justify-evenly">
+          <div className="w-1/3 h-full ">
+            <div className="w-full h-full flex items-center justify-evenly">
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#ffc658] text-black">
                   Variación mes anterior
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
-                  {calculateMonthlyVariation("suroeste", currentMonthIndex)}%
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
+                  {calculateMonthlyVariation("suroeste", currentMonthIndex)} %
                 </span>
               </div>
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 text-center ">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#ffc658] text-black">
                   Variación acumulada
                 </span>
-                <span className="w-full h-2/3 flex items-center justify-center border-t text-lg">
+                <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
                   {calculateAnnualCumulativeVariation(
                     "suroeste",
                     currentMonthIndex
@@ -301,56 +196,6 @@ export default function Alquiler() {
                   %
                 </span>
               </div>
-            </div>
-            <div className="w-full h-1/2 flex items-center justify-center">
-              {compararSur ? (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#82ca9d] text-black">
-                    Vs GBA NORTE
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg ">
-                    {(
-                      ((data[currentMonthIndex].suroeste -
-                        data[currentMonthIndex].norte) /
-                        data[currentMonthIndex].norte) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].suroeste -
-                        data[currentMonthIndex].norte) /
-                        data[currentMonthIndex].norte) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              ) : (
-                <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between mr-4">
-                  <span className="w-full h-1/3 text-center bg-[#8884d8] text-black">
-                    Vs CABA
-                  </span>
-                  <span className="w-full h-2/3 flex items-center justify-center border-t text-lg ">
-                    {(
-                      ((data[currentMonthIndex].suroeste -
-                        data[currentMonthIndex].caba) /
-                        data[currentMonthIndex].caba) *
-                      100
-                    ).toFixed(2) > 0 && "+ "}
-                    {(
-                      ((data[currentMonthIndex].suroeste -
-                        data[currentMonthIndex].caba) /
-                        data[currentMonthIndex].caba) *
-                      100
-                    ).toFixed(2)}{" "}
-                    %
-                  </span>
-                </div>
-              )}
-              <FaExchangeAlt
-                size={20}
-                onClick={() => setCompararSur((prevState) => !prevState)}
-                className="animate-pulse cursor-pointer"
-              />
             </div>
           </div>
         </div>

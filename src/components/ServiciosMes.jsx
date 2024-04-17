@@ -1,68 +1,105 @@
 import React from "react";
 
-const nodes = [
-  { id: 1, label: "Nodo 1", info: "Información del nodo 1" },
-  { id: 2, label: "Nodo 2", info: "Información del nodo 2" },
-  { id: 3, label: "Nodo 3", info: "Información del nodo 3" },
-  { id: 4, label: "Nodo 4", info: "Información del nodo 4" },
-  { id: 5, label: "Nodo 5", info: "Información del nodo 5" },
-  { id: 6, label: "Nodo 6", info: "Información del nodo 6" },
-  { id: 7, label: "Nodo 7", info: "Información del nodo 7" },
-  { id: 8, label: "Nodo 8", info: "Información del nodo 8" },
-];
-
 const ServiciosMes = ({ mes }) => {
-  const centerX = window.innerWidth / 2; // Centro horizontal
-  const centerY = window.innerHeight / 2; // Centro vertical
-
-  // Radio de los nodos
-  const nodeRadius = 30; // Aumenta el radio de los nodos
-
-  // Radio del círculo exterior
-  const outerRadius = Math.min(window.innerWidth, window.innerHeight) / 3; // Mayor radio para ocupar más espacio
-
-  // Ángulo de separación entre nodos
-  const angleStep = (2 * Math.PI) / nodes.length;
-
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <svg className="w-full h-full">
-        {/* Dibujar flechas desde el centro a cada nodo */}
-        {nodes.map((node, index) => {
-          const angle = index * angleStep;
-          const x = centerX + outerRadius * Math.cos(angle);
-          let y = centerY + outerRadius * Math.sin(angle);
-          const nodeWidth = 200; // Ancho del nodo
-          const nodeHeight = 100; // Alto del nodo
-          y -= nodeHeight / 2; // Centra verticalmente el nodo
-          return (
-            <g key={node.id}>
-              {/* Flecha */}
-              <line
-                x1={centerX}
-                y1={centerY}
-                x2={x}
-                y2={y + nodeHeight / 2}
-                stroke="black"
-              />
-              {/* Nodo */}
-              <foreignObject
-                x={x - nodeWidth / 2}
-                y={y}
-                width={nodeWidth}
-                height={nodeHeight}
-              >
-                <div className="node w-full h-full bg-red-100 flex flex-col justify-center items-center">
-                  <div>{node.label}</div>
-                  <div className="info">{node.info}</div>
-                </div>
-              </foreignObject>
-            </g>
-          );
-        })}
-        {/* Nodo central */}
-        <circle cx={centerX} cy={centerY} r={nodeRadius} fill="blue" />
-      </svg>
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-4/5 flex h-4/5 ">
+        <div className="w-1/3 h-full flex flex-col justify-between pl-4 items-start">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              LUZ
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              {" "}
+              <img src="/assets/luz.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              GAS
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              {" "}
+              <img src="/assets/gas.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              INTERNET
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              {" "}
+              <img src="/assets/internet.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              CELULAR
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              {" "}
+              <img src="/assets/celu.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+        </div>
+        <div className="w-1/3 h-full flex flex-col justify-around items-center">
+          <div className="w-full h-3/4 rounded">
+            <img src="/assets/house.png" alt="" className="w-full h-full" />
+          </div>
+          <div className="w-72 h-32 bg-yellow-300 rounded-xl border-yellow-500 border-2 relative flex items-end pb-7 justify-around">
+            <div className="w-80 h-12 absolute -top-4  rounded-xl bg-yellow-100 border-yellow-500 border flex items-center justify-center font-bold">
+              ALQUILER MONOAMBIENTE
+            </div>
+            <div className="text-5xl">$1545.32</div>
+          </div>
+        </div>
+        <div className="w-1/3 h-full flex flex-col justify-between p-4 items-end">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              KILO DE PAN
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+              {" "}
+              <img src="/assets/pan.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              LITRO DE LECHE{" "}
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+              {" "}
+              <img src="/assets/leche.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              KILO DE YERBA{" "}
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+              {" "}
+              <img src="/assets/yerba.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
+              LITRO DE CERVEZA
+            </div>
+            <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+              {" "}
+              <img src="/assets/cerveza.png" alt="" />
+            </div>
+            <div className="text-4xl">$1545.32</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

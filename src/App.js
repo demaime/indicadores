@@ -42,7 +42,7 @@ export default function App() {
       </section>
 
       <section className="section" id="servicios">
-        <Encabezado content={"SERVICIOS"} />
+        <Encabezado content={"ALQUILER JOVEN CABA"} />
         <Servicios />
       </section>
 

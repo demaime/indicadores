@@ -41,8 +41,8 @@ export default function App() {
         <Transporte />
       </section>
 
-      <section className="section" id="servicios">
-        <Encabezado content={"ALQUILER JOVEN CABA"} />
+      <section className="section" id="cotidianos">
+        <Encabezado content={"GASTOS COTIDIANOS CABA"} />
         <Servicios />
       </section>
 

@@ -63,10 +63,10 @@ export default function Encabezado({ content }) {
                   TRANSPORTE
                 </li>
               </a>
-              <a href="#servicios">
+              <a href="#cotidianos">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
-                  SERVICIOS
+                  GASTOS COTIDIANOS
                 </li>
               </a>
               {/* <a href="#comparativa">

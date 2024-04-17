@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ServiciosMes from "./ServiciosMes";
 
 export default function Servicios() {
-  const [mesSeleccionado, setMesSeleccionado] = useState("enero");
+  const [mesSeleccionado, setMesSeleccionado] = useState("marzo");
 
-  const meses = ["enero", "febrero", "marzo"]; // Puedes agregar más meses aquí
+  const meses = ["marzo", "abril", "mayo"]; // Puedes agregar más meses aquí
 
   return (
     <div className="w-full h-full bg-gray-200 flex flex-col">
@@ -21,7 +21,7 @@ export default function Servicios() {
           </button>
         ))}
       </div>
-      <ServiciosMes mes={mesSeleccionado} />
+      <ServiciosMes mesData={mesSeleccionado} />
     </div>
   );
 }

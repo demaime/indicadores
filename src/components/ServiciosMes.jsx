@@ -1,29 +1,89 @@
 import React from "react";
+import { FiArrowRightCircle } from "react-icons/fi";
 
-const ServiciosMes = ({ mes }) => {
+const data = {
+  marzo: {
+    alquiler: 284561,
+    luz: 7699,
+    gas: "-",
+    internet: 24000,
+    celular: 6948,
+    pan: 1980.05,
+    leche: 1114.65,
+    yerba: 3771.89,
+    cerveza: 2005.49,
+  },
+  abril: {
+    alquiler: "-",
+    luz: "-",
+    gas: "-",
+    internet: "-",
+    celular: "-",
+    pan: "-",
+    leche: "-",
+    yerba: "-",
+    cerveza: "-",
+  },
+  mayo: {
+    alquiler: "-",
+    luz: "-",
+    gas: "-",
+    internet: "-",
+    celular: "-",
+    pan: "-",
+    leche: "-",
+    yerba: "-",
+    cerveza: "-",
+  },
+};
+
+const ServiciosMes = ({ mesData }) => {
+  const formatNumber = (number) => {
+    if (number === "-" || isNaN(number)) {
+      return number;
+    }
+
+    return parseFloat(number).toLocaleString();
+  };
+
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center relative">
+      <FiArrowRightCircle
+        className="absolute right-32 text-yellow-400 top-1/2 animate-pulse duration-1000"
+        size={40}
+      />
       <div className="w-4/5 flex h-4/5 ">
         <div className="w-1/3 h-full flex flex-col justify-between pl-4 items-start">
+          <div className="text-4xl">ALIMENTOS</div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               LUZ
             </div>
             <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
-              {" "}
               <img src="/assets/luz.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].luz !== "-"
+                  ? `$${formatNumber(data[mesData].luz)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               GAS
             </div>
             <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
-              {" "}
               <img src="/assets/gas.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].gas !== "-"
+                  ? `$${formatNumber(data[mesData].gas)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
@@ -33,7 +93,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/internet.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].internet !== "-"
+                  ? `$${formatNumber(data[mesData].internet)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
@@ -43,7 +109,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/celu.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].celular !== "-"
+                  ? `$${formatNumber(data[mesData].celular)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-1/3 h-full flex flex-col justify-around items-center">
@@ -54,7 +126,13 @@ const ServiciosMes = ({ mes }) => {
             <div className="w-80 h-12 absolute -top-4  rounded-xl bg-yellow-100 border-yellow-500 border flex items-center justify-center font-bold">
               ALQUILER MONOAMBIENTE
             </div>
-            <div className="text-5xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].alquiler !== "-"
+                  ? `$${formatNumber(data[mesData].alquiler)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-1/3 h-full flex flex-col justify-between p-4 items-end">
@@ -66,7 +144,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/pan.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].pan !== "-"
+                  ? `$${formatNumber(data[mesData].pan)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
@@ -76,7 +160,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/leche.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].leche !== "-"
+                  ? `$${formatNumber(data[mesData].leche)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
@@ -86,7 +176,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/yerba.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].yerba !== "-"
+                  ? `$${formatNumber(data[mesData].yerba)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
           <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
             <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
@@ -96,7 +192,13 @@ const ServiciosMes = ({ mes }) => {
               {" "}
               <img src="/assets/cerveza.png" alt="" />
             </div>
-            <div className="text-4xl">$1545.32</div>
+            <div className="text-4xl">
+              <div className="text-4xl">
+                {data[mesData].cerveza !== "-"
+                  ? `$${formatNumber(data[mesData].cerveza)}`
+                  : "-"}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const data = [
 ];
 
 export default function Alquiler() {
-  const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
+  const [currentMonthIndex, setCurrentMonthIndex] = useState(data.length - 1);
 
   // Función para avanzar al siguiente mes
   const nextMonth = () => {

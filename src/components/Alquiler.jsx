@@ -129,7 +129,7 @@ export default function Alquiler() {
           <div className="w-1/3 h-full ">
             <div className="w-full h-full flex items-center justify-evenly">
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 justify-center flex items-center  bg-[#8884d8] text-black">
+                <span className="w-full h-1/3 justify-center flex items-center  bg-[#ffc658] text-black">
                   Variación mes anterior
                 </span>
                 <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
@@ -137,7 +137,7 @@ export default function Alquiler() {
                 </span>
               </div>
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 justify-center flex items-center bg-[#8884d8] text-black">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#ffc658] text-black">
                   Variación acumulada
                 </span>
                 <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
@@ -177,7 +177,7 @@ export default function Alquiler() {
           <div className="w-1/3 h-full ">
             <div className="w-full h-full flex items-center justify-evenly">
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 justify-center flex items-center bg-[#ffc658] text-black">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#8884d8] text-black">
                   Variación mes anterior
                 </span>
                 <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
@@ -185,7 +185,7 @@ export default function Alquiler() {
                 </span>
               </div>
               <div className="w-1/3 h-2/3 bg-gray-700 text-gray-200 rounded flex flex-col items-center justify-between">
-                <span className="w-full h-1/3 justify-center flex items-center bg-[#ffc658] text-black">
+                <span className="w-full h-1/3 justify-center flex items-center bg-[#8884d8] text-black">
                   Variación acumulada
                 </span>
                 <span className="w-full h-2/3 flex items-center justify-center border-t text-2xl">
@@ -202,7 +202,7 @@ export default function Alquiler() {
       </div>
       <div className="flex h-3/4 w-full">
         <div className="w-1/3 h-full flex flex-col items-center justify-between ">
-          <h1 className="bg-[#8884d8] font-black tracker-widest text-xl w-full text-white text-center">
+          <h1 className="bg-[#ffc658] font-black tracker-widest text-xl w-full text-white text-center">
             CABA
           </h1>
           <ResponsiveContainer height={"75%"} width={"85%"}>
@@ -221,12 +221,12 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="caba"
-                fill="#8884d8"
+                fill="#ffc658" // Cambio de color a amarillo
                 label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
               />
             </BarChart>
           </ResponsiveContainer>
-          <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#8884d8]">
+          <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#ffc658]">
             Variación anual acumulada:&nbsp;
             <span className="font-bold"> {calculateVariation("caba")} %</span>
           </div>
@@ -251,7 +251,7 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="norte"
-                fill="#82ca9d"
+                fill="#82ca9d" // Cambio de color a violeta
                 label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
               />
             </BarChart>
@@ -262,7 +262,7 @@ export default function Alquiler() {
           </div>
         </div>
         <div className="w-1/3 h-full flex flex-col items-center justify-between">
-          <h1 className="bg-[#ffc658] font-black tracker-widest text-xl text-white text-center w-full">
+          <h1 className="bg-[#8884d8] font-black tracker-widest text-xl text-white text-center w-full">
             GBA - SUR/OESTE
           </h1>
           <ResponsiveContainer height={"75%"} width={"85%"}>
@@ -281,12 +281,12 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="suroeste"
-                fill="#ffc658"
+                fill="#8884d8" // Cambio de color a gris
                 label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
               />
             </BarChart>
           </ResponsiveContainer>
-          <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#ffc658]">
+          <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#8884d8]">
             Variación anual acumulada:&nbsp;
             <span className="font-bold">
               {" "}

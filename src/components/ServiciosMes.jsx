@@ -12,6 +12,10 @@ const data = {
     leche: 1114.65,
     yerba: 3771.89,
     cerveza: 2005.49,
+    cafe: 3200,
+    carne: 8487.04,
+    pizza: 12450,
+    fideo: 1235.25,
   },
   abril: {
     alquiler: "-",
@@ -23,6 +27,10 @@ const data = {
     leche: "-",
     yerba: "-",
     cerveza: "-",
+    cafe: "-",
+    carne: "-",
+    pizza: "-",
+    fideo: "-",
   },
   mayo: {
     alquiler: "-",
@@ -34,6 +42,10 @@ const data = {
     leche: "-",
     yerba: "-",
     cerveza: "-",
+    cafe: "-",
+    carne: "-",
+    pizza: "-",
+    fideo: "-",
   },
 };
 
@@ -55,8 +67,8 @@ const ServiciosMes = ({ mesData }) => {
   return (
     <div className="w-full h-full flex items-center justify-center relative">
       <FiArrowRightCircle
-        className="absolute right-32 text-yellow-400 top-1/2 animate-pulse duration-1000 cursor-pointer"
-        size={40}
+        className="absolute right-24 text-amber-500 top-1/2 animate-pulse duration-1000 cursor-pointer"
+        size={50}
         onClick={toggleSection}
       />
       <div className="w-4/5 flex h-4/5 ">
@@ -207,20 +219,16 @@ const ServiciosMes = ({ mesData }) => {
             </div>
             <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
-                LITRO DE CERVEZA
+                FIDEOS
               </div>
               <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
                 {" "}
-                <img
-                  src="/assets/cerveza.png"
-                  alt=""
-                  className="h-full w-full"
-                />
+                <img src="/assets/fideo.png" alt="" className="h-full w-full" />
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
-                  {data[mesData].cerveza !== "-"
-                    ? `$${formatNumber(data[mesData].cerveza)}`
+                  {data[mesData].fideo !== "-"
+                    ? `$${formatNumber(data[mesData].fideo)}`
                     : "-"}
                 </div>
               </div>
@@ -238,8 +246,8 @@ const ServiciosMes = ({ mesData }) => {
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
-                  {data[mesData].pan !== "-"
-                    ? `$${formatNumber(data[mesData].pan)}`
+                  {data[mesData].pizza !== "-"
+                    ? `$${formatNumber(data[mesData].pizza)}`
                     : "-"}
                 </div>
               </div>
@@ -254,8 +262,8 @@ const ServiciosMes = ({ mesData }) => {
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
-                  {data[mesData].leche !== "-"
-                    ? `$${formatNumber(data[mesData].leche)}`
+                  {data[mesData].cafe !== "-"
+                    ? `$${formatNumber(data[mesData].cafe)}`
                     : "-"}
                 </div>
               </div>
@@ -270,19 +278,19 @@ const ServiciosMes = ({ mesData }) => {
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
-                  {data[mesData].yerba !== "-"
-                    ? `$${formatNumber(data[mesData].yerba)}`
+                  {data[mesData].carne !== "-"
+                    ? `$${formatNumber(data[mesData].carne)}`
                     : "-"}
                 </div>
               </div>
             </div>
             <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
-                FIDEOS
+                LITRO DE CERVEZA
               </div>
               <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                 {" "}
-                <img src="/assets/fideo.png" alt="" />
+                <img src="/assets/cerveza.png" alt="" />
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">

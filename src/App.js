@@ -6,8 +6,8 @@ import DolarDesglose from "./components/DolarDesglose.jsx";
 import Encabezado from "./components/Encabezado.jsx";
 import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
-import Servicios from "./components/Servicios.jsx";
 import Alquiler from "./components/Alquiler.jsx";
+import GastosCotidianos from "./components/GastosCotidianos.jsx";
 // import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
 export default function App() {
@@ -41,19 +41,19 @@ export default function App() {
         <Transporte />
       </section>
 
+      <section className="section" id="alquiler">
+        <Encabezado content={"ALQUILER"} />
+        <Alquiler />
+      </section>
       <section className="section" id="cotidianos">
         <Encabezado content={"GASTOS COTIDIANOS CABA"} />
-        <Servicios />
+        <GastosCotidianos />
       </section>
 
       {/* <section className="section" id="comparativa">
         <Encabezado content={"COMPARATIVA"} />
         <Comparativa />
       </section> */}
-      <section className="section" id="alquiler">
-        <Encabezado content={"ALQUILER"} />
-        <Alquiler />
-      </section>
     </div>
   );
 }

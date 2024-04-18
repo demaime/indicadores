@@ -58,3 +58,12 @@ input[type="checkbox"]:checked + label .checkbox {
     --checkbox-color
   ); /* Utiliza una variable CSS para establecer el color */
 }
+
+.text-fill {
+  text-decoration: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px black;
+  letter-spacing: 1px;
+
+  text-shadow: 1px 1px 1px #fef08a, 3px 3px 3px #555353;
+}

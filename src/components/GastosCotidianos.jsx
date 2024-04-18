@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ServiciosMes from "./ServiciosMes";
 
-export default function Servicios() {
+export default function GastosCotidianos() {
   const [mesSeleccionado, setMesSeleccionado] = useState("marzo");
 
   const meses = ["marzo", "abril", "mayo"]; // Puedes agregar más meses aquí

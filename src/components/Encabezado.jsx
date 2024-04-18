@@ -63,6 +63,12 @@ export default function Encabezado({ content }) {
                   TRANSPORTE
                 </li>
               </a>
+              <a href="#alquiler">
+                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
+                  <IoArrowRedoCircleOutline className="mr-4" />
+                  ALQUILER
+                </li>
+              </a>
               <a href="#cotidianos">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />
@@ -75,12 +81,6 @@ export default function Encabezado({ content }) {
                   COMPARATIVA
                 </li>
               </a> */}
-              <a href="#alquiler">
-                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
-                  <IoArrowRedoCircleOutline className="mr-4" />
-                  ALQUILER
-                </li>
-              </a>
               <a href="#">
                 <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                   <IoArrowRedoCircleOutline className="mr-4" />

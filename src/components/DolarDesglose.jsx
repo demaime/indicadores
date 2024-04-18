@@ -82,7 +82,7 @@ export default function DolarDesglose() {
         <select
           value={selectedMonth}
           onChange={handleMonthChange}
-          className="bg-gray-700 font-bold text-white w-1/3 rounded h-10 px-1"
+          className="bg-gray-700 font-bold text-white w-1/4 rounded h-10 px-2"
         >
           {data.map((item) => (
             <option key={item.mes} value={item.mes}>

@@ -79,7 +79,7 @@ const ServiciosMes = ({ mesData }) => {
           <div className="text-3xl absolute top-2 right-[8%] text-fill font-black">
             ALIMENTOS
           </div>
-          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around shadow-lg">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               LUZ
             </div>
@@ -94,7 +94,7 @@ const ServiciosMes = ({ mesData }) => {
               </div>
             </div>
           </div>
-          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around shadow-lg">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               GAS
             </div>
@@ -109,7 +109,7 @@ const ServiciosMes = ({ mesData }) => {
               </div>
             </div>
           </div>
-          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around shadow-lg">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               INTERNET
             </div>
@@ -125,7 +125,7 @@ const ServiciosMes = ({ mesData }) => {
               </div>
             </div>
           </div>
-          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around">
+          <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around shadow-lg">
             <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
               CELULAR
             </div>
@@ -169,7 +169,7 @@ const ServiciosMes = ({ mesData }) => {
         </div>
         {showServicios ? (
           <div className="w-1/3 h-full flex flex-col justify-between pr-4 items-end">
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 KILO DE PAN
               </div>
@@ -185,7 +185,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 LITRO DE LECHE{" "}
               </div>
@@ -201,7 +201,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 KILO DE YERBA{" "}
               </div>
@@ -217,7 +217,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 FIDEOS
               </div>
@@ -236,7 +236,7 @@ const ServiciosMes = ({ mesData }) => {
           </div>
         ) : (
           <div className="w-1/3 h-full flex flex-col justify-between pr-4 items-end">
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 PIZZA
               </div>
@@ -252,7 +252,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 CAFE{" "}
               </div>
@@ -268,7 +268,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 KILO DE CARNE{" "}
               </div>
@@ -284,7 +284,7 @@ const ServiciosMes = ({ mesData }) => {
                 </div>
               </div>
             </div>
-            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around">
+            <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
               <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 LITRO DE CERVEZA
               </div>

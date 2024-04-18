@@ -67,7 +67,7 @@ const ServiciosMes = ({ mesData }) => {
   return (
     <div className="w-full h-full flex items-center justify-center relative">
       <FiArrowRightCircle
-        className="absolute right-24 text-amber-500 top-1/2 animate-pulse duration-1000 cursor-pointer"
+        className="absolute right-24 text-orange-400 top-1/2 animate-pulse duration-1000 cursor-pointer"
         size={50}
         onClick={toggleSection}
       />

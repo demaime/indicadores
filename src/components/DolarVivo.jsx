@@ -10,6 +10,7 @@ export default function DolarVivo() {
   const [dolarBlue, setDolarBlue] = useState();
   const [dolarMep, setDolarMep] = useState();
   const [dolarTarjeta, setDolarTarjeta] = useState();
+  const [historicoBlue, setHistoricoBlue] = useState();
 
   useEffect(() => {
     axios
@@ -54,6 +55,19 @@ export default function DolarVivo() {
         console.error("Error al obtener datos:", error);
       });
   }, []);
+
+  useEffect(() => {
+    axios
+      .get("https://api.argentinadatos.com/v1/cotizaciones/dolares/blue")
+      .then((response) => {
+        setHistoricoBlue(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener datos:", error);
+      });
+  }, []);
+
+  // console.log(historicoBlue[historicoBlue.length - 1].fecha);
 
   const date = new Date(dolarOficial && dolarOficial.fechaActualizacion);
 

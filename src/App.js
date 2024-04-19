@@ -8,6 +8,7 @@ import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
+import DolarNuevo from "./components/DolarNuevo.jsx";
 // import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
 export default function App() {
@@ -15,15 +16,32 @@ export default function App() {
     <div className="full-container">
       <Portada />
       <section className="section" id="inflacion">
-        <Encabezado content={"INFLACION"} />
+        <Encabezado
+          title={"INFLACION"}
+          description={"Nacional: INDEC - CABA: Estadisticas Ciudad"}
+        />
         <InflacionDesglose />
       </section>
       <section className="section" id="canasta-salario">
-        <Encabezado content={"CANASTA BASICA - SALARIO MINIMO"} />
+        <Encabezado
+          title={"CANASTA BASICA - SALARIO MINIMO"}
+          description={
+            "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad"
+          }
+        />
         <CanastaSalario />
       </section>
+      <section className="section">
+        <Encabezado
+          title={"DOLAR NUEVO - *EN DESARROLLO*"}
+          description={
+            "DolarAPI - Registro histórico y valores promedio del dolar y sus distintas cotizaciones"
+          }
+        />
+        <DolarNuevo />
+      </section>
       <section className="section bg-gray-800 text-white" id="dolar">
-        <Encabezado content={"DOLAR"} />
+        <Encabezado title={"DOLAR"} />
         <div className="w-full h-2/3 flex">
           <div className="w-2/3">
             <Dolar />
@@ -37,21 +55,21 @@ export default function App() {
         </div>
       </section>
       <section className="section" id="transporte">
-        <Encabezado content={"TRANSPORTE"} />
+        <Encabezado title={"TRANSPORTE"} />
         <Transporte />
       </section>
 
       <section className="section" id="alquiler">
-        <Encabezado content={"ALQUILER"} />
+        <Encabezado title={"ALQUILER"} />
         <Alquiler />
       </section>
       <section className="section" id="cotidianos">
-        <Encabezado content={"GASTOS COTIDIANOS CABA"} />
+        <Encabezado title={"GASTOS COTIDIANOS CABA"} />
         <GastosCotidianos />
       </section>
 
       {/* <section className="section" id="comparativa">
-        <Encabezado content={"COMPARATIVA"} />
+        <Encabezado title={"COMPARATIVA"} />
         <Comparativa />
       </section> */}
     </div>

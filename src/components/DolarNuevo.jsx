@@ -1,44 +1,90 @@
 import React from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import CanvasJSReact from "@canvasjs/react-charts";
+// var CanvasJSReact = require('@canvasjs/react-charts');
+
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+const officialValue = 900; // Puedes cambiar este valor según sea necesario
 
 const data = [
-  { name: "Oficial", valor: 900 },
-  { name: "MEP", valor: 920 },
-  { name: "Blue", valor: 850 },
-  { name: "Otro", valor: 880 },
+  { name: "OFICIAL", minValue: 0, maxValue: officialValue, color: "green" },
+  { name: "Blue", minValue: officialValue, maxValue: 850, color: "blue" },
+  { name: "CCL", minValue: officialValue, maxValue: 880, color: "cyan" },
+  { name: "MEP", minValue: officialValue, maxValue: 920, color: "red" },
+  { name: "Cripto", minValue: officialValue, maxValue: 925, color: "pink" },
+  { name: "Tarjeta", minValue: officialValue, maxValue: 1070, color: "yellow" },
+  {
+    name: "Mayorista",
+    minValue: officialValue,
+    maxValue: 1450,
+    color: "orange",
+  },
   // Agrega más tipos de cambio aquí si es necesario
 ];
 
+const options = {
+  animationEnabled: true,
+  // title: {
+  //   text: "Cotización Histórica",
+  //   fontColor: "#FFFFFF", // Letras blancas
+  // },
+  axisY: {
+    title: "Valor",
+    prefix: "$",
+    labelFontColor: "#FFFFFF", // Letras blancas
+    titleFontColor: "#FFFFFF", // Letras blancas
+    minimum: 700, // Valor mínimo del eje Y
+    maximum: 1500, // Valor máximo del eje Y
+    interval: 50, // Intervalo entre marcas del eje Y
+  },
+  axisX: {
+    labelFontColor: "#FFFFFF", // Letras blancas
+  },
+  backgroundColor: "transparent", // Fondo transparente
+  data: [
+    {
+      type: "rangeColumn",
+      dataPointWidth: 30, // Ancho de las barras
+      indexLabel: "", // Eliminar el índice de la etiqueta
+      dataPoints: data.map((entry) => ({
+        label: entry.name,
+        y: [entry.minValue, entry.maxValue],
+        color: entry.color, // Asignación de color
+      })),
+    },
+  ],
+  toolTip: {
+    content: function (e) {
+      var content = " ";
+      var entry = e.entries[0].dataPoint;
+      var maxValue = entry.y[1];
+      var difference = maxValue - officialValue;
+      content += `<strong>${entry.label}</strong><br/>`;
+      content += `Valor máximo: $${maxValue}<br/>`;
+      content += `Diferencia con el valor oficial: $${difference}<br/>`;
+      return content;
+    },
+  },
+};
+
 export default function DolarNuevo() {
-  const officialValue = data.find((entry) => entry.name === "Oficial").valor;
-
-  const modifiedData = data.map((entry) => ({
-    name: entry.name,
-    difference: entry.name === "Oficial" ? 0 : entry.valor - officialValue,
-  }));
-
   return (
     <div className="w-full h-full bg-gray-800 text-gray-100">
       <div className="w-full h-3/4">
         <div className="w-full h-8 bg-yellow-200 font-semibold tracker-wider text-black flex items-center justify-center ">
           COTIZACION HISTORICA
         </div>
-        <BarChart width={600} height={300} data={modifiedData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="difference" fill="#82ca9d" />
-        </BarChart>
+        <div className="h-full w-full flex">
+          <div className="h-full w-1/3 flex flex-col items-center justify-center">
+            <CanvasJSChart
+              options={options}
+              containerProps={{ width: "100%", height: "85%" }}
+            />
+          </div>
+          <div className="h-full w-1/3"></div>
+          <div className="h-full w-1/3"></div>
+        </div>
       </div>
       <div className="w-full h-1/4 bg-gray-300 flex flex-col">
         <div className="w-full h-8 bg-pink-200 font-semibold tracker-wider text-black flex items-center justify-center ">

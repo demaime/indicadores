@@ -557,9 +557,9 @@ export default function DolarNuevo() {
             <div className="h-[90%] w-full flex flex-col items-center justify-center relative p-2">
               <CanvasJSChart
                 options={options}
-                containerProps={{ width: "100%", height: "85%" }}
+                containerProps={{ width: "100%", height: "90%" }}
               />
-              <div className="absolute top-4 w-[95%] h-14 flex left-4 justify-between px-4 z-30 bg-gray-800">
+              {/* <div className="absolute top-4 w-[95%] h-14 flex left-4 justify-between px-4 z-30 bg-gray-800">
                 <div className="h-full w-[10%] rounded bg-transparent"> </div>
                 <div className="h-full w-[10%] rounded bg-green-400">
                   {" "}
@@ -663,15 +663,15 @@ export default function DolarNuevo() {
                       : (promedioTarjeta - promedioOficial).toFixed(2)}
                   </span>
                 </div>
-              </div>
-              <div className="absolute left-4 w-16 rounded h-14 bg-white top-4 z-40 text-black py-2">
+              </div> */}
+              {/* <div className="absolute left-4 w-16 rounded h-14 bg-white top-4 z-40 text-black py-2">
                 <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
                   Valor
                 </span>
                 <span className="w-full border-t border-gray-300 h-1/2 text-xs flex items-center justify-center text-gray-800 font-semibold">
                   Diferencia
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="h-full w-1/3 ">

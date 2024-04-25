@@ -26,4 +26,10 @@ GASTOS COTIDIANOS: Si se puede elegir si es el valor $ o el %
 
 asfalto y cemento (para medir obra pública)
 
+agregar lineas canasta basica en grafico salario minimo
+
 [12:22, 18/4/2024] Facundo DGOP: Alquiler (aclarar que son dos ambientes) y en dólar (aclarar que es promedio)
+
+INDICE CAC (SLIDE)
+
+INDUSTRIA PYME (SLIDE)

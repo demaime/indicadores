@@ -558,119 +558,6 @@ export default function DolarNuevo() {
                 options={options}
                 containerProps={{ width: "100%", height: "90%" }}
               />
-              {/* <div className="absolute top-4 w-[95%] h-14 flex left-4 justify-between px-4 z-30 bg-gray-800">
-                <div className="h-full w-[10%] rounded bg-transparent"> </div>
-                <div className="h-full w-[10%] rounded bg-green-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioOficial}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-xs flex items-center justify-center text-gray-800 font-semibold">
-                    + / -
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-orange-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioMayorista}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioMayorista - promedioOficial) /
-                            promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioMayorista - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-blue-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioBlue}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioBlue - promedioOficial) / promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioBlue - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-red-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioMep}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioMep - promedioOficial) / promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioMep - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-cyan-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioCcl}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioCcl - promedioOficial) / promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioCcl - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-pink-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioCripto}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioCripto - promedioOficial) /
-                            promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioCripto - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-                <div className="h-full w-[10%] rounded bg-yellow-400">
-                  {" "}
-                  <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    ${promedioTarjeta}
-                  </span>
-                  <span className="w-full border-t border-gray-300 h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                    $
-                    {porcentajeOmoneda === "porcentaje"
-                      ? (
-                          ((promedioTarjeta - promedioOficial) /
-                            promedioOficial) *
-                          100
-                        ).toFixed(2) + "%"
-                      : (promedioTarjeta - promedioOficial).toFixed(2)}
-                  </span>
-                </div>
-              </div> */}
-              {/* <div className="absolute left-4 w-16 rounded h-14 bg-white top-4 z-40 text-black py-2">
-                <span className="w-full h-1/2 text-[10px] flex items-center justify-center text-gray-800 font-semibold">
-                  Valor
-                </span>
-                <span className="w-full border-t border-gray-300 h-1/2 text-xs flex items-center justify-center text-gray-800 font-semibold">
-                  Diferencia
-                </span>
-              </div> */}
             </div>
           </div>
           <div className="h-full w-1/3 ">
@@ -722,12 +609,123 @@ export default function DolarNuevo() {
                   <span className="h-1/3 w-full flex items-center justify-center text-xs font-bold  tracking-wider">
                     OFICIAL
                   </span>
-                  <span className="h-2/3 w-full  flex items-center justify-center text-xl bg-gray-800 text-green-400 border border-green-400">
-                    OFICIAL
+                  <span className="h-2/3 w-full  flex items-center justify-center text-2xl bg-gray-800 text-green-400 border border-green-400">
+                    $&nbsp;{promedioOficial}
                   </span>
                 </div>
               </div>
-              <div className="w-full h-5/6"></div>
+              <div className="w-full h-5/6 flex flex-col items-center justify-start">
+                <div className="w-[90%] h-6 bg-gray-600 text-white text-sm rounded-xl font-semibold flex items-center justify-around text-center">
+                  <span className="w-16 text-center">Tipo</span>
+                  <span className="w-16 text-center">Valor</span>
+                  <span className="w-16 text-center">Diferencia</span>
+                </div>
+                <div className="w-[90%] h-5/6 flex flex-col items-center justify-around">
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-orange-400 text-orange-200 flex items-center justify-center">
+                      Mayorista
+                    </div>
+                    <div className="h-8 w-24 rounded text-orange-400 flex items-center justify-center">
+                      ${promedioMayorista}
+                    </div>
+                    <div className="h-8 w-24 rounded text-orange-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioMayorista - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" +
+                          (promedioMayorista - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-blue-400 text-blue-200 flex items-center justify-center">
+                      Blue
+                    </div>
+                    <div className="h-8 w-24 rounded text-blue-400 flex items-center justify-center">
+                      ${promedioBlue}
+                    </div>
+                    <div className="h-8 w-24 rounded text-blue-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioBlue - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" + (promedioBlue - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-red-400 text-red-200 flex items-center justify-center">
+                      MEP
+                    </div>
+                    <div className="h-8 w-24 rounded text-red-400 flex items-center justify-center">
+                      ${promedioMep}
+                    </div>
+                    <div className="h-8 w-24 rounded text-red-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioMep - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" + (promedioMep - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-cyan-400 text-cyan-200 flex items-center justify-center">
+                      CCL
+                    </div>
+                    <div className="h-8 w-24 rounded text-cyan-400 flex items-center justify-center">
+                      ${promedioCcl}
+                    </div>
+                    <div className="h-8 w-24 rounded text-cyan-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioCcl - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" + (promedioCcl - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-pink-400 text-pink-200 flex items-center justify-center">
+                      Cripto
+                    </div>
+                    <div className="h-8 w-24 rounded text-pink-400 flex items-center justify-center">
+                      ${promedioCripto}
+                    </div>
+                    <div className="h-8 w-24 rounded text-pink-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioCripto - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" + (promedioCripto - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-full flex items-center justify-around font-semibold">
+                    <div className="h-8 w-24 rounded border border-yellow-400 text-yellow-200 flex items-center justify-center">
+                      Tarjeta
+                    </div>
+                    <div className="h-8 w-24 rounded text-yellow-400 flex items-center justify-center">
+                      ${promedioTarjeta}
+                    </div>
+                    <div className="h-8 w-24 rounded text-yellow-400 flex items-center justify-center">
+                      {porcentajeOmoneda === "porcentaje"
+                        ? (
+                            ((promedioTarjeta - promedioOficial) /
+                              promedioOficial) *
+                            100
+                          ).toFixed(2) + "%"
+                        : "$" + (promedioTarjeta - promedioOficial).toFixed(2)}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="h-full w-1/3 border-l border-yellow-200">
@@ -758,8 +756,10 @@ export default function DolarNuevo() {
                 <XAxis dataKey="mes" tick={{ fill: "white" }} />
                 <YAxis
                   tick={{ fill: "white" }}
+                  domain={[600, 1600]}
                   tickFormatter={(value) => `$${value}`}
                 />
+
                 <Tooltip
                   contentStyle={{
                     backgroundColor: "rgba(0, 0, 0, 0.8)",

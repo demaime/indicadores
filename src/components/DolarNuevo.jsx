@@ -7,7 +7,6 @@ import {
   YAxis,
   Tooltip,
   Line,
-  Legend,
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
@@ -694,28 +693,59 @@ export default function DolarNuevo() {
                 </button>
               </div>
             </div>
-            <div className="h-[90%] w-full relative">
-              <div className="absolute top-3 w-full flex ">
-                <div className="w-[10%] bg-red-40 h-full border-r-2 border-gray-600 flex flex-col justify-between">
-                  <button
-                    className="w-10 h-6 bg-blue-900 p-2 rounded flex items-center justify-center my-1"
-                    onClick={() => setPorcentajeOmoneda("porcentaje")}
-                  >
-                    %
-                  </button>
-                  <button
-                    className="w-10 h-6 bg-blue-900 p-2 rounded flex items-center justify-center my-1"
-                    onClick={() => setPorcentajeOmoneda("moneda")}
-                  >
-                    $
-                  </button>
-                </div>
-                <div className="w-[90%] pl-2 h-full">cosas</div>
+            <div className="h-[90%] w-full flex flex-col items-center">
+              <div className="w-[80%] flex h-[10%] border-b border-gray-600 items-center justify-evenly">
+                <button
+                  className={`w-14 h-6 bg-blue-900 p-2 rounded flex items-center justify-center my-1 ${
+                    porcentajeOmoneda === "porcentaje"
+                      ? "bg-blue-600 border border-white"
+                      : "bg-blue-900"
+                  }`}
+                  onClick={() => setPorcentajeOmoneda("porcentaje")}
+                >
+                  %
+                </button>
+                <p className="text-sm">Formato del diferencial</p>
+                <button
+                  className={`w-14 h-6 bg-blue-900 p-2 rounded flex items-center justify-center my-1 ${
+                    porcentajeOmoneda === "moneda"
+                      ? "bg-blue-600 border border-white"
+                      : "bg-blue-900"
+                  }`}
+                  onClick={() => setPorcentajeOmoneda("moneda")}
+                >
+                  $
+                </button>
               </div>
+              <div className="w-full h-1/6 flex items-center justify-center">
+                <div className="w-1/2 h-12 bg-green-400 text-gray-800 rounded-xl">
+                  <span className="h-1/3 w-full flex items-center justify-center text-xs font-bold  tracking-wider">
+                    OFICIAL
+                  </span>
+                  <span className="h-2/3 w-full  flex items-center justify-center text-xl bg-gray-800 text-green-400 border border-green-400">
+                    OFICIAL
+                  </span>
+                </div>
+              </div>
+              <div className="w-full h-5/6"></div>
             </div>
           </div>
-          <div className="h-full w-1/3">
-            <ResponsiveContainer height={"90%"}>
+          <div className="h-full w-1/3 border-l border-yellow-200">
+            <div className="w-full bg-transparent rounded-lg h-[10%] flex flex-col items-center justify-center border-b-2 border-gray-600 ">
+              <p className="text-lg h-2/3 flex items-center justify-center">
+                EVOLUTIVO DE PROMEDIOS
+              </p>
+              <p className="text-xs flex items-end h-1/3 justify-evenly w-full pb-1 ">
+                <span className="text-green-400">● Oficial</span>
+                <span className="text-orange-400">● Mayorista</span>
+                <span className="text-blue-400">● Blue</span>
+                <span className="text-red-400">● MEP</span>
+                <span className="text-cyan-400">● CCL</span>
+                <span className="text-pink-400">● Cripto</span>
+                <span className="text-yellow-400">● Tarjeta</span>
+              </p>
+            </div>
+            <ResponsiveContainer height={"85%"}>
               <LineChart
                 className="p-2 font-bold text-white"
                 width={1030}
@@ -725,9 +755,20 @@ export default function DolarNuevo() {
                 style={{ color: "white" }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="mes" />
-                <YAxis domain={yAxisDomain} tick={yLines} />
-                <Tooltip />
+                <XAxis dataKey="mes" tick={{ fill: "white" }} />
+                <YAxis
+                  tick={{ fill: "white" }}
+                  tickFormatter={(value) => `$${value}`}
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    border: "none",
+                    color: "white",
+                    textTransform: "uppercase",
+                  }}
+                  formatter={(value) => `$${value}`.toUpperCase()}
+                />
 
                 {tiposDolar.map((tipo, index) => (
                   <Line
@@ -737,6 +778,7 @@ export default function DolarNuevo() {
                     name={tipo}
                     stroke={getColorByName(tipo)}
                     strokeWidth={2}
+                    dot={{ stroke: getColorByName(tipo), strokeWidth: 4, r: 2 }} // Establecer el color del punto
                   />
                 ))}
               </LineChart>
@@ -748,7 +790,6 @@ export default function DolarNuevo() {
         <div className="w-full h-8 bg-pink-200 font-semibold tracker-wider text-black flex items-center justify-center ">
           COTIZACION AL DIA
         </div>
-        |
         <div className="w-full h-full bg-gray-800 text-gray-100 flex">
           <div className="h-full w-4/5 flex">
             <div className="h-full w-[15%]  border-r border-gray-600 pl-4">

@@ -50,9 +50,6 @@ export default function App() {
             <DolarDesglose />
           </div>
         </div>
-        <div className="h-1/3 w-full bg-gray-700">
-          <DolarVivo />
-        </div>
       </section>
       <section className="section" id="transporte">
         <Encabezado title={"TRANSPORTE"} />

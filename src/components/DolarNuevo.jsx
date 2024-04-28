@@ -719,12 +719,12 @@ export default function DolarNuevo() {
         <div className="h-full w-full flex">
           <div className="h-full w-1/3">
             <div className="w-full bg-transparent rounded-lg h-[10%] flex flex-col items-center justify-center border-b-2 border-gray-600 relative">
-              <p className="text-lg">COMPARATIVA POR PRECIO PROMEDIO</p>
+              <p className="text-lg">COMPARATIVA PRECIO PROMEDIO</p>
               <p className="text-xs text-gray-300">
                 Valores promedios comparados con el dolar oficial
               </p>
               <button
-                className={`absolute top-2 right-2 h-6 w-24 bg-blue-500 text-xs flex items-center justify-center rounded-xl ${
+                className={`absolute top-1 right-2 h-6 w-24 bg-blue-500 text-xs flex items-center justify-center rounded-xl ${
                   comparativoOEvolutivo === "comparativo" ? "hidden" : ""
                 }`}
                 onClick={() => setComparativoOEvolutivo("comparativo")}
@@ -738,7 +738,7 @@ export default function DolarNuevo() {
             >
               <CanvasJSChart
                 options={options}
-                containerProps={{ width: "100%", height: "90%" }}
+                containerProps={{ width: "100%", height: "85%" }}
               />
             </div>
           </div>
@@ -1064,7 +1064,7 @@ export default function DolarNuevo() {
           <div className="h-full w-1/3 bg-black">
             <div className="w-full bg-transparent rounded-lg h-[10%] flex flex-col items-center justify-center border-b-2 border-gray-600 relative">
               <button
-                className={`absolute top-2 left-2 h-6 w-24 bg-blue-500 text-xs flex items-center justify-center rounded-xl ${
+                className={`absolute top-1 left-2 h-6 w-24 bg-blue-500 text-xs flex items-center justify-center rounded-xl ${
                   comparativoOEvolutivo === "evolutivo" ? "hidden" : ""
                 }`}
                 onClick={() => setComparativoOEvolutivo("evolutivo")}
@@ -1128,7 +1128,7 @@ export default function DolarNuevo() {
         </div>
       </div>
       <div className="w-full h-1/4 bg-gray-300 flex flex-col">
-        <div className="w-full h-8 bg-pink-200 font-semibold tracker-wider text-black flex items-center justify-center ">
+        <div className="w-full h-[15%] bg-pink-200 font-semibold tracker-wider text-black flex items-center justify-center ">
           COTIZACION AL DIA
         </div>
         <DolarVivo

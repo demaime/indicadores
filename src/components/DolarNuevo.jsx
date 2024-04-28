@@ -677,6 +677,39 @@ export default function DolarNuevo() {
     return tipo ? tipo.color : "#000000"; // Si no se encuentra el tipo, devuelve un color negro
   };
 
+  // Encuentra el índice del mes seleccionado en el array evolutivo
+  const indexMesSeleccionado = evolutivo.findIndex(
+    (item) => item.mes === mesSeleccionado
+  );
+
+  // Calcula las diferencias para cada tipo de dólar
+  const calcularDiferenciasMensuales = (tipo) => {
+    if (indexMesSeleccionado === -1) {
+      return { pesos: 0, porcentaje: 0 };
+    }
+
+    const mesActual = evolutivo[indexMesSeleccionado];
+    const mesAnterior =
+      indexMesSeleccionado > 0 ? evolutivo[indexMesSeleccionado - 1] : null;
+
+    if (!mesAnterior) {
+      return { pesos: 0, porcentaje: 0 };
+    }
+
+    const valorActual = mesActual[tipo];
+    const valorAnterior = mesAnterior[tipo];
+
+    const diferenciaPesos = (valorActual - valorAnterior).toFixed(2);
+    const diferenciaPorcentaje = (
+      ((valorActual - valorAnterior) / valorAnterior) *
+      100
+    ).toFixed(2);
+
+    return { pesos: diferenciaPesos, porcentaje: diferenciaPorcentaje };
+  };
+
+  console.log(calcularDiferenciasMensuales("oficial"));
+
   return (
     <div className="w-full h-full bg-gray-800 text-gray-100">
       <div className="w-full h-3/4">
@@ -699,7 +732,10 @@ export default function DolarNuevo() {
                 VER DATOS
               </button>
             </div>
-            <div className="h-[90%] w-full flex flex-col items-center justify-center relative p-2">
+            <div
+              id="canvachart"
+              className="h-[90%] w-full flex flex-col items-center justify-center relative p-2"
+            >
               <CanvasJSChart
                 options={options}
                 containerProps={{ width: "100%", height: "90%" }}
@@ -882,8 +918,145 @@ export default function DolarNuevo() {
                   </div>
                 </div>
               ) : (
-                <div className="w-full h-5/6 flex flex-col items-center justify-start">
-                  HUEVITO
+                <div className="w-full h-5/6 flex  items-center justify-start">
+                  <div className="w-3/12 h-full flex flex-col items-center justify-evenly text-xs tracking-wider text-black">
+                    <div className="w-24 h-8 bg-black font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-24 h-8 bg-green-400 font-semibold rounded-lg flex items-center justify-center">
+                      OFICIAL
+                    </div>
+                    <div className="w-24 h-8 bg-orange-400 font-semibold rounded-lg flex items-center justify-center">
+                      MAYORISTA
+                    </div>
+                    <div className="w-24 h-8 bg-blue-400 font-semibold rounded-lg flex items-center justify-center">
+                      BLUE
+                    </div>
+                    <div className="w-24 h-8 bg-red-400 font-semibold rounded-lg flex items-center justify-center">
+                      MEP
+                    </div>
+                    <div className="w-24 h-8 bg-cyan-400 font-semibold rounded-lg flex items-center justify-center">
+                      CCL
+                    </div>
+                    <div className="w-24 h-8 bg-pink-400 font-semibold rounded-lg flex items-center justify-center">
+                      CRIPTO
+                    </div>
+                    <div className="w-24 h-8 bg-yellow-400 font-semibold rounded-lg flex items-center justify-center">
+                      TARJETA
+                    </div>
+                  </div>
+                  <div className="w-8/12 h-full flex">
+                    <div className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs tracking-wider text-black">
+                      <div className="w-24 h-8 text-gray-200 font-semibold rounded-lg flex items-center justify-center">
+                        VALOR
+                      </div>
+                      <div className="w-24 h-8  text-green-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioOficial}
+                      </div>
+                      <div className="w-24 h-8  text-orange-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioMayorista}
+                      </div>
+                      <div className="w-24 h-8  text-blue-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioBlue}
+                      </div>
+                      <div className="w-24 h-8  text-red-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioMep}
+                      </div>
+                      <div className="w-24 h-8  text-cyan-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioCcl}
+                      </div>
+                      <div className="w-24 h-8  text-pink-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioCripto}
+                      </div>
+                      <div className="w-24 h-8  text-yellow-200 font-semibold rounded-lg flex items-center justify-center">
+                        $ {promedioTarjeta}
+                      </div>
+                    </div>
+                    <div className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs tracking-wider text-black">
+                      <div className="w-24 h-8  text-gray-200 font-semibold rounded-lg flex items-center justify-evenly text-center">
+                        VARIACIÓN MES ANTERIOR
+                      </div>
+                      <div className="w-24 h-8  text-green-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("oficial").porcentaje +
+                            "%"
+                          : "$" + calcularDiferenciasMensuales("oficial").pesos}
+                      </div>
+                      <div className="w-24 h-8  text-orange-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("mayorista")
+                              .porcentaje + "%"
+                          : "$" +
+                            calcularDiferenciasMensuales("mayorista")
+                              .pesos}{" "}
+                      </div>
+                      <div className="w-24 h-8  text-blue-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("blue").porcentaje +
+                            "%"
+                          : "$" +
+                            calcularDiferenciasMensuales("blue").pesos}{" "}
+                      </div>
+                      <div className="w-24 h-8  text-red-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("mep").porcentaje + "%"
+                          : "$" +
+                            calcularDiferenciasMensuales("mep").pesos}{" "}
+                      </div>
+                      <div className="w-24 h-8  text-cyan-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("ccl").porcentaje + "%"
+                          : "$" +
+                            calcularDiferenciasMensuales("ccl").pesos}{" "}
+                      </div>
+                      <div className="w-24 h-8  text-pink-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("cripto").porcentaje +
+                            "%"
+                          : "$" + calcularDiferenciasMensuales("cripto").pesos}
+                      </div>
+                      <div className="w-24 h-8  text-yellow-200 font-semibold rounded-lg flex items-center justify-center">
+                        {porcentajeOmoneda === "porcentaje"
+                          ? calcularDiferenciasMensuales("tarjeta").porcentaje +
+                            "%"
+                          : "$" + calcularDiferenciasMensuales("tarjeta").pesos}
+                      </div>
+                    </div>
+                    <div className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs tracking-wider text-black">
+                      <div className="w-24 h-8  text-gray-200 font-semibold rounded-lg flex items-center justify-evenly text-center">
+                        VARIACION INTERANUAL
+                      </div>
+                      <div className="w-24 h-8  text-green-200 font-semibold rounded-lg flex items-center justify-center">
+                        OFICIAL
+                      </div>
+                      <div className="w-24 h-8  text-orange-200 font-semibold rounded-lg flex items-center justify-center">
+                        MAYORISTA
+                      </div>
+                      <div className="w-24 h-8  text-blue-200 font-semibold rounded-lg flex items-center justify-center">
+                        BLUE
+                      </div>
+                      <div className="w-24 h-8  text-red-200 font-semibold rounded-lg flex items-center justify-center">
+                        MEP
+                      </div>
+                      <div className="w-24 h-8  text-cyan-200 font-semibold rounded-lg flex items-center justify-center">
+                        CCL
+                      </div>
+                      <div className="w-24 h-8  text-pink-200 font-semibold rounded-lg flex items-center justify-center">
+                        CRIPTO
+                      </div>
+                      <div className="w-24 h-8  text-yellow-200 font-semibold rounded-lg flex items-center justify-center">
+                        TARJETA
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-1/12 h-full flex flex-col items-start justify-evenly text-xs tracking-wider text-black">
+                    <div className="w-2 h-8 bg-black font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-green-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-orange-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-blue-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-red-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-cyan-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-pink-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                    <div className="w-2 h-8 bg-yellow-400 font-semibold rounded-lg flex items-center justify-center"></div>
+                  </div>
                 </div>
               )}
             </div>

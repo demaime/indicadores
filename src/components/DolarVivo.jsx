@@ -187,7 +187,7 @@ export default function DolarVivo({ ultimos2Dias, porcentajeOmoneda }) {
 
   return (
     <>
-      <div className="w-full h-[85%] bg-gray-800 text-gray-100 flex">
+      <div className="w-full h-full bg-gray-800 text-gray-100 flex">
         <div className="h-full w-4/5 flex">
           <div className="h-full w-[15%] border-r border-gray-600 pl-4">
             <div className="w-full h-1/5 flex items-start justify-end text-xs flex-col text-yellow-200 tracking-wider">

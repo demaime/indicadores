@@ -61,6 +61,8 @@ export default function DolarNuevo() {
     abril: 0,
   });
 
+  const [promedios2023, setPromedios2023] = useState();
+
   const promedioOficial = parseFloat(promediosOficial2024[mesSeleccionado]);
   const promedioBlue = parseFloat(promediosBlue2024[mesSeleccionado]);
   const promedioMep = parseFloat(promediosMep2024[mesSeleccionado]);
@@ -162,6 +164,9 @@ export default function DolarNuevo() {
         const dataOficial2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataOficial2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataOficial2024[dataOficial2024.length - 1];
         const anteultimoResultado = dataOficial2024[dataOficial2024.length - 2];
@@ -178,7 +183,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataOficial2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -200,9 +205,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosOficial2024(promedios);
-
-        //GUARDAR LOS ULTIMOS DOS. SIEMPER SON LOS ULTIMOS 2 DIAS
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataOficial2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosOficial2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          oficial: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -210,6 +279,10 @@ export default function DolarNuevo() {
 
     fetchData();
   }, []);
+
+  console.log(
+    promedioOficial - parseFloat(promedios2023.oficial[mesSeleccionado])
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -220,6 +293,9 @@ export default function DolarNuevo() {
         // Calcular el promedio de ventas para cada mes
         const dataBlue2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
+        );
+        const dataBlue2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
         );
 
         const ultimoResultado = dataBlue2024[dataBlue2024.length - 1];
@@ -237,7 +313,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataBlue2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -260,7 +336,73 @@ export default function DolarNuevo() {
           ),
           // Agrega más meses si es necesario
         };
-        setPromediosBlue2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataBlue2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosBlue2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          blue: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -279,6 +421,9 @@ export default function DolarNuevo() {
         const dataMep2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataMep2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataMep2024[dataMep2024.length - 1];
         const anteultimoResultado = dataMep2024[dataMep2024.length - 2];
@@ -295,7 +440,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataMep2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -317,7 +462,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosMep2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataMep2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosMep2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          mep: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -336,6 +547,9 @@ export default function DolarNuevo() {
         const dataTarjeta2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataTarjeta2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataTarjeta2024[dataTarjeta2024.length - 1];
         const anteultimoResultado = dataTarjeta2024[dataTarjeta2024.length - 2];
@@ -352,7 +566,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataTarjeta2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -374,7 +588,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosTarjeta2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataTarjeta2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosTarjeta2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          tarjeta: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -393,6 +673,9 @@ export default function DolarNuevo() {
         const dataCcl2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataCcl2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataCcl2024[dataCcl2024.length - 1];
         const anteultimoResultado = dataCcl2024[dataCcl2024.length - 2];
@@ -409,7 +692,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataCcl2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -431,7 +714,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosCcl2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataCcl2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosCcl2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          ccl: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -450,6 +799,9 @@ export default function DolarNuevo() {
         const dataCripto2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataCripto2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataCripto2024[dataCripto2024.length - 1];
         const anteultimoResultado = dataCripto2024[dataCripto2024.length - 2];
@@ -466,7 +818,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataCripto2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -488,7 +840,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosCripto2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataCripto2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosCripto2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          cripto: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -507,6 +925,9 @@ export default function DolarNuevo() {
         const dataMayorista2024 = response.data.filter((cotizacion) =>
           cotizacion.fecha.startsWith("2024")
         );
+        const dataMayorista2023 = response.data.filter((cotizacion) =>
+          cotizacion.fecha.startsWith("2023")
+        );
 
         const ultimoResultado = dataMayorista2024[dataMayorista2024.length - 1];
         const anteultimoResultado =
@@ -524,7 +945,7 @@ export default function DolarNuevo() {
           ),
         ]);
 
-        const promedios = {
+        const promedios2024 = {
           enero: calcularPromedio(
             dataMayorista2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-01")
@@ -546,7 +967,73 @@ export default function DolarNuevo() {
             )
           ),
         };
-        setPromediosMayorista2024(promedios);
+        const promedios2023 = {
+          enero: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-01")
+            )
+          ),
+          febrero: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-02")
+            )
+          ),
+          marzo: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-03")
+            )
+          ),
+          abril: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-04")
+            )
+          ),
+          mayo: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-05")
+            )
+          ),
+          junio: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-07")
+            )
+          ),
+          agosto: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-08")
+            )
+          ),
+          septiembre: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-09")
+            )
+          ),
+          octubre: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-11")
+            )
+          ),
+          diciembre: calcularPromedio(
+            dataMayorista2023.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2023-12")
+            )
+          ),
+        };
+        setPromediosMayorista2024(promedios2024);
+        setPromedios2023((prevPromedios2023) => ({
+          ...prevPromedios2023,
+          mayorista: promedios2023,
+        }));
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -708,7 +1195,11 @@ export default function DolarNuevo() {
     return { pesos: diferenciaPesos, porcentaje: diferenciaPorcentaje };
   };
 
-  console.log(calcularDiferenciasMensuales("oficial"));
+  function calcularDiferenciaPorcentual(valor1, valor2) {
+    const diferencia = valor2 - valor1;
+    const porcentaje = (diferencia / valor1) * 100;
+    return Math.round(porcentaje * 100) / 100;
+  }
 
   return (
     <div className="w-full h-full bg-gray-800 text-gray-100">
@@ -1025,25 +1516,92 @@ export default function DolarNuevo() {
                         VARIACION INTERANUAL
                       </div>
                       <div className="w-24 h-8  text-green-200 font-semibold rounded-lg flex items-center justify-center">
-                        OFICIAL
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioOficial -
+                              parseFloat(promedios2023.oficial[mesSeleccionado])
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.oficial[mesSeleccionado],
+                              promedioOficial
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-orange-200 font-semibold rounded-lg flex items-center justify-center">
-                        MAYORISTA
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioMayorista -
+                              parseFloat(
+                                promedios2023.mayorista[mesSeleccionado]
+                              )
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.mayorista[mesSeleccionado],
+                              promedioMayorista
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-blue-200 font-semibold rounded-lg flex items-center justify-center">
-                        BLUE
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioBlue -
+                              parseFloat(promedios2023.blue[mesSeleccionado])
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.blue[mesSeleccionado],
+                              promedioBlue
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-red-200 font-semibold rounded-lg flex items-center justify-center">
-                        MEP
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioMep -
+                              parseFloat(promedios2023.mep[mesSeleccionado])
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.mep[mesSeleccionado],
+                              promedioMep
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-cyan-200 font-semibold rounded-lg flex items-center justify-center">
-                        CCL
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioCcl -
+                              parseFloat(promedios2023.ccl[mesSeleccionado])
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.ccl[mesSeleccionado],
+                              promedioCcl
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-pink-200 font-semibold rounded-lg flex items-center justify-center">
-                        CRIPTO
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioCripto -
+                              parseFloat(promedios2023.cripto[mesSeleccionado])
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.cripto[mesSeleccionado],
+                              promedioCripto
+                            ) + "%"}
                       </div>
                       <div className="w-24 h-8  text-yellow-200 font-semibold rounded-lg flex items-center justify-center">
-                        TARJETA
+                        {porcentajeOmoneda === "moneda"
+                          ? "$" +
+                            (
+                              promedioTarjeta -
+                              parseFloat(
+                                promedios2023.tarjeta[mesSeleccionado]
+                              )
+                            ).toFixed(2)
+                          : calcularDiferenciaPorcentual(
+                              promedios2023.tarjeta[mesSeleccionado],
+                              promedioTarjeta
+                            ) + "%"}
                       </div>
                     </div>
                   </div>
@@ -1131,10 +1689,12 @@ export default function DolarNuevo() {
         <div className="w-full h-[15%] bg-pink-200 font-semibold tracker-wider text-black flex items-center justify-center ">
           COTIZACION AL DIA
         </div>
-        <DolarVivo
-          ultimos2Dias={ultimos2Dias}
-          porcentajeOmoneda={porcentajeOmoneda}
-        />
+        <div className="w-full h-[85%]">
+          <DolarVivo
+            ultimos2Dias={ultimos2Dias}
+            porcentajeOmoneda={porcentajeOmoneda}
+          />
+        </div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ DOLAR: Ver si se puede sumar variación diaria, en absolutos y porcentajes
 
 TRANSPORTE: Sumar litro de nafta, peajes
 
-ALQUILER: Comparativa de dos ambientes.
+ALQUILER: Comparativa de dos ambientes. (descripcion)
 
 GASTOS COTIDIANOS: Si se puede elegir si es el valor $ o el %
 

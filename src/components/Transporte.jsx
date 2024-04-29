@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   Tooltip,
@@ -11,48 +9,48 @@ import {
   Legend,
   Line,
 } from "recharts";
-
-const CustomizedLabelBarras = ({ x, y, stroke, value }) => {
-  return (
-    <text
-      x={x}
-      y={y}
-      dy={"10%"}
-      dx={"8%"}
-      fill={stroke}
-      fontSize={12}
-      className="font-bold"
-      textAnchor="middle"
-    >
-      {`$${value}`}
-    </text>
-  );
-};
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 const data = [
   {
-    Mes: "Diciembre",
+    Mes: "diciembre",
     Subte: 80,
     Tren: 29.86,
     Colectivo: 52,
+    Nafta: 123,
+    "Peaje Norte": 132,
+    "Peaje Sur": 145,
+    Patente: 102,
   },
   {
-    Mes: "Enero",
+    Mes: "enero",
     Subte: 110,
     Tren: 43.38,
     Colectivo: 76.92,
+    Nafta: 123,
+    "Peaje Norte": 132,
+    "Peaje Sur": 145,
+    Patente: 111,
   },
   {
-    Mes: "Febrero",
+    Mes: "febrero",
     Subte: 125,
     Tren: 130,
     Colectivo: 270,
+    Nafta: 123,
+    "Peaje Norte": 132,
+    "Peaje Sur": 145,
+    Patente: 164,
   },
   {
-    Mes: "Marzo",
+    Mes: "marzo",
     Subte: 125,
     Tren: 130,
     Colectivo: 270,
+    Nafta: 123,
+    "Peaje Norte": 132,
+    "Peaje Sur": 145,
+    Patente: 168,
   },
 ];
 
@@ -152,58 +150,93 @@ const CustomizedLabelColectivo = ({ x, y, stroke, value, index }) => {
 };
 
 export default function Transporte() {
+  const [mesSeleccionadoIndex, setMesSeleccionadoIndex] = useState(0);
+
+  const cambiarMes = (direccion) => {
+    if (direccion === "anterior") {
+      setMesSeleccionadoIndex((prevIndex) =>
+        prevIndex === 0 ? data.length - 1 : prevIndex - 1
+      );
+    } else {
+      setMesSeleccionadoIndex((prevIndex) =>
+        prevIndex === data.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
   return (
-    <div className="h-full w-full flex">
-      <div className="h-full w-1/3 bg-yellow-200 flex flex-col">
-        <div className="h-1/3 w-full  flex flex-col items-center">
-          <p className="w-full text-start pl-2 font-bold">Subte</p>
-          <ResponsiveContainer width="80%" height="80%">
-            <BarChart width={150} height={40} data={data}>
-              <XAxis dataKey="Mes" />
-              <YAxis />
-              <Bar
-                dataKey="Subte"
-                fill="#facc15"
-                label={<CustomizedLabelBarras />}
-              />
-              <Tooltip />
-            </BarChart>
-          </ResponsiveContainer>
+    <div className="h-full w-full flex relative">
+      <div className="w-1/2 h-full bg-gray-700">
+        <div className="w-full h-8 absolute top-1/2 justify-center flex items-center">
+          <div className="w-1/4 flex h-full bg-gray-500 justify-evenly rounded-lg flex items-center">
+            <RiArrowLeftSLine
+              className=" cursor-pointer rounded-full bg-yellow-400"
+              color="black"
+              onClick={() => cambiarMes("anterior")}
+            />{" "}
+            <select
+              value={data[mesSeleccionadoIndex].Mes}
+              onChange={(e) =>
+                setMesSeleccionadoIndex(
+                  data.findIndex((mesData) => mesData.Mes === e.target.value)
+                )
+              }
+              className="text-gray-300 font-semibold bg-transparent w-2/3 text-center appearance-none"
+            >
+              {data.map((mesData, index) => (
+                <option key={index} value={mesData.Mes} className="bg-gray-900">
+                  {mesData.Mes.toLocaleUpperCase()}
+                </option>
+              ))}
+            </select>
+            <RiArrowRightSLine
+              className="cursor-pointer rounded-full bg-yellow-400"
+              color="black"
+              onClick={() => cambiarMes("siguiente")}
+            />
+          </div>
         </div>
-        <div className="h-1/3 w-full  flex flex-col items-center border-t border-white  ">
-          <p className="w-full text-start pl-2 font-bold">Tren</p>
-          <ResponsiveContainer width="80%" height="80%">
-            <BarChart width={150} height={40} data={data}>
-              <XAxis dataKey="Mes" />
-              <YAxis />
-              <Bar
-                dataKey="Tren"
-                fill="#facc15"
-                label={<CustomizedLabelBarras />}
-              />
+        <div className="w-full h-1/2">
+          <ResponsiveContainer>
+            <LineChart
+              className="p-2 font-bold text-white"
+              width={1030}
+              height={350}
+              data={data}
+              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+              style={{ color: "white" }}
+            >
+              <defs />
+              <XAxis dataKey="Mes" interval={0} tick={{ fontSize: 12 }} />
+              <YAxis tickFormatter={(value) => `$${value}`} />
+              <CartesianGrid strokeDasharray="3 3" />
               <Tooltip />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="h-1/3 w-full  flex flex-col items-center border-t border-white">
-          <p className="w-full text-start pl-2 font-bold">Colectivo</p>
-          <ResponsiveContainer width="80%" height="80%">
-            <BarChart width={150} height={40} data={data}>
-              <XAxis dataKey="Mes" />
-              <YAxis />
-              <Bar
-                dataKey="Colectivo"
-                fill="#facc15"
-                label={<CustomizedLabelBarras />}
+              <Legend verticalAlign="bottom" height={36} />
+
+              {/* Línea para la serie "Subte" */}
+              <Line
+                type="monotone"
+                dataKey="Nafta"
+                stroke="#f6893b"
+                strokeWidth={2}
+                dot={{ stroke: "#16a34a", strokeWidth: 2 }}
+                label={<CustomizedLabelSubte stroke="#f6893b" />}
               />
-              <Tooltip />
-            </BarChart>
+
+              <Line
+                type="monotone"
+                dataKey="Patente"
+                stroke="#f9f943"
+                strokeWidth={2}
+                dot={{ stroke: "#f9f943", strokeWidth: 2 }}
+                label={<CustomizedLabelTren stroke="#f9f943" />}
+              />
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </div>
-      <div className="h-full w-2/3 flex flex-col">
-        <div className="w-full h-2/3">
-          <ResponsiveContainer className="p-2">
+      <div className="w-1/2 h-full bg-white">
+        <div className="w-full h-1/2">
+          <ResponsiveContainer>
             <LineChart
               className="p-2 font-bold text-white"
               width={1030}
@@ -251,26 +284,18 @@ export default function Transporte() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="w-full h-1/3 bg-gray-300 flex flex-col">
-          <div className="w-full h-1/6 bg-gray-500 text-white flex items-center justify-center font-bold">
-            AUMENTO ACUMULADO ANUAL
-          </div>
-          <div className="w-full h-5/6 flex items-center justify-evenly">
-            <div className="w-1/3 h-full text-[#16a34a] flex flex-col items-center justify-evenly">
-              <img className="h-24" src="/assets/subte.png" alt="" />
-              <p className="text-4xl font-bold">51.13%</p>
-            </div>
-            <div className="w-1/3 h-full text-[#2563eb] flex flex-col items-center justify-evenly">
-              <img className="h-24" src="/assets/tren.png" alt="" />
-              <p className="text-4xl font-bold">245%</p>
-            </div>
-            <div className="w-1/3 h-full text-[#dc2626] flex flex-col items-center justify-evenly">
-              <img className="h-24" src="/assets/bondi.png" alt="" />
-              <p className="text-4xl font-bold">296.25%</p>
-            </div>
+        <div className="h-1/2 w-full">
+          <div className="h-[10%] w-full"></div>
+          <div className="h-[90%] w-1/4 flex flex-col items-center justify-evenly">
+            <img src="/assets/subte.png" alt="" className="w-16 h-16 " />
+            <img src="/assets/tren.png" alt="" className="w-16 h-16 " />
+            <img src="/assets/bondi.png" alt="" className="w-16 h-16 " />
           </div>
         </div>
       </div>
     </div>
   );
 }
+//#ec68ff auto
+//#f6893b nafta
+//#f9f943 peaje

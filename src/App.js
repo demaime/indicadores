@@ -1,14 +1,12 @@
 import InflacionDesglose from "./components/InflacionDesglose.jsx";
 import Portada from "./components/Portada.jsx";
 import Dolar from "./components/Dolar.jsx";
-import DolarVivo from "./components/DolarVivo.jsx";
-import DolarDesglose from "./components/DolarDesglose.jsx";
 import Encabezado from "./components/Encabezado.jsx";
 import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
-import DolarNuevo from "./components/DolarNuevo.jsx";
+
 // import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
 export default function App() {
@@ -31,26 +29,16 @@ export default function App() {
         />
         <CanastaSalario />
       </section>
-      <section className="section">
+      <section className="section" id="dolar">
         <Encabezado
-          title={"DOLAR NUEVO - *EN DESARROLLO*"}
+          title={"DOLAR"}
           description={
             "DolarAPI - Registro histórico y valores promedio del dolar y sus distintas cotizaciones"
           }
         />
-        <DolarNuevo />
+        <Dolar />
       </section>
-      <section className="section bg-gray-800 text-white" id="dolar">
-        <Encabezado title={"DOLAR"} />
-        <div className="w-full h-2/3 flex">
-          <div className="w-2/3">
-            <Dolar />
-          </div>
-          <div className="w-2/3">
-            <DolarDesglose />
-          </div>
-        </div>
-      </section>
+
       <section className="section" id="transporte">
         <Encabezado title={"TRANSPORTE"} />
         <Transporte />

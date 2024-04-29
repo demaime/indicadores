@@ -40,7 +40,12 @@ export default function App() {
       </section>
 
       <section className="section" id="transporte">
-        <Encabezado title={"TRANSPORTE"} />
+        <Encabezado
+          title={"TRANSPORTE"}
+          description={
+            "Valor del litro de nafta, peajes, pasajes de transportes públicos y cantidad de patentamientos vehiculares a nivel nacional"
+          }
+        />
         <Transporte />
       </section>
 

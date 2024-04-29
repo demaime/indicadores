@@ -48,8 +48,8 @@ const data = [
     Tren: 130,
     Colectivo: 270,
     Nafta: 123,
-    "Peaje Norte": 132,
-    "Peaje Sur": 145,
+    "Peaje Norte": 54,
+    "Peaje Sur": 65,
     Patente: 168,
   },
 ];
@@ -224,7 +224,7 @@ export default function Transporte() {
 
               <Line
                 type="monotone"
-                dataKey="Patente"
+                dataKey="Peaje Norte"
                 stroke="#f9f943"
                 strokeWidth={2}
                 dot={{ stroke: "#f9f943", strokeWidth: 2 }}
@@ -232,6 +232,14 @@ export default function Transporte() {
               />
             </LineChart>
           </ResponsiveContainer>
+        </div>
+        <div className="h-1/2 w-full">
+          <div className="h-[10%] w-full"></div>
+          <div className="h-[90%] w-1/4 flex flex-col items-center justify-evenly">
+            <img src="/assets/peaje.png" alt="" className="w-16 h-16 " />
+            <img src="/assets/nafta.png" alt="" className="w-16 h-16 " />
+            <img src="/assets/auto.png" alt="" className="w-16 h-16 " />
+          </div>
         </div>
       </div>
       <div className="w-1/2 h-full bg-white">

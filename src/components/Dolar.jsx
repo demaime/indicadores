@@ -1222,11 +1222,11 @@ export default function Dolar() {
             </div>
             <div
               id="canvachart"
-              className="h-[90%] w-full flex flex-col items-center justify-center relative p-2"
+              className="h-[90%] w-full flex flex-col items-center justify-start relative p-2"
             >
               <CanvasJSChart
                 options={options}
-                containerProps={{ width: "100%", height: "85%" }}
+                containerProps={{ width: "100%", height: "90%" }}
               />
             </div>
           </div>

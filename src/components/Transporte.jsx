@@ -436,18 +436,19 @@ export default function Transporte() {
         </div>
       </div>
       <div className="w-1/4 h-full bg-gray-300">
-        <div className="w-full h-1/2">
-          <ResponsiveContainer width="100%" height="90%">
+        <div className="w-full h-1/2 flex items-center justify-center">
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart
               className="p-2 font-bold text-white"
               layout="vertical"
               data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 0, right: 30, left: 30, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" />
               <YAxis dataKey="Mes" type="category" tick={{ fill: "#1f2937" }} />
               <Tooltip />
+              <Legend />
               <Bar
                 label={{
                   fill: "#1f2937",

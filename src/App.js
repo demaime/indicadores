@@ -6,6 +6,7 @@ import Transporte from "./components/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
+import Ocio from "./components/Ocio.jsx";
 
 // import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
@@ -58,10 +59,10 @@ export default function App() {
         <GastosCotidianos />
       </section>
 
-      {/* <section className="section" id="comparativa">
-        <Encabezado title={"COMPARATIVA"} />
-        <Comparativa />
-      </section> */}
+      <section className="section" id="ocio">
+        <Encabezado title={"OCIO"} />
+        <Ocio />
+      </section>
     </div>
   );
 }

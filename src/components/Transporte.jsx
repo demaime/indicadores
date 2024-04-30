@@ -533,8 +533,6 @@ export default function Transporte() {
               <CartesianGrid strokeDasharray="3 3" />
               <Tooltip />
               <Legend verticalAlign="bottom" height={36} />
-
-              {/* Línea para la serie "Subte" */}
               <Line
                 type="monotone"
                 dataKey="Subte"
@@ -543,8 +541,6 @@ export default function Transporte() {
                 dot={{ stroke: "#44f56c", strokeWidth: 2 }}
                 label={<CustomizedLabelSubte stroke="#44f56c" />}
               />
-
-              {/* Línea para la serie "Tren" */}
               <Line
                 type="monotone"
                 dataKey="Tren"
@@ -553,8 +549,6 @@ export default function Transporte() {
                 dot={{ stroke: "#5f91ff", strokeWidth: 2 }}
                 label={<CustomizedLabelTren stroke="#5f91ff" />}
               />
-
-              {/* Línea para la serie "Colectivo" */}
               <Line
                 type="monotone"
                 dataKey="Colectivo"
@@ -741,7 +735,7 @@ export default function Transporte() {
                     <div className="w-full h-1/3 text-xs text-[#f9d900] font-semibold flex items-center justify-center">
                       Valor
                     </div>
-                    <div className="w-full h-2/3 text-2xl font-bold">
+                    <div className="w-full h-2/3 text-xl font-bold">
                       $ {data[mesSeleccionadoIndex].PeajeNorte}
                     </div>
                   </div>
@@ -799,7 +793,7 @@ export default function Transporte() {
                     <div className="w-full h-1/3 text-xs text-[#feef6a] font-semibold flex items-center justify-center">
                       Valor
                     </div>
-                    <div className="w-full h-2/3 text-2xl font-bold">
+                    <div className="w-full h-2/3 text-xl font-bold">
                       $ {data[mesSeleccionadoIndex].PeajeOeste}
                     </div>
                   </div>

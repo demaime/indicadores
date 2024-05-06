@@ -71,3 +71,7 @@ input[type="checkbox"]:checked + label .checkbox {
 #canvachart a {
   display: none;
 }
+
+.writing-vertical {
+  writing-mode: vertical-lr;
+}

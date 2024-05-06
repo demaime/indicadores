@@ -4,7 +4,7 @@ import ServiciosMes from "./ServiciosMes";
 export default function GastosCotidianos() {
   const [mesSeleccionado, setMesSeleccionado] = useState("marzo");
 
-  const meses = ["marzo", "abril", "mayo"]; // Puedes agregar más meses aquí
+  const meses = ["marzo", "abril", "mayo"];
 
   return (
     <div className="w-full h-full bg-gray-200 flex flex-col">
@@ -21,6 +21,7 @@ export default function GastosCotidianos() {
           </button>
         ))}
       </div>
+
       <ServiciosMes mesData={mesSeleccionado} />
     </div>
   );

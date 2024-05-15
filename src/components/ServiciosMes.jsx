@@ -49,9 +49,9 @@ const data = {
   },
 };
 
-const ServiciosMes = ({ mesData }) => {
+const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
   const [showServicios, setShowServicios] = useState(true);
-  const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
+
   const toggleSection = () => {
     setShowServicios(!showServicios);
   };
@@ -75,28 +75,7 @@ const ServiciosMes = ({ mesData }) => {
       ) : (
         ""
       )}
-      <div className="absolute w-6 h-full left-0 text-gray-700">
-        <div
-          onClick={() => setGraficoOEtiquetas(true)}
-          className={`h-1/2 rounded-r-3xl cursor-pointer writing-vertical w-full flex items-center justify-center text-xs font-bold tracking-wider ${
-            graficoOEtiquetas
-              ? "bg-orange-300 border-r-2 border-orange-500"
-              : "bg-orange-200 border-r-2 border-orange-300"
-          }`}
-        >
-          TARJETAS
-        </div>
-        <div
-          onClick={() => setGraficoOEtiquetas(false)}
-          className={`h-1/2 rounded-r-3xl cursor-pointer writing-vertical w-full flex items-center justify-center text-xs font-bold tracking-wider ${
-            graficoOEtiquetas
-              ? "bg-orange-200 border-r-2 border-orange-300"
-              : "bg-orange-300 border-r-2 border-orange-500"
-          }`}
-        >
-          GRAFICO
-        </div>{" "}
-      </div>
+
       {graficoOEtiquetas ? (
         <div className="w-4/5 flex h-4/5 ">
           <div className="w-1/3 h-full flex flex-col justify-between pl-4 items-start">

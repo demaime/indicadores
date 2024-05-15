@@ -833,7 +833,6 @@ export default function Transporte() {
                 </div>
               )}
             </div>
-            <div className="w-full flex items-center justify-between h-1/2"></div>
           </div>
         </div>
       </div>

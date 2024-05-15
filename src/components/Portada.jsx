@@ -54,17 +54,11 @@ export default function Portada() {
             GASTOS COTIDIANOS CABA
           </a>
 
-          {/* <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#comparativa"
-          >
-            COMPARATIVA
-          </a> */}
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-            href="#"
+            href="#ocio"
           >
-            EJEMPLO 7
+            OCIO
           </a>
         </div>
       </div>

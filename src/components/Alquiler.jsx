@@ -119,7 +119,7 @@ export default function Alquiler() {
         <div className="w-full bg-gray-500 justify-center items-center h-1/5 flex font-black">
           <div className="flex items-center justify-around w-1/4">
             <button onClick={prevMonth}>{"<"}</button>
-            <div className="w-full bg-gray-500 text-center h-1/5 text-gray-100 tracking-wider">
+            <div className="w-4/5 bg-gray-500 text-center h-full text-gray-100 tracking-wider">
               {data[currentMonthIndex].mes}
             </div>
             <button onClick={nextMonth}>{">"}</button>

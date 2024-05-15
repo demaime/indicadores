@@ -76,16 +76,11 @@ export default function Encabezado({ title, description }) {
                     GASTOS COTIDIANOS
                   </li>
                 </a>
-                {/* <a href="#comparativa">
-                <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
-                  <IoArrowRedoCircleOutline className="mr-4" />
-                  COMPARATIVA
-                </li>
-              </a> */}
-                <a href="#">
+
+                <a href="#ocio">
                   <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                     <IoArrowRedoCircleOutline className="mr-4" />
-                    EJEMPLO 7
+                    OCIO
                   </li>
                 </a>
               </ul>

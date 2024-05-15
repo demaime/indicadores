@@ -79,6 +79,23 @@ const dataNacion = [
       Educación: 36.8,
     },
   },
+  {
+    Abril: {
+      GENERAL: 8.8,
+      "Bienes y servicios": 5.7,
+      Transporte: 6.3,
+      Comunicación: 14.2,
+      "Recreación y cultura": 7.1,
+      "Equipamiento y mantenimiento del hogar": 6.5,
+      "Bebidas alcohólicas y tabaco": 5.5,
+      Salud: 9.1,
+      "Alimentos y bebidas no alcohólicas": 6,
+      "Restaurantes y hoteles": 7.3,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 35.6,
+      "Prendas de vestir y calzado": 9.6,
+      Educación: 8.6,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -154,6 +171,24 @@ const dataCaba = [
       "Cuidado personal, protección social y otros": 10,
     },
   },
+  {
+    Abril: {
+      GENERAL: 9.8,
+      "Bienes y servicios": 11.7,
+      Transporte: 4.4,
+      Comunicación: 11.7,
+      "Recreación y cultura": 3.6,
+      "Equipamiento y mantenimiento del hogar": 6.9,
+      "Bebidas alcohólicas y tabaco": 5.8,
+      Salud: 13,
+      "Alimentos y bebidas no alcohólicas": 5.1,
+      "Restaurantes y hoteles": 6.1,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 22.9,
+      "Prendas de vestir y calzado": 6.2,
+      Educación: 15.1,
+      "Cuidado personal, protección social y otros": 6.5,
+    },
+  },
 ];
 
 const coloresCategorias = {
@@ -177,21 +212,25 @@ const variacionAcumuladaNacion = {
   Enero: "20.6%",
   Febrero: "36.6%",
   Marzo: "51.6%",
+  Abril: "65%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
   Febrero: "38.9%",
   Marzo: "57.3%",
+  Abril: "67.1%",
 };
 const variacionAnualNacion = {
   Enero: "254.2%",
   Febrero: "276.2%",
   Marzo: "287.9%",
+  Abril: "289.4%",
 };
 const variacionAnualCaba = {
   Enero: "238.5%",
   Febrero: "264.5%",
   Marzo: "285.3%",
+  Abril: "292.5%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {

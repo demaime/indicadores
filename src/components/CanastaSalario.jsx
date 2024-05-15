@@ -12,29 +12,33 @@ import {
 } from "recharts";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-const meses = ["enero", "febrero", "marzo"];
+const meses = ["enero", "febrero", "marzo", "abril"];
 
 const canastaAlimentariaNacio = [
   { mes: "enero", valor: 285561, variacion: 18.6, acumulada: 18.6 },
   { mes: "febrero", valor: 322851, variacion: 13.1, acumulada: 34.4 },
   { mes: "marzo", valor: 358049, variacion: 10.9, acumulada: 48.8 },
+  { mes: "abril", valor: 373044, variacion: 4.2, acumulada: 55 },
 ];
 const canastaTotalNacio = [
   { mes: "enero", valor: 596823, variacion: 20.4, acumulada: 20.4 },
   { mes: "febrero", valor: 690902, variacion: 15.8, acumulada: 39.4 },
   { mes: "marzo", valor: 773385, variacion: 11.94, acumulada: 56 },
+  { mes: "abril", valor: 828158, variacion: 7.1, acumulada: 67 },
 ];
 
 const canastaAlimentariaCaba = [
   { mes: "enero", valor: 350564, variacion: 20.7, acumulada: 20.7 },
   { mes: "febrero", valor: 402752, variacion: 14.9, acumulada: 38.7 },
   { mes: "marzo", valor: 442239, variacion: 9.8, acumulada: 52.3 },
+  { mes: "abril", valor: 467177, variacion: 5.63, acumulada: 0 },
 ];
 
 const canastaTotalCaba = [
   { mes: "enero", valor: 590042, variacion: 19.3, acumulada: 19.3 },
   { mes: "febrero", valor: 684115, variacion: 15.9, acumulada: 38.3 },
   { mes: "marzo", valor: 766146, variacion: 11.99, acumulada: 54.9 },
+  { mes: "abril", valor: 825809, variacion: 7.78, acumulada: 0 },
 ];
 
 const smvm = [
@@ -42,6 +46,7 @@ const smvm = [
   { mes: "enero", salario: 156000 },
   { mes: "febrero", salario: 180000 },
   { mes: "marzo", salario: 202800 },
+  { mes: "abril", salario: 221252 },
 ];
 
 export default function CanastaSalario() {

@@ -54,6 +54,16 @@ const data = [
     PeajeOeste: 910.43,
     Patentamiento: 17282,
   },
+  {
+    Mes: "abril",
+    Subte: 125,
+    Tren: 130,
+    Colectivo: 270,
+    Nafta: 837,
+    PeajeNorte: 946.25,
+    PeajeOeste: 2276.08,
+    Patentamiento: 0,
+  },
 ];
 
 const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
@@ -315,6 +325,15 @@ export default function Transporte() {
       PeajeNorte: 49,
       PeajeOeste: 49,
     },
+    {
+      Mes: "abril",
+      Subte: 51.14,
+      Tren: 244.96,
+      Colectivo: 298.93,
+      Nafta: 37.47,
+      PeajeNorte: 199,
+      PeajeOeste: 199,
+    },
   ];
 
   const variacionInteranualPatentes = {
@@ -322,6 +341,7 @@ export default function Transporte() {
     enero: -33.5,
     febrero: -14.2,
     marzo: -31.1,
+    abril: 0,
   };
 
   return (

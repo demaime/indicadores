@@ -14,23 +14,23 @@ const data = {
     cerveza: 2005.49,
     cafe: 3200,
     carne: 8487.04,
-    pizza: 12450,
+    coca: 2029.38,
     fideo: 1235.25,
   },
   abril: {
-    alquiler: "-",
-    luz: "-",
+    alquiler: 290615,
+    luz: 7699,
     gas: "-",
-    internet: "-",
-    celular: "-",
-    pan: "-",
-    leche: "-",
-    yerba: "-",
-    cerveza: "-",
-    cafe: "-",
-    carne: "-",
-    pizza: "-",
-    fideo: "-",
+    internet: 27999,
+    celular: 7988,
+    pan: 2086.96,
+    leche: 1196.96,
+    yerba: 3869.81,
+    cerveza: 2091.11,
+    cafe: 3200,
+    carne: 9022.9,
+    coca: 2030.26,
+    fideo: 1180.75,
   },
   mayo: {
     alquiler: "-",
@@ -44,7 +44,7 @@ const data = {
     cerveza: "-",
     cafe: "-",
     carne: "-",
-    pizza: "-",
+    coca: "-",
     fideo: "-",
   },
 };
@@ -248,16 +248,16 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
             <div className="w-1/3 h-full flex flex-col justify-between pr-4 items-end">
               <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pr-4 justify-around shadow-xl">
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
-                  PIZZA
+                  COCA COLA
                 </div>
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
-                  <img src="/assets/pizza.png" alt="" />
+                  <img src="/assets/coca.png" alt="" />
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
-                    {data[mesData].pizza !== "-"
-                      ? `$${formatNumber(data[mesData].pizza)}`
+                    {data[mesData].coca !== "-"
+                      ? `$${formatNumber(data[mesData].coca)}`
                       : "-"}
                   </div>
                 </div>

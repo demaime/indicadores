@@ -28,6 +28,12 @@ const data = [
     norte: 372792,
     suroeste: 267105,
   },
+  {
+    mes: "Abril",
+    caba: 430332,
+    norte: 383514,
+    suroeste: 267105,
+  },
 ];
 
 export default function Alquiler() {
@@ -110,7 +116,7 @@ export default function Alquiler() {
       cumulativeVariation += parseFloat(calculateMonthlyVariation(location, i));
     }
 
-    return cumulativeVariation;
+    return cumulativeVariation.toFixed(2);
   };
 
   return (

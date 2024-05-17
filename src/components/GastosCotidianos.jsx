@@ -5,7 +5,7 @@ export default function GastosCotidianos() {
   const [mesSeleccionado, setMesSeleccionado] = useState("marzo");
   const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
 
-  const meses = ["marzo", "abril", "mayo"];
+  const meses = ["marzo", "abril"];
 
   return (
     <div className="w-full h-full bg-gray-200 flex flex-col relative">

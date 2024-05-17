@@ -33,21 +33,6 @@ const data = {
     coca: 2030.26,
     fideo: 1180.75,
   },
-  mayo: {
-    alquiler: "-",
-    luz: "-",
-    gas: "-",
-    internet: "-",
-    celular: "-",
-    pan: "-",
-    leche: "-",
-    yerba: "-",
-    cerveza: "-",
-    cafe: "-",
-    carne: "-",
-    coca: "-",
-    fideo: "-",
-  },
 };
 
 const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {

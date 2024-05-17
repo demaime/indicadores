@@ -36,5 +36,11 @@ INDUSTRIA PYME (SLIDE)
 
 ---
 
-INFLACION: PREGUNTAR VARIACION ACUMULADA ANUAL CABA ABRIL (VALOR DEL EXCEL VS VALOR DEL INFORME)
 TRANSPORTE: ACUMULADA ANUAL, VER DE DONDE CULO LA SAQUE- AGREGAR EXCEPCION A PATENTAMIENTOS PORQUE ES TRIMESTRAL
+
+INDICE DE VENTAS EN SUPERMERCADO
+DOLAR: VENTA Y NO VALOR
+nivel de actividad y nivel de consunmo
+slide MACRO: Grandes indicadores trimestralews (desempleo, indigencia, actividad pyme, consumo mayorista, minurista, capacidad instalada de la industria)
+
+FUENTES!!

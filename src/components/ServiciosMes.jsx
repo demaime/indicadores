@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
+import GraficoGastosCotidianos from "./GraficoGastosCotidianos";
 
 const data = {
   marzo: {
@@ -314,9 +315,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
           )}
         </div>
       ) : (
-        <div className="w-full h-full flex items-center justify-center">
-          GRAFICO
-        </div>
+        <GraficoGastosCotidianos data={data} />
       )}
     </div>
   );

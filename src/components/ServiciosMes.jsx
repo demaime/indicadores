@@ -16,7 +16,7 @@ const data = {
     cafe: 3200,
     carne: 8487.04,
     coca: 2029.38,
-    fideo: 1235.25,
+    fideos: 1235.25,
   },
   abril: {
     alquiler: 290615,
@@ -31,9 +31,40 @@ const data = {
     cafe: 3200,
     carne: 9022.9,
     coca: 2030.26,
-    fideo: 1180.75,
+    fideos: 1180.75,
   },
 };
+
+const calculateSingleVariation = (current, previous) => {
+  if (current === "-" || previous === "-") return "-";
+  const currentNumber = parseFloat(current);
+  const previousNumber = parseFloat(previous);
+  if (isNaN(currentNumber) || isNaN(previousNumber)) return "-";
+  const variation = ((currentNumber - previousNumber) / previousNumber) * 100;
+  return `${variation.toFixed(2)}%`;
+};
+
+const getVariations = (data) => {
+  const months = Object.keys(data);
+  const variations = {};
+
+  for (let i = 1; i < months.length; i++) {
+    const currentMonth = months[i];
+    const previousMonth = months[i - 1];
+    variations[currentMonth] = {};
+
+    for (const category in data[currentMonth]) {
+      variations[currentMonth][category] = calculateSingleVariation(
+        data[currentMonth][category],
+        data[previousMonth][category]
+      );
+    }
+  }
+
+  return variations;
+};
+
+const variaciones = getVariations(data);
 
 const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
   const [showServicios, setShowServicios] = useState(true);
@@ -123,7 +154,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               </div>
               <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 {" "}
-                <img src="/assets/celu.png" alt="" />
+                <img src="/assets/celular.png" alt="" />
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
@@ -216,15 +247,15 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
                   {" "}
                   <img
-                    src="/assets/fideo.png"
+                    src="/assets/fideos.png"
                     alt=""
                     className="h-full w-full"
                   />
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
-                    {data[mesData].fideo !== "-"
-                      ? `$${formatNumber(data[mesData].fideo)}`
+                    {data[mesData].fideos !== "-"
+                      ? `$${formatNumber(data[mesData].s)}`
                       : "-"}
                   </div>
                 </div>
@@ -300,7 +331,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
           )}
         </div>
       ) : (
-        <GraficoGastosCotidianos data={data} />
+        <GraficoGastosCotidianos
+          data={data}
+          variaciones={variaciones}
+          mesData={mesData}
+        />
       )}
     </div>
   );

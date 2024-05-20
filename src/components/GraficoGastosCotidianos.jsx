@@ -7,10 +7,13 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  LabelList,
 } from "recharts";
 
-export default function GraficoGastosCotidianos({ data }) {
+export default function GraficoGastosCotidianos({
+  data,
+  variaciones,
+  mesData,
+}) {
   const CustomizedAxisTick = ({ x, y, payload }) => {
     return (
       <g transform={`translate(${x},${y})`}>
@@ -58,8 +61,14 @@ export default function GraficoGastosCotidianos({ data }) {
     yerba: "#3b81b5",
     coca: "#FFC0CB",
     cerveza: "#ADC2E2",
-    fideo: "#a464d1",
+    fideos: "#a464d1",
   };
+
+  const categories = Object.keys(data[Object.keys(data)[0]]).filter(
+    (category) => category !== "alquiler" && category !== "internet"
+  );
+
+  console.log(mesData);
 
   return (
     <div className="w-full h-full flex items-center justify-center bg-gray-600">
@@ -116,11 +125,53 @@ export default function GraficoGastosCotidianos({ data }) {
         </ResponsiveContainer>
       </div>
       <div className="w-1/3 h-full flex">
-        <div className="w-1/2 h-full flex items-center justify-start">
-          <div className="w-[80%] h-[80%] bg-gray-400  rounded-xl"></div>
+        <div className="w-1/3 h-full flex items-center justify-start">
+          <div className="w-[90%] h-[80%] bg-gray-500  rounded-xl px-4">
+            {" "}
+            <ul className="w-full h-full flex flex-col items-center justify-evenly">
+              {categories.map((category) => (
+                <li
+                  className="text-black font-semibold flex items-center justify-between w-[90%] h-8 rounded-xl"
+                  key={category}
+                >
+                  <div
+                    className="w-10 h-6 rounded-full border-r-4 pr-4"
+                    style={{
+                      // backgroundColor: colors[category],
+                      borderColor: colors[category],
+                    }}
+                  >
+                    <img
+                      src={`/assets/${category}.png`}
+                      alt={category}
+                      className="w-6 h-full rounded-full"
+                    />
+                  </div>
+                  <p className="text-xs">{category.toUpperCase()}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="w-1/2 h-full flex items-center justify-start">
-          <div className="w-[80%] h-[80%] bg-gray-400  rounded-xl"></div>
+        <div className="w-2/3 h-full flex items-center justify-start">
+          <div className="w-[80%] h-[80%] bg-gray-500  rounded-xl">
+            <ul className="w-full h-full flex flex-col items-center justify-evenly">
+              {categories.map((category) => (
+                <li
+                  className="text-black font-bold flex items-center justify-between w-full h-full opacity-80"
+                  style={{
+                    color: colors[category],
+                  }}
+                  key={category}
+                >
+                  {variaciones[mesData] &&
+                  variaciones[mesData][category] !== undefined
+                    ? variaciones[mesData][category]
+                    : "No disponible"}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

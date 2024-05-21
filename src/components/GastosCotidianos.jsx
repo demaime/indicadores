@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ServiciosMes from "./ServiciosMes";
 
 export default function GastosCotidianos() {
-  const [mesSeleccionado, setMesSeleccionado] = useState("marzo");
+  const [mesSeleccionado, setMesSeleccionado] = useState("abril");
   const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
 
   const meses = ["marzo", "abril"];

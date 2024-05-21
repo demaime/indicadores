@@ -71,7 +71,6 @@ const getVariations = (data) => {
         );
       }
     } else {
-      // Handle the first month where there's no previous month
       for (const category in data[currentMonth]) {
         variations[currentMonth][category] = "-";
       }
@@ -198,11 +197,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
           <div className="w-1/3 h-full flex flex-col justify-around items-center border-x-2 border-yellow-400 p-4 relative">
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-5 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-1/3 -left-[15%]"></div>
-            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1 text-xs flex items-center justify-center font-semibold/3 -left-[15%]"></div>
+            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1/3 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-5 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-5 -right-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-1/3 -right-[15%]"></div>
-            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1 text-xs flex items-center justify-center font-semibold/3 -right-[15%]"></div>
+            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1/3 -right-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-5 -right-[15%]"></div>
             <div className="w-full h-3/4 rounded">
               <img src="/assets/house.png" alt="" className="w-full h-full" />

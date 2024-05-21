@@ -41,7 +41,7 @@ export default function GraficoGastosCotidianos({
   const chartData = Object.keys(data).map((month) => {
     const monthData = { ...data[month] };
     delete monthData.alquiler;
-    delete monthData.internet;
+
     return {
       name: month,
       ...monthData,
@@ -65,52 +65,59 @@ export default function GraficoGastosCotidianos({
   };
 
   const categories = Object.keys(data[Object.keys(data)[0]]).filter(
-    (category) => category !== "alquiler" && category !== "internet"
+    (category) => category !== "alquiler"
   );
 
-  console.log(mesData);
+  const serviceCategories = ["luz", "gas", "internet", "celular"];
+  const foodCategories = Object.keys(colors).filter(
+    (category) => !serviceCategories.includes(category)
+  );
 
   return (
     <div className="w-full h-full flex items-center justify-center bg-gray-600">
-      <div className="w-2/3 h-full flex items-center justify-center">
-        <ResponsiveContainer width={"90%"} height={"90%"}>
-          <LineChart
-            width={800}
-            height={400}
-            data={chartData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+      <div className="w-2/3 h-full flex flex-col items-center justify-center">
+        <div className="w-full h-1/2 items-center justify-center flex">
+          <ResponsiveContainer
+            width={"75%"}
+            height={"90%"}
+            className={"relative"}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="name"
-              height={60}
-              tick={<CustomizedAxisTick />}
-              tickLine={{ stroke: "#D3D3D3" }}
-              axisLine={{ stroke: "#D3D3D3" }}
-            />
-            <YAxis
-              tick={{ fontWeight: "bold", fill: "#D3D3D3" }} // Gris claro
-              tickLine={{ stroke: "#D3D3D3" }}
-              axisLine={{ stroke: "#D3D3D3" }}
-              tickFormatter={formatCurrency} // Formatear el eje Y
-            />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#333",
-                border: "none",
-                color: "#fff",
-              }}
-              formatter={(value, name) => [
-                `${name}: ${formatCurrency(value)}`,
-                <span style={{ color: colors[name] || "#fff" }}>{name}</span>,
-              ]}
-            />
-            {/* Mapear cada categoría para renderizar una línea */}
-            {Object.keys(data.marzo)
-              .filter(
-                (category) => category !== "alquiler" && category !== "internet"
-              )
-              .map((category, index) => (
+            <h2 className="absolute left-1/2 bg-gray-400 p-1 px-4 rounded-xl -top-2 font-semibold z-50 text-gray-700">
+              SERVICIOS
+            </h2>
+            <LineChart
+              width={800}
+              height={400}
+              data={chartData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="name"
+                height={60}
+                tick={<CustomizedAxisTick />}
+                tickLine={{ stroke: "#D3D3D3" }}
+                axisLine={{ stroke: "#D3D3D3" }}
+              />
+              <YAxis
+                tick={{ fontWeight: "bold", fill: "#D3D3D3" }} // Gris claro
+                tickLine={{ stroke: "#D3D3D3" }}
+                axisLine={{ stroke: "#D3D3D3" }}
+                tickFormatter={formatCurrency} // Formatear el eje Y
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#333",
+                  border: "none",
+                  color: "#fff",
+                }}
+                formatter={(value, name) => [
+                  `${name}: ${formatCurrency(value)}`,
+                  <span style={{ color: colors[name] || "#fff" }}>{name}</span>,
+                ]}
+              />
+              {/* Mapear cada categoría para renderizar una línea */}
+              {serviceCategories.map((category, index) => (
                 <Line
                   key={index}
                   type="monotone"
@@ -121,8 +128,65 @@ export default function GraficoGastosCotidianos({
                   activeDot={{ r: 8 }}
                 ></Line>
               ))}
-          </LineChart>
-        </ResponsiveContainer>
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="w-full h-1/2 items-center justify-center flex">
+          {" "}
+          <ResponsiveContainer
+            width={"75%"}
+            height={"90%"}
+            className={"relative"}
+          >
+            <h2 className="absolute left-1/2 bg-gray-400 p-1 px-4 rounded-xl -top-2 font-semibold z-50 text-gray-700">
+              ALIMENTOS
+            </h2>
+            <LineChart
+              width={800}
+              height={400}
+              data={chartData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="name"
+                height={60}
+                tick={<CustomizedAxisTick />}
+                tickLine={{ stroke: "#D3D3D3" }}
+                axisLine={{ stroke: "#D3D3D3" }}
+              />
+              <YAxis
+                tick={{ fontWeight: "bold", fill: "#D3D3D3" }} // Gris claro
+                tickLine={{ stroke: "#D3D3D3" }}
+                axisLine={{ stroke: "#D3D3D3" }}
+                tickFormatter={formatCurrency} // Formatear el eje Y
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#333",
+                  border: "none",
+                  color: "#fff",
+                }}
+                formatter={(value, name) => [
+                  `${name}: ${formatCurrency(value)}`,
+                  <span style={{ color: colors[name] || "#fff" }}>{name}</span>,
+                ]}
+              />
+              {/* Mapear cada categoría para renderizar una línea */}
+              {foodCategories.map((category, index) => (
+                <Line
+                  key={index}
+                  type="monotone"
+                  dataKey={category}
+                  stroke={colors[category] || "#000000"} // Usar color predefinido o negro si no se encuentra
+                  strokeWidth={3} // Línea más gruesa
+                  dot={{ fill: colors[category] }}
+                  activeDot={{ r: 8 }}
+                ></Line>
+              ))}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
       <div className="w-1/3 h-full flex ">
         <div className="w-1/3 h-full flex items-center justify-start">

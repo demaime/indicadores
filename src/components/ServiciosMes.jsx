@@ -37,27 +37,44 @@ const data = {
 
 const calculateSingleVariation = (current, previous) => {
   if (current === "-" || previous === "-") return "-";
+
   const currentNumber = parseFloat(current);
   const previousNumber = parseFloat(previous);
-  if (isNaN(currentNumber) || isNaN(previousNumber)) return "-";
+
+  // Check if previousNumber is NaN or if it's 0 (for March, when there's no previous month)
+  if (isNaN(currentNumber) || isNaN(previousNumber) || previousNumber === 0)
+    return "-";
+
   const variation = ((currentNumber - previousNumber) / previousNumber) * 100;
-  return `${variation.toFixed(2)}%`;
+
+  if (variation > 0) {
+    return `+${variation.toFixed(2)}%`;
+  } else {
+    return `${variation.toFixed(2)}%`;
+  }
 };
 
 const getVariations = (data) => {
   const months = Object.keys(data);
   const variations = {};
 
-  for (let i = 1; i < months.length; i++) {
+  for (let i = 0; i < months.length; i++) {
     const currentMonth = months[i];
-    const previousMonth = months[i - 1];
+    const previousMonth = i === 0 ? null : months[i - 1];
     variations[currentMonth] = {};
 
-    for (const category in data[currentMonth]) {
-      variations[currentMonth][category] = calculateSingleVariation(
-        data[currentMonth][category],
-        data[previousMonth][category]
-      );
+    if (previousMonth) {
+      for (const category in data[currentMonth]) {
+        variations[currentMonth][category] = calculateSingleVariation(
+          data[currentMonth][category],
+          data[previousMonth][category]
+        );
+      }
+    } else {
+      // Handle the first month where there's no previous month
+      for (const category in data[currentMonth]) {
+        variations[currentMonth][category] = "-";
+      }
     }
   }
 
@@ -80,6 +97,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
 
     return parseFloat(number).toLocaleString();
   };
+  console.log(variaciones[mesData]);
 
   return (
     <div className="w-full h-full flex items-center justify-center relative ">
@@ -109,6 +127,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 <img src="/assets/luz.png" alt="" />
               </div>
+              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+                {variaciones[mesData].luz}
+              </div>
               <div className="text-4xl">
                 <div className="text-4xl">
                   {data[mesData].luz !== "-"
@@ -123,6 +144,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               </div>
               <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 <img src="/assets/gas.png" alt="" />
+              </div>
+              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+                {variaciones[mesData].gas}
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">
@@ -140,6 +164,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 {" "}
                 <img src="/assets/internet.png" alt="" />
               </div>
+              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+                {variaciones[mesData].internet}
+              </div>
               <div className="text-4xl">
                 <div className="text-4xl">
                   {data[mesData].internet !== "-"
@@ -156,6 +183,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 {" "}
                 <img src="/assets/celular.png" alt="" />
               </div>
+              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+                {variaciones[mesData].celular}
+              </div>
               <div className="text-4xl">
                 <div className="text-4xl">
                   {data[mesData].celular !== "-"
@@ -168,11 +198,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
           <div className="w-1/3 h-full flex flex-col justify-around items-center border-x-2 border-yellow-400 p-4 relative">
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-5 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-1/3 -left-[15%]"></div>
-            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1/3 -left-[15%]"></div>
+            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1 text-xs flex items-center justify-center font-semibold/3 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-5 -left-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-5 -right-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute top-1/3 -right-[15%]"></div>
-            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1/3 -right-[15%]"></div>
+            <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-1 text-xs flex items-center justify-center font-semibold/3 -right-[15%]"></div>
             <div className="w-24 h-0.5 bg-yellow-400 absolute bottom-5 -right-[15%]"></div>
             <div className="w-full h-3/4 rounded">
               <img src="/assets/house.png" alt="" className="w-full h-full" />
@@ -200,6 +230,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   {" "}
                   <img src="/assets/pan.png" alt="" />
                 </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].pan}
+                </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
                     {data[mesData].pan !== "-"
@@ -213,8 +246,10 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   LITRO DE LECHE{" "}
                 </div>
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
-                  {" "}
                   <img src="/assets/leche.png" alt="" />
+                </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].pan}
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
@@ -231,6 +266,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/yerba.png" alt="" />
+                </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].yerba}
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
@@ -252,10 +290,13 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                     className="h-full w-full"
                   />
                 </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].fideos}
+                </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
                     {data[mesData].fideos !== "-"
-                      ? `$${formatNumber(data[mesData].s)}`
+                      ? `$${formatNumber(data[mesData].fideos)}`
                       : "-"}
                   </div>
                 </div>
@@ -270,6 +311,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/coca.png" alt="" />
+                </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].coca}
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
@@ -287,6 +331,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   {" "}
                   <img src="/assets/cafe.png" alt="" className="h-full" />
                 </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].cafe}
+                </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
                     {data[mesData].cafe !== "-"
@@ -303,6 +350,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   {" "}
                   <img src="/assets/carne.png" alt="" />
                 </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].carne}
+                </div>
                 <div className="text-4xl">
                   <div className="text-4xl">
                     {data[mesData].carne !== "-"
@@ -318,6 +368,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/cerveza.png" alt="" />
+                </div>
+                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                  {variaciones[mesData].cerveza}
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">

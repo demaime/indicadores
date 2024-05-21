@@ -124,7 +124,7 @@ export default function GraficoGastosCotidianos({
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="w-1/3 h-full flex">
+      <div className="w-1/3 h-full flex ">
         <div className="w-1/3 h-full flex items-center justify-start">
           <div className="w-[90%] h-[80%] bg-gray-500  rounded-xl px-4">
             {" "}
@@ -153,12 +153,35 @@ export default function GraficoGastosCotidianos({
             </ul>
           </div>
         </div>
-        <div className="w-2/3 h-full flex items-center justify-start">
-          <div className="w-[80%] h-[80%] bg-gray-500  rounded-xl">
-            <ul className="w-full h-full flex flex-col items-center justify-evenly">
+        <div className="w-2/3 h-full flex items-center justify-start relative">
+          <div className="w-3/4 h-12 absolute left-2 top-2 text-xs flex items-center justify-evenly">
+            <div className="rounded-xl bg-gray-500 w-28 flex items-center justify-center text-white h-8 ">
+              Valor
+            </div>
+            <div className="rounded-xl bg-gray-500 w-28 flex items-center justify-center text-white h-8 ">
+              Variación Mensual
+            </div>
+          </div>
+          <div className="w-[80%] h-[80%] bg-gray-800 flex justify-evenly rounded-xl">
+            <ul className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs">
               {categories.map((category) => (
                 <li
-                  className="text-black font-bold flex items-center justify-between w-full h-full opacity-80"
+                  className="text-black font-bold flex items-center justify-center w-full h-full"
+                  style={{
+                    color: colors[category],
+                  }}
+                  key={category}
+                >
+                  {data[mesData] && data[mesData][category] !== undefined
+                    ? formatCurrency(data[mesData][category])
+                    : "No disponible"}
+                </li>
+              ))}
+            </ul>
+            <ul className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs">
+              {categories.map((category) => (
+                <li
+                  className="text-black font-bold flex items-center justify-center w-full h-full"
                   style={{
                     color: colors[category],
                   }}

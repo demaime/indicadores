@@ -3,11 +3,14 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
   BarChart,
   Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 
 export default function IndustriaPyme() {
@@ -190,6 +193,14 @@ export default function IndustriaPyme() {
     })
   );
 
+  const generalDataOrdenada = meses.map((mes) => ({
+    name: mes.toUpperCase(),
+    intermensual: data[mes].intermensual,
+    acumulada: data[mes].acumulada,
+    interanual: data[mes].interanual,
+    capacidad: data[mes].capacidad,
+  }));
+
   return (
     <div className="w-full h-full">
       <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center relative">
@@ -306,7 +317,62 @@ export default function IndustriaPyme() {
         </div>
       ) : (
         <div className="w-full h-[95%] flex">
-          <div className="h-full w-1/2 bg-gray-300"></div>
+          <div className="h-full w-1/2 bg-gray-100 flex items-center justify-start">
+            <ResponsiveContainer width="90%" height="90%">
+              <LineChart data={generalDataOrdenada}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" style={{ fontWeight: "bold" }} />
+                <YAxis domain={[-50, 90]} style={{ fontWeight: "bold" }} />
+                <Tooltip />
+
+                <Line
+                  type="monotone"
+                  dataKey="intermensual"
+                  stroke="#8884d8"
+                  activeDot={{ r: 8 }}
+                  strokeWidth={3}
+                  label={{
+                    position: "top",
+                    fill: "#8884d8",
+                    fontWeight: "bold",
+                  }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="acumulada"
+                  stroke="#34a832"
+                  strokeWidth={3}
+                  label={{
+                    position: "top",
+                    fill: "#34a832",
+                    fontWeight: "bold",
+                  }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="interanual"
+                  stroke="#f74640"
+                  strokeWidth={3}
+                  label={{
+                    position: "top",
+                    fill: "#f74640",
+                    fontWeight: "bold",
+                  }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="capacidad"
+                  stroke="#ffa21f"
+                  strokeWidth={3}
+                  label={{
+                    position: "top",
+                    fill: "#ffa21f",
+                    fontWeight: "bold",
+                  }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
           <div className="h-full w-1/2 bg-gray-500"></div>
         </div>
       )}

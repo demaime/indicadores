@@ -7,9 +7,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
-  LabelList,
 } from "recharts";
 
 export default function IndustriaPyme() {
@@ -75,6 +73,76 @@ export default function IndustriaPyme() {
     },
   };
 
+  const aperturaInteranual = {
+    enero: {
+      "textiles e indumentaria": -18.2,
+      "alimentos y bebidas": -22,
+      "madera y muebles": -30.6,
+      "papel e impresiones": -41.7,
+      "quimicos y plasticos": -35.6,
+      "metal y maquinaria": -34.8,
+    },
+    febrero: {
+      "textiles e indumentaria": 10.5,
+      "alimentos y bebidas": -0.3,
+      "madera y muebles": -10,
+      "papel e impresiones": -24.6,
+      "quimicos y plasticos": -23.1,
+      "metal y maquinaria": -15.2,
+    },
+    marzo: {
+      "textiles e indumentaria": 10.9,
+      "alimentos y bebidas": -5.6,
+      "madera y muebles": -11.9,
+      "papel e impresiones": -27.4,
+      "quimicos y plasticos": -20.7,
+      "metal y maquinaria": -16.8,
+    },
+    abril: {
+      "textiles e indumentaria": -0.2,
+      "alimentos y bebidas": -13.7,
+      "madera y muebles": -15.7,
+      "papel e impresiones": -32.3,
+      "quimicos y plasticos": -21.6,
+      "metal y maquinaria": -23.7,
+    },
+  };
+
+  const aperturaAcumulada = {
+    enero: {
+      "textiles e indumentaria": -2.3,
+      "alimentos y bebidas": -8.7,
+      "madera y muebles": -13.5,
+      "papel e impresiones": -3,
+      "quimicos y plasticos": -11.8,
+      "metal y maquinaria": -13.5,
+    },
+    febrero: {
+      "textiles e indumentaria": -1.3,
+      "alimentos y bebidas": -14.6,
+      "madera y muebles": -24.6,
+      "papel e impresiones": -26,
+      "quimicos y plasticos": -31.2,
+      "metal y maquinaria": -27.9,
+    },
+    marzo: {
+      "textiles e indumentaria": 2.3,
+      "alimentos y bebidas": -14.2,
+      "madera y muebles": -20.1,
+      "papel e impresiones": -23.7,
+      "quimicos y plasticos": -28.7,
+      "metal y maquinaria": -24.5,
+    },
+    abril: {
+      "textiles e indumentaria": -0.1,
+      "alimentos y bebidas": -15,
+      "madera y muebles": -19.2,
+      "papel e impresiones": -23.4,
+      "quimicos y plasticos": -27.3,
+      "metal y maquinaria": -23.8,
+    },
+  };
+
   const colors = {
     "textiles e indumentaria": "#8884d8",
     "alimentos y bebidas": "#82ca9d",
@@ -106,6 +174,18 @@ export default function IndustriaPyme() {
       name: key.toUpperCase(),
       value: aperturaIntermensual[mesSeleccionado][key],
       fill: colors[key],
+    })
+  );
+
+  const interanualData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
+    (key) => ({
+      value: aperturaInteranual[mesSeleccionado][key],
+    })
+  );
+
+  const acumuladaData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
+    (key) => ({
+      value: aperturaAcumulada[mesSeleccionado][key],
     })
   );
 
@@ -153,8 +233,8 @@ export default function IndustriaPyme() {
             </span>
           </div>
         </div>
-        <div className="w-full h-4/5 flex flex items-end relative justify-start">
-          <ResponsiveContainer width="95%" height="95%">
+        <div className="w-full h-4/5 flex flex items-start relative justify-start">
+          <ResponsiveContainer width="95%" height="90%">
             <BarChart data={barData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -185,6 +265,30 @@ export default function IndustriaPyme() {
             </div>
             <div className="rounded-full h-12 w-12">
               <img src="/assets/metal.png" alt="" />
+            </div>
+          </div>
+          <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-semibold">
+            <div className="w-full h-1/2 flex items-center text-green-500">
+              Interanual
+            </div>
+            <div className="w-full h-1/2 flex items-center text-blue-500">
+              Acumulada
+            </div>
+          </div>
+          <div className="w-[90%] h-[10%] absolute bottom-2 mx-auto left-0 right-4">
+            <div className="w-full h-1/2 flex items-center justify-around text-green-500">
+              {interanualData.map((item) => (
+                <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-green-500">
+                  {item.value}
+                </div>
+              ))}
+            </div>
+            <div className="w-full h-1/2 flex items-center justify-around text-green-500">
+              {acumuladaData.map((item) => (
+                <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-blue-500">
+                  {item.value}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
 import Ocio from "./components/Ocio.jsx";
+import IndustriaPyme from "./components/IndustriaPyme.jsx";
 
 // import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
 
@@ -62,6 +63,10 @@ export default function App() {
       <section className="section" id="ocio">
         <Encabezado title={"OCIO"} />
         <Ocio />
+      </section>
+      <section className="section" id="industrial">
+        <Encabezado title={"INDUSTRIA PYME"} />
+        <IndustriaPyme />
       </section>
     </div>
   );

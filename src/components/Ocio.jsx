@@ -53,7 +53,7 @@ export default function Ocio() {
         <div className="w-full h-1/3 flex justify-evenly">
           <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative  ">
             <h1 className="text-blue-400 text-3xl font-bold">
-              ${data[mesSeleccionado].fiesta}
+              ${data[mesSeleccionado].fiesta.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-blue-400 absolute -bottom-8 -right-12">
               <img src="/assets/fiesta.png" className="w-full h-full" alt="" />
@@ -61,7 +61,7 @@ export default function Ocio() {
           </div>
           <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center   ">
             <h1 className="text-red-400 text-3xl font-bold">
-              ${data[mesSeleccionado].combo}
+              ${data[mesSeleccionado].combo.toLocaleString()}
             </h1>
 
             <div className="w-24 h-24 rounded-full bg-red-400 absolute -bottom-8 -left-12">
@@ -74,7 +74,7 @@ export default function Ocio() {
           {" "}
           <div className="w-48 h-48 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative    ">
             <h1 className="text-green-400 text-3xl font-bold">
-              ${data[mesSeleccionado].gym}
+              ${data[mesSeleccionado].gym.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-green-400 absolute top-1/4 -left-1/4">
               {" "}
@@ -83,7 +83,7 @@ export default function Ocio() {
           </div>
           <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative  ">
             <h1 className="text-yellow-400 text-3xl font-bold">
-              ${data[mesSeleccionado].cine}
+              ${data[mesSeleccionado].cine.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-yellow-400 absolute -top-1/4 left-1/4">
               {" "}
@@ -92,7 +92,7 @@ export default function Ocio() {
           </div>
           <div className="w-48 h-48 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative  ">
             <h1 className="text-purple-400 text-3xl font-bold">
-              ${data[mesSeleccionado].teatro}
+              ${data[mesSeleccionado].teatro.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-purple-400 absolute top-1/4 -right-1/4">
               {" "}
@@ -103,7 +103,7 @@ export default function Ocio() {
         <div className="w-full h-1/3 flex justify-evenly">
           <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative  ">
             <h1 className="text-pink-400 text-3xl font-bold">
-              ${data[mesSeleccionado].netflix}
+              ${data[mesSeleccionado].netflix.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-pink-400 absolute -top-8 -right-12">
               {" "}
@@ -112,7 +112,7 @@ export default function Ocio() {
           </div>
           <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative  ">
             <h1 className="text-orange-400 text-3xl font-bold">
-              ${data[mesSeleccionado].libro}
+              ${data[mesSeleccionado].libro.toLocaleString()}
             </h1>
             <div className="w-24 h-24 rounded-full bg-orange-400 absolute -top-8 -left-12">
               <img src="/assets/libro.png" className="w-full h-full" alt="" />

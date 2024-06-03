@@ -77,7 +77,7 @@ export default function GraficoGastosCotidianos({
       <div className="w-2/3 h-full flex flex-col items-center justify-center bg-gray-200">
         <div className="w-full h-1/2 items-center justify-center flex">
           <ResponsiveContainer
-            width={"75%"}
+            width={"85%"}
             height={"90%"}
             className={"relative"}
           >
@@ -124,7 +124,7 @@ export default function GraficoGastosCotidianos({
         <div className="w-full h-1/2 items-end justify-center flex border-gray-500 border-t-2">
           {" "}
           <ResponsiveContainer
-            width={"75%"}
+            width={"85%"}
             height={"90%"}
             className={"relative"}
           >

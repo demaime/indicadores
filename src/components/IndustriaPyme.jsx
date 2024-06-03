@@ -156,6 +156,7 @@ export default function IndustriaPyme() {
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
+  const [visibilidad, setVisibilidad] = useState(true);
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -172,130 +173,143 @@ export default function IndustriaPyme() {
   const barData = Object.keys(aperturaIntermensual[mesSeleccionado]).map(
     (key) => ({
       name: key.toUpperCase(),
-      value: aperturaIntermensual[mesSeleccionado][key],
+      valor: aperturaIntermensual[mesSeleccionado][key],
       fill: colors[key],
     })
   );
 
   const interanualData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
     (key) => ({
-      value: aperturaInteranual[mesSeleccionado][key],
+      valor: aperturaInteranual[mesSeleccionado][key],
     })
   );
 
   const acumuladaData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
     (key) => ({
-      value: aperturaAcumulada[mesSeleccionado][key],
+      valor: aperturaAcumulada[mesSeleccionado][key],
     })
   );
 
   return (
     <div className="w-full h-full">
-      <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center">
+      <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center relative">
         <FaArrowLeft className="cursor-pointer" onClick={handleMesAnterior} />
         <span className="mx-4 flex items-center justify-center w-1/3">
           {mesSeleccionado.toUpperCase()}
         </span>
         <FaArrowRight className="cursor-pointer" onClick={handleMesSiguiente} />
+        <button
+          onClick={() => setVisibilidad(!visibilidad)}
+          className="w-28 h-6 flex items-center justify-center text-xs font-semibold rounded-xl bg-pink-500 absolute right-0"
+        >
+          {visibilidad ? "VER EVOLUTIVO" : "VER TARJETAS"}
+        </button>
       </div>
-      <div className="w-full h-[95%]">
-        <div className="w-full h-1/5 bg-gray-400 flex items-center justify-evenly">
-          <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
-            <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
-              VARIACIÓN MENSUAL
-            </span>
-            <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-              {data[mesSeleccionado].intermensual}
-            </span>
+      {visibilidad ? (
+        <div className="w-full h-[95%]">
+          <div className="w-full h-1/5 bg-gray-400 flex items-center justify-evenly">
+            <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
+              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
+                VARIACIÓN MENSUAL
+              </span>
+              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
+                {data[mesSeleccionado].intermensual}
+              </span>
+            </div>
+            <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
+              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
+                VARIACIÓN ACUMULADA
+              </span>
+              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
+                {data[mesSeleccionado].acumulada}
+              </span>
+            </div>
+            <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
+              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
+                VARIACIÓN INTERANUAL
+              </span>
+              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
+                {data[mesSeleccionado].interanual}
+              </span>
+            </div>
+            <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
+              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
+                CAPACIDAD INDUSTRIAL UTILIZADA
+              </span>
+              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
+                {data[mesSeleccionado].capacidad}
+              </span>
+            </div>
           </div>
-          <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
-            <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
-              VARIACIÓN ACUMULADA
-            </span>
-            <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-              {data[mesSeleccionado].acumulada}
-            </span>
-          </div>
-          <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
-            <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
-              VARIACIÓN INTERANUAL
-            </span>
-            <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-              {data[mesSeleccionado].interanual}
-            </span>
-          </div>
-          <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
-            <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
-              CAPACIDAD INDUSTRIAL UTILIZADA
-            </span>
-            <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-              {data[mesSeleccionado].capacidad}
-            </span>
-          </div>
-        </div>
-        <div className="w-full h-4/5 flex flex items-start relative justify-start">
-          <ResponsiveContainer width="95%" height="90%">
-            <BarChart data={barData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="name"
-                style={{ fontWeight: "bold", fontSize: "12px" }}
-              />
-              <YAxis domain={[-15, 15]} y tickCount={9} />
-              <Tooltip />
+          <div className="w-full h-4/5 flex flex items-start relative justify-start">
+            <ResponsiveContainer width="95%" height="90%">
+              <BarChart data={barData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="name"
+                  style={{ fontWeight: "bold", fontSize: "12px" }}
+                />
+                <YAxis domain={[-15, 15]} y tickCount={9} />
+                <Tooltip />
 
-              <Bar
-                dataKey="value"
-                label={{ position: "insideTop", fill: "#000" }}
-              ></Bar>
-            </BarChart>
-          </ResponsiveContainer>
-          <div className="w-[90%] h-[10%] flex items-center justify-around absolute top-2 mx-auto left-0 right-4">
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/textil.png" alt="" />
+                <Bar
+                  dataKey="valor"
+                  label={{ position: "insideTop", fill: "#000" }}
+                ></Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="w-[90%] h-[10%] flex items-center justify-around absolute top-2 mx-auto left-0 right-4">
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/textil.png" alt="" />
+              </div>
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/alimento.png" alt="" />
+              </div>
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/madera.png" alt="" />
+              </div>
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/papel.png" alt="" />
+              </div>
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/quimico.png" alt="" />
+              </div>
+              <div className="rounded-full h-12 w-12">
+                <img src="/assets/metal.png" alt="" />
+              </div>
             </div>
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/alimento.png" alt="" />
+            <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-bold">
+              <div className="w-full h-1/2 flex items-center text-green-500">
+                Interanual
+              </div>
+              <div className="w-full h-1/2 flex items-center text-blue-500">
+                Acumulada
+              </div>
             </div>
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/madera.png" alt="" />
-            </div>
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/papel.png" alt="" />
-            </div>
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/quimico.png" alt="" />
-            </div>
-            <div className="rounded-full h-12 w-12">
-              <img src="/assets/metal.png" alt="" />
-            </div>
-          </div>
-          <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-bold">
-            <div className="w-full h-1/2 flex items-center text-green-500">
-              Interanual
-            </div>
-            <div className="w-full h-1/2 flex items-center text-blue-500">
-              Acumulada
-            </div>
-          </div>
-          <div className="w-[90%] h-[10%] absolute bottom-2 mx-auto left-0 right-4">
-            <div className="w-full h-1/2 flex items-center justify-around text-green-500">
-              {interanualData.map((item) => (
-                <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-green-500">
-                  {item.value}
-                </div>
-              ))}
-            </div>
-            <div className="w-full h-1/2 flex items-center justify-around text-green-500">
-              {acumuladaData.map((item) => (
-                <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-blue-500">
-                  {item.value}
-                </div>
-              ))}
+            <div className="w-[90%] h-[10%] absolute bottom-2 mx-auto left-0 right-4">
+              <div className="w-full h-1/2 flex items-center justify-around text-green-500">
+                {interanualData.map((item) => (
+                  <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-green-500">
+                    {item.valor}
+                  </div>
+                ))}
+              </div>
+              <div className="w-full h-1/2 flex items-center justify-around text-green-500">
+                {acumuladaData.map((item) => (
+                  <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-blue-500">
+                    {item.valor}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="w-full h-[95%] flex">
+          <div className="h-full w-1/2 bg-gray-300"></div>
+          <div className="h-full w-1/2 bg-gray-500"></div>
+        </div>
+      )}
     </div>
   );
 }

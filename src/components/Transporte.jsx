@@ -62,7 +62,7 @@ const data = [
     Nafta: 837,
     PeajeNorte: 946.25,
     PeajeOeste: 2276.08,
-    Patentamiento: 0,
+    Patentamiento: "actualización trimestral",
   },
 ];
 
@@ -492,12 +492,19 @@ export default function Transporte() {
               <div className="w-[80%] h-[80%] rounded-xl bg-gray-700 ">
                 <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
                   <div className="text-md font-semibold">Valor</div>
-                  <div className="bg-[#e95faa] flex items-center w-2/3 justify-center rounded-xl font-bold text-center text-2xl">
-                    {data[mesSeleccionadoIndex].Patentamiento}{" "}
-                    <span className="text-[14px] flex items-center pl-2 ">
-                      Automóviles
-                    </span>
-                  </div>
+                  {data[mesSeleccionadoIndex].Patentamiento ===
+                  "actualización trimestral" ? (
+                    <div className="bg-[#e95faa] flex items-center w-3/4 justify-center rounded-xl font-bold text-center text-md italic">
+                      {data[mesSeleccionadoIndex].Patentamiento}
+                    </div>
+                  ) : (
+                    <div className="bg-[#e95faa] flex items-center w-2/3 justify-center rounded-xl font-bold text-center text-2xl">
+                      {data[mesSeleccionadoIndex].Patentamiento}
+                      <span className="text-[14px] flex items-center pl-2 ">
+                        Automóviles
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="w-full h-1/2 flex">
                   <div className="w-1/2 h-full flex flex-col justify-evenly items-center">

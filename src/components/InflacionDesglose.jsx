@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const dataNacion = [
   {
@@ -206,6 +208,28 @@ const coloresCategorias = {
   "Prendas de vestir y calzado": "#FFC0CB",
   Educación: "#ADC2E2",
   "Cuidado personal, protección social y otros": "#a464d1",
+};
+
+const descripciones = {
+  GENERAL: "General description",
+  "Bienes y servicios": "Description for Bienes y servicios",
+  Transporte: "Description for Transporte",
+  Comunicación: "Description for Comunicación",
+  "Recreación y cultura": "Description for Recreación y cultura",
+  "Equipamiento y mantenimiento del hogar":
+    "Description for Equipamiento y mantenimiento del hogar",
+  "Bebidas alcohólicas y tabaco":
+    "Description for Bebidas alcohólicas y tabaco",
+  Salud: "Description for Salud",
+  "Alimentos y bebidas no alcohólicas":
+    "Description for Alimentos y bebidas no alcohólicas",
+  "Restaurantes y hoteles": "Description for Restaurantes y hoteles",
+  "Vivienda, agua, electricidad, gas y otros combustibles":
+    "Description for Vivienda, agua, electricidad, gas y otros combustibles",
+  "Prendas de vestir y calzado": "Description for Prendas de vestir y calzado",
+  Educación: "Description for Educación",
+  "Cuidado personal, protección social y otros":
+    "Description for Cuidado personal, protección social y otros",
 };
 
 const variacionAcumuladaNacion = {
@@ -507,6 +531,11 @@ export default function InflacionDesglose() {
                 >
                   <div className="checkbox"></div> {categoria.toUpperCase()}
                 </label>
+                <Tippy content={<span>{descripciones[categoria]}</span>}>
+                  <span className="mr-1 flex rounded-full bg-black text-white items-center justify-center w-4 h-4 text-[8px]">
+                    ?
+                  </span>
+                </Tippy>
               </div>
             ))}
           </div>

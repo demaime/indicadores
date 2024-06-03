@@ -22,9 +22,8 @@ export default function GraficoGastosCotidianos({
           y={0}
           dy={16}
           textAnchor="end"
-          fill="#D3D3D3" // Gris claro
           transform="rotate(-35)"
-          fontWeight="bold"
+          fontWeight="semibold"
         >
           {payload.value}
         </text>
@@ -74,8 +73,8 @@ export default function GraficoGastosCotidianos({
   );
 
   return (
-    <div className="w-full h-full flex items-center justify-center bg-gray-600">
-      <div className="w-2/3 h-full flex flex-col items-center justify-center">
+    <div className="w-full h-full flex items-end justify-center bg-gray-600">
+      <div className="w-2/3 h-full flex flex-col items-center justify-center bg-gray-200">
         <div className="w-full h-1/2 items-center justify-center flex">
           <ResponsiveContainer
             width={"75%"}
@@ -92,17 +91,8 @@ export default function GraficoGastosCotidianos({
               margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="name"
-                height={60}
-                tick={<CustomizedAxisTick />}
-                tickLine={{ stroke: "#D3D3D3" }}
-                axisLine={{ stroke: "#D3D3D3" }}
-              />
+              <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
               <YAxis
-                tick={{ fontWeight: "bold", fill: "#D3D3D3" }} // Gris claro
-                tickLine={{ stroke: "#D3D3D3" }}
-                axisLine={{ stroke: "#D3D3D3" }}
                 tickFormatter={formatCurrency} // Formatear el eje Y
               />
               <Tooltip
@@ -123,7 +113,7 @@ export default function GraficoGastosCotidianos({
                   type="monotone"
                   dataKey={category}
                   stroke={colors[category] || "#000000"} // Usar color predefinido o negro si no se encuentra
-                  strokeWidth={3} // Línea más gruesa
+                  strokeWidth={2} // Línea más gruesa
                   dot={{ fill: colors[category] }}
                   activeDot={{ r: 8 }}
                 ></Line>
@@ -131,7 +121,7 @@ export default function GraficoGastosCotidianos({
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="w-full h-1/2 items-center justify-center flex">
+        <div className="w-full h-1/2 items-end justify-center flex border-gray-500 border-t-2">
           {" "}
           <ResponsiveContainer
             width={"75%"}
@@ -148,17 +138,8 @@ export default function GraficoGastosCotidianos({
               margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="name"
-                height={60}
-                tick={<CustomizedAxisTick />}
-                tickLine={{ stroke: "#D3D3D3" }}
-                axisLine={{ stroke: "#D3D3D3" }}
-              />
+              <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
               <YAxis
-                tick={{ fontWeight: "bold", fill: "#D3D3D3" }} // Gris claro
-                tickLine={{ stroke: "#D3D3D3" }}
-                axisLine={{ stroke: "#D3D3D3" }}
                 tickFormatter={formatCurrency} // Formatear el eje Y
               />
               <Tooltip
@@ -179,7 +160,7 @@ export default function GraficoGastosCotidianos({
                   type="monotone"
                   dataKey={category}
                   stroke={colors[category] || "#000000"} // Usar color predefinido o negro si no se encuentra
-                  strokeWidth={3} // Línea más gruesa
+                  strokeWidth={2} // Línea más gruesa
                   dot={{ fill: colors[category] }}
                   activeDot={{ r: 8 }}
                 ></Line>
@@ -188,9 +169,9 @@ export default function GraficoGastosCotidianos({
           </ResponsiveContainer>
         </div>
       </div>
-      <div className="w-1/3 h-full flex ">
-        <div className="w-1/3 h-full flex items-center justify-start">
-          <div className="w-[90%] h-[80%] bg-gray-500  rounded-xl px-4">
+      <div className="w-1/3 h-full flex pl-4">
+        <div className="w-1/3 h-full flex items-end justify-start pb-4">
+          <div className="w-[90%] h-[90%] bg-gray-400 rounded-xl px-4">
             {" "}
             <ul className="w-full h-full flex flex-col items-center justify-evenly">
               {categories.map((category) => (
@@ -201,7 +182,6 @@ export default function GraficoGastosCotidianos({
                   <div
                     className="w-10 h-6 rounded-full border-r-4 pr-4"
                     style={{
-                      // backgroundColor: colors[category],
                       borderColor: colors[category],
                     }}
                   >
@@ -217,8 +197,8 @@ export default function GraficoGastosCotidianos({
             </ul>
           </div>
         </div>
-        <div className="w-2/3 h-full flex items-center justify-start relative">
-          <div className="w-3/4 h-12 absolute left-2 top-2 text-xs flex items-center justify-evenly">
+        <div className="w-2/3 h-full flex items-end justify-center relative pb-4">
+          <div className="w-3/4 h-12 absolute left-10 top-2 text-[10px] flex items-center justify-evenly">
             <div className="rounded-xl bg-gray-500 w-28 flex items-center justify-center text-white h-8 ">
               Valor
             </div>
@@ -226,7 +206,7 @@ export default function GraficoGastosCotidianos({
               Variación Mensual
             </div>
           </div>
-          <div className="w-[80%] h-[80%] bg-gray-800 flex justify-evenly rounded-xl">
+          <div className="w-[80%] h-[90%] bg-gray-800 flex justify-evenly rounded-xl">
             <ul className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs">
               {categories.map((category) => (
                 <li

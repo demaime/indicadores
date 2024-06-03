@@ -237,7 +237,10 @@ export default function IndustriaPyme() {
           <ResponsiveContainer width="95%" height="90%">
             <BarChart data={barData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
+              <XAxis
+                dataKey="name"
+                style={{ fontWeight: "bold", fontSize: "12px" }}
+              />
               <YAxis domain={[-15, 15]} y tickCount={9} />
               <Tooltip />
 
@@ -267,7 +270,7 @@ export default function IndustriaPyme() {
               <img src="/assets/metal.png" alt="" />
             </div>
           </div>
-          <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-semibold">
+          <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-bold">
             <div className="w-full h-1/2 flex items-center text-green-500">
               Interanual
             </div>

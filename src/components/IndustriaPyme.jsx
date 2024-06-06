@@ -10,7 +10,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
 } from "recharts";
 
 export default function IndustriaPyme() {
@@ -148,7 +147,7 @@ export default function IndustriaPyme() {
 
   const colors = {
     "textiles e indumentaria": "#8884d8",
-    "alimentos y bebidas": "#82ca9d",
+    "alimentos y bebidas": "#f261da",
     "madera y muebles": "#ffc658",
     "papel e impresiones": "#ff8042",
     "quimicos y plasticos": "#8dd1e1",
@@ -200,6 +199,13 @@ export default function IndustriaPyme() {
     interanual: data[mes].interanual,
     capacidad: data[mes].capacidad,
   }));
+
+  const evolutivoIntermensual = Object.keys(aperturaIntermensual).map(
+    (month) => ({
+      month,
+      ...aperturaIntermensual[month],
+    })
+  );
 
   return (
     <div className="w-full h-full">
@@ -271,10 +277,10 @@ export default function IndustriaPyme() {
             </ResponsiveContainer>
             <div className="w-[90%] h-[10%] flex items-center justify-around absolute top-2 mx-auto left-0 right-4">
               <div className="rounded-full h-12 w-12">
-                <img src="/assets/textil.png" alt="" />
+                <img src="/assets/textiles.png" alt="" />
               </div>
               <div className="rounded-full h-12 w-12">
-                <img src="/assets/alimento.png" alt="" />
+                <img src="/assets/alimentos.png" alt="" />
               </div>
               <div className="rounded-full h-12 w-12">
                 <img src="/assets/madera.png" alt="" />
@@ -283,7 +289,7 @@ export default function IndustriaPyme() {
                 <img src="/assets/papel.png" alt="" />
               </div>
               <div className="rounded-full h-12 w-12">
-                <img src="/assets/quimico.png" alt="" />
+                <img src="/assets/quimicos.png" alt="" />
               </div>
               <div className="rounded-full h-12 w-12">
                 <img src="/assets/metal.png" alt="" />
@@ -316,64 +322,161 @@ export default function IndustriaPyme() {
           </div>
         </div>
       ) : (
-        <div className="w-full h-[95%] flex">
-          <div className="h-full w-1/2 bg-gray-100 flex items-center justify-start">
-            <ResponsiveContainer width="90%" height="90%">
-              <LineChart data={generalDataOrdenada}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" style={{ fontWeight: "bold" }} />
-                <YAxis domain={[-50, 90]} style={{ fontWeight: "bold" }} />
-                <Tooltip />
-
-                <Line
-                  type="monotone"
-                  dataKey="intermensual"
-                  stroke="#8884d8"
-                  activeDot={{ r: 8 }}
-                  strokeWidth={3}
-                  label={{
-                    position: "top",
-                    fill: "#8884d8",
-                    fontWeight: "bold",
-                  }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="acumulada"
-                  stroke="#34a832"
-                  strokeWidth={3}
-                  label={{
-                    position: "top",
-                    fill: "#34a832",
-                    fontWeight: "bold",
-                  }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="interanual"
-                  stroke="#f74640"
-                  strokeWidth={3}
-                  label={{
-                    position: "top",
-                    fill: "#f74640",
-                    fontWeight: "bold",
-                  }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="capacidad"
-                  stroke="#ffa21f"
-                  strokeWidth={3}
-                  label={{
-                    position: "top",
-                    fill: "#ffa21f",
-                    fontWeight: "bold",
-                  }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
+        <div className="w-full h-[95%]">
+          <div className="w-full h-[10%] flex">
+            <div className="w-1/2 h-full bg-gray-200 border-b-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white">
+              <div className="w-28 h-8 flex items-center justify-center rounded bg-[#8884d8]">
+                INTERMENSUAL
+              </div>
+              <div className="w-28 h-8 flex items-center justify-center rounded bg-[#34a832]">
+                ACUMULADA
+              </div>
+              <div className="w-28 h-8 flex items-center justify-center rounded bg-[#f74640]">
+                INTERANUAL
+              </div>
+              <div className="w-28 h-8 flex items-center justify-center rounded bg-[#ffa21f]">
+                CAPACIDAD
+              </div>
+            </div>
+            <div className="w-1/2 h-full bg-gray-900 border-b-2 border-gray-400 flex items-center justify-evenly pl-2">
+              {Object.keys(aperturaIntermensual[mesSeleccionado]).map(
+                (categoria, index) => (
+                  <div
+                    key={index}
+                    className="w-28 h-8 rounded-full flex items-center justify-end relative"
+                    style={{ backgroundColor: colors[categoria] }}
+                  >
+                    <div className="w-10 h-10 rounded-full absolute -top-1 -left-2 rounded full bg-white flex items-center justify-center">
+                      <img
+                        className="w-2/3 h-2/3 "
+                        src={`/assets/${categoria
+                          .split(" ")[0]
+                          .toUpperCase()}.png`}
+                        alt=""
+                      />
+                    </div>
+                    <span className=" font-semibold text-[10px] pr-2">
+                      {categoria.split(" ")[0].toUpperCase()}
+                    </span>
+                  </div>
+                )
+              )}
+            </div>
           </div>
-          <div className="h-full w-1/2 bg-gray-500"></div>
+          <div className="w-full h-[90%] flex">
+            <div className="h-full w-1/2 bg-gray-200 flex items-center justify-start">
+              <ResponsiveContainer width="90%" height="90%">
+                <LineChart data={generalDataOrdenada}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" style={{ fontWeight: "bold" }} />
+                  <YAxis domain={[-50, 90]} style={{ fontWeight: "bold" }} />
+                  <Tooltip />
+
+                  <Line
+                    type="monotone"
+                    dataKey="intermensual"
+                    stroke="#8884d8"
+                    activeDot={{ r: 8 }}
+                    strokeWidth={3}
+                    label={{
+                      position: "top",
+                      fill: "#8884d8",
+                      fontWeight: "bold",
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="acumulada"
+                    stroke="#34a832"
+                    strokeWidth={3}
+                    label={{
+                      position: "top",
+                      fill: "#34a832",
+                      fontWeight: "bold",
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="interanual"
+                    stroke="#f74640"
+                    strokeWidth={3}
+                    label={{
+                      position: "top",
+                      fill: "#f74640",
+                      fontWeight: "bold",
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="capacidad"
+                    stroke="#ffa21f"
+                    strokeWidth={3}
+                    label={{
+                      position: "top",
+                      fill: "#ffa21f",
+                      fontWeight: "bold",
+                    }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="h-full w-1/2 bg-gray-900 flex items-center justify-start">
+              <ResponsiveContainer width="98%" height={"90%"}>
+                <LineChart data={evolutivoIntermensual}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="month"
+                    style={{ fontWeight: "bold" }}
+                    tick={{ fill: "white" }}
+                    tickFormatter={(value) => value.toUpperCase()}
+                  />
+                  <YAxis
+                    domain={[-20, 20]}
+                    style={{ fontWeight: "bold" }}
+                    tick={{ fill: "white" }}
+                  />
+                  <Tooltip />
+
+                  <Line
+                    type="monotone"
+                    dataKey="textiles e indumentaria"
+                    stroke="#8884d8"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="alimentos y bebidas"
+                    stroke="#f261da"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="madera y muebles"
+                    stroke="#ffc658"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="papel e impresiones"
+                    stroke="#ff8042"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="quimicos y plasticos"
+                    stroke="#8dd1e1"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="metal y maquinaria"
+                    stroke="#a4de6c"
+                    strokeWidth={3}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </div>
       )}
     </div>

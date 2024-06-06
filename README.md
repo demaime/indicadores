@@ -42,3 +42,9 @@ nivel de actividad y nivel de consunmo
 slide MACRO: Grandes indicadores trimestralews (desempleo, indigencia, actividad pyme, consumo mayorista, minurista, capacidad instalada de la industria)
 
 FUENTES!!
+
+https://chequeado.com/el-explicador/jubilados-que-cambio-el-gobierno-de-cuanto-sera-el-aumento-y-que-diferencias-hay-con-las-formulas-anteriores/
+
+revisar dato de jubilacion: cual vamos a usar, con bono o sin? que sea siempre igual
+
+https://www.argentina.gob.ar/economia/energia/noticias

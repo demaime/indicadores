@@ -1340,7 +1340,7 @@ export default function Dolar() {
                   </div>
                   <div className="w-[90%] h-6 bg-gray-600 text-white text-sm rounded-xl font-semibold flex items-center justify-around text-center">
                     <span className="w-16 text-center">Tipo</span>
-                    <span className="w-16 text-center">Valor</span>
+                    <span className="w-16 text-center">Venta</span>
                     <span className="w-16 text-center">Diferencia</span>
                   </div>
                   <div className="w-[90%] h-5/6 flex flex-col items-center justify-around">
@@ -1479,7 +1479,7 @@ export default function Dolar() {
                   <div className="w-8/12 h-full flex">
                     <div className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs tracking-wider text-black">
                       <div className="w-24 h-8 text-gray-200 font-semibold rounded-lg flex items-center justify-center">
-                        VALOR
+                        VENTA
                       </div>
                       <div className="w-24 h-8  text-green-200 font-semibold rounded-lg flex items-center justify-center">
                         $ {promedioOficial}

@@ -230,7 +230,7 @@ export default function IndustriaPyme() {
                 VARIACIÓN MENSUAL
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].intermensual}
+                {data[mesSeleccionado].intermensual} pp
               </span>
             </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
@@ -238,7 +238,7 @@ export default function IndustriaPyme() {
                 VARIACIÓN ACUMULADA
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].acumulada}
+                {data[mesSeleccionado].acumulada} pp
               </span>
             </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
@@ -246,7 +246,7 @@ export default function IndustriaPyme() {
                 VARIACIÓN INTERANUAL
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].interanual}
+                {data[mesSeleccionado].interanual} pp
               </span>
             </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
@@ -254,7 +254,7 @@ export default function IndustriaPyme() {
                 CAPACIDAD INDUSTRIAL UTILIZADA
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].capacidad}
+                {data[mesSeleccionado].capacidad} %
               </span>
             </div>
           </div>
@@ -306,15 +306,15 @@ export default function IndustriaPyme() {
             <div className="w-[90%] h-[10%] absolute bottom-2 mx-auto left-0 right-4">
               <div className="w-full h-1/2 flex items-center justify-around text-green-500">
                 {interanualData.map((item) => (
-                  <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-green-500">
-                    {item.valor}
+                  <div className="flex flex-col items-center w-24 items-center justify-center rounded-xl text-white bg-green-500">
+                    {item.valor} pp
                   </div>
                 ))}
               </div>
               <div className="w-full h-1/2 flex items-center justify-around text-green-500">
                 {acumuladaData.map((item) => (
-                  <div className="flex flex-col items-center w-16 items-center justify-center rounded-xl text-white bg-blue-500">
-                    {item.valor}
+                  <div className="flex flex-col items-center w-24 items-center justify-center rounded-xl text-white bg-blue-500">
+                    {item.valor} pp
                   </div>
                 ))}
               </div>

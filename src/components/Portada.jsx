@@ -66,6 +66,12 @@ export default function Portada() {
           >
             INDUSTRIA PYME
           </a>
+          <a
+            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            href="#actividadeconomica"
+          >
+            ACTIVIDAD ECONOMICA
+          </a>
         </div>
       </div>
     </div>

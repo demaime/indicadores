@@ -48,3 +48,11 @@ https://chequeado.com/el-explicador/jubilados-que-cambio-el-gobierno-de-cuanto-s
 revisar dato de jubilacion: cual vamos a usar, con bono o sin? que sea siempre igual
 
 https://www.argentina.gob.ar/economia/energia/noticias
+
+CANASTA BASICA ALIMENTARIA
+La canasta básica alimentaria (CBA) es el conjunto de alimentos y bebidas que satisfacen requerimientos nutricionales, kilocalóricos y proteicos, cuya composición refleja los hábitos de consumo de una población de referencia, es decir, un grupo de hogares que cubre con su consumo dichas
+necesidades alimentarias
+
+CANASTA BASICA TOTAL
+La canasta básica total (CBT) amplía la canasta básica alimentaria (CBA) al considerar los bienes y
+servicios no alimentarios tales como vestimenta, transporte, educación, salud, vivienda, etcétera.

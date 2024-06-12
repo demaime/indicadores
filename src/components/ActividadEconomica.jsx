@@ -172,10 +172,10 @@ export default function ActividadEconomica() {
             Variación Interanual
           </button>
         </div>
-        <ResponsiveContainer height={"90%"} width={"100%"}>
+        <ResponsiveContainer height={"80%"} width={"95%"}>
           <LineChart
             data={dataForChart}
-            margin={{ top: 5, right: 50, bottom: 5 }}
+            margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="mes" tick={{ fill: "white" }} />

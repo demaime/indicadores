@@ -107,7 +107,7 @@ export default function ActividadEconomica() {
   const categorias = Object.keys(dataApertura);
 
   const [mesSeleccionado, setMesSeleccionado] = useState(meses[0]);
-
+  const [mensualoAnual, setMensualoAnual] = useState(true);
   const handleChangeMes = (event) => {
     setMesSeleccionado(event.target.value);
   };
@@ -155,6 +155,22 @@ export default function ActividadEconomica() {
               </option>
             ))}
           </select>
+          <button
+            className={`w-32 text-xs mx-2 rounded ${
+              mensualoAnual ? "bg-gray-400" : "bg-gray-200"
+            }`}
+            onClick={() => setMensualoAnual(false)}
+          >
+            Variación Intermensual
+          </button>
+          <button
+            className={`w-32 text-xs mx-2 rounded ${
+              mensualoAnual ? "bg-gray-200" : "bg-gray-400"
+            }`}
+            onClick={() => setMensualoAnual(true)}
+          >
+            Variación Interanual
+          </button>
         </div>
         <ResponsiveContainer height={"90%"} width={"100%"}>
           <LineChart
@@ -232,20 +248,23 @@ export default function ActividadEconomica() {
                     {categoria}
                   </p>
                 </div>
-                <div className="w-full h-4/5 flex flex-col justify-between">
+                <div className="w-full h-4/5 flex flex-col justify-evenly">
                   <p className="flex flex-col items-center text-5xl">{dato}</p>
-                  <p className="flex flex-col items-center text-[8px]">
-                    VARIACION INTERMENSUAL:{" "}
-                    <span className="text-2xl flex items-center">
-                      {intermensual}pp {getArrow(intermensual)}
-                    </span>
-                  </p>
-                  <p className="flex flex-col items-center text-[8px]">
-                    VARIACION INTERANUAL:{" "}
-                    <span className="text-2xl flex items-center">
-                      {interanual}pp {getArrow(interanual)}
-                    </span>
-                  </p>
+                  {!mensualoAnual ? (
+                    <p className="flex flex-col items-center text-[8px]">
+                      VARIACION INTERMENSUAL:{" "}
+                      <span className="text-2xl flex items-center">
+                        {intermensual}pp {getArrow(intermensual)}
+                      </span>
+                    </p>
+                  ) : (
+                    <p className="flex flex-col items-center text-[8px]">
+                      VARIACION INTERANUAL:{" "}
+                      <span className="text-2xl flex items-center">
+                        {interanual}pp {getArrow(interanual)}
+                      </span>
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

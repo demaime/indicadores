@@ -234,13 +234,13 @@ export default function ActividadEconomica() {
                 </div>
                 <div className="w-full h-4/5 flex flex-col justify-between">
                   <p className="flex flex-col items-center text-5xl">{dato}</p>
-                  <p className="flex flex-col items-center text-xs">
+                  <p className="flex flex-col items-center text-[8px]">
                     VARIACION INTERMENSUAL:{" "}
                     <span className="text-2xl flex items-center">
                       {intermensual}pp {getArrow(intermensual)}
                     </span>
                   </p>
-                  <p className="flex flex-col items-center text-xs">
+                  <p className="flex flex-col items-center text-[8px]">
                     VARIACION INTERANUAL:{" "}
                     <span className="text-2xl flex items-center">
                       {interanual}pp {getArrow(interanual)}

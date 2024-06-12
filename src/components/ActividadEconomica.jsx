@@ -121,14 +121,33 @@ export default function ActividadEconomica() {
     return dataObj;
   });
 
+  const colors = [
+    "#e6194b", // Red
+    "#3cb44b", // Green
+    "#ffe119", // Yellow
+    "#4363d8", // Blue
+    "#f58231", // Orange
+    "#911eb4", // Purple
+    "#42d4f4", // Cyan
+    "#f032e6", // Magenta
+    "#bfef45", // Lime
+    "#fabebe", // Pink
+    "#469990", // Teal
+    "#e6beff", // Lavender
+    "#9a6324", // Brown
+    "#fffac8", // Beige
+    "#800000", // Maroon
+    "#aaffc3", // Mint
+  ];
+
   return (
     <div className="w-full h-full flex">
-      <div className="w-1/2 h-full bg-gray-300 flex items-center justify-start relative">
-        <div className="col-span-4 flex justify-center items-center absolute top-0 w-full bg-gray-400">
+      <div className="w-1/2 h-full bg-gray-600 flex items-center justify-start relative">
+        <div className="flex justify-center items-center absolute top-0 w-full">
           <select
             value={mesSeleccionado}
             onChange={handleChangeMes}
-            className="p-2"
+            className="p-2 w-full text-center bg-blue-900 text-white font-semibold"
           >
             {meses.map((mes, index) => (
               <option key={index} value={mes}>
@@ -137,21 +156,29 @@ export default function ActividadEconomica() {
             ))}
           </select>
         </div>
-        <ResponsiveContainer height={"75%"} width={"90%"}>
+        <ResponsiveContainer height={"90%"} width={"100%"}>
           <LineChart
             data={dataForChart}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 5, right: 50, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="mes" />
-            <YAxis domain={[50, 200]} />
-            <Tooltip />
+            <XAxis dataKey="mes" tick={{ fill: "white" }} />
+            <YAxis domain={[50, 200]} tick={{ fill: "white" }} />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#333",
+                color: "#fff",
+                fontSize: "12px",
+              }}
+              cursor={{ stroke: "#333", strokeWidth: 2 }}
+            />
             {Object.keys(dataApertura).map((categoria, index) => (
               <Line
                 key={index}
                 type="monotone"
                 dataKey={categoria}
-                stroke={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
+                stroke={colors[index % colors.length]}
+                strokeWidth={2}
               />
             ))}
           </LineChart>
@@ -190,32 +217,36 @@ export default function ActividadEconomica() {
               key={index}
               className={`flex justify-center items-center flex-col ${backgroundColorClass}`}
             >
-              <div className="text-[8px] h-full flex items-center justify-between p-1 flex-col">
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <img
-                    src={`/assets/emae/${categoria
-                      .split(" ")[0]
-                      .toLowerCase()}.png`}
-                    alt=""
-                  />
+              <div className="h-full w-full flex items-center justify-between flex-col p-1">
+                <div className="w-full h-1/5 flex">
+                  {" "}
+                  <div className="w-12 h-12">
+                    <img
+                      src={`/assets/emae/${categoria
+                        .split(" ")[0]
+                        .toLowerCase()}.png`}
+                      alt=""
+                    />
+                  </div>
+                  <p className="flex items-center justify-center w-full text-center text-xs font-semibold text-yellow-600">
+                    {categoria}
+                  </p>
                 </div>
-
-                <p className="flex items-center justify-center w-full text-center">
-                  {categoria}
-                </p>
-                <p className="flex flex-col items-center text-3xl">{dato}</p>
-                <p className="flex flex-col items-center">
-                  VARIACION INTERMENSUAL:{" "}
-                  <span className="text-lg flex items-center">
-                    {intermensual} {getArrow(intermensual)}
-                  </span>
-                </p>
-                <p className="flex flex-col items-center">
-                  VARIACION INTERANUAL:{" "}
-                  <span className="text-lg flex items-center">
-                    {interanual} {getArrow(interanual)}
-                  </span>
-                </p>
+                <div className="w-full h-4/5 flex flex-col justify-between">
+                  <p className="flex flex-col items-center text-5xl">{dato}</p>
+                  <p className="flex flex-col items-center text-xs">
+                    VARIACION INTERMENSUAL:{" "}
+                    <span className="text-2xl flex items-center">
+                      {intermensual}pp {getArrow(intermensual)}
+                    </span>
+                  </p>
+                  <p className="flex flex-col items-center text-xs">
+                    VARIACION INTERANUAL:{" "}
+                    <span className="text-2xl flex items-center">
+                      {interanual}pp {getArrow(interanual)}
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           );

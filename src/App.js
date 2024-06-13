@@ -70,7 +70,12 @@ export default function App() {
         <IndustriaPyme />
       </section>
       <section className="section" id="actividadeconomica">
-        <Encabezado title={"ACTIVIDAD ECONOMICA"} />
+        <Encabezado
+          title={"ACTIVIDAD ECONOMICA"}
+          description={
+            "Indicador provisorio de la evolución del PIB a precios constantes de 2004, difundido con un rezago de 50 a 60 días de concluido el mes de referencia. Fuente: INDEC"
+          }
+        />
         <ActividadEconomica />
       </section>
     </div>

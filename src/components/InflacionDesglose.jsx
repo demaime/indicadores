@@ -210,27 +210,159 @@ const coloresCategorias = {
   "Cuidado personal, protección social y otros": "#a464d1",
 };
 
-const descripciones = {
-  GENERAL: "General description",
-  "Bienes y servicios": "Description for Bienes y servicios",
-  Transporte: "Description for Transporte",
-  Comunicación: "Description for Comunicación",
-  "Recreación y cultura": "Description for Recreación y cultura",
-  "Equipamiento y mantenimiento del hogar":
-    "Description for Equipamiento y mantenimiento del hogar",
-  "Bebidas alcohólicas y tabaco":
-    "Description for Bebidas alcohólicas y tabaco",
-  Salud: "Description for Salud",
-  "Alimentos y bebidas no alcohólicas":
-    "Description for Alimentos y bebidas no alcohólicas",
-  "Restaurantes y hoteles": "Description for Restaurantes y hoteles",
-  "Vivienda, agua, electricidad, gas y otros combustibles":
-    "Description for Vivienda, agua, electricidad, gas y otros combustibles",
-  "Prendas de vestir y calzado": "Description for Prendas de vestir y calzado",
-  Educación: "Description for Educación",
-  "Cuidado personal, protección social y otros":
-    "Description for Cuidado personal, protección social y otros",
-};
+const descripciones = [
+  {
+    GENERAL: ["Valor total de la inflación mensual"],
+  },
+  {
+    "Alimentos y bebidas no alcohólicas": [
+      "Pan y cereales",
+      "Carnes y derivados",
+      "Pescados y Mariscos",
+      "Leche, productos lácteos y huevos",
+      "Aceites, grasas y manteca",
+      "Frutas",
+      "Verduras, tubérculos y legumbres",
+      "Azúcar, dulces, chocolate, golosinas, etc.",
+      "Otros alimentos",
+      "Café, té, yerba y cacao",
+      "Aguas minerales, bebidas gaseosas y jugos",
+    ],
+  },
+  {
+    "Bebidas alcohólicas y tabaco": [
+      "Tabaco",
+      "Bebidas espirituosas, destiladas y licores",
+      "Vinos",
+      "Cerveza",
+    ],
+  },
+  {
+    "Prendas de vestir y calzado": [
+      "Prendas de vestir y materiales",
+      "Calzado",
+      "Materiales textiles, telas e hilados",
+      "Prendas de vestir",
+      "Otros artículos y accesorios para el vestir",
+      "Limpieza, reparación, alquiler de ropa",
+      "Zapatos y otros calzados",
+      "Limpieza, reparación, alquiler de calzados",
+    ],
+  },
+  {
+    "Vivienda, agua, electricidad, gas y otros combustibles": [
+      "Alquiler de la vivienda y gastos conexos",
+      "Mantenimiento y reparación de la vivienda",
+      "Suministro de agua",
+      "Electricidad, gas y otros combustibles",
+      "Alquiler de la vivienda",
+      "Gastos comunes por la vivienda y/o cochera y otros gastos",
+      "Materiales para la reparación de la vivienda",
+      "Servicios para la reparación de la vivienda",
+      "Electricidad",
+      "Gas",
+    ],
+  },
+  {
+    "Equipamiento y mantenimiento del hogar": [
+      "Muebles, accesorios, alfombras y otros materiales para pisos",
+      "Artículos textiles para el hogar",
+      "Artefactos para el hogar",
+      "Vajilla, utensilios, loza y cristalería",
+      "Herramientas y equipos para el hogar y el jardín",
+      "Bienes y servicios para la conservación del hogar",
+      "Bienes para el hogar no durables",
+      "Servicios domésticos y para el hogar",
+    ],
+  },
+  {
+    Salud: [
+      "Productos medicinales, artefactos y equipos para la salud",
+      "Servicios para pacientes externos",
+      "Gastos de prepagas y obras sociales",
+      "Productos farmacéuticos",
+      "Otros productos medicinales",
+      "Artefactos y equipos terapéuticos y sus reparaciones",
+      "Servicios médicos para pacientes externos",
+      "Servicios y tratamientos odontológicos",
+      "Servicios auxiliares para pacientes externos",
+    ],
+  },
+  {
+    Transporte: [
+      "Adquisición de vehículos",
+      "Funcionamiento de equipos de transporte personal",
+      "Transporte público",
+      "Vehículos a motor",
+      "Motocicletas",
+      "Bicicletas",
+      "Funcionamiento de equipos de transporte de uso del hogar",
+      "Combustibles y lubricantes para vehículos de uso del hogar",
+      "Conservación y reparación de vehículos de uso del hogar",
+      "Otros servicios relativos al equipo de vehículos de uso del hogar",
+      "Servicios de transporte automotor",
+      "Servicios de transporte ferroviario",
+      "Servicios de transporte aéreo",
+      "Otros servicios de transporte",
+    ],
+  },
+  {
+    Comunicación: [
+      "Servicios postales",
+      "Equipos telefónicos",
+      "Servicios de telefonía e internet",
+      "Equipos teléfonicos fijos",
+      "Equipos telefónicos móviles",
+      "Servicio de teléfonos fijos",
+      "Servicio de telefonía móvil",
+      "Servicio de conexión a internet",
+    ],
+  },
+  {
+    "Recreación y cultura": [
+      "Equipos audiovisuales, fotográficos y de procesamiento de la información",
+      "Otros artículos para la recreación, jardines y animales",
+      "Servicios recreativos y culturales",
+      "Periódicos, diarios, revistas, libros y artículos de papelería",
+      "Paquete turístico",
+      "Equipos para la recepción, grabación y reproducción de sonidos e imágenes",
+      "Equipo fotográfico y cinematográfico e instrumentos ópticos",
+      "Equipos de procesamiento e información",
+      "Medios para grabación",
+      "Juegos, juguetes y hobbies",
+      "Equipo para el deporte, campamento y recreación al aire libre",
+      "Mascotas y productos conexos",
+      "Servicios recreativos y deportivos",
+      "Servicios culturales",
+      "Libros",
+      "Diarios y publicaciones periódicas",
+      "Papel y útiles de oficina y materiales de dibujo",
+    ],
+  },
+  {
+    Educación: [
+      "Educación preescolar y primaria",
+      "Educación secundaria",
+      "Educación postsecundaria, no terciaria",
+      "Educación no atribuible a ningún nivel",
+    ],
+  },
+  {
+    "Restaurantes y hoteles": [
+      "Restaurantes y comidas fuera del hogar",
+      "Hoteles",
+    ],
+  },
+  {
+    "Bienes y servicios": [
+      "Cuidado personal",
+      "Seguros",
+      "Otros servicios",
+      "Salones de peluquería y establecimientos de cuidados personales",
+      "Otros aparatos, artículos y productos para la atención personal",
+    ],
+  },
+];
 
 const variacionAcumuladaNacion = {
   Enero: "20.6%",
@@ -506,38 +638,53 @@ export default function InflacionDesglose() {
             </button>
           </div>
           <div className="w-full h-[80%] flex flex-col justify-evenly items-center">
-            {categorias.map((categoria) => (
-              <div
-                key={categoria}
-                className="flex items-center justify-between w-full"
-              >
-                <input
-                  type="checkbox"
-                  id={categoria}
-                  checked={categoriasSeleccionadas.includes(categoria)}
-                  onChange={() => handleCategoriaSeleccionada(categoria)}
-                  className="hidden"
-                />
-                <label
-                  className={`w-full text-center text-[10px] font-semibold relative cursor-pointer rounded-xl py-1 ${
-                    dataInflacion === "nacional"
-                      ? "hover:bg-pink-200"
-                      : "hover:bg-yellow-200"
-                  }`}
-                  htmlFor={categoria}
-                  style={{
-                    "--checkbox-color": coloresCategorias[categoria],
-                  }}
+            {categorias.map((categoria) => {
+              // Buscar la descripción correspondiente en descripciones
+              const descripcion = descripciones.find((desc) =>
+                desc.hasOwnProperty(categoria)
+              )[categoria];
+
+              return (
+                <div
+                  key={categoria}
+                  className="flex items-center justify-between w-full"
                 >
-                  <div className="checkbox"></div> {categoria.toUpperCase()}
-                </label>
-                <Tippy content={<span>{descripciones[categoria]}</span>}>
-                  <span className="mr-1 flex rounded-full bg-black text-white items-center justify-center w-4 h-4 text-[8px]">
-                    ?
-                  </span>
-                </Tippy>
-              </div>
-            ))}
+                  <input
+                    type="checkbox"
+                    id={categoria}
+                    checked={categoriasSeleccionadas.includes(categoria)}
+                    onChange={() => handleCategoriaSeleccionada(categoria)}
+                    className="hidden"
+                  />
+                  <label
+                    className={`w-full text-center text-[10px] font-semibold relative cursor-pointer rounded-xl py-1 ${
+                      dataInflacion === "nacional"
+                        ? "hover:bg-pink-200"
+                        : "hover:bg-yellow-200"
+                    }`}
+                    htmlFor={categoria}
+                    style={{
+                      "--checkbox-color": coloresCategorias[categoria],
+                    }}
+                  >
+                    <div className="checkbox"></div> {categoria.toUpperCase()}
+                  </label>
+                  <Tippy
+                    content={
+                      <ul className="list-disc pl-4 text-xs">
+                        {descripcion.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    }
+                  >
+                    <span className="mr-1 flex rounded-full bg-black text-white items-center justify-center w-4 h-4 text-[8px]">
+                      ?
+                    </span>
+                  </Tippy>
+                </div>
+              );
+            })}
           </div>
           <div className="h-[5%] flex items-center w-full justify-evenly">
             {" "}

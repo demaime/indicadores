@@ -73,12 +73,11 @@ export default function ActividadEconomica() {
       { mes: "FEBRERO", dato: 147.3, intermensual: -0.34, interanual: -0.5 },
       { mes: "MARZO", dato: 148.2, intermensual: 0.34, interanual: -3.1 },
     ],
-    "Administración pública y defensa; planes de seguridad social de afiliación obligatoria":
-      [
-        { mes: "ENERO", dato: 166.4, intermensual: -1, interanual: 1.1 },
-        { mes: "FEBRERO", dato: 166.8, intermensual: 0.24, interanual: 1.2 },
-        { mes: "MARZO", dato: 164.9, intermensual: -1.14, interanual: 0.2 },
-      ],
+    "Adm. pública y defensa; planes de seguridad social": [
+      { mes: "ENERO", dato: 166.4, intermensual: -1, interanual: 1.1 },
+      { mes: "FEBRERO", dato: 166.8, intermensual: 0.24, interanual: 1.2 },
+      { mes: "MARZO", dato: 164.9, intermensual: -1.14, interanual: 0.2 },
+    ],
     Enseñanza: [
       { mes: "ENERO", dato: 167.1, intermensual: -4.48, interanual: 1.9 },
       { mes: "FEBRERO", dato: 168.6, intermensual: 0.9, interanual: 1.9 },
@@ -107,7 +106,9 @@ export default function ActividadEconomica() {
   const categorias = Object.keys(dataApertura);
 
   const [mesSeleccionado, setMesSeleccionado] = useState(meses[0]);
+  const [generalOApertura, setGeneralOApertura] = useState(true);
   const [mensualoAnual, setMensualoAnual] = useState(true);
+
   const handleChangeMes = (event) => {
     setMesSeleccionado(event.target.value);
   };
@@ -122,155 +123,183 @@ export default function ActividadEconomica() {
   });
 
   const colors = [
-    "#e6194b", // Red
-    "#3cb44b", // Green
-    "#ffe119", // Yellow
-    "#4363d8", // Blue
-    "#f58231", // Orange
-    "#911eb4", // Purple
-    "#42d4f4", // Cyan
-    "#f032e6", // Magenta
-    "#bfef45", // Lime
-    "#fabebe", // Pink
-    "#469990", // Teal
-    "#e6beff", // Lavender
-    "#9a6324", // Brown
-    "#fffac8", // Beige
-    "#800000", // Maroon
-    "#aaffc3", // Mint
+    "#e6194b",
+    "#3cb44b",
+    "#ffe119",
+    "#4363d8",
+    "#f58231",
+    "#911eb4",
+    "#42d4f4",
+    "#f032e6",
+    "#bfef45",
+    "#fabebe",
+    "#469990",
+    "#e6beff",
+    "#9a6324",
+    "#fffac8",
+    "#800000",
+    "#aaffc3",
   ];
 
   return (
     <div className="w-full h-full flex">
-      <div className="w-1/2 h-full bg-gray-600 flex items-center justify-start relative">
-        <div className="flex justify-center items-center absolute top-0 w-full">
-          <select
-            value={mesSeleccionado}
-            onChange={handleChangeMes}
-            className="p-2 w-full text-center bg-blue-900 text-white font-semibold"
-          >
-            {meses.map((mes, index) => (
-              <option key={index} value={mes}>
-                {mes}
-              </option>
-            ))}
-          </select>
-          <button
-            className={`w-32 text-xs mx-2 rounded ${
-              mensualoAnual ? "bg-gray-400" : "bg-gray-200"
-            }`}
-            onClick={() => setMensualoAnual(false)}
-          >
-            Variación Intermensual
-          </button>
-          <button
-            className={`w-32 text-xs mx-2 rounded ${
-              mensualoAnual ? "bg-gray-200" : "bg-gray-400"
-            }`}
-            onClick={() => setMensualoAnual(true)}
-          >
-            Variación Interanual
-          </button>
-        </div>
-        <ResponsiveContainer height={"80%"} width={"95%"}>
-          <LineChart
-            data={dataForChart}
-            margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="mes" tick={{ fill: "white" }} />
-            <YAxis domain={[50, 200]} tick={{ fill: "white" }} />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#333",
-                color: "#fff",
-                fontSize: "12px",
-              }}
-              cursor={{ stroke: "#333", strokeWidth: 2 }}
-            />
-            {Object.keys(dataApertura).map((categoria, index) => (
-              <Line
-                key={index}
-                type="monotone"
-                dataKey={categoria}
-                stroke={colors[index % colors.length]}
-                strokeWidth={2}
-              />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-
-      <div className="w-1/2 h-full bg-gray-800 grid grid-cols-4 grid-rows-4">
-        {categorias.map((categoria, index) => {
-          const datoObj = dataApertura[categoria].find(
-            (item) => item.mes === mesSeleccionado
-          );
-          const dato = datoObj?.dato;
-          const intermensual = datoObj?.intermensual;
-          const interanual = datoObj?.interanual;
-
-          const fila = Math.floor(index / 4);
-          const columna = index % 4;
-          const isEvenRow = fila % 2 === 0;
-          const isEvenColumn = columna % 2 === 0;
-          const backgroundColorClass =
-            (isEvenRow && !isEvenColumn) || (!isEvenRow && isEvenColumn)
-              ? "bg-gray-200 text-gray-800"
-              : "bg-gray-800 text-gray-200";
-
-          const getArrow = (value) => {
-            if (value > 0) {
-              return <FaArrowUp className="text-green-500 ml-2" size={15} />;
-            } else if (value < 0) {
-              return <FaArrowDown className="text-red-500 ml-2" size={15} />;
-            }
-            return null;
-          };
-
-          return (
-            <div
-              key={index}
-              className={`flex justify-center items-center flex-col ${backgroundColorClass}`}
-            >
-              <div className="h-full w-full flex items-center justify-between flex-col p-1">
-                <div className="w-full h-1/5 flex">
-                  {" "}
-                  <div className="w-12 h-12">
-                    <img
-                      src={`/assets/emae/${categoria
-                        .split(" ")[0]
-                        .toLowerCase()}.png`}
-                      alt=""
-                    />
-                  </div>
-                  <p className="flex items-center justify-center w-full text-center text-xs font-semibold text-yellow-600">
-                    {categoria}
-                  </p>
-                </div>
-                <div className="w-full h-4/5 flex flex-col justify-evenly">
-                  <p className="flex flex-col items-center text-5xl">{dato}</p>
-                  {!mensualoAnual ? (
-                    <p className="flex flex-col items-center text-[8px]">
-                      VARIACION INTERMENSUAL:{" "}
-                      <span className="text-2xl flex items-center">
-                        {intermensual}pp {getArrow(intermensual)}
-                      </span>
-                    </p>
-                  ) : (
-                    <p className="flex flex-col items-center text-[8px]">
-                      VARIACION INTERANUAL:{" "}
-                      <span className="text-2xl flex items-center">
-                        {interanual}pp {getArrow(interanual)}
-                      </span>
-                    </p>
-                  )}
-                </div>
-              </div>
+      {generalOApertura ? (
+        <>
+          <div className="w-1/2 h-full bg-gray-600 flex items-center justify-start relative">
+            <div className="flex justify-center items-center absolute top-0 w-full">
+              <select
+                value={mesSeleccionado}
+                onChange={handleChangeMes}
+                className="p-2 w-full text-center bg-blue-900 text-white font-semibold"
+              >
+                {meses.map((mes, index) => (
+                  <option key={index} value={mes}>
+                    {mes}
+                  </option>
+                ))}
+              </select>
+              <button
+                className={`w-32 text-xs mx-2 rounded ${
+                  mensualoAnual ? "bg-gray-400" : "bg-gray-200"
+                }`}
+                onClick={() => setMensualoAnual(false)}
+              >
+                Variación Intermensual
+              </button>
+              <button
+                className={`w-32 text-xs mx-2 rounded ${
+                  mensualoAnual ? "bg-gray-200" : "bg-gray-400"
+                }`}
+                onClick={() => setMensualoAnual(true)}
+              >
+                Variación Interanual
+              </button>
             </div>
-          );
-        })}
-      </div>
+            <ResponsiveContainer height={"80%"} width={"95%"}>
+              <LineChart
+                data={dataForChart}
+                margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="mes" tick={{ fill: "white" }} />
+                <YAxis domain={[50, 200]} tick={{ fill: "white" }} />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#333",
+                    color: "#fff",
+                    fontSize: "12px",
+                  }}
+                  cursor={{ stroke: "#333", strokeWidth: 2 }}
+                />
+                {Object.keys(dataApertura).map((categoria, index) => (
+                  <Line
+                    key={index}
+                    type="monotone"
+                    dataKey={categoria}
+                    stroke={colors[index % colors.length]}
+                    strokeWidth={2}
+                    dot={{ fill: colors[index % colors.length] }} // Asegura que los puntos sean del mismo color que la línea
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+
+            <button
+              onClick={() => setGeneralOApertura(false)}
+              className="absolute bottom-2 right-4 bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
+            >
+              VOLVER A VISTA GENERAL
+            </button>
+          </div>
+          <div className="w-1/2 h-full bg-gray-800 grid grid-cols-4 grid-rows-4">
+            {categorias.map((categoria, index) => {
+              const datoObj = dataApertura[categoria].find(
+                (item) => item.mes === mesSeleccionado
+              );
+              const dato = datoObj?.dato;
+              const intermensual = datoObj?.intermensual;
+              const interanual = datoObj?.interanual;
+
+              const fila = Math.floor(index / 4);
+              const columna = index % 4;
+              const isEvenRow = fila % 2 === 0;
+              const isEvenColumn = columna % 2 === 0;
+              const backgroundColorClass =
+                (isEvenRow && !isEvenColumn) || (!isEvenRow && isEvenColumn)
+                  ? "bg-gray-200 text-gray-800"
+                  : "bg-gray-800 text-gray-200";
+
+              const getArrow = (value) => {
+                if (value > 0) {
+                  return (
+                    <FaArrowUp className="text-green-500 ml-2" size={15} />
+                  );
+                } else if (value < 0) {
+                  return (
+                    <FaArrowDown className="text-red-500 ml-2" size={15} />
+                  );
+                }
+                return null;
+              };
+
+              return (
+                <div
+                  key={index}
+                  className={`flex justify-center items-center flex-col ${backgroundColorClass}`}
+                >
+                  <div className="h-full w-full flex items-center justify-between flex-col p-1">
+                    <div className="w-full h-1/5 flex">
+                      {" "}
+                      <div className="w-12 h-12">
+                        <img
+                          src={`/assets/emae/${categoria
+                            .split(" ")[0]
+                            .toLowerCase()}.png`}
+                          alt=""
+                        />
+                      </div>
+                      <p className="flex items-center justify-center w-full text-center text-xs font-semibold text-yellow-600">
+                        {categoria}
+                      </p>
+                    </div>
+                    <div className="w-full h-4/5 flex flex-col justify-evenly">
+                      <p className="flex flex-col items-center text-5xl">
+                        {dato}
+                      </p>
+                      {!mensualoAnual ? (
+                        <p className="flex flex-col items-center text-[8px]">
+                          VARIACION INTERMENSUAL:{" "}
+                          <span className="text-2xl flex items-center">
+                            {intermensual}pp {getArrow(intermensual)}
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="flex flex-col items-center text-[8px]">
+                          VARIACION INTERANUAL:{" "}
+                          <span className="text-2xl flex items-center">
+                            {interanual}pp {getArrow(interanual)}
+                          </span>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>{" "}
+        </>
+      ) : (
+        <div className="w-full h-full">
+          <div className="w-full h-1/2 bg-gray-800"></div>
+          <div className="w-full h-1/2 bg-gray-200"></div>
+        </div>
+        // <button
+        //   onClick={() => setGeneralOApertura(true)}
+        //   className="bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
+        // >
+        //   VER APERTURA
+        // </button>
+      )}
     </div>
   );
 }

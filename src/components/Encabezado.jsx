@@ -87,7 +87,7 @@ export default function Encabezado({ title, description }) {
                 <a href="#industrial">
                   <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                     <IoArrowRedoCircleOutline className="mr-4" />
-                    INDUSTRIA PYME
+                    INDUSTRIA
                   </li>
                 </a>
 

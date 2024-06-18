@@ -105,7 +105,9 @@ export default function ActividadEconomica() {
   );
   const categorias = Object.keys(dataApertura);
 
-  const [mesSeleccionado, setMesSeleccionado] = useState(meses[0]);
+  const [mesSeleccionado, setMesSeleccionado] = useState(
+    meses[meses.length - 1]
+  );
   const [generalOApertura, setGeneralOApertura] = useState(true);
   const [mensualoAnual, setMensualoAnual] = useState(true);
 
@@ -145,7 +147,7 @@ export default function ActividadEconomica() {
     <div className="w-full h-full flex">
       {generalOApertura ? (
         <>
-          <div className="w-1/2 h-full bg-gray-600 flex items-center justify-start relative">
+          <div className="w-1/2 h-full bg-gray-900 flex items-center justify-start relative">
             <div className="flex justify-center items-center absolute top-0 w-full">
               <select
                 value={mesSeleccionado}
@@ -291,14 +293,16 @@ export default function ActividadEconomica() {
       ) : (
         <div className="w-full h-full">
           <div className="w-full h-1/2 bg-gray-800"></div>
-          <div className="w-full h-1/2 bg-gray-200"></div>
+          <div className="w-full h-1/2 bg-gray-200">
+            {" "}
+            <button
+              onClick={() => setGeneralOApertura(true)}
+              className="bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
+            >
+              VER APERTURA
+            </button>
+          </div>
         </div>
-        // <button
-        //   onClick={() => setGeneralOApertura(true)}
-        //   className="bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
-        // >
-        //   VER APERTURA
-        // </button>
       )}
     </div>
   );

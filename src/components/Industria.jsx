@@ -12,8 +12,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function IndustriaPyme() {
-  const data = {
+export default function Industria() {
+  const dataPyme = {
     enero: {
       intermensual: -9.1,
       acumulada: -9.1,
@@ -40,7 +40,7 @@ export default function IndustriaPyme() {
     },
   };
 
-  const aperturaIntermensual = {
+  const aperturaIntermensualPyme = {
     enero: {
       "textiles e indumentaria": -2.3,
       "alimentos y bebidas": -8.7,
@@ -75,7 +75,7 @@ export default function IndustriaPyme() {
     },
   };
 
-  const aperturaInteranual = {
+  const aperturaInteranualPyme = {
     enero: {
       "textiles e indumentaria": -18.2,
       "alimentos y bebidas": -22,
@@ -110,7 +110,7 @@ export default function IndustriaPyme() {
     },
   };
 
-  const aperturaAcumulada = {
+  const aperturaAcumuladaPyme = {
     enero: {
       "textiles e indumentaria": -2.3,
       "alimentos y bebidas": -8.7,
@@ -154,11 +154,255 @@ export default function IndustriaPyme() {
     "metal y maquinaria": "#a4de6c",
   };
 
+  //acomodar estos objetos. esto es 2023 casi todo
+  const capacidadInstaladaIndustria = {
+    enero: {
+      Textiles: 41.0,
+      "Alimentos y bebidas": 60.4,
+      "Productos minerales no metálicos": 68.3,
+      "Papel y cartón": 76.4,
+      "Refinación de petróleo": 84.1,
+      "Edición e impresión": 57.9,
+      "Productos del tabáco": 55.7,
+      "Industrias metálicas": 81.7,
+      "Productos de caucho y plástico": 52.2,
+      "Industria automotriz": 31.0,
+      "Sustancias y productos químicos": 72.1,
+      "Metalmecánica (sin automotriz)": 45.3,
+      GENERAL: 62.0,
+    },
+    febrero: {
+      Textiles: 52.4,
+      "Alimentos y bebidas": 59.3,
+      "Productos minerales no metálicos": 74.4,
+      "Papel y cartón": 77.2,
+      "Refinación de petróleo": 86.0,
+      "Edición e impresión": 59.6,
+      "Productos del tabáco": 51.7,
+      "Industrias metálicas": 74.5,
+      "Productos de caucho y plástico": 53.7,
+      "Industria automotriz": 60.5,
+      "Sustancias y productos químicos": 74.2,
+      "Metalmecánica (sin automotriz)": 52.2,
+      GENERAL: 65.0,
+    },
+    marzo: {
+      Textiles: 52.5,
+      "Alimentos y bebidas": 61.3,
+      "Productos minerales no metálicos": 76.3,
+      "Papel y cartón": 76.9,
+      "Refinación de petróleo": 85.1,
+      "Edición e impresión": 62.5,
+      "Productos del tabáco": 61.3,
+      "Industrias metálicas": 77.2,
+      "Productos de caucho y plástico": 58.0,
+      "Industria automotriz": 72.5,
+      "Sustancias y productos químicos": 72.1,
+      "Metalmecánica (sin automotriz)": 57.3,
+      GENERAL: 67.3,
+    },
+    abril: {
+      Textiles: 53.9,
+      "Alimentos y bebidas": 62.7,
+      "Productos minerales no metálicos": 72.3,
+      "Papel y cartón": 74.6,
+      "Refinación de petróleo": 86.8,
+      "Edición e impresión": 60.6,
+      "Productos del tabáco": 63.3,
+      "Industrias metálicas": 82.0,
+      "Productos de caucho y plástico": 56.8,
+      "Industria automotriz": 66.6,
+      "Sustancias y productos químicos": 77.0,
+      "Metalmecánica (sin automotriz)": 61.0,
+      GENERAL: 68.9,
+    },
+    mayo: {
+      Textiles: 58.0,
+      "Alimentos y bebidas": 64.6,
+      "Productos minerales no metálicos": 72.7,
+      "Papel y cartón": 78.7,
+      "Refinación de petróleo": 83.1,
+      "Edición e impresión": 58.1,
+      "Productos del tabáco": 65.5,
+      "Industrias metálicas": 81.7,
+      "Productos de caucho y plástico": 55.9,
+      "Industria automotriz": 62.4,
+      "Sustancias y productos químicos": 74.5,
+      "Metalmecánica (sin automotriz)": 56.3,
+      GENERAL: 67.8,
+    },
+    junio: {
+      Textiles: 64.4,
+      "Alimentos y bebidas": 64.2,
+      "Productos minerales no metálicos": 74.4,
+      "Papel y cartón": 77.4,
+      "Refinación de petróleo": 82.4,
+      "Edición e impresión": 61.2,
+      "Productos del tabáco": 56.8,
+      "Industrias metálicas": 81.0,
+      "Productos de caucho y plástico": 55.4,
+      "Industria automotriz": 64.9,
+      "Sustancias y productos químicos": 74.7,
+      "Metalmecánica (sin automotriz)": 60.1,
+      GENERAL: 68.6,
+    },
+    julio: {
+      Textiles: 63.2,
+      "Alimentos y bebidas": 61.3,
+      "Productos minerales no metálicos": 71.7,
+      "Papel y cartón": 77.4,
+      "Refinación de petróleo": 82.3,
+      "Edición e impresión": 60.2,
+      "Productos del tabáco": 59.1,
+      "Industrias metálicas": 66.5,
+      "Productos de caucho y plástico": 55.4,
+      "Industria automotriz": 57.9,
+      "Sustancias y productos químicos": 73.6,
+      "Metalmecánica (sin automotriz)": 56.5,
+      GENERAL: 65.0,
+    },
+    agosto: {
+      Textiles: 59.3,
+      "Alimentos y bebidas": 64.5,
+      "Productos minerales no metálicos": 77.8,
+      "Papel y cartón": 79.8,
+      "Refinación de petróleo": 72.2,
+      "Edición e impresión": 60.0,
+      "Productos del tabáco": 59.7,
+      "Industrias metálicas": 78.7,
+      "Productos de caucho y plástico": 57.1,
+      "Industria automotriz": 74.3,
+      "Sustancias y productos químicos": 70.4,
+      "Metalmecánica (sin automotriz)": 61.2,
+      GENERAL: 67.9,
+    },
+    septiembre: {
+      Textiles: 59.1,
+      "Alimentos y bebidas": 62.4,
+      "Productos minerales no metálicos": 76.3,
+      "Papel y cartón": 77.4,
+      "Refinación de petróleo": 82.0,
+      "Edición e impresión": 62.4,
+      "Productos del tabáco": 52.6,
+      "Industrias metálicas": 85.0,
+      "Productos de caucho y plástico": 60.0,
+      "Industria automotriz": 68.6,
+      "Sustancias y productos químicos": 75.5,
+      "Metalmecánica (sin automotriz)": 51.0,
+      GENERAL: 67.9,
+    },
+    octubre: {
+      Textiles: 55.8,
+      "Alimentos y bebidas": 59.6,
+      "Productos minerales no metálicos": 72.9,
+      "Papel y cartón": 76.4,
+      "Refinación de petróleo": 72.1,
+      "Edición e impresión": 56.4,
+      "Productos del tabáco": 48.2,
+      "Industrias metálicas": 84.5,
+      "Productos de caucho y plástico": 57.8,
+      "Industria automotriz": 61.0,
+      "Sustancias y productos químicos": 70.7,
+      "Metalmecánica (sin automotriz)": 55.4,
+      GENERAL: 65.3,
+    },
+    noviembre: {
+      Textiles: 59.1,
+      "Alimentos y bebidas": 65.2,
+      "Productos minerales no metálicos": 74.3,
+      "Papel y cartón": 72.7,
+      "Refinación de petróleo": 84.7,
+      "Edición e impresión": 54.8,
+      "Productos del tabáco": 56.2,
+      "Industrias metálicas": 79.4,
+      "Productos de caucho y plástico": 56.8,
+      "Industria automotriz": 68.3,
+      "Sustancias y productos químicos": 71.4,
+      "Metalmecánica (sin automotriz)": 50.3,
+      GENERAL: 66.4,
+    },
+    diciembre: {
+      Textiles: 39.9,
+      "Alimentos y bebidas": 57.4,
+      "Productos minerales no metálicos": 60.8,
+      "Papel y cartón": 67.3,
+      "Refinación de petróleo": 85.0,
+      "Edición e impresión": 44.2,
+      "Productos del tabáco": 44.0,
+      "Industrias metálicas": 64.5,
+      "Productos de caucho y plástico": 46.5,
+      "Industria automotriz": 42.6,
+      "Sustancias y productos químicos": 58.2,
+      "Metalmecánica (sin automotriz)": 37.9,
+      GENERAL: 54.9,
+    },
+    enero_2024: {
+      Textiles: 36.7,
+      "Alimentos y bebidas": 57.7,
+      "Productos minerales no metálicos": 57.0,
+      "Papel y cartón": 69.8,
+      "Refinación de petróleo": 83.5,
+      "Edición e impresión": 53.9,
+      "Productos del tabáco": 50.5,
+      "Industrias metálicas": 76.3,
+      "Productos de caucho y plástico": 43.5,
+      "Industria automotriz": 25.7,
+      "Sustancias y productos químicos": 57.1,
+      "Metalmecánica (sin automotriz)": 33.4,
+      GENERAL: 54.6,
+    },
+    febrero_2024: {
+      Textiles: 45.6,
+      "Alimentos y bebidas": 58.1,
+      "Productos minerales no metálicos": 59.6,
+      "Papel y cartón": 75.4,
+      "Refinación de petróleo": 79.2,
+      "Edición e impresión": 51.3,
+      "Productos del tabáco": 52.2,
+      "Industrias metálicas": 66.5,
+      "Productos de caucho y plástico": 45.9,
+      "Industria automotriz": 47.3,
+      "Sustancias y productos químicos": 67.8,
+      "Metalmecánica (sin automotriz)": 37.3,
+      GENERAL: 57.6,
+    },
+    marzo_2024: {
+      Textiles: 38.5,
+      "Alimentos y bebidas": 54.5,
+      "Productos minerales no metálicos": 47.2,
+      "Papel y cartón": 63.5,
+      "Refinación de petróleo": 80.0,
+      "Edición e impresión": 48.3,
+      "Productos del tabáco": 50.5,
+      "Industrias metálicas": 50.0,
+      "Productos de caucho y plástico": 44.1,
+      "Industria automotriz": 50.8,
+      "Sustancias y productos químicos": 64.9,
+      "Metalmecánica (sin automotriz)": 38.0,
+      GENERAL: 53.4,
+    },
+    abril_2024: {
+      Textiles: 37.7,
+      "Alimentos y bebidas": 57.9,
+      "Productos minerales no metálicos": 42.7,
+      "Papel y cartón": 69.5,
+      "Refinación de petróleo": 82.2,
+      "Edición e impresión": 49.9,
+      "Productos del tabáco": 52.0,
+      "Industrias metálicas": 63.7,
+      "Productos de caucho y plástico": 42.4,
+      "Industria automotriz": 52.6,
+      "Sustancias y productos químicos": 63.3,
+      "Metalmecánica (sin automotriz)": 44.5,
+      GENERAL: 56.6,
+    },
+  };
+
   const meses = ["enero", "febrero", "marzo", "abril"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
-  const [visibilidad, setVisibilidad] = useState(true);
+  const [vista, setVista] = useState("PYME");
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -172,38 +416,38 @@ export default function IndustriaPyme() {
     setMesSeleccionado(meses[newIndex]);
   };
 
-  const barData = Object.keys(aperturaIntermensual[mesSeleccionado]).map(
+  const barData = Object.keys(aperturaInteranualPyme[mesSeleccionado]).map(
     (key) => ({
       name: key.toUpperCase(),
-      valor: aperturaIntermensual[mesSeleccionado][key],
+      valor: aperturaInteranualPyme[mesSeleccionado][key],
       fill: colors[key],
     })
   );
 
-  const interanualData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
-    (key) => ({
-      valor: aperturaInteranual[mesSeleccionado][key],
-    })
-  );
+  const intermensualData = Object.keys(
+    aperturaIntermensualPyme[mesSeleccionado]
+  ).map((key) => ({
+    valor: aperturaIntermensualPyme[mesSeleccionado][key],
+  }));
 
-  const acumuladaData = Object.keys(aperturaInteranual[mesSeleccionado]).map(
-    (key) => ({
-      valor: aperturaAcumulada[mesSeleccionado][key],
-    })
-  );
+  const acumuladaData = Object.keys(
+    aperturaInteranualPyme[mesSeleccionado]
+  ).map((key) => ({
+    valor: aperturaAcumuladaPyme[mesSeleccionado][key],
+  }));
 
   const generalDataOrdenada = meses.map((mes) => ({
     name: mes.toUpperCase(),
-    intermensual: data[mes].intermensual,
-    acumulada: data[mes].acumulada,
-    interanual: data[mes].interanual,
-    capacidad: data[mes].capacidad,
+    intermensual: dataPyme[mes].intermensual,
+    acumulada: dataPyme[mes].acumulada,
+    interanual: dataPyme[mes].interanual,
+    capacidad: dataPyme[mes].capacidad,
   }));
 
-  const evolutivoIntermensual = Object.keys(aperturaIntermensual).map(
+  const evolutivoIntermensual = Object.keys(aperturaIntermensualPyme).map(
     (month) => ({
       month,
-      ...aperturaIntermensual[month],
+      ...aperturaIntermensualPyme[month],
     })
   );
 
@@ -215,22 +459,56 @@ export default function IndustriaPyme() {
           {mesSeleccionado.toUpperCase()}
         </span>
         <FaArrowRight className="cursor-pointer" onClick={handleMesSiguiente} />
-        <button
-          onClick={() => setVisibilidad(!visibilidad)}
-          className="w-28 h-6 flex items-center justify-center text-xs font-semibold rounded-xl bg-pink-500 absolute right-0"
-        >
-          {visibilidad ? "VER EVOLUTIVO" : "VER TARJETAS"}
-        </button>
+        <div className="absolute right-0 flex space-x-2">
+          <button
+            onClick={() => setVista("COMPARATIVA")}
+            className={`w-28 h-6 flex items-center justify-center text-xs font-semibold rounded-xl ${
+              vista === "COMPARATIVA"
+                ? "bg-pink-600 text-white"
+                : "bg-gray-600 text-white"
+            } hover:bg-pink-800`}
+          >
+            COMPARATIVA
+          </button>
+          <button
+            onClick={() => setVista("PYME")}
+            className={`w-28 h-6 flex items-center justify-center text-xs font-semibold rounded-xl ${
+              vista === "PYME"
+                ? "bg-pink-600 text-white"
+                : "bg-gray-600 text-white"
+            } hover:bg-pink-800`}
+          >
+            PYME
+          </button>
+          <button
+            onClick={() => setVista("INDUSTRIA")}
+            className={`w-28 h-6 flex items-center justify-center text-xs font-semibold rounded-xl ${
+              vista === "INDUSTRIA"
+                ? "bg-pink-600 text-white"
+                : "bg-gray-600 text-white"
+            } hover:bg-pink-800`}
+          >
+            INDUSTRIA
+          </button>
+        </div>
       </div>
-      {visibilidad ? (
+      {vista === "PYME" ? (
         <div className="w-full h-[95%]">
           <div className="w-full h-1/5 bg-gray-400 flex items-center justify-evenly">
+            <div className="w-1/6 h-3/4 rounded-xl bg-yellow-100 flex flex-col text-white text-xs">
+              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
+                VARIACIÓN INTERANUAL
+              </span>
+              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
+                {dataPyme[mesSeleccionado].interanual} pp
+              </span>
+            </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
               <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
                 VARIACIÓN MENSUAL
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].intermensual} pp
+                {dataPyme[mesSeleccionado].intermensual} pp
               </span>
             </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
@@ -238,15 +516,7 @@ export default function IndustriaPyme() {
                 VARIACIÓN ACUMULADA
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].acumulada} pp
-              </span>
-            </div>
-            <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
-              <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
-                VARIACIÓN INTERANUAL
-              </span>
-              <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].interanual} pp
+                {dataPyme[mesSeleccionado].acumulada} pp
               </span>
             </div>
             <div className="w-1/6 h-3/4 rounded-xl bg-gray-200 flex flex-col text-white text-xs">
@@ -254,7 +524,7 @@ export default function IndustriaPyme() {
                 CAPACIDAD INDUSTRIAL UTILIZADA
               </span>
               <span className="w-full h-3/4 font-black flex items-center justify-center text-4xl text-gray-700">
-                {data[mesSeleccionado].capacidad} %
+                {dataPyme[mesSeleccionado].capacidad} %
               </span>
             </div>
           </div>
@@ -266,7 +536,7 @@ export default function IndustriaPyme() {
                   dataKey="name"
                   style={{ fontWeight: "bold", fontSize: "12px" }}
                 />
-                <YAxis domain={[-15, 15]} y tickCount={9} />
+                <YAxis domain={[-50, 50]} y tickCount={9} />
                 <Tooltip />
 
                 <Bar
@@ -297,7 +567,7 @@ export default function IndustriaPyme() {
             </div>
             <div className="w-32 absolute h-[10%]  left-1 bottom-2 text-[12px] font-bold">
               <div className="w-full h-1/2 flex items-center text-green-500">
-                Interanual
+                Intermensual
               </div>
               <div className="w-full h-1/2 flex items-center text-blue-500">
                 Acumulada
@@ -305,7 +575,7 @@ export default function IndustriaPyme() {
             </div>
             <div className="w-[90%] h-[10%] absolute bottom-2 mx-auto left-0 right-4">
               <div className="w-full h-1/2 flex items-center justify-around text-green-500">
-                {interanualData.map((item) => (
+                {intermensualData.map((item) => (
                   <div className="flex flex-col items-center w-24 items-center justify-center rounded-xl text-white bg-green-500">
                     {item.valor} pp
                   </div>
@@ -321,7 +591,7 @@ export default function IndustriaPyme() {
             </div>
           </div>
         </div>
-      ) : (
+      ) : vista === "COMPARATIVA" ? (
         <div className="w-full h-[95%]">
           <div className="w-full h-[10%] flex">
             <div className="w-1/2 h-full bg-gray-200 border-b-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white">
@@ -339,7 +609,7 @@ export default function IndustriaPyme() {
               </div>
             </div>
             <div className="w-1/2 h-full bg-gray-900 border-b-2 border-gray-400 flex items-center justify-evenly pl-2">
-              {Object.keys(aperturaIntermensual[mesSeleccionado]).map(
+              {Object.keys(aperturaIntermensualPyme[mesSeleccionado]).map(
                 (categoria, index) => (
                   <div
                     key={index}
@@ -349,9 +619,7 @@ export default function IndustriaPyme() {
                     <div className="w-10 h-10 rounded-full absolute -top-1 -left-2 rounded full bg-white flex items-center justify-center">
                       <img
                         className="w-2/3 h-2/3 "
-                        src={`/assets/${categoria
-                          .split(" ")[0]
-                          .toUpperCase()}.png`}
+                        src={`/assets/${categoria.split(" ")[0]}.png`}
                         alt=""
                       />
                     </div>
@@ -477,6 +745,12 @@ export default function IndustriaPyme() {
               </ResponsiveContainer>
             </div>
           </div>
+        </div>
+      ) : (
+        <div>
+          {" "}
+          Utilización de la capacidad instalada en la industria (grafico barras
+          horizontales)
         </div>
       )}
     </div>

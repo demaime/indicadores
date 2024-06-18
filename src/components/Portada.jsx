@@ -64,7 +64,7 @@ export default function Portada() {
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#industrial"
           >
-            INDUSTRIA PYME
+            INDUSTRIA
           </a>
           <a
             className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"

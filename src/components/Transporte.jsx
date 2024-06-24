@@ -64,6 +64,16 @@ const data = [
     PeajeOeste: 2276.08,
     Patentamiento: "actualización trimestral",
   },
+  {
+    Mes: "mayo",
+    Subte: 574,
+    Tren: 200,
+    Colectivo: 270,
+    Nafta: 870,
+    PeajeNorte: 1277.44,
+    PeajeOeste: 3072.71,
+    Patentamiento: "actualización trimestral",
+  },
 ];
 
 const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
@@ -288,7 +298,7 @@ export default function Transporte() {
 
   const mesSeleccionado = data[mesSeleccionadoIndex].Mes.toLowerCase();
 
-  const variacionesAnuales = [
+  const acumuladasAnuales = [
     {
       Mes: "diciembre",
       Subte: "-",
@@ -327,6 +337,15 @@ export default function Transporte() {
     },
     {
       Mes: "abril",
+      Subte: 51.14,
+      Tren: 244.96,
+      Colectivo: 298.93,
+      Nafta: 37.47,
+      PeajeNorte: 199,
+      PeajeOeste: 199,
+    },
+    {
+      Mes: "mayo",
       Subte: 51.14,
       Tren: 244.96,
       Colectivo: 298.93,
@@ -446,7 +465,7 @@ export default function Transporte() {
                   <div className="w-1/2 h-full flex flex-col justify-evenly items-center">
                     <div className="text-xs font-semibold">Acumulada Anual</div>
                     <div className="bg-[#f6893b] w-2/3 rounded-xl font-bold text-center text-xl">
-                      {variacionesAnuales[mesSeleccionadoIndex].Nafta}%{" "}
+                      {acumuladasAnuales[mesSeleccionadoIndex].Nafta}%{" "}
                     </div>
                   </div>
                 </div>
@@ -632,7 +651,7 @@ export default function Transporte() {
                       Acumulada Anual
                     </div>
                     <div className="w-full h-2/3 text-xl font-bold flex items-center justify-center">
-                      {variacionesAnuales[mesSeleccionadoIndex].Subte}%
+                      {acumuladasAnuales[mesSeleccionadoIndex].Subte}%
                     </div>
                   </div>
                 </div>
@@ -684,7 +703,7 @@ export default function Transporte() {
                       Acumulada Anual
                     </div>
                     <div className="w-full h-2/3 text-xl font-bold flex items-center justify-center">
-                      {variacionesAnuales[mesSeleccionadoIndex].Tren}%{" "}
+                      {acumuladasAnuales[mesSeleccionadoIndex].Tren}%{" "}
                     </div>
                   </div>
                 </div>
@@ -722,7 +741,7 @@ export default function Transporte() {
                       Acumulada Anual
                     </div>
                     <div className="w-full h-2/3 text-xl font-bold flex items-center justify-center">
-                      {variacionesAnuales[mesSeleccionadoIndex].Colectivo}%{" "}
+                      {acumuladasAnuales[mesSeleccionadoIndex].Colectivo}%{" "}
                     </div>
                   </div>
                 </div>
@@ -788,7 +807,7 @@ export default function Transporte() {
                         Acumulada Anual
                       </div>
                       <div className="w-full h-2/3 text-xl font-bold flex items-center justify-center">
-                        {variacionesAnuales[mesSeleccionadoIndex].PeajeNorte}%{" "}
+                        {acumuladasAnuales[mesSeleccionadoIndex].PeajeNorte}%{" "}
                       </div>
                     </div>
                   </div>
@@ -846,7 +865,7 @@ export default function Transporte() {
                         Acumulada Anual
                       </div>
                       <div className="w-full h-2/3 text-xl font-bold flex items-center justify-center">
-                        {variacionesAnuales[mesSeleccionadoIndex].PeajeOeste}%{" "}
+                        {acumuladasAnuales[mesSeleccionadoIndex].PeajeOeste}%{" "}
                       </div>
                     </div>
                   </div>

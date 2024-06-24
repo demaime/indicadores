@@ -33,6 +33,21 @@ const data = {
     coca: 2030.26,
     fideos: 1180.75,
   },
+  mayo: {
+    alquiler: 298724,
+    luz: 7699,
+    gas: "-",
+    internet: 31499,
+    celular: 8608,
+    pan: 2260.54,
+    leche: 1226.29,
+    yerba: 3958.57,
+    cerveza: 2200.83,
+    cafe: 3600,
+    carne: 9125.36,
+    coca: 2067.18,
+    fideos: 1226,
+  },
 };
 
 const calculateSingleVariation = (current, previous) => {
@@ -209,6 +224,9 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
             <div className="w-72 h-32 bg-yellow-300 rounded-xl border-yellow-500 border-2 relative flex items-end pb-7 justify-around">
               <div className="w-80 h-12 absolute -top-4  rounded-xl bg-yellow-100 border-yellow-500 border flex items-center justify-center font-bold">
                 ALQUILER MONOAMBIENTE
+              </div>
+              <div className="w-14 h-8 bg-white rounded-xl absolute  right-[40%] -bottom-3 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+                {variaciones[mesData].alquiler}
               </div>
               <div className="text-4xl">
                 <div className="text-4xl">

@@ -14,10 +14,10 @@ const data = {
   mayo: {
     fiesta: 8000,
     netflix: 4299,
-    gym: 17588,
-    cine: 5926,
-    combo: 7900,
-    libro: 21882,
+    gym: 20008,
+    cine: 6185,
+    combo: 8600,
+    libro: 22326,
     teatro: 15000,
   },
 };

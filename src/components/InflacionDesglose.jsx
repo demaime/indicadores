@@ -98,6 +98,23 @@ const dataNacion = [
       Educación: 8.6,
     },
   },
+  {
+    Mayo: {
+      GENERAL: 4.2,
+      "Bienes y servicios": 4.3,
+      Transporte: 4,
+      Comunicación: 8.2,
+      "Recreación y cultura": 4.6,
+      "Equipamiento y mantenimiento del hogar": 3.2,
+      "Bebidas alcohólicas y tabaco": 6.7,
+      Salud: 0.7,
+      "Alimentos y bebidas no alcohólicas": 4.8,
+      "Restaurantes y hoteles": 5.5,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 2.5,
+      "Prendas de vestir y calzado": 3.5,
+      Educación: 7.6,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -116,7 +133,6 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 11.6,
       "Prendas de vestir y calzado": 16.2,
       Educación: 15.9,
-      "Cuidado personal, protección social y otros": 26.9,
     },
   },
   {
@@ -134,7 +150,6 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 10,
       "Prendas de vestir y calzado": 10.6,
       Educación: 1.5,
-      "Cuidado personal, protección social y otros": 35.7,
     },
   },
   {
@@ -152,7 +167,6 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 13.2,
       "Prendas de vestir y calzado": 9.8,
       Educación: 9.4,
-      "Cuidado personal, protección social y otros": 14.3,
     },
   },
   {
@@ -170,7 +184,6 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 17.9,
       "Prendas de vestir y calzado": 11.5,
       Educación: 36.8,
-      "Cuidado personal, protección social y otros": 10,
     },
   },
   {
@@ -188,7 +201,23 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 22.9,
       "Prendas de vestir y calzado": 6.2,
       Educación: 15.1,
-      "Cuidado personal, protección social y otros": 6.5,
+    },
+  },
+  {
+    Mayo: {
+      GENERAL: 4.4,
+      "Bienes y servicios": 12.6,
+      Transporte: 5.2,
+      Comunicación: 7.7,
+      "Recreación y cultura": 5.9,
+      "Equipamiento y mantenimiento del hogar": 5.7,
+      "Bebidas alcohólicas y tabaco": 6,
+      Salud: -4.2,
+      "Alimentos y bebidas no alcohólicas": 4.8,
+      "Restaurantes y hoteles": 5.7,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 4.8,
+      "Prendas de vestir y calzado": 2.2,
+      Educación: 6.2,
     },
   },
 ];
@@ -207,7 +236,6 @@ const coloresCategorias = {
   "Vivienda, agua, electricidad, gas y otros combustibles": "#000080",
   "Prendas de vestir y calzado": "#FFC0CB",
   Educación: "#ADC2E2",
-  "Cuidado personal, protección social y otros": "#a464d1",
 };
 
 const descripciones = [
@@ -355,7 +383,6 @@ const descripciones = [
   },
   {
     "Bienes y servicios": [
-      "Cuidado personal",
       "Seguros",
       "Otros servicios",
       "Salones de peluquería y establecimientos de cuidados personales",
@@ -369,24 +396,28 @@ const variacionAcumuladaNacion = {
   Febrero: "36.6%",
   Marzo: "51.6%",
   Abril: "65%",
+  Mayo: "71.9%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
   Febrero: "38.9%",
   Marzo: "57.3%",
   Abril: "67.1%",
+  Mayo: "80.2%",
 };
 const variacionAnualNacion = {
   Enero: "254.2%",
   Febrero: "276.2%",
   Marzo: "287.9%",
   Abril: "289.4%",
+  Mayo: "276.4%",
 };
 const variacionAnualCaba = {
   Enero: "238.5%",
   Febrero: "264.5%",
   Marzo: "285.3%",
   Abril: "292.5%",
+  Mayo: "287.9%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {

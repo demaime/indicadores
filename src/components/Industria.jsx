@@ -147,113 +147,125 @@ export default function Industria() {
   };
 
   const capacidadInstaladaPyme = {
-    "enero 2023": {
+    "ENE-23": {
       "Textiles e indumentaria": 72.5,
       "Alimentos y bebidas": 80.1,
       "Madera y muebles": 72.4,
       "Papel e impresiones": 77.5,
       "Químicos y plásticos": 68.7,
       "Metal, maquinaria y equipo, y material de transporte": 67.5,
-      GENERAL: 72.5,
+      MANUFACTURERA: 62.0,
+      PYME: 72.5,
     },
-    "febrero 2023": {
+    "FEB-23": {
       "Textiles e indumentaria": 71.7,
       "Alimentos y bebidas": 73.5,
       "Madera y muebles": 75,
       "Papel e impresiones": 73.7,
       "Químicos y plásticos": 68.9,
       "Metal, maquinaria y equipo, y material de transporte": 69.9,
-      GENERAL: 71.7,
+      MANUFACTURERA: 65.0,
+      PYME: 71.7,
     },
-    "marzo 2023": {
+    "MAR-23": {
       "Textiles e indumentaria": 73.3,
       "Alimentos y bebidas": 76.7,
       "Madera y muebles": 74.2,
       "Papel e impresiones": 81.4,
       "Químicos y plásticos": 69.9,
       "Metal, maquinaria y equipo, y material de transporte": 69.9,
-      GENERAL: 73.3,
+      MANUFACTURERA: 67.3,
+      PYME: 73.3,
     },
-    "abril 2023": {
+    "ABR-23": {
       "Textiles e indumentaria": 73.2,
       "Alimentos y bebidas": 73.6,
       "Madera y muebles": 73.9,
       "Papel e impresiones": 76.4,
       "Químicos y plásticos": 72.8,
       "Metal, maquinaria y equipo, y material de transporte": 71.3,
-      GENERAL: 73.2,
+      MANUFACTURERA: 68.9,
+      PYME: 73.2,
     },
-    "mayo 2023": {
+    "MAY-23": {
       "Textiles e indumentaria": 73.6,
       "Alimentos y bebidas": 74.2,
       "Madera y muebles": 71.7,
       "Papel e impresiones": 82.4,
       "Químicos y plásticos": 70,
       "Metal, maquinaria y equipo, y material de transporte": 71.3,
-      GENERAL: 73.6,
+      MANUFACTURERA: 67.8,
+      PYME: 73.6,
     },
-    "junio 2023": {
+    "JUN-23": {
       "Textiles e indumentaria": 72.5,
       "Alimentos y bebidas": 72.9,
       "Madera y muebles": 75.3,
       "Papel e impresiones": 80.5,
       "Químicos y plásticos": 68.1,
       "Metal, maquinaria y equipo, y material de transporte": 70.5,
-      GENERAL: 72.5,
+      MANUFACTURERA: 68.6,
+      PYME: 72.5,
     },
-    "julio 2023": {
+    "JUL-23": {
       "Textiles e indumentaria": 71.9,
       "Alimentos y bebidas": 74.3,
       "Madera y muebles": 75.5,
       "Papel e impresiones": 77.5,
       "Químicos y plásticos": 65.8,
       "Metal, maquinaria y equipo, y material de transporte": 69.9,
-      GENERAL: 71.9,
+      MANUFACTURERA: 65.0,
+      PYME: 71.9,
     },
-    "agosto 2023": {
+    "AGO-23": {
       "Textiles e indumentaria": 73.1,
       "Alimentos y bebidas": 71.6,
       "Madera y muebles": 76.5,
       "Papel e impresiones": 80.7,
       "Químicos y plásticos": 69.6,
       "Metal, maquinaria y equipo, y material de transporte": 71.7,
-      GENERAL: 73.1,
+      MANUFACTURERA: 67.9,
+      PYME: 73.1,
     },
-    "septiembre 2023": {
+    "SEP-23": {
       "Textiles e indumentaria": 73,
       "Alimentos y bebidas": 70.9,
       "Madera y muebles": 76.7,
       "Papel e impresiones": 78.9,
       "Químicos y plásticos": 72.1,
       "Metal, maquinaria y equipo, y material de transporte": 70.9,
-      GENERAL: 73,
+      MANUFACTURERA: 67.9,
+      PYME: 73,
     },
-    "octubre 2023": {
+    "OCT-23": {
       "Textiles e indumentaria": 71.8,
       "Alimentos y bebidas": 71.3,
       "Madera y muebles": 73.3,
       "Papel e impresiones": 80.5,
       "Químicos y plásticos": 69.9,
       "Metal, maquinaria y equipo, y material de transporte": 70,
-      GENERAL: 71.8,
+      MANUFACTURERA: 65.3,
+      PYME: 71.8,
     },
-    "noviembre 2023": {
+    "NOV-23": {
       "Textiles e indumentaria": 73.3,
       "Alimentos y bebidas": 72.7,
       "Madera y muebles": 76.3,
       "Papel e impresiones": 76.7,
       "Químicos y plásticos": 72,
       "Metal, maquinaria y equipo, y material de transporte": 71.8,
-      GENERAL: 73.3,
+      MANUFACTURERA: 66.4,
+      PYME: 73.3,
     },
-    "diciembre 2023": {
+    "DIC-23": {
       "Textiles e indumentaria": 73.1,
       "Alimentos y bebidas": 75.8,
       "Madera y muebles": 71.6,
       "Papel e impresiones": 74.5,
       "Químicos y plásticos": 70.8,
       "Metal, maquinaria y equipo, y material de transporte": 70.8,
-      GENERAL: 73.1,
+      MANUFACTURERA: 54.9,
+      PYME: 73.1,
     },
     ENERO: {
       "Textiles e indumentaria": 68.2,
@@ -262,7 +274,8 @@ export default function Industria() {
       "Papel e impresiones": 76.3,
       "Químicos y plásticos": 69.9,
       "Metal, maquinaria y equipo, y material de transporte": 67,
-      GENERAL: 70.8,
+      MANUFACTURERA: 54.6,
+      PYME: 70.8,
     },
     FEBRERO: {
       "Textiles e indumentaria": 72.6,
@@ -271,7 +284,8 @@ export default function Industria() {
       "Papel e impresiones": 77.9,
       "Químicos y plásticos": 65.6,
       "Metal, maquinaria y equipo, y material de transporte": 66.6,
-      GENERAL: 70.9,
+      MANUFACTURERA: 57.6,
+      PYME: 70.9,
     },
     MARZO: {
       "Textiles e indumentaria": 71,
@@ -280,7 +294,8 @@ export default function Industria() {
       "Papel e impresiones": 76.8,
       "Químicos y plásticos": 67.4,
       "Metal, maquinaria y equipo, y material de transporte": 67.1,
-      GENERAL: 70,
+      MANUFACTURERA: 53.4,
+      PYME: 70,
     },
     ABRIL: {
       "Textiles e indumentaria": 70.8,
@@ -289,20 +304,23 @@ export default function Industria() {
       "Papel e impresiones": 76.8,
       "Químicos y plásticos": 67.4,
       "Metal, maquinaria y equipo, y material de transporte": 67.1,
-      GENERAL: 70.1,
+      MANUFACTURERA: 56.6,
+      PYME: 70.1,
     },
   };
 
-  const colors = {
+  const colorsPyme = {
     "textiles e indumentaria": "#8884d8",
     "alimentos y bebidas": "#f261da",
     "madera y muebles": "#ffc658",
     "papel e impresiones": "#ff8042",
     "quimicos y plasticos": "#8dd1e1",
     "metal y maquinaria": "#a4de6c",
+    MANUFACTURERA: "red",
+    PYME: "blue",
   };
 
-  const dataIndustrial = {
+  const variacionesIndustrial = {
     enero: {
       intermensual: -0.5,
       interanual: -12.6,
@@ -326,7 +344,7 @@ export default function Industria() {
   };
 
   const capacidadInstaladaIndustria = {
-    "enero 2023": {
+    "ENE-23": {
       Textiles: 41.0,
       "Alimentos y bebidas": 60.4,
       "Productos minerales no metálicos": 68.3,
@@ -339,9 +357,10 @@ export default function Industria() {
       "Industria automotriz": 31.0,
       "Sustancias y productos químicos": 72.1,
       "Metalmecánica (sin automotriz)": 45.3,
-      GENERAL: 62.0,
+      MANUFACTURERA: 62.0,
+      PYME: 72.5,
     },
-    "febrero 2023": {
+    "FEB-23": {
       Textiles: 52.4,
       "Alimentos y bebidas": 59.3,
       "Productos minerales no metálicos": 74.4,
@@ -354,9 +373,10 @@ export default function Industria() {
       "Industria automotriz": 60.5,
       "Sustancias y productos químicos": 74.2,
       "Metalmecánica (sin automotriz)": 52.2,
-      GENERAL: 65.0,
+      MANUFACTURERA: 65.0,
+      PYME: 71.7,
     },
-    "marzo 2023": {
+    "MAR-23": {
       Textiles: 52.5,
       "Alimentos y bebidas": 61.3,
       "Productos minerales no metálicos": 76.3,
@@ -369,9 +389,10 @@ export default function Industria() {
       "Industria automotriz": 72.5,
       "Sustancias y productos químicos": 72.1,
       "Metalmecánica (sin automotriz)": 57.3,
-      GENERAL: 67.3,
+      MANUFACTURERA: 67.3,
+      PYME: 73.3,
     },
-    "abril 2023": {
+    "ABR-23": {
       Textiles: 53.9,
       "Alimentos y bebidas": 62.7,
       "Productos minerales no metálicos": 72.3,
@@ -384,9 +405,10 @@ export default function Industria() {
       "Industria automotriz": 66.6,
       "Sustancias y productos químicos": 77.0,
       "Metalmecánica (sin automotriz)": 61.0,
-      GENERAL: 68.9,
+      MANUFACTURERA: 68.9,
+      PYME: 73.2,
     },
-    "mayo 2023": {
+    "MAY-23": {
       Textiles: 58.0,
       "Alimentos y bebidas": 64.6,
       "Productos minerales no metálicos": 72.7,
@@ -399,9 +421,10 @@ export default function Industria() {
       "Industria automotriz": 62.4,
       "Sustancias y productos químicos": 74.5,
       "Metalmecánica (sin automotriz)": 56.3,
-      GENERAL: 67.8,
+      MANUFACTURERA: 67.8,
+      PYME: 73.6,
     },
-    "junio 2023": {
+    "JUN-23": {
       Textiles: 64.4,
       "Alimentos y bebidas": 64.2,
       "Productos minerales no metálicos": 74.4,
@@ -414,9 +437,10 @@ export default function Industria() {
       "Industria automotriz": 64.9,
       "Sustancias y productos químicos": 74.7,
       "Metalmecánica (sin automotriz)": 60.1,
-      GENERAL: 68.6,
+      MANUFACTURERA: 68.6,
+      PYME: 72.5,
     },
-    "julio 2023": {
+    "JUL-23": {
       Textiles: 63.2,
       "Alimentos y bebidas": 61.3,
       "Productos minerales no metálicos": 71.7,
@@ -429,9 +453,10 @@ export default function Industria() {
       "Industria automotriz": 57.9,
       "Sustancias y productos químicos": 73.6,
       "Metalmecánica (sin automotriz)": 56.5,
-      GENERAL: 65.0,
+      MANUFACTURERA: 65.0,
+      PYME: 71.9,
     },
-    "agosto 2023": {
+    "AGO-23": {
       Textiles: 59.3,
       "Alimentos y bebidas": 64.5,
       "Productos minerales no metálicos": 77.8,
@@ -444,9 +469,10 @@ export default function Industria() {
       "Industria automotriz": 74.3,
       "Sustancias y productos químicos": 70.4,
       "Metalmecánica (sin automotriz)": 61.2,
-      GENERAL: 67.9,
+      MANUFACTURERA: 67.9,
+      PYME: 73.1,
     },
-    "septiembre 2023": {
+    "SEP-23": {
       Textiles: 59.1,
       "Alimentos y bebidas": 62.4,
       "Productos minerales no metálicos": 76.3,
@@ -459,9 +485,10 @@ export default function Industria() {
       "Industria automotriz": 68.6,
       "Sustancias y productos químicos": 75.5,
       "Metalmecánica (sin automotriz)": 51.0,
-      GENERAL: 67.9,
+      MANUFACTURERA: 67.9,
+      PYME: 73,
     },
-    "octubre 2023": {
+    "OCT-23": {
       Textiles: 55.8,
       "Alimentos y bebidas": 59.6,
       "Productos minerales no metálicos": 72.9,
@@ -474,9 +501,10 @@ export default function Industria() {
       "Industria automotriz": 61.0,
       "Sustancias y productos químicos": 70.7,
       "Metalmecánica (sin automotriz)": 55.4,
-      GENERAL: 65.3,
+      MANUFACTURERA: 65.3,
+      PYME: 71.8,
     },
-    "noviembre 2023": {
+    "NOV-23": {
       Textiles: 59.1,
       "Alimentos y bebidas": 65.2,
       "Productos minerales no metálicos": 74.3,
@@ -489,9 +517,10 @@ export default function Industria() {
       "Industria automotriz": 68.3,
       "Sustancias y productos químicos": 71.4,
       "Metalmecánica (sin automotriz)": 50.3,
-      GENERAL: 66.4,
+      MANUFACTURERA: 66.4,
+      PYME: 73.3,
     },
-    "diciembre 2023": {
+    "DIC-23": {
       Textiles: 39.9,
       "Alimentos y bebidas": 57.4,
       "Productos minerales no metálicos": 60.8,
@@ -504,9 +533,10 @@ export default function Industria() {
       "Industria automotriz": 42.6,
       "Sustancias y productos químicos": 58.2,
       "Metalmecánica (sin automotriz)": 37.9,
-      GENERAL: 54.9,
+      MANUFACTURERA: 54.9,
+      PYME: 73.1,
     },
-    enero: {
+    ENERO: {
       Textiles: 36.7,
       "Alimentos y bebidas": 57.7,
       "Productos minerales no metálicos": 57.0,
@@ -519,9 +549,10 @@ export default function Industria() {
       "Industria automotriz": 25.7,
       "Sustancias y productos químicos": 57.1,
       "Metalmecánica (sin automotriz)": 33.4,
-      GENERAL: 54.6,
+      MANUFACTURERA: 54.6,
+      PYME: 70.8,
     },
-    febrero: {
+    FEBRERO: {
       Textiles: 45.6,
       "Alimentos y bebidas": 58.1,
       "Productos minerales no metálicos": 59.6,
@@ -534,9 +565,10 @@ export default function Industria() {
       "Industria automotriz": 47.3,
       "Sustancias y productos químicos": 67.8,
       "Metalmecánica (sin automotriz)": 37.3,
-      GENERAL: 57.6,
+      MANUFACTURERA: 57.6,
+      PYME: 70.9,
     },
-    marzo: {
+    MARZO: {
       Textiles: 38.5,
       "Alimentos y bebidas": 54.5,
       "Productos minerales no metálicos": 47.2,
@@ -549,9 +581,10 @@ export default function Industria() {
       "Industria automotriz": 50.8,
       "Sustancias y productos químicos": 64.9,
       "Metalmecánica (sin automotriz)": 38.0,
-      GENERAL: 53.4,
+      MANUFACTURERA: 53.4,
+      PYME: 70,
     },
-    abril: {
+    ABRIL: {
       Textiles: 37.7,
       "Alimentos y bebidas": 57.9,
       "Productos minerales no metálicos": 42.7,
@@ -564,9 +597,15 @@ export default function Industria() {
       "Industria automotriz": 52.6,
       "Sustancias y productos químicos": 63.3,
       "Metalmecánica (sin automotriz)": 44.5,
-      GENERAL: 56.6,
+      MANUFACTURERA: 56.6,
+      PYME: 70.1,
     },
   };
+
+  const dataIndustria = Object.keys(capacidadInstaladaIndustria).map((key) => ({
+    mes: key,
+    ...capacidadInstaladaIndustria[key],
+  }));
 
   const meses = ["enero", "febrero", "marzo", "abril"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
@@ -590,23 +629,39 @@ export default function Industria() {
     (key) => ({
       name: key.toUpperCase(),
       valor: aperturaInteranualPyme[mesSeleccionado][key],
-      fill: colors[key],
+      fill: colorsPyme[key],
     })
   );
 
-  const IndustrialData = useMemo(() => {
-    const data = capacidadInstaladaIndustria[mesSeleccionado];
+  const transformData = (data) => {
+    // Filtramos los datos para excluir la categoría "PYME"
+    const filteredData = data.filter((item) => item.name !== "PYME");
+
+    // Renombramos la categoría "MANUFACTURERA" a "GENERAL"
+    const transformedData = filteredData.map((item) => ({
+      ...item,
+      name: item.name === "MANUFACTURERA" ? "GENERAL" : item.name,
+    }));
+
+    return transformedData;
+  };
+
+  const industrialData = useMemo(() => {
+    const data =
+      capacidadInstaladaIndustria[mesSeleccionado.toLocaleUpperCase()];
 
     const filteredData = Object.entries(data).map(([key, value]) => ({
       name: key,
       value,
-      fill: key === "GENERAL" ? "#372879" : "#8884d8",
+      fill: key === "MANUFACTURERA" ? "#372879" : "#8884d8",
     }));
 
     const sortedData = filteredData.sort((a, b) => b.value - a.value);
 
     return sortedData;
   }, [mesSeleccionado]);
+
+  const transformedIndustrialData = transformData(industrialData);
 
   const intermensualPymeData = Object.keys(
     aperturaIntermensualPyme[mesSeleccionado]
@@ -620,35 +675,67 @@ export default function Industria() {
     valor: aperturaAcumuladaPyme[mesSeleccionado][key],
   }));
 
-  const generalDataPymeOrdenada = meses.map((mes) => ({
-    name: mes.toUpperCase(),
-    intermensual: dataPyme[mes].intermensual,
-    acumulada: dataPyme[mes].acumulada,
-    interanual: dataPyme[mes].interanual,
-    capacidad: dataPyme[mes].capacidad,
-  }));
-
-  const evolutivoPymeIntermensual = Object.keys(aperturaIntermensualPyme).map(
-    (month) => ({
-      month,
-      ...aperturaIntermensualPyme[month],
-    })
-  );
-
   const charPymedata = Object.keys(capacidadInstaladaPyme).map((mes) => ({
     mes,
-    "Textiles e indumentaria":
+    "textiles e indumentaria":
       capacidadInstaladaPyme[mes]["Textiles e indumentaria"],
-    "Alimentos y bebidas": capacidadInstaladaPyme[mes]["Alimentos y bebidas"],
-    "Madera y muebles": capacidadInstaladaPyme[mes]["Madera y muebles"],
-    "Papel e impresiones": capacidadInstaladaPyme[mes]["Papel e impresiones"],
-    "Químicos y plásticos": capacidadInstaladaPyme[mes]["Químicos y plásticos"],
-    "Metal, maquinaria y equipo, y material de transporte":
+    "alimentos y bebidas": capacidadInstaladaPyme[mes]["Alimentos y bebidas"],
+    "madera y muebles": capacidadInstaladaPyme[mes]["Madera y muebles"],
+    "papel e impresiones": capacidadInstaladaPyme[mes]["Papel e impresiones"],
+    "quimicos y plasticos": capacidadInstaladaPyme[mes]["Químicos y plásticos"],
+    "metal y maquinaria":
       capacidadInstaladaPyme[mes][
         "Metal, maquinaria y equipo, y material de transporte"
       ],
-    GENERAL: capacidadInstaladaPyme[mes]["GENERAL"],
+    MANUFACTURERA: capacidadInstaladaPyme[mes]["MANUFACTURERA"],
+    PYME: capacidadInstaladaPyme[mes]["PYME"],
   }));
+
+  const colorsIndustria = {
+    Textiles: "#8884d8",
+    "Alimentos y bebidas": "#f261da",
+    "Productos minerales no metálicos": "#ffc658",
+    "Papel y cartón": "#ff8042",
+    "Refinación de petróleo": "#8dd1e1",
+    "Edición e impresión": "#a4de6c",
+    "Productos del tabáco": "#d0ed57",
+    "Industrias metálicas": "#82ca9d",
+    "Productos de caucho y plástico": "#ff6666",
+    "Industria automotriz": "#66b3ff",
+    "Sustancias y productos químicos": "#c658ff",
+    "Metalmecánica (sin automotriz)": "#66ffb3",
+    MANUFACTURERA: "red",
+    PYME: "blue",
+  };
+
+  const categoriasIndustria = Object.keys(colorsIndustria);
+
+  const [visibleLinesManufacturera, setVisibleLinesManufacturera] = useState([
+    "MANUFACTURERA",
+    "PYME",
+  ]);
+  const [visibleLinesPyme, setVisibleLinesPyme] = useState([
+    "MANUFACTURERA",
+    "PYME",
+  ]);
+
+  const toggleLineVisibilityManufacturera = (categoria) => {
+    setVisibleLinesManufacturera((prev) =>
+      prev.includes(categoria)
+        ? prev.filter((item) => item !== categoria)
+        : [...prev, categoria]
+    );
+  };
+
+  const categoriasPyme = Object.keys(colorsPyme);
+
+  const toggleLineVisibilityPyme = (categoria) => {
+    setVisibleLinesPyme((prev) =>
+      prev.includes(categoria)
+        ? prev.filter((item) => item !== categoria)
+        : [...prev, categoria]
+    );
+  };
 
   return (
     <div className="w-full h-full">
@@ -792,85 +879,99 @@ export default function Industria() {
         </div>
       ) : vista === "COMPARATIVA" ? (
         <div className="w-full h-[95%]">
-          <div className="w-full h-[10%] flex">
-            <div className="w-1/2 h-full bg-gray-200 border-b-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white"></div>
-            <div className="w-1/2 h-full bg-gray-900 border-b-2 border-gray-400 flex items-center justify-evenly pl-2">
-              {Object.keys(aperturaIntermensualPyme[mesSeleccionado]).map(
-                (categoria, index) => (
-                  <div
-                    key={index}
-                    className="w-28 h-8 rounded-full flex items-center justify-end relative"
-                    style={{ backgroundColor: colors[categoria] }}
-                  >
-                    <div className="w-10 h-10 rounded-full absolute -top-1 -left-2 rounded full bg-white flex items-center justify-center">
-                      <img
-                        className="w-2/3 h-2/3 "
-                        src={`/assets/${categoria.split(" ")[0]}.png`}
-                        alt=""
-                      />
-                    </div>
-                    <span className=" font-semibold text-[10px] pr-2">
-                      {categoria.split(" ")[0].toUpperCase()}
-                    </span>
-                  </div>
-                )
-              )}
+          <div className="w-full h-[90%] flex relative">
+            <div className="absolute top-3 left-[15%] w-64 rounded bg-blue-800 text-gray-100 flex items-center justify-center">
+              MANUFACTURERA
             </div>
-          </div>
-          <div className="w-full h-[90%] flex">
-            <div className="h-full w-1/2 bg-gray-200 flex items-center justify-start"></div>
-            <div className="h-full w-1/2 bg-gray-900 flex items-center justify-start">
-              <ResponsiveContainer width="100%" height={400}>
+            <div className="absolute top-3 right-[15%] w-64 rounded bg-blue-800 text-gray-100 flex items-center justify-center">
+              PYME
+            </div>
+            <div className="h-full w-1/2 bg-gray-200 flex items-end justify-start">
+              <ResponsiveContainer width="90%" height={"90%"}>
+                <LineChart data={dataIndustria}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="mes" />
+                  <YAxis domain={[20, 90]} />
+                  <Tooltip />
+                  {visibleLinesManufacturera.map((categoria) => (
+                    <Line
+                      key={categoria}
+                      type="monotone"
+                      dataKey={categoria}
+                      stroke={colorsIndustria[categoria]}
+                      dot={{
+                        stroke: colorsIndustria[categoria],
+                        fill: colorsIndustria[categoria],
+                      }}
+                    />
+                  ))}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="h-full w-1/2 bg-gray-900 flex items-end justify-start">
+              <ResponsiveContainer width="95%" height={"90%"}>
                 <LineChart data={charPymedata}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="mes" />
-                  <YAxis domain={[30, 90]} />
+                  <YAxis domain={[20, 90]} />
                   <Tooltip />
-
-                  <Line
-                    type="monotone"
-                    dataKey="Textiles e indumentaria"
-                    stroke="#8884d8"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Alimentos y bebidas"
-                    stroke="#f261da"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Madera y muebles"
-                    stroke="#ffc658"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Papel e impresiones"
-                    stroke="#ff8042"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Químicos y plásticos"
-                    stroke="#8dd1e1"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="Metal, maquinaria y equipo, y material de transporte"
-                    stroke="#a4de6c"
-                    strokeWidth={1}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="GENERAL"
-                    stroke="red"
-                    strokeWidth={5}
-                  />
+                  {visibleLinesPyme.map((categoria) => (
+                    <Line
+                      key={categoria}
+                      type="monotone"
+                      dataKey={categoria}
+                      stroke={colorsPyme[categoria]}
+                      strokeWidth={1}
+                      dot={{
+                        stroke: colorsPyme[categoria],
+                        fill: colorsPyme[categoria],
+                      }}
+                    />
+                  ))}
                 </LineChart>
               </ResponsiveContainer>
+            </div>
+          </div>
+          <div className="w-full h-[10%] flex">
+            <div className="w-1/2 h-full bg-gray-200 border-t-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white">
+              <div className="w-full flex flex-wrap justify-center h-full">
+                {categoriasIndustria.map((categoria, index) => (
+                  <div
+                    key={index}
+                    className="w-24 m-1 h-[1rem] rounded-full flex items-center justify-center cursor-pointer"
+                    style={{
+                      backgroundColor: visibleLinesManufacturera.includes(
+                        categoria
+                      )
+                        ? colorsIndustria[categoria]
+                        : "gray",
+                    }}
+                    onClick={() => toggleLineVisibilityManufacturera(categoria)}
+                  >
+                    <span className="font-semibold text-white text-[10px]">
+                      {categoria.split(" ")[0].toUpperCase()}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="w-1/2 h-full bg-gray-900 border-t-2 border-gray-400 flex items-center justify-evenly pl-2">
+              {categoriasPyme.map((categoria, index) => (
+                <div
+                  key={index}
+                  className="w-32 h-8 m-[2px] rounded-full flex items-center justify-center cursor-pointer"
+                  style={{
+                    backgroundColor: visibleLinesPyme.includes(categoria)
+                      ? colorsPyme[categoria]
+                      : "gray",
+                  }}
+                  onClick={() => toggleLineVisibilityPyme(categoria)}
+                >
+                  <span className="font-semibold text-white text-[8px]">
+                    {categoria.split(" ")[0].toUpperCase()}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -879,15 +980,8 @@ export default function Industria() {
           <ResponsiveContainer width="75%" height={"100%"}>
             <BarChart
               layout="vertical"
-              width={500}
-              height={300}
-              data={IndustrialData}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
+              data={transformedIndustrialData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 100]} />
@@ -899,7 +993,7 @@ export default function Industria() {
                 label={{ fontSize: 14 }}
               />
               <Tooltip />
-              <Bar dataKey="value" fill="#8884d8">
+              <Bar dataKey="value">
                 <LabelList dataKey="value" position="insideRight" fill="#fff" />
               </Bar>
             </BarChart>
@@ -910,7 +1004,7 @@ export default function Industria() {
                 CAPACIDAD INSUTRIAL UTILIZADA
               </span>
               <p className="text-5xl pb-8">
-                {dataIndustrial[mesSeleccionado].capacidad} %
+                {variacionesIndustrial[mesSeleccionado].capacidad} %
               </p>
             </div>
             <div className="rounded text-yellow-400 border-2 border-yellow-500 w-56 h-32 flex flex-col items-center justify-between">
@@ -918,7 +1012,7 @@ export default function Industria() {
                 VARIACION INTERANUAL
               </span>
               <p className="text-5xl pb-8">
-                {dataIndustrial[mesSeleccionado].interanual} pp.
+                {variacionesIndustrial[mesSeleccionado].interanual} pp.
               </p>
             </div>{" "}
             <div className="rounded text-yellow-400 border-2 border-yellow-500 w-56 h-32 flex flex-col items-center justify-between">
@@ -926,7 +1020,7 @@ export default function Industria() {
                 VARIACION INTERMENSUAL
               </span>
               <p className="text-5xl pb-8">
-                {dataIndustrial[mesSeleccionado].intermensual} pp.
+                {variacionesIndustrial[mesSeleccionado].intermensual} pp.
               </p>
             </div>
           </div>

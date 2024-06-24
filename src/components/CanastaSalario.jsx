@@ -68,29 +68,15 @@ export default function CanastaSalario() {
     return number.toLocaleString();
   };
 
-  const xAxisDomainMaxTotal =
-    Math.ceil(
-      Math.max(
-        ...canastaTotalNacio.map((item) => item.valor),
-        ...canastaTotalCaba.map((item) => item.valor)
-      ) / 100000
-    ) * 100000;
-
-  // Calcula el valor máximo de los datos
-  const yAxisDataMax = Math.max(...smvm.map((item) => item.salario));
-
-  // Calcula el siguiente número redondeado del máximo
-  const yAxisDomainMax = Math.ceil(yAxisDataMax / 50000) * 50000;
-
   return (
     <div className="w-full h-full flex flex-col bg-gray-200">
-      <div className="w-full flex items-center h-[5 %]">
+      <div className="w-full flex items-center h-[5%]">
         {" "}
         <div className="relative w-full h-full flex">
           <div className="flex w-64 justify-evenly">
             <button
               onClick={() => setDataCanasta("nacional")}
-              className={`border w-24 rounded-xl text-xs p-3 bg-[#f57b6dff] w-full ${
+              className={`border w-24 rounded text-xs p-3 bg-[#f57b6dff] w-full flex items-center justify-center ${
                 dataCanasta === "nacional" ? "font-bold" : ""
               }`}
             >
@@ -98,7 +84,7 @@ export default function CanastaSalario() {
             </button>
             <button
               onClick={() => setDataCanasta("caba")}
-              className={`border w-24 rounded-xl text-xs p-3 bg-yellow-400 w-full ${
+              className={`border w-24 rounded text-xs p-3 bg-yellow-400 w-full flex items-center justify-center ${
                 dataCanasta === "caba" ? "font-bold" : ""
               }`}
             >
@@ -108,7 +94,7 @@ export default function CanastaSalario() {
           <select
             value={mesSeleccionado}
             onChange={handleMesChange}
-            className={`text-2xl w-full h-full font-semibold flex items-center justify-center appearance-none outline-none text-center p-1 ${
+            className={`text-lg w-full h-full rounded-lg font-semibold flex items-center justify-center appearance-none outline-none text-center p-1 ${
               dataCanasta === "nacional" ? "bg-pink-200" : "bg-yellow-200"
             }`}
           >
@@ -130,258 +116,210 @@ export default function CanastaSalario() {
       <div className="w-full h-[95%] flex">
         <div className="h-full w-1/2 bg-gray-200 flex flex-col">
           <div className="w-full h-full flex flex-col justify-between">
-            <div className="h-1/2 p-2">
+            <div className="h-1/2">
               <h1 className="bg-gray-700 text-white px-2">
                 CANASTA BASICA ALIMENTARIA (HOGAR 4 INTEGRANTES)
               </h1>
-              <ResponsiveContainer width="100%" height="90%">
-                <BarChart
-                  className="p-2 font-bold text-white"
-                  layout="vertical"
-                  data={
-                    dataCanasta === "nacional"
-                      ? canastaAlimentariaNacio
-                      : canastaAlimentariaCaba
-                  }
-                  margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    type="number"
-                    domain={[0, xAxisDomainMaxTotal]} // Usar xAxisDomainMaxTotal en lugar de xAxisDomainMaxAlimentaria
-                    tickFormatter={formatNumber}
-                  />
-                  <YAxis
-                    dataKey="mes"
-                    type="category"
-                    tick={{ fill: "#1f2937" }}
-                  />
-                  <Tooltip formatter={formatNumber} />
-                  <Bar
-                    label={{
-                      fill: "1f2937",
-                      fontSize: 12,
-                      fontWeight: "bold",
-                      position: "right",
-                      formatter: formatNumber,
-                    }}
-                    dataKey="valor"
-                    fill={dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
+              <div className="w-full h-full flex">
+                <ResponsiveContainer width="50%" height="90%">
+                  <BarChart
+                    className="p-2 font-bold text-white"
+                    layout="horizontal"
+                    data={
+                      dataCanasta === "nacional"
+                        ? canastaAlimentariaNacio
+                        : canastaAlimentariaCaba
+                    }
+                    margin={{ top: 20, right: 0, left: 20, bottom: 0 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <YAxis
+                      type="number"
+                      domain={[0, 500000]} // Usar xAxisDomainMaxTotal en lugar de xAxisDomainMaxAlimentaria
+                      tickFormatter={formatNumber}
+                    />
+                    <XAxis
+                      dataKey="mes"
+                      type="category"
+                      tick={{ fill: "#1f2937" }}
+                    />
+                    <Tooltip formatter={formatNumber} />
+                    <Bar
+                      label={{
+                        fill: "1f2937",
+                        fontSize: 8,
+                        fontWeight: "bold",
+                        position: "inside",
+                        formatter: formatNumber,
+                      }}
+                      dataKey="valor"
+                      fill={
+                        dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"
+                      }
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+                <div className="w-1/2 h-full">
+                  <div className="h-full w-full flex flex-col items-center justify-evenly">
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
+                      VALOR MENSUAL
+                      <span className="text-3xl font-bold">
+                        $
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaAlimentariaNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.valor
+                            )
+                          : formatNumber(
+                              canastaAlimentariaCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.valor
+                            )}
+                      </span>
+                    </div>
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
+                      VARIACION MENSUAL
+                      <span className="text-3xl font-bold">
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaAlimentariaNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.variacion
+                            )
+                          : formatNumber(
+                              canastaAlimentariaCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.variacion
+                            )}
+                        %
+                      </span>
+                    </div>
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-700 text-white rounded flex flex-col items-center justify-center">
+                      VARIACION ACUMULADA
+                      <span className="text-3xl font-bold">
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaAlimentariaNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.acumulada
+                            )
+                          : formatNumber(
+                              canastaAlimentariaCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.acumulada
+                            )}
+                        %
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="h-1/2 p-2">
-              {" "}
+            <div className="h-1/2">
               <h1 className="bg-gray-400 px-2">
                 CANASTA BASICA TOTAL (HOGAR 4 INTEGRANTES)
               </h1>
-              <ResponsiveContainer width="100%" height="90%">
-                <BarChart
-                  className="p-2 font-bold text-white"
-                  layout="vertical"
-                  data={
-                    dataCanasta === "nacional"
-                      ? canastaTotalNacio
-                      : canastaTotalCaba
-                  }
-                  margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    type="number"
-                    domain={[0, xAxisDomainMaxTotal]}
-                    tickFormatter={formatNumber}
-                  />
-                  <YAxis
-                    dataKey="mes"
-                    type="category"
-                    tick={{ fill: "#1f2937" }}
-                  />
-                  <Tooltip formatter={formatNumber} />
-                  <Bar
-                    label={{
-                      fill: "1f2937",
-                      fontSize: 12,
-                      fontWeight: "bold",
-                      position: "right",
-                      formatter: formatNumber,
-                    }}
-                    dataKey="valor"
-                    fill={dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-        </div>
-        <div className="h-full w-1/2 bg-white flex">
-          <div className="w-1/3 h-full flex flex-col">
-            <div className="h-1/2 w-full flex flex-col items-center justify-evenly">
-              <div className="w-2/3 text-xs h-20 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
-                VALOR MENSUAL
-                <span className="text-3xl font-bold">
-                  $
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaAlimentariaNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.valor
-                      )
-                    : formatNumber(
-                        canastaAlimentariaCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.valor
-                      )}
-                </span>
-              </div>
-              <div className="w-2/3 text-xs h-20 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
-                VARIACION MENSUAL
-                <span className="text-3xl font-bold">
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaAlimentariaNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.variacion
-                      )
-                    : formatNumber(
-                        canastaAlimentariaCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.variacion
-                      )}
-                  %
-                </span>
-              </div>
-              <div className="w-2/3 text-xs h-20 bg-gray-700 text-white rounded flex flex-col items-center justify-center">
-                VARIACION ACUMULADA
-                <span className="text-3xl font-bold">
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaAlimentariaNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.acumulada
-                      )
-                    : formatNumber(
-                        canastaAlimentariaCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.acumulada
-                      )}
-                  %
-                </span>
-              </div>
-            </div>
-            <div className="h-1/2 w-full flex flex-col items-center justify-evenly">
-              <div className="w-2/3 text-xs h-20 bg-gray-400 rounded flex flex-col items-center justify-evenly">
-                VALOR MENSUAL
-                <span className="text-3xl font-bold">
-                  $
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaTotalNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.valor
-                      )
-                    : formatNumber(
-                        canastaTotalCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.valor
-                      )}
-                </span>
-              </div>
-              <div className="w-2/3 text-xs h-20 bg-gray-400 rounded flex flex-col items-center justify-evenly">
-                VARIACION MENSUAL
-                <span className="text-3xl font-bold">
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaTotalNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.variacion
-                      )
-                    : formatNumber(
-                        canastaTotalCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.variacion
-                      )}
-                  %
-                </span>
-              </div>
-              <div className="w-2/3 text-xs h-20 bg-gray-400 rounded flex flex-col items-center justify-center">
-                VARIACION ACUMULADA
-                <span className="text-3xl font-bold">
-                  {dataCanasta === "nacional"
-                    ? formatNumber(
-                        canastaTotalNacio.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.acumulada
-                      )
-                    : formatNumber(
-                        canastaTotalCaba.find(
-                          (item) => item.mes === mesSeleccionado
-                        )?.acumulada
-                      )}
-                  %
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="w-2/3 h-full bg-gray-800 flex flex-col">
-            <div className="h-1/6 text-white font-bold text-xl w-full flex items-center justify-center border-b border-gray-400">
-              SALARIO MINIMO VITAL Y MOVIL
-            </div>
-            <div className="h-5/6 flex flex-col items-center justify-evenly">
-              <div className="flex w-full items-center justify-evenly">
-                <p
-                  className={`text-center text-2xl ${
-                    dataCanasta === "nacional"
-                      ? "text-[#f57b6dff]"
-                      : "text-[#facc15]"
-                  }`}
-                >
-                  {mesSeleccionado.toUpperCase()}
-                </p>
-                <p className="text-center text-2xl text-white">
-                  $
-                  {formatNumber(
-                    smvm.find((item) => item.mes === mesSeleccionado)
-                      ?.salario || 0
-                  )}
-                </p>
-              </div>
-              <ResponsiveContainer width="95%" height="75%">
-                <LineChart
-                  className="p-2 font-bold text-white"
-                  data={smvm}
-                  margin={{ top: 10, right: 0, left: 10, bottom: 0 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="mes" tick={{ fill: "white" }} />
-                  <YAxis
-                    tick={{ fill: "white" }}
-                    tickFormatter={formatNumber}
-                    interval={0}
-                    domain={[0, yAxisDomainMax]}
-                  />
-                  <Tooltip />
-                  <Line
-                    label={{
-                      fill: "silver",
-                      fontSize: 12,
-                      fontWeight: "bold",
-                      position: "left",
-                      formatter: formatNumber,
-                    }}
-                    type="monotone"
-                    dataKey="salario"
-                    stroke={
-                      dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"
+              <div className="w-full h-full flex bg-gray-800">
+                <ResponsiveContainer width="50%" height="90%">
+                  <BarChart
+                    className="p-2 font-bold text-white"
+                    layout="horizontal"
+                    data={
+                      dataCanasta === "nacional"
+                        ? canastaTotalNacio
+                        : canastaTotalCaba
                     }
-                    strokeWidth={2}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+                    margin={{ top: 20, right: 0, left: 20, bottom: 0 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <YAxis
+                      type="number"
+                      domain={[0, 900000]}
+                      tickFormatter={formatNumber}
+                      tick={{ fill: "white" }}
+                    />
+                    <XAxis
+                      dataKey="mes"
+                      type="category"
+                      tick={{ fill: "white" }}
+                    />
+                    <Tooltip formatter={formatNumber} />
+                    <Bar
+                      label={{
+                        fill: "#1f2937",
+                        fontSize: 8,
+                        fontWeight: "bold",
+                        position: "inside",
+                        formatter: formatNumber,
+                      }}
+                      dataKey="valor"
+                      fill={
+                        dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"
+                      }
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+                <div className="w-1/2 h-full">
+                  <div className="h-full w-full flex flex-col items-center justify-evenly">
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-400 rounded flex flex-col items-center justify-evenly">
+                      VALOR MENSUAL
+                      <span className="text-3xl font-bold">
+                        $
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaTotalNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.valor
+                            )
+                          : formatNumber(
+                              canastaTotalCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.valor
+                            )}
+                      </span>
+                    </div>
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-400 rounded flex flex-col items-center justify-evenly">
+                      VARIACION MENSUAL
+                      <span className="text-3xl font-bold">
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaTotalNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.variacion
+                            )
+                          : formatNumber(
+                              canastaTotalCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.variacion
+                            )}
+                        %
+                      </span>
+                    </div>
+                    <div className="w-2/3 text-xs h-1/5 bg-gray-400 rounded flex flex-col items-center justify-center">
+                      VARIACION ACUMULADA
+                      <span className="text-3xl font-bold">
+                        {dataCanasta === "nacional"
+                          ? formatNumber(
+                              canastaTotalNacio.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.acumulada
+                            )
+                          : formatNumber(
+                              canastaTotalCaba.find(
+                                (item) => item.mes === mesSeleccionado
+                              )?.acumulada
+                            )}
+                        %
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div className="h-full w-1/2 bg-white flex"></div>
       </div>
     </div>
   );

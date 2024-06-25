@@ -25,9 +25,9 @@ export default function App() {
       </section>
       <section className="section" id="canasta-salario">
         <Encabezado
-          title={"CANASTA BASICA - SALARIO MINIMO"}
+          title={"CANASTA BASICA - SALARIO MINIMO - JUBILACION"}
           description={
-            "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad"
+            "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad. SMVM y Jubilación mínima: ANSES"
           }
         />
         <CanastaSalario />

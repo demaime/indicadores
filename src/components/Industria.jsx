@@ -347,14 +347,14 @@ export default function Industria() {
     "ENE-23": {
       Textiles: 41.0,
       "Alimentos y bebidas": 60.4,
-      "Productos minerales no metálicos": 68.3,
+      "Minerales no metálicos": 68.3,
       "Papel y cartón": 76.4,
       "Refinación de petróleo": 84.1,
       "Edición e impresión": 57.9,
-      "Productos del tabáco": 55.7,
-      "Industrias metálicas": 81.7,
-      "Productos de caucho y plástico": 52.2,
-      "Industria automotriz": 31.0,
+      Tabaco: 55.7,
+      Metálicas: 81.7,
+      "Caucho y plástico": 52.2,
+      Automotriz: 31.0,
       "Sustancias y productos químicos": 72.1,
       "Metalmecánica (sin automotriz)": 45.3,
       MANUFACTURERA: 62.0,
@@ -363,14 +363,14 @@ export default function Industria() {
     "FEB-23": {
       Textiles: 52.4,
       "Alimentos y bebidas": 59.3,
-      "Productos minerales no metálicos": 74.4,
+      "Minerales no metálicos": 74.4,
       "Papel y cartón": 77.2,
       "Refinación de petróleo": 86.0,
       "Edición e impresión": 59.6,
-      "Productos del tabáco": 51.7,
-      "Industrias metálicas": 74.5,
-      "Productos de caucho y plástico": 53.7,
-      "Industria automotriz": 60.5,
+      Tabaco: 51.7,
+      Metálicas: 74.5,
+      "Caucho y plástico": 53.7,
+      Automotriz: 60.5,
       "Sustancias y productos químicos": 74.2,
       "Metalmecánica (sin automotriz)": 52.2,
       MANUFACTURERA: 65.0,
@@ -379,14 +379,14 @@ export default function Industria() {
     "MAR-23": {
       Textiles: 52.5,
       "Alimentos y bebidas": 61.3,
-      "Productos minerales no metálicos": 76.3,
+      "Minerales no metálicos": 76.3,
       "Papel y cartón": 76.9,
       "Refinación de petróleo": 85.1,
       "Edición e impresión": 62.5,
-      "Productos del tabáco": 61.3,
-      "Industrias metálicas": 77.2,
-      "Productos de caucho y plástico": 58.0,
-      "Industria automotriz": 72.5,
+      Tabaco: 61.3,
+      Metálicas: 77.2,
+      "Caucho y plástico": 58.0,
+      Automotriz: 72.5,
       "Sustancias y productos químicos": 72.1,
       "Metalmecánica (sin automotriz)": 57.3,
       MANUFACTURERA: 67.3,
@@ -395,14 +395,14 @@ export default function Industria() {
     "ABR-23": {
       Textiles: 53.9,
       "Alimentos y bebidas": 62.7,
-      "Productos minerales no metálicos": 72.3,
+      "Minerales no metálicos": 72.3,
       "Papel y cartón": 74.6,
       "Refinación de petróleo": 86.8,
       "Edición e impresión": 60.6,
-      "Productos del tabáco": 63.3,
-      "Industrias metálicas": 82.0,
-      "Productos de caucho y plástico": 56.8,
-      "Industria automotriz": 66.6,
+      Tabaco: 63.3,
+      Metálicas: 82.0,
+      "Caucho y plástico": 56.8,
+      Automotriz: 66.6,
       "Sustancias y productos químicos": 77.0,
       "Metalmecánica (sin automotriz)": 61.0,
       MANUFACTURERA: 68.9,
@@ -411,14 +411,14 @@ export default function Industria() {
     "MAY-23": {
       Textiles: 58.0,
       "Alimentos y bebidas": 64.6,
-      "Productos minerales no metálicos": 72.7,
+      "Minerales no metálicos": 72.7,
       "Papel y cartón": 78.7,
       "Refinación de petróleo": 83.1,
       "Edición e impresión": 58.1,
-      "Productos del tabáco": 65.5,
-      "Industrias metálicas": 81.7,
-      "Productos de caucho y plástico": 55.9,
-      "Industria automotriz": 62.4,
+      Tabaco: 65.5,
+      Metálicas: 81.7,
+      "Caucho y plástico": 55.9,
+      Automotriz: 62.4,
       "Sustancias y productos químicos": 74.5,
       "Metalmecánica (sin automotriz)": 56.3,
       MANUFACTURERA: 67.8,
@@ -427,14 +427,14 @@ export default function Industria() {
     "JUN-23": {
       Textiles: 64.4,
       "Alimentos y bebidas": 64.2,
-      "Productos minerales no metálicos": 74.4,
+      "Minerales no metálicos": 74.4,
       "Papel y cartón": 77.4,
       "Refinación de petróleo": 82.4,
       "Edición e impresión": 61.2,
-      "Productos del tabáco": 56.8,
-      "Industrias metálicas": 81.0,
-      "Productos de caucho y plástico": 55.4,
-      "Industria automotriz": 64.9,
+      Tabaco: 56.8,
+      Metálicas: 81.0,
+      "Caucho y plástico": 55.4,
+      Automotriz: 64.9,
       "Sustancias y productos químicos": 74.7,
       "Metalmecánica (sin automotriz)": 60.1,
       MANUFACTURERA: 68.6,
@@ -443,14 +443,14 @@ export default function Industria() {
     "JUL-23": {
       Textiles: 63.2,
       "Alimentos y bebidas": 61.3,
-      "Productos minerales no metálicos": 71.7,
+      "Minerales no metálicos": 71.7,
       "Papel y cartón": 77.4,
       "Refinación de petróleo": 82.3,
       "Edición e impresión": 60.2,
-      "Productos del tabáco": 59.1,
-      "Industrias metálicas": 66.5,
-      "Productos de caucho y plástico": 55.4,
-      "Industria automotriz": 57.9,
+      Tabaco: 59.1,
+      Metálicas: 66.5,
+      "Caucho y plástico": 55.4,
+      Automotriz: 57.9,
       "Sustancias y productos químicos": 73.6,
       "Metalmecánica (sin automotriz)": 56.5,
       MANUFACTURERA: 65.0,
@@ -459,14 +459,14 @@ export default function Industria() {
     "AGO-23": {
       Textiles: 59.3,
       "Alimentos y bebidas": 64.5,
-      "Productos minerales no metálicos": 77.8,
+      "Minerales no metálicos": 77.8,
       "Papel y cartón": 79.8,
       "Refinación de petróleo": 72.2,
       "Edición e impresión": 60.0,
-      "Productos del tabáco": 59.7,
-      "Industrias metálicas": 78.7,
-      "Productos de caucho y plástico": 57.1,
-      "Industria automotriz": 74.3,
+      Tabaco: 59.7,
+      Metálicas: 78.7,
+      "Caucho y plástico": 57.1,
+      Automotriz: 74.3,
       "Sustancias y productos químicos": 70.4,
       "Metalmecánica (sin automotriz)": 61.2,
       MANUFACTURERA: 67.9,
@@ -475,14 +475,14 @@ export default function Industria() {
     "SEP-23": {
       Textiles: 59.1,
       "Alimentos y bebidas": 62.4,
-      "Productos minerales no metálicos": 76.3,
+      "Minerales no metálicos": 76.3,
       "Papel y cartón": 77.4,
       "Refinación de petróleo": 82.0,
       "Edición e impresión": 62.4,
-      "Productos del tabáco": 52.6,
-      "Industrias metálicas": 85.0,
-      "Productos de caucho y plástico": 60.0,
-      "Industria automotriz": 68.6,
+      Tabaco: 52.6,
+      Metálicas: 85.0,
+      "Caucho y plástico": 60.0,
+      Automotriz: 68.6,
       "Sustancias y productos químicos": 75.5,
       "Metalmecánica (sin automotriz)": 51.0,
       MANUFACTURERA: 67.9,
@@ -491,14 +491,14 @@ export default function Industria() {
     "OCT-23": {
       Textiles: 55.8,
       "Alimentos y bebidas": 59.6,
-      "Productos minerales no metálicos": 72.9,
+      "Minerales no metálicos": 72.9,
       "Papel y cartón": 76.4,
       "Refinación de petróleo": 72.1,
       "Edición e impresión": 56.4,
-      "Productos del tabáco": 48.2,
-      "Industrias metálicas": 84.5,
-      "Productos de caucho y plástico": 57.8,
-      "Industria automotriz": 61.0,
+      Tabaco: 48.2,
+      Metálicas: 84.5,
+      "Caucho y plástico": 57.8,
+      Automotriz: 61.0,
       "Sustancias y productos químicos": 70.7,
       "Metalmecánica (sin automotriz)": 55.4,
       MANUFACTURERA: 65.3,
@@ -507,14 +507,14 @@ export default function Industria() {
     "NOV-23": {
       Textiles: 59.1,
       "Alimentos y bebidas": 65.2,
-      "Productos minerales no metálicos": 74.3,
+      "Minerales no metálicos": 74.3,
       "Papel y cartón": 72.7,
       "Refinación de petróleo": 84.7,
       "Edición e impresión": 54.8,
-      "Productos del tabáco": 56.2,
-      "Industrias metálicas": 79.4,
-      "Productos de caucho y plástico": 56.8,
-      "Industria automotriz": 68.3,
+      Tabaco: 56.2,
+      Metálicas: 79.4,
+      "Caucho y plástico": 56.8,
+      Automotriz: 68.3,
       "Sustancias y productos químicos": 71.4,
       "Metalmecánica (sin automotriz)": 50.3,
       MANUFACTURERA: 66.4,
@@ -523,14 +523,14 @@ export default function Industria() {
     "DIC-23": {
       Textiles: 39.9,
       "Alimentos y bebidas": 57.4,
-      "Productos minerales no metálicos": 60.8,
+      "Minerales no metálicos": 60.8,
       "Papel y cartón": 67.3,
       "Refinación de petróleo": 85.0,
       "Edición e impresión": 44.2,
-      "Productos del tabáco": 44.0,
-      "Industrias metálicas": 64.5,
-      "Productos de caucho y plástico": 46.5,
-      "Industria automotriz": 42.6,
+      Tabaco: 44.0,
+      Metálicas: 64.5,
+      "Caucho y plástico": 46.5,
+      Automotriz: 42.6,
       "Sustancias y productos químicos": 58.2,
       "Metalmecánica (sin automotriz)": 37.9,
       MANUFACTURERA: 54.9,
@@ -539,14 +539,14 @@ export default function Industria() {
     ENERO: {
       Textiles: 36.7,
       "Alimentos y bebidas": 57.7,
-      "Productos minerales no metálicos": 57.0,
+      "Minerales no metálicos": 57.0,
       "Papel y cartón": 69.8,
       "Refinación de petróleo": 83.5,
       "Edición e impresión": 53.9,
-      "Productos del tabáco": 50.5,
-      "Industrias metálicas": 76.3,
-      "Productos de caucho y plástico": 43.5,
-      "Industria automotriz": 25.7,
+      Tabaco: 50.5,
+      Metálicas: 76.3,
+      "Caucho y plástico": 43.5,
+      Automotriz: 25.7,
       "Sustancias y productos químicos": 57.1,
       "Metalmecánica (sin automotriz)": 33.4,
       MANUFACTURERA: 54.6,
@@ -555,14 +555,14 @@ export default function Industria() {
     FEBRERO: {
       Textiles: 45.6,
       "Alimentos y bebidas": 58.1,
-      "Productos minerales no metálicos": 59.6,
+      "Minerales no metálicos": 59.6,
       "Papel y cartón": 75.4,
       "Refinación de petróleo": 79.2,
       "Edición e impresión": 51.3,
-      "Productos del tabáco": 52.2,
-      "Industrias metálicas": 66.5,
-      "Productos de caucho y plástico": 45.9,
-      "Industria automotriz": 47.3,
+      Tabaco: 52.2,
+      Metálicas: 66.5,
+      "Caucho y plástico": 45.9,
+      Automotriz: 47.3,
       "Sustancias y productos químicos": 67.8,
       "Metalmecánica (sin automotriz)": 37.3,
       MANUFACTURERA: 57.6,
@@ -571,14 +571,14 @@ export default function Industria() {
     MARZO: {
       Textiles: 38.5,
       "Alimentos y bebidas": 54.5,
-      "Productos minerales no metálicos": 47.2,
+      "Minerales no metálicos": 47.2,
       "Papel y cartón": 63.5,
       "Refinación de petróleo": 80.0,
       "Edición e impresión": 48.3,
-      "Productos del tabáco": 50.5,
-      "Industrias metálicas": 50.0,
-      "Productos de caucho y plástico": 44.1,
-      "Industria automotriz": 50.8,
+      Tabaco: 50.5,
+      Metálicas: 50.0,
+      "Caucho y plástico": 44.1,
+      Automotriz: 50.8,
       "Sustancias y productos químicos": 64.9,
       "Metalmecánica (sin automotriz)": 38.0,
       MANUFACTURERA: 53.4,
@@ -587,14 +587,14 @@ export default function Industria() {
     ABRIL: {
       Textiles: 37.7,
       "Alimentos y bebidas": 57.9,
-      "Productos minerales no metálicos": 42.7,
+      "Minerales no metálicos": 42.7,
       "Papel y cartón": 69.5,
       "Refinación de petróleo": 82.2,
       "Edición e impresión": 49.9,
-      "Productos del tabáco": 52.0,
-      "Industrias metálicas": 63.7,
-      "Productos de caucho y plástico": 42.4,
-      "Industria automotriz": 52.6,
+      Tabaco: 52.0,
+      Metálicas: 63.7,
+      "Caucho y plástico": 42.4,
+      Automotriz: 52.6,
       "Sustancias y productos químicos": 63.3,
       "Metalmecánica (sin automotriz)": 44.5,
       MANUFACTURERA: 56.6,
@@ -694,14 +694,14 @@ export default function Industria() {
   const colorsIndustria = {
     Textiles: "#8884d8",
     "Alimentos y bebidas": "#f261da",
-    "Productos minerales no metálicos": "#ffc658",
+    "Minerales no metálicos": "#ffc658",
     "Papel y cartón": "#ff8042",
     "Refinación de petróleo": "#8dd1e1",
     "Edición e impresión": "#a4de6c",
-    "Productos del tabáco": "#d0ed57",
-    "Industrias metálicas": "#82ca9d",
-    "Productos de caucho y plástico": "#ff6666",
-    "Industria automotriz": "#66b3ff",
+    Tabaco: "#d0ed57",
+    Metálicas: "#82ca9d",
+    "Caucho y plástico": "#ff6666",
+    Automotriz: "#66b3ff",
     "Sustancias y productos químicos": "#c658ff",
     "Metalmecánica (sin automotriz)": "#66ffb3",
     MANUFACTURERA: "red",
@@ -886,7 +886,7 @@ export default function Industria() {
             <div className="absolute top-3 right-[15%] w-64 rounded bg-blue-800 text-gray-100 flex items-center justify-center">
               PYME
             </div>
-            <div className="h-full w-1/2 bg-gray-200 flex items-end justify-start">
+            <div className="h-full w-1/2 bg-gray-100 flex items-end justify-start">
               <ResponsiveContainer width="90%" height={"90%"}>
                 <LineChart data={dataIndustria}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -933,12 +933,12 @@ export default function Industria() {
             </div>
           </div>
           <div className="w-full h-[10%] flex">
-            <div className="w-1/2 h-full bg-gray-200 border-t-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white">
-              <div className="w-full flex flex-wrap justify-center h-full">
+            <div className="w-1/2 h-full bg-white border-t-2 border-gray-500 flex items-center justify-evenly font-semibold text-xs text-white">
+              <div className="w-full flex flex-wrap justify-center h-full items-center">
                 {categoriasIndustria.map((categoria, index) => (
                   <div
                     key={index}
-                    className="w-24 m-1 h-[1rem] rounded-full flex items-center justify-center cursor-pointer"
+                    className="w-24 m-1 h-[1rem] rounded-full flex items-center justify-center cursor-pointer text-gray-800"
                     style={{
                       backgroundColor: visibleLinesManufacturera.includes(
                         categoria
@@ -948,14 +948,14 @@ export default function Industria() {
                     }}
                     onClick={() => toggleLineVisibilityManufacturera(categoria)}
                   >
-                    <span className="font-semibold text-white text-[10px]">
+                    <span className="font-semibold text-[10px]">
                       {categoria.split(" ")[0].toUpperCase()}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="w-1/2 h-full bg-gray-900 border-t-2 border-gray-400 flex items-center justify-evenly pl-2">
+            <div className="w-1/2 h-full bg-gray-800 border-t-2 border-gray-400 flex items-center justify-evenly pl-2">
               {categoriasPyme.map((categoria, index) => (
                 <div
                   key={index}

@@ -18,56 +18,56 @@ export default function Portada() {
         </div>
         <div className="w-full text-white flex flex-col items-center justify-evenly h-5/6">
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#inflacion"
           >
             INFLACION
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#canasta-salario"
           >
-            SALARIO VS CANASTA
+            SALARIO - CANASTA - JUBILACION
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#dolar"
           >
             DOLAR
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#transporte"
           >
             TRANSPORTE
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#alquiler"
           >
             ALQUILER
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#cotidianos"
           >
             GASTOS COTIDIANOS CABA
           </a>
 
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#ocio"
           >
             OCIO
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#industrial"
           >
             INDUSTRIA
           </a>
           <a
-            className="text-md font-bold tracking-wider w-1/5 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#actividadeconomica"
           >
             ACTIVIDAD ECONOMICA

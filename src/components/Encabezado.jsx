@@ -38,7 +38,7 @@ export default function Encabezado({ title, description }) {
             className="hover:scale-125 cursor-pointer transition-all"
           />
           {menuVisible && (
-            <div className="absolute top-2 right-0 rounded-xl w-48 shadow-md z-50">
+            <div className="absolute top-2 right-0 rounded-xl w-80 shadow-md z-50">
               <ul className="h-96 w-full flex flex-col justify-evenly bg-gray-300 text-gray-900 rounded">
                 <a href="#inflacion">
                   <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center flex items-center    ">
@@ -49,7 +49,7 @@ export default function Encabezado({ title, description }) {
                 <a href="#canasta-salario">
                   <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                     <IoArrowRedoCircleOutline className="mr-4" />
-                    SALARIO vs CANASTA
+                    SALARIO - CANASTA - JUBILACION
                   </li>
                 </a>
                 <a href="#dolar">

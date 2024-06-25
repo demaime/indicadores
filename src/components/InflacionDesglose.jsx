@@ -611,12 +611,7 @@ export default function InflacionDesglose() {
             Gráfico evolutivo de variables específicas
           </h1>
           <ResponsiveContainer width={"95%"} height={"80%"}>
-            <LineChart
-              width={800}
-              height={400}
-              data={graficoData}
-              margin={{ right: 50 }}
-            >
+            <LineChart data={graficoData} margin={{ right: 50 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="Mes" />
               <YAxis domain={[0, 50]} />

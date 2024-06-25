@@ -7,10 +7,13 @@ import {
   Tooltip,
   CartesianGrid,
   ResponsiveContainer,
-  LineChart,
   Line,
+  LineChart,
 } from "recharts";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaMinus, FaEllipsisH } from "react-icons/fa";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const meses = ["enero", "febrero", "marzo", "abril", "mayo"];
 
@@ -26,7 +29,7 @@ const canastaTotalNacio = [
   { mes: "febrero", valor: 690902, variacion: 15.8, acumulada: 39.4 },
   { mes: "marzo", valor: 773385, variacion: 11.94, acumulada: 56 },
   { mes: "abril", valor: 828158, variacion: 7.1, acumulada: 67 },
-  { mes: "mayo", valor: 828158, variacion: 2.8, acumulada: 71.7 },
+  { mes: "mayo", valor: 851351, variacion: 2.8, acumulada: 71.7 },
 ];
 
 const canastaAlimentariaCaba = [
@@ -46,13 +49,36 @@ const canastaTotalCaba = [
 ];
 
 const smvm = [
-  { mes: "diciembre", salario: 156000 },
-  { mes: "enero", salario: 156000 },
-  { mes: "febrero", salario: 180000 },
-  { mes: "marzo", salario: 202800 },
-  { mes: "abril", salario: 221252 },
-  { mes: "mayo", salario: 234315 },
+  { mes: "enero", valor: 156000 },
+  { mes: "febrero", valor: 180000 },
+  { mes: "marzo", valor: 202800 },
+  { mes: "abril", valor: 221252 },
+  { mes: "mayo", valor: 234315 },
 ];
+
+//CARGANDO ESTOS DATOS
+const jubilacionSinBono = [
+  { mes: "enero", valor: 165923 },
+  { mes: "febrero", valor: 146575 },
+  { mes: "marzo", valor: 167941 },
+  { mes: "abril", valor: 196650 },
+  { mes: "mayo", valor: 203071 },
+];
+
+const jubilacionConBono = [
+  { mes: "enero", valor: 252249 },
+  { mes: "febrero", valor: 222835 },
+  { mes: "marzo", valor: 255380 },
+  { mes: "abril", valor: 277017 },
+  { mes: "mayo", valor: 277831 },
+];
+
+const contenidoTippy = {
+  basica:
+    "La Canasta Básica Alimentaria (CBA) se define como el conjunto de alimentos que satisfacen ciertos requerimientos nutricionales, y cuya estructura refleja el patrón de consumo de alimentos de la población de referencia. La población de referencia se identifica como aquel grupo de hogares cuyos consumos en alimentos cubren las necesidades alimentarias del hogar. Considerada “línea de indigencia”.",
+  total:
+    "La Canasta Básica Total (CBT), se obtiene mediante la ampliación de la CBA considerando los bienes y servicios no alimentarios (vestimenta, transporte, educación, salud, etcétera) consumidos por la población de referencia. Considerada “línea de pobreza.",
+};
 
 export default function CanastaSalario() {
   const [mesSeleccionado, setMesSeleccionado] = useState(
@@ -65,13 +91,27 @@ export default function CanastaSalario() {
   };
 
   const formatNumber = (number) => {
-    return number.toLocaleString();
+    return `$${number.toLocaleString()}`;
   };
+
+  const dataGrafico = meses.map((mes, index) => ({
+    mes,
+    "Canasta Alimentaria":
+      dataCanasta === "nacional"
+        ? canastaAlimentariaNacio[index].valor
+        : canastaAlimentariaCaba[index].valor,
+    "Canasta Total":
+      dataCanasta === "nacional"
+        ? canastaTotalNacio[index].valor
+        : canastaTotalCaba[index].valor,
+    "Salario Mínimo Vital y Móvil": smvm[index].valor,
+    "Jubilación sin Bono": jubilacionSinBono[index].valor,
+    "Jubilación con Bono": jubilacionConBono[index].valor,
+  }));
 
   return (
     <div className="w-full h-full flex flex-col bg-gray-200">
       <div className="w-full flex items-center h-[5%]">
-        {" "}
         <div className="relative w-full h-full flex">
           <div className="flex w-64 justify-evenly">
             <button
@@ -117,9 +157,15 @@ export default function CanastaSalario() {
         <div className="h-full w-1/2 bg-gray-200 flex flex-col">
           <div className="w-full h-full flex flex-col justify-between">
             <div className="h-1/2">
-              <h1 className="bg-gray-700 text-white px-2">
+              <h1 className="bg-gray-700 text-white px-2 w-full flex items-center justify-between">
                 CANASTA BASICA ALIMENTARIA (HOGAR 4 INTEGRANTES)
+                <Tippy content={contenidoTippy.basica}>
+                  <span className="mr-1 flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                    ?
+                  </span>
+                </Tippy>
               </h1>
+
               <div className="w-full h-full flex">
                 <ResponsiveContainer width="50%" height="90%">
                   <BarChart
@@ -135,7 +181,7 @@ export default function CanastaSalario() {
                     <CartesianGrid strokeDasharray="3 3" />
                     <YAxis
                       type="number"
-                      domain={[0, 500000]} // Usar xAxisDomainMaxTotal en lugar de xAxisDomainMaxAlimentaria
+                      domain={[0, 500000]}
                       tickFormatter={formatNumber}
                     />
                     <XAxis
@@ -164,7 +210,6 @@ export default function CanastaSalario() {
                     <div className="w-2/3 text-xs h-1/5 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
                       VALOR MENSUAL
                       <span className="text-3xl font-bold">
-                        $
                         {dataCanasta === "nacional"
                           ? formatNumber(
                               canastaAlimentariaNacio.find(
@@ -182,16 +227,12 @@ export default function CanastaSalario() {
                       VARIACION MENSUAL
                       <span className="text-3xl font-bold">
                         {dataCanasta === "nacional"
-                          ? formatNumber(
-                              canastaAlimentariaNacio.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.variacion
-                            )
-                          : formatNumber(
-                              canastaAlimentariaCaba.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.variacion
-                            )}
+                          ? canastaAlimentariaNacio.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.variacion
+                          : canastaAlimentariaCaba.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.variacion}
                         %
                       </span>
                     </div>
@@ -199,16 +240,12 @@ export default function CanastaSalario() {
                       VARIACION ACUMULADA
                       <span className="text-3xl font-bold">
                         {dataCanasta === "nacional"
-                          ? formatNumber(
-                              canastaAlimentariaNacio.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.acumulada
-                            )
-                          : formatNumber(
-                              canastaAlimentariaCaba.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.acumulada
-                            )}
+                          ? canastaAlimentariaNacio.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.acumulada
+                          : canastaAlimentariaCaba.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.acumulada}
                         %
                       </span>
                     </div>
@@ -217,8 +254,13 @@ export default function CanastaSalario() {
               </div>
             </div>
             <div className="h-1/2">
-              <h1 className="bg-gray-400 px-2">
+              <h1 className="bg-gray-400 text-black px-2 w-full flex items-center justify-between">
                 CANASTA BASICA TOTAL (HOGAR 4 INTEGRANTES)
+                <Tippy content={contenidoTippy.total}>
+                  <span className="mr-1 flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                    ?
+                  </span>
+                </Tippy>
               </h1>
               <div className="w-full h-full flex bg-gray-800">
                 <ResponsiveContainer width="50%" height="90%">
@@ -265,7 +307,6 @@ export default function CanastaSalario() {
                     <div className="w-2/3 text-xs h-1/5 bg-gray-400 rounded flex flex-col items-center justify-evenly">
                       VALOR MENSUAL
                       <span className="text-3xl font-bold">
-                        $
                         {dataCanasta === "nacional"
                           ? formatNumber(
                               canastaTotalNacio.find(
@@ -283,16 +324,12 @@ export default function CanastaSalario() {
                       VARIACION MENSUAL
                       <span className="text-3xl font-bold">
                         {dataCanasta === "nacional"
-                          ? formatNumber(
-                              canastaTotalNacio.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.variacion
-                            )
-                          : formatNumber(
-                              canastaTotalCaba.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.variacion
-                            )}
+                          ? canastaTotalNacio.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.variacion
+                          : canastaTotalCaba.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.variacion}
                         %
                       </span>
                     </div>
@@ -300,16 +337,12 @@ export default function CanastaSalario() {
                       VARIACION ACUMULADA
                       <span className="text-3xl font-bold">
                         {dataCanasta === "nacional"
-                          ? formatNumber(
-                              canastaTotalNacio.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.acumulada
-                            )
-                          : formatNumber(
-                              canastaTotalCaba.find(
-                                (item) => item.mes === mesSeleccionado
-                              )?.acumulada
-                            )}
+                          ? canastaTotalNacio.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.acumulada
+                          : canastaTotalCaba.find(
+                              (item) => item.mes === mesSeleccionado
+                            )?.acumulada}
                         %
                       </span>
                     </div>
@@ -319,7 +352,113 @@ export default function CanastaSalario() {
             </div>
           </div>
         </div>
-        <div className="h-full w-1/2 bg-white flex"></div>
+        <div className="h-full w-1/2 bg-white flex flex-col items-center justify-evenly">
+          <ResponsiveContainer width="90%" height="90%">
+            <LineChart
+              data={dataGrafico}
+              margin={{ top: 30, right: 20, left: 25, bottom: 20 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="mes" />
+              <YAxis tickFormatter={formatNumber} />
+              <Tooltip formatter={formatNumber} />
+              <Line
+                type="monotone"
+                dataKey="Canasta Total"
+                stroke={dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"}
+                dot={{
+                  stroke: dataCanasta === "nacional" ? "#f57b6dff" : "#facc15",
+                  fill: dataCanasta === "nacional" ? "#f57b6dff" : "#facc15",
+                }}
+                strokeWidth={2}
+                strokeDasharray="15 10"
+              />
+              <Line
+                type="monotone"
+                dataKey="Canasta Alimentaria"
+                stroke={dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"}
+                dot={{
+                  stroke: dataCanasta === "nacional" ? "#f57b6dff" : "#facc15",
+                  fill: dataCanasta === "nacional" ? "#f57b6dff" : "#facc15",
+                }}
+                strokeWidth={2}
+              />
+
+              <Line
+                type="monotone"
+                dataKey="Salario Mínimo Vital y Móvil"
+                stroke="#8884d8"
+                dot={{
+                  stroke: "#8884d8",
+                  fill: "#8884d8",
+                }}
+                strokeWidth={2}
+              />
+              <Line
+                type="monotone"
+                dataKey="Jubilación sin Bono"
+                stroke="#50e82e"
+                dot={{
+                  stroke: "#50e82e",
+                  fill: "#50e82e",
+                }}
+                strokeWidth={2}
+              />
+              <Line
+                type="monotone"
+                dataKey="Jubilación con Bono"
+                stroke="#32a852"
+                dot={{
+                  stroke: "#32a852",
+                  fill: "#32a852",
+                }}
+                strokeWidth={2}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+          <div className="w-full h-[10%] bg-gray-200 border-t-2 border-gray-400 flex items-center justify-evenly text-[10px]">
+            <div className="w-1/6 h-8 bg-white rounded border border-gray-400 flex items-center justify-evenly">
+              <FaMinus className="text-xl text-[#8884d8]" />
+              <p className="flex items-center justify-center">Salario MVM</p>
+            </div>
+            <div className="w-1/6 h-8 bg-white rounded border border-gray-400 flex items-center justify-evenly">
+              <FaMinus className="text-xl text-[#32a852]" />
+              <p className="flex items-center justify-center">
+                Jubilación c/ Bono
+              </p>
+            </div>
+            <div className="w-1/6 h-8 bg-white rounded border border-gray-400 flex items-center justify-evenly">
+              <FaMinus className="text-xl text-[#50e82e]" />
+              <p className="flex items-center justify-center">
+                Jubilación s/ Bono
+              </p>
+            </div>
+            <div className="w-1/6 h-8 bg-white rounded border border-gray-400 flex items-center justify-evenly">
+              <FaMinus
+                className={`text-xl ${
+                  dataCanasta === "nacional"
+                    ? "text-[#f57b6dff]"
+                    : "text-[#facc15]"
+                }`}
+              />
+              <p className="flex items-center justify-center">
+                Canasta B. Alimentaria
+              </p>
+            </div>
+            <div className="w-1/6 h-8 bg-white rounded border border-gray-400 flex items-center justify-evenly">
+              <FaEllipsisH
+                className={`text-xl ${
+                  dataCanasta === "nacional"
+                    ? "text-[#f57b6dff]"
+                    : "text-[#facc15]"
+                }`}
+              />
+              <p className="flex items-center justify-center">
+                Canasta B. Total
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

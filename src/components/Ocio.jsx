@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import OcioTarjetas from "./OcioTarjetas";
 
 const data = {
   abril: {
@@ -27,6 +28,7 @@ export default function Ocio() {
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
+  const [tarjetasOgrafico, setTarjetasOgrafico] = useState("tarjetas");
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -39,6 +41,35 @@ export default function Ocio() {
     const newIndex = currentIndex === meses.length - 1 ? 0 : currentIndex + 1;
     setMesSeleccionado(meses[newIndex]);
   };
+
+  const calcularVariacion = (valorActual, valorAnterior) => {
+    return ((valorActual - valorAnterior) / valorAnterior) * 100;
+  };
+  const calcularVariacionesMensuales = (data) => {
+    const variaciones = {};
+    const meses = Object.keys(data);
+
+    for (let i = 1; i < meses.length; i++) {
+      const mesActual = meses[i];
+      const mesAnterior = meses[i - 1];
+      variaciones[mesActual] = {};
+
+      for (const categoria in data[mesActual]) {
+        const valorActual = data[mesActual][categoria];
+        const valorAnterior = data[mesAnterior][categoria];
+        variaciones[mesActual][categoria] = calcularVariacion(
+          valorActual,
+          valorAnterior
+        );
+      }
+    }
+    return variaciones;
+  };
+
+  const variaciones = calcularVariacionesMensuales(data);
+
+  console.log(variaciones);
+
   return (
     <div className="h-full w-full bg-gray-200">
       <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center">
@@ -48,77 +79,35 @@ export default function Ocio() {
         </span>
         <FaArrowRight className="cursor-pointer" onClick={handleMesSiguiente} />
       </div>
-      <div className="w-full h-[95%] p-2">
-        {" "}
-        <div className="w-full h-1/3 flex justify-evenly">
-          <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative  ">
-            <h1 className="text-blue-400 text-3xl font-bold">
-              ${data[mesSeleccionado].fiesta.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-blue-400 absolute -bottom-8 -right-12">
-              <img src="/assets/fiesta.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
-          <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center   ">
-            <h1 className="text-red-400 text-3xl font-bold">
-              ${data[mesSeleccionado].combo.toLocaleString()}
-            </h1>
-
-            <div className="w-24 h-24 rounded-full bg-red-400 absolute -bottom-8 -left-12">
-              {" "}
-              <img src="/assets/combo.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
+      <div className="w-full h-[95%] p-2 relative">
+        <div
+          onClick={() => setTarjetasOgrafico("tarjetas")}
+          className={`absolute h-2/5 w-8 left-4 top-[25%] rounded-xl cursor-pointer writing-vertical tracking-widest font-semibold text-white text-xs items-center justify-center flex ${
+            tarjetasOgrafico === "grafico"
+              ? "bg-gray-900"
+              : "bg-gray-400 hover:bg-gray-500"
+          }`}
+        >
+          VER TARJETAS
         </div>
-        <div className="w-full h-1/3 flex justify-evenly">
-          {" "}
-          <div className="w-48 h-48 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative    ">
-            <h1 className="text-green-400 text-3xl font-bold">
-              ${data[mesSeleccionado].gym.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-green-400 absolute top-1/4 -left-1/4">
-              {" "}
-              <img src="/assets/gym.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
-          <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative  ">
-            <h1 className="text-yellow-400 text-3xl font-bold">
-              ${data[mesSeleccionado].cine.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-yellow-400 absolute -top-1/4 left-1/4">
-              {" "}
-              <img src="/assets/cine.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
-          <div className="w-48 h-48 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative  ">
-            <h1 className="text-purple-400 text-3xl font-bold">
-              ${data[mesSeleccionado].teatro.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-purple-400 absolute top-1/4 -right-1/4">
-              {" "}
-              <img src="/assets/teatro.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
+        <div
+          onClick={() => setTarjetasOgrafico("grafico")}
+          className={`absolute h-2/5 w-8 right-4 top-[25%] rounded-xl cursor-pointer writing-vertical tracking-widest font-semibold text-white text-xs items-center justify-center flex ${
+            tarjetasOgrafico === "grafico"
+              ? "bg-gray-400 hover:bg-gray-500"
+              : "bg-gray-900"
+          }`}
+        >
+          VER GRAFICO
         </div>
-        <div className="w-full h-1/3 flex justify-evenly">
-          <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative  ">
-            <h1 className="text-pink-400 text-3xl font-bold">
-              ${data[mesSeleccionado].netflix.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-pink-400 absolute -top-8 -right-12">
-              {" "}
-              <img src="/assets/netflix.png" className="w-full h-full" alt="" />
-            </div>
+        {tarjetasOgrafico === "tarjetas" ? (
+          <OcioTarjetas data={data} mesSeleccionado={mesSeleccionado} />
+        ) : (
+          <div className="h-full w-full bg-gray-700 flex items-center justify-around">
+            <div className="w-2/3 h-[90%] rounded-xl border border-white"></div>
+            <div className="w-1/4 h-[90%] rounded-xl border border-white"></div>
           </div>
-          <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative  ">
-            <h1 className="text-orange-400 text-3xl font-bold">
-              ${data[mesSeleccionado].libro.toLocaleString()}
-            </h1>
-            <div className="w-24 h-24 rounded-full bg-orange-400 absolute -top-8 -left-12">
-              <img src="/assets/libro.png" className="w-full h-full" alt="" />
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

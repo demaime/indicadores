@@ -57,12 +57,23 @@ export default function App() {
         <Alquiler />
       </section>
       <section className="section" id="cotidianos">
-        <Encabezado title={"GASTOS COTIDIANOS CABA"} />
+        <Encabezado
+          title={"GASTOS COTIDIANOS CABA"}
+          description={
+            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Estadísticas CABA"
+          }
+        />
+
         <GastosCotidianos />
       </section>
 
       <section className="section" id="ocio">
-        <Encabezado title={"OCIO"} />
+        <Encabezado
+          title={"OCIO"}
+          description={
+            "Promedio de precios de actividades recreativas CABA. Fuente: Estadísticas CABA y fuentes específicas"
+          }
+        />
         <Ocio />
       </section>
       <section className="section" id="industrial">

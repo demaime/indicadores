@@ -32,7 +32,7 @@ const data = [
     mes: "Abril",
     caba: 430332,
     norte: 383514,
-    suroeste: 267105,
+    suroeste: 277282,
   },
   {
     mes: "Mayo",
@@ -239,7 +239,7 @@ export default function Alquiler() {
             </BarChart>
           </ResponsiveContainer>
           <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#ffc658]">
-            Variación anual acumulada:&nbsp;
+            Variación actual acumulada:&nbsp;
             <span className="font-bold"> {calculateVariation("caba")} %</span>
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function Alquiler() {
             </BarChart>
           </ResponsiveContainer>
           <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#82ca9d]">
-            Variación anual acumulada:&nbsp;
+            Variación actual acumulada:&nbsp;
             <span className="font-bold"> {calculateVariation("norte")} %</span>
           </div>
         </div>
@@ -299,7 +299,7 @@ export default function Alquiler() {
             </BarChart>
           </ResponsiveContainer>
           <div className="w-full flex items-center justify-center rounded h-12 text-center bg-[#8884d8]">
-            Variación anual acumulada:&nbsp;
+            Variación actual acumulada:&nbsp;
             <span className="font-bold">
               {" "}
               {calculateVariation("suroeste")} %

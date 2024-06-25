@@ -37,7 +37,7 @@ export default function OcioTarjetas({ data, mesSeleccionado }) {
             ${data[mesSeleccionado].gym.toLocaleString()}
           </h1>
           <h1 className="bg-green-400 text-xl font-bold absolute top-2 left-1/2 transform -translate-x-1/2 rounded-lg border-4 px-4 border-white text-white">
-            Gym
+            Gimnasio
           </h1>
           <div className="w-24 h-24 rounded-full bg-green-400 absolute top-1/4 -left-1/4">
             {" "}

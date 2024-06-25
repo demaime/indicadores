@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import OcioTarjetas from "./OcioTarjetas";
 
 const data = {
@@ -23,6 +32,51 @@ const data = {
   },
 };
 
+const calcularVariacion = (valorActual, valorAnterior) => {
+  return ((valorActual - valorAnterior) / valorAnterior) * 100;
+};
+
+const calcularVariaciones = (data) => {
+  const variaciones = {};
+  const meses = Object.keys(data);
+
+  for (let i = 1; i < meses.length; i++) {
+    const mesActual = meses[i];
+    const mesAnterior = meses[i - 1];
+    variaciones[mesActual] = {};
+
+    for (const categoria in data[mesActual]) {
+      const valorActual = data[mesActual][categoria];
+      const valorAnterior = data[mesAnterior][categoria];
+      variaciones[mesActual][categoria] = calcularVariacion(
+        valorActual,
+        valorAnterior
+      ).toFixed(2);
+    }
+  }
+  return variaciones;
+};
+
+const variaciones = calcularVariaciones(data);
+
+const formatearDatosParaGrafica = (variaciones) => {
+  if (!variaciones || Object.keys(variaciones).length === 0) {
+    return []; // Retorna un array vacío si variaciones no está definido o no tiene datos
+  }
+
+  const meses = Object.keys(variaciones);
+  const categorias = Object.keys(variaciones[meses[0]]);
+  return meses.map((mes) => {
+    const datosMes = { mes };
+    categorias.forEach((categoria) => {
+      datosMes[categoria] = variaciones[mes][categoria];
+    });
+    return datosMes;
+  });
+};
+
+const datosGrafica = formatearDatosParaGrafica(variaciones);
+
 export default function Ocio() {
   const meses = ["abril", "mayo"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
@@ -42,33 +96,15 @@ export default function Ocio() {
     setMesSeleccionado(meses[newIndex]);
   };
 
-  const calcularVariacion = (valorActual, valorAnterior) => {
-    return ((valorActual - valorAnterior) / valorAnterior) * 100;
+  const colors = {
+    fiesta: "#bfdbfe",
+    netflix: "#fbcfe8",
+    gym: "#bbf7d0",
+    cine: "#fef08a",
+    combo: "#fecaca",
+    libro: "#fed7aa",
+    teatro: "#e9d5ff",
   };
-  const calcularVariacionesMensuales = (data) => {
-    const variaciones = {};
-    const meses = Object.keys(data);
-
-    for (let i = 1; i < meses.length; i++) {
-      const mesActual = meses[i];
-      const mesAnterior = meses[i - 1];
-      variaciones[mesActual] = {};
-
-      for (const categoria in data[mesActual]) {
-        const valorActual = data[mesActual][categoria];
-        const valorAnterior = data[mesAnterior][categoria];
-        variaciones[mesActual][categoria] = calcularVariacion(
-          valorActual,
-          valorAnterior
-        );
-      }
-    }
-    return variaciones;
-  };
-
-  const variaciones = calcularVariacionesMensuales(data);
-
-  console.log(variaciones);
 
   return (
     <div className="h-full w-full bg-gray-200">
@@ -104,8 +140,44 @@ export default function Ocio() {
           <OcioTarjetas data={data} mesSeleccionado={mesSeleccionado} />
         ) : (
           <div className="h-full w-full bg-gray-700 flex items-center justify-around">
-            <div className="w-2/3 h-[90%] rounded-xl border border-white"></div>
-            <div className="w-1/4 h-[90%] rounded-xl border border-white"></div>
+            <div className="w-2/3 h-[90%] rounded-xl border border-white flex items-center justify-start">
+              <ResponsiveContainer width="95%" height="90%">
+                <LineChart
+                  data={datosGrafica}
+                  margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="mes"
+                    tick={{ fontWeight: "bold", fill: "#999", fontSize: "10" }}
+                  />
+                  <YAxis
+                    domain={[0, 30]}
+                    tick={{ fontWeight: "bold", fill: "#999", fontSize: "10" }}
+                    tickFormatter={(value) => `${value}%`}
+                  />
+                  <Tooltip />
+
+                  {Object.keys(
+                    variaciones[Object.keys(variaciones)[0]] || {}
+                  ).map((categoria, index) => (
+                    <Line
+                      key={index}
+                      type="monotone"
+                      dataKey={categoria}
+                      stroke={`hsl(${index * 50}, 70%, 50%)`}
+                      strokeWidth={2}
+                    />
+                  ))}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="w-1/4 h-[90%] rounded-xl border border-white flex">
+              <div className="w-1/2 h-full bg-red-100 flex flex-col items-center justify-evenly">
+                <div className="w-3/4"></div>
+              </div>
+              <div className="w-1/2 h-full bg-blue-100"></div>
+            </div>
           </div>
         )}
       </div>

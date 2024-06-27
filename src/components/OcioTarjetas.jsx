@@ -34,14 +34,14 @@ export default function OcioTarjetas({ data, mesSeleccionado }) {
         {" "}
         <div className="w-48 h-48 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative    ">
           <h1 className="text-green-400 text-3xl font-bold">
-            ${data[mesSeleccionado].gym.toLocaleString()}
+            ${data[mesSeleccionado].gimnasio.toLocaleString()}
           </h1>
           <h1 className="bg-green-400 text-xl font-bold absolute top-2 left-1/2 transform -translate-x-1/2 rounded-lg border-4 px-4 border-white text-white">
             Gimnasio
           </h1>
           <div className="w-24 h-24 rounded-full bg-green-400 absolute top-1/4 -left-1/4">
             {" "}
-            <img src="/assets/gym.png" className="w-full h-full" alt="" />
+            <img src="/assets/gimnasio.png" className="w-full h-full" alt="" />
           </div>
         </div>
         <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative  ">
@@ -73,14 +73,18 @@ export default function OcioTarjetas({ data, mesSeleccionado }) {
       <div className="w-full h-1/3 flex justify-evenly">
         <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative  ">
           <h1 className="text-pink-400 text-3xl font-bold">
-            ${data[mesSeleccionado].netflix.toLocaleString()}
+            ${data[mesSeleccionado].plataforma.toLocaleString()}
           </h1>
           <h1 className="bg-pink-400 text-xl font-bold absolute bottom-2 left-1/2 transform -translate-x-1/2 rounded-lg border-4 px-4 border-white text-white">
             Plataforma
           </h1>
           <div className="w-24 h-24 rounded-full bg-pink-400 absolute -top-8 -right-12">
             {" "}
-            <img src="/assets/netflix.png" className="w-full h-full" alt="" />
+            <img
+              src="/assets/plataforma.png"
+              className="w-full h-full"
+              alt=""
+            />
           </div>
         </div>
         <div className="w-48 h-48 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative  ">

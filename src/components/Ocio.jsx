@@ -14,8 +14,8 @@ import OcioTarjetas from "./OcioTarjetas";
 const data = {
   abril: {
     fiesta: 7000,
-    netflix: 4299,
-    gym: 17588,
+    plataforma: 4299,
+    gimnasio: 17588,
     cine: 5926,
     combo: 7900,
     libro: 21882,
@@ -23,8 +23,8 @@ const data = {
   },
   mayo: {
     fiesta: 8000,
-    netflix: 4299,
-    gym: 20008,
+    plataforma: 4299,
+    gimnasio: 20008,
     cine: 6185,
     combo: 8600,
     libro: 22326,
@@ -54,6 +54,13 @@ const calcularVariaciones = (data) => {
       ).toFixed(2);
     }
   }
+
+  // Añadir un valor predeterminado para el primer mes
+  variaciones[meses[0]] = {};
+  for (const categoria in data[meses[0]]) {
+    variaciones[meses[0]][categoria] = "-";
+  }
+
   return variaciones;
 };
 
@@ -97,13 +104,13 @@ export default function Ocio() {
   };
 
   const colors = {
-    fiesta: "#bfdbfe",
-    netflix: "#fbcfe8",
-    gym: "#bbf7d0",
-    cine: "#fef08a",
-    combo: "#fecaca",
-    libro: "#fed7aa",
-    teatro: "#e9d5ff",
+    fiesta: "#60a5fa",
+    plataforma: "#f87171",
+    gimnasio: "#4ade80",
+    cine: "#facc15",
+    combo: "#f472b6",
+    libro: "#fb923c",
+    teatro: "#c084fc",
   };
 
   return (
@@ -165,18 +172,34 @@ export default function Ocio() {
                       key={index}
                       type="monotone"
                       dataKey={categoria}
-                      stroke={`hsl(${index * 50}, 70%, 50%)`}
+                      stroke={colors[categoria]}
                       strokeWidth={2}
+                      // Evitar errores de NaN
+                      isAnimationActive={false}
+                      dot={false}
                     />
                   ))}
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <div className="w-1/4 h-[90%] rounded-xl border border-white flex">
-              <div className="w-1/2 h-full bg-red-100 flex flex-col items-center justify-evenly">
-                <div className="w-3/4"></div>
-              </div>
-              <div className="w-1/2 h-full bg-blue-100"></div>
+            <div className="w-1/4 h-[90%] rounded-xl border border-white flex flex-col justify-evenly">
+              {Object.keys(variaciones[mesSeleccionado]).map(
+                (categoria, index) => (
+                  <div
+                    style={{ color: colors[categoria] }}
+                    key={index}
+                    className="w-full py-2 px-6 rounded-md flex justify-between items-center font-semibold"
+                  >
+                    <div className="w-12 h-12">
+                      <img src={`/assets/${categoria}.png`} alt="" />
+                    </div>
+                    <span>{categoria.toUpperCase()}</span>
+                    <span className="w-12 text-center">
+                      {variaciones[mesSeleccionado][categoria]}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
           </div>
         )}

@@ -53,7 +53,12 @@ export default function App() {
       </section>
 
       <section className="section" id="alquiler">
-        <Encabezado title={"ALQUILER"} />
+        <Encabezado
+          title={"ALQUILER"}
+          description={
+            "Promedio alquileres departamento 2 ambientes . Fuente: ZonaProp"
+          }
+        />
         <Alquiler />
       </section>
       <section className="section" id="cotidianos">

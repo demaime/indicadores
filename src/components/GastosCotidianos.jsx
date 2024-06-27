@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import ServiciosMes from "./ServiciosMes";
 
 export default function GastosCotidianos() {
-  const [mesSeleccionado, setMesSeleccionado] = useState("abril");
   const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
 
   const meses = ["marzo", "abril", "mayo"];
+  const [mesSeleccionado, setMesSeleccionado] = useState(
+    meses[meses.length - 1]
+  );
 
   return (
     <div className="w-full h-full bg-gray-200 flex flex-col relative">

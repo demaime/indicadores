@@ -194,8 +194,8 @@ export default function Ocio() {
                       <img src={`/assets/${categoria}.png`} alt="" />
                     </div>
                     <span>{categoria.toUpperCase()}</span>
-                    <span className="w-12 text-center">
-                      {variaciones[mesSeleccionado][categoria]}
+                    <span className="w-14 text-center">
+                      {variaciones[mesSeleccionado][categoria] + " %"}
                     </span>
                   </div>
                 )

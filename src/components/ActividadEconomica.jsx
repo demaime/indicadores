@@ -152,7 +152,7 @@ export default function ActividadEconomica() {
               <select
                 value={mesSeleccionado}
                 onChange={handleChangeMes}
-                className="p-2 w-full text-center bg-blue-900 text-white font-semibold"
+                className="p-2 w-full text-center bg-blue-900 rounded text-white font-semibold"
               >
                 {meses.map((mes, index) => (
                   <option key={index} value={mes}>
@@ -200,7 +200,7 @@ export default function ActividadEconomica() {
                     dataKey={categoria}
                     stroke={colors[index % colors.length]}
                     strokeWidth={2}
-                    dot={{ fill: colors[index % colors.length] }} // Asegura que los puntos sean del mismo color que la línea
+                    dot={{ fill: colors[index % colors.length] }}
                   />
                 ))}
               </LineChart>

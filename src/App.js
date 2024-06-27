@@ -77,7 +77,12 @@ export default function App() {
         <Ocio />
       </section>
       <section className="section" id="industrial">
-        <Encabezado title={"INDUSTRIA"} />
+        <Encabezado
+          title={"INDUSTRIA"}
+          description={
+            "Evolución de la facturación de la industria manufacturera PyME (CAME) - Proporción de la capacidad instalada del sector industrial de nuestro país que está siendo actualmente utilizada (INDEC)"
+          }
+        />
         <Industria />
       </section>
       <section className="section" id="actividadeconomica">

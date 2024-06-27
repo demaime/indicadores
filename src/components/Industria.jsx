@@ -39,6 +39,12 @@ export default function Industria() {
       interanual: -18.3,
       capacidad: 70.1,
     },
+    mayo: {
+      intermensual: 5.3,
+      acumulada: -19.1,
+      interanual: -19,
+      capacidad: 70.3,
+    },
   };
 
   const aperturaIntermensualPyme = {
@@ -73,6 +79,14 @@ export default function Industria() {
       "papel e impresiones": 0.2,
       "quimicos y plasticos": 3.9,
       "metal y maquinaria": 4,
+    },
+    mayo: {
+      "textiles e indumentaria": 3.5,
+      "alimentos y bebidas": 2,
+      "madera y muebles": 6.1,
+      "papel e impresiones": -1.5,
+      "quimicos y plasticos": 3.9,
+      "metal y maquinaria": 4.6,
     },
   };
 
@@ -109,6 +123,14 @@ export default function Industria() {
       "quimicos y plasticos": -21.6,
       "metal y maquinaria": -23.7,
     },
+    mayo: {
+      "textiles e indumentaria": -4.3,
+      "alimentos y bebidas": -14.7,
+      "madera y muebles": -10.4,
+      "papel e impresiones": -45.8,
+      "quimicos y plasticos": -22.9,
+      "metal y maquinaria": -20.6,
+    },
   };
 
   const aperturaAcumuladaPyme = {
@@ -143,6 +165,14 @@ export default function Industria() {
       "papel e impresiones": -23.4,
       "quimicos y plasticos": -27.3,
       "metal y maquinaria": -23.8,
+    },
+    mayo: {
+      "textiles e indumentaria": -0.9,
+      "alimentos y bebidas": -15.8,
+      "madera y muebles": -17.7,
+      "papel e impresiones": -25.9,
+      "quimicos y plasticos": -27.1,
+      "metal y maquinaria": -23,
     },
   };
 
@@ -307,6 +337,16 @@ export default function Industria() {
       MANUFACTURERA: 56.6,
       PYME: 70.1,
     },
+    MAYO: {
+      "Textiles e indumentaria": 71.5,
+      "Alimentos y bebidas": 72.4,
+      "Madera y muebles": 70.8,
+      "Papel e impresiones": 78.8,
+      "Químicos y plásticos": 68.8,
+      "Metal, maquinaria y equipo, y material de transporte": 66.6,
+      MANUFACTURERA: "-",
+      PYME: 70.3,
+    },
   };
 
   const colorsPyme = {
@@ -340,6 +380,11 @@ export default function Industria() {
       intermensual: 5.8,
       interanual: -19.6,
       capacidad: 56.6,
+    },
+    mayo: {
+      intermensual: "-",
+      interanual: "-",
+      capacidad: "-",
     },
   };
 
@@ -600,6 +645,22 @@ export default function Industria() {
       MANUFACTURERA: 56.6,
       PYME: 70.1,
     },
+    MAYO: {
+      Textiles: "-",
+      "Alimentos y bebidas": "-",
+      "Minerales no metálicos": "-",
+      "Papel y cartón": "-",
+      "Refinación de petróleo": "-",
+      "Edición e impresión": "-",
+      Tabaco: "-",
+      Metálicas: "-",
+      "Caucho y plástico": "-",
+      Automotriz: "-",
+      "Sustancias y productos químicos": "-",
+      "Metalmecánica (sin automotriz)": "-",
+      MANUFACTURERA: "-",
+      PYME: "-",
+    },
   };
 
   const dataIndustria = Object.keys(capacidadInstaladaIndustria).map((key) => ({
@@ -607,7 +668,7 @@ export default function Industria() {
     ...capacidadInstaladaIndustria[key],
   }));
 
-  const meses = ["enero", "febrero", "marzo", "abril"];
+  const meses = ["enero", "febrero", "marzo", "abril", "mayo"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
@@ -634,10 +695,8 @@ export default function Industria() {
   );
 
   const transformData = (data) => {
-    // Filtramos los datos para excluir la categoría "PYME"
     const filteredData = data.filter((item) => item.name !== "PYME");
 
-    // Renombramos la categoría "MANUFACTURERA" a "GENERAL"
     const transformedData = filteredData.map((item) => ({
       ...item,
       name: item.name === "MANUFACTURERA" ? "GENERAL" : item.name,

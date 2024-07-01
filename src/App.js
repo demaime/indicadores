@@ -65,7 +65,7 @@ export default function App() {
         <Encabezado
           title={"GASTOS COTIDIANOS CABA"}
           description={
-            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Estadísticas CABA"
+            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Estadísticas CABA / IIEP"
           }
         />
 

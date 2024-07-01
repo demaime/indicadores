@@ -32,6 +32,7 @@ const colors = {
 
 export default function ActividadEconomica() {
   const [generalOapertura, setGeneralOapertura] = useState("general");
+
   const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
 
   const data = [
@@ -171,8 +172,8 @@ export default function ActividadEconomica() {
           <button
             className={`w-20 h-6 text-xs rounded  ${
               generalOapertura === "general"
-                ? "bg-gray-300"
-                : "bg-gray-500 hover:bg-white"
+                ? "bg-blue-300"
+                : "bg-blue-500 hover:bg-blue-50"
             }`}
             onClick={() => setGeneralOapertura("general")}
           >
@@ -181,8 +182,8 @@ export default function ActividadEconomica() {
           <button
             className={`w-20 h-6 text-xs rounded  ${
               generalOapertura === "apertura"
-                ? "bg-gray-300"
-                : "bg-gray-500 hover:bg-white"
+                ? "bg-blue-300"
+                : "bg-blue-500 hover:bg-blue-50"
             }`}
             onClick={() => setGeneralOapertura("apertura")}
           >
@@ -204,7 +205,7 @@ export default function ActividadEconomica() {
                       (item) => item.mes === mes
                     );
                     if (datosMes) {
-                      result[categoria] = datosMes.intermensual;
+                      result[categoria] = datosMes.dato;
                     } else {
                       result[categoria] = null; // Opcional: manejar casos donde no haya datos
                     }
@@ -223,6 +224,10 @@ export default function ActividadEconomica() {
                     dataKey={categoria}
                     stroke={colors[categoria]}
                     strokeWidth={2}
+                    dot={{
+                      stroke: colors[categoria],
+                      fill: colors[categoria],
+                    }}
                   />
                 ))}
               </LineChart>
@@ -232,6 +237,7 @@ export default function ActividadEconomica() {
                 Seleccione alguna categoría para mostrar en el gráfico
               </div>
             )}
+
             <div className="absolute bottom-2 w-full flex items-center justify-evenly text-[8px] text-gray-200 ">
               <button
                 className="border-b border-gray-400 rounded-xl px-2"

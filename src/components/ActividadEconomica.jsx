@@ -277,7 +277,15 @@ export default function ActividadEconomica() {
                     ></div>
                     <span>{categoria}</span>
                   </div>
-                  <span>{datosMes ? datosMes.intermensual : "-"} %</span>
+                  <span
+                    className={
+                      categoriasSeleccionadas.includes(categoria)
+                        ? ""
+                        : "text-gray-300"
+                    }
+                  >
+                    {datosMes ? datosMes.intermensual : "-"} %
+                  </span>
                 </div>
               );
             })}

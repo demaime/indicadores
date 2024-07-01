@@ -7,8 +7,8 @@ import "tippy.js/dist/tippy.css";
 const data = {
   marzo: {
     alquiler: 284561,
-    luz: 7699,
-    gas: "-",
+    luz: 25988,
+    gas: 5043,
     internet: 24000,
     celular: 6948,
     pan: 1980.05,
@@ -22,8 +22,8 @@ const data = {
   },
   abril: {
     alquiler: 290615,
-    luz: 7699,
-    gas: "-",
+    luz: 21675,
+    gas: 19567,
     internet: 27999,
     celular: 7988,
     pan: 2086.96,
@@ -37,8 +37,8 @@ const data = {
   },
   mayo: {
     alquiler: 298724,
-    luz: 7699,
-    gas: "-",
+    luz: 27924,
+    gas: 29634,
     internet: 31499,
     celular: 8608,
     pan: 2260.54,
@@ -145,10 +145,10 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   </span>
                 </Tippy>
               </div>
-              <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              <div className="w-16 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 <img src="/assets/luz.png" alt="" />
               </div>
-              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+              <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
                 {variaciones[mesData].luz}
               </div>
               <div className="text-4xl">
@@ -168,10 +168,10 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   </span>
                 </Tippy>
               </div>
-              <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              <div className="w-16 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 <img src="/assets/gas.png" alt="" />
               </div>
-              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+              <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
                 {variaciones[mesData].gas}
               </div>
               <div className="text-4xl">
@@ -186,11 +186,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 TV + INTERNET
               </div>
-              <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              <div className="w-16 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 {" "}
                 <img src="/assets/internet.png" alt="" />
               </div>
-              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+              <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
                 {variaciones[mesData].internet}
               </div>
               <div className="text-4xl">
@@ -205,11 +205,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 CELULAR
               </div>
-              <div className="w-14 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
+              <div className="w-16 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 {" "}
                 <img src="/assets/celular.png" alt="" />
               </div>
-              <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+              <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
                 {variaciones[mesData].celular}
               </div>
               <div className="text-4xl">
@@ -237,7 +237,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
               <div className="w-80 h-12 absolute -top-4  rounded-xl bg-yellow-100 border-yellow-500 border flex items-center justify-center font-bold">
                 ALQUILER MONOAMBIENTE
               </div>
-              <div className="w-14 h-8 bg-white rounded-xl absolute  right-[40%] -bottom-3 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
+              <div className="w-16 h-8 bg-white rounded-xl absolute  right-[40%] -bottom-3 text-xs flex items-center justify-center font-semibold -right-4 p-2 border-2 border-yellow-500">
                 {variaciones[mesData].alquiler}
               </div>
               <div className="text-4xl">
@@ -255,11 +255,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   KILO DE PAN
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/pan.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].pan}
                 </div>
                 <div className="text-4xl">
@@ -274,10 +274,10 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   LITRO DE LECHE{" "}
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   <img src="/assets/leche.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].pan}
                 </div>
                 <div className="text-4xl">
@@ -292,11 +292,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   KILO DE YERBA{" "}
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/yerba.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].yerba}
                 </div>
                 <div className="text-4xl">
@@ -311,7 +311,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   FIDEOS
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
                   {" "}
                   <img
                     src="/assets/fideos.png"
@@ -319,7 +319,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                     className="h-full w-full"
                   />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].fideos}
                 </div>
                 <div className="text-4xl">
@@ -337,11 +337,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   COCA COLA
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/coca.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].coca}
                 </div>
                 <div className="text-4xl">
@@ -356,11 +356,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   CAFE{" "}
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500 flex items-center justify-center">
                   {" "}
                   <img src="/assets/cafe.png" alt="" className="h-full" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].cafe}
                 </div>
                 <div className="text-4xl">
@@ -375,11 +375,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   KILO DE CARNE{" "}
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/carne.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].carne}
                 </div>
                 <div className="text-4xl">
@@ -394,11 +394,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                 <div className="w-72 h-8 absolute -top-4 -left-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                   LITRO DE CERVEZA
                 </div>
-                <div className="w-14 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
+                <div className="w-16 h-14 bg-white rounded-full absolute -right-4 p-2 border-r-4 border-yellow-500">
                   {" "}
                   <img src="/assets/cerveza.png" alt="" />
                 </div>
-                <div className="w-14 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
+                <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
                   {variaciones[mesData].cerveza}
                 </div>
                 <div className="text-4xl">

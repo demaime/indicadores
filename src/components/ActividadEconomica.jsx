@@ -10,11 +10,34 @@ import {
 } from "recharts";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
+const colors = {
+  "Agricultura, ganadería, caza y silvicultura": "#e6194b",
+  Pesca: "#3cb44b",
+  "Explotación de minas y canteras": "#ffe119",
+  "Industria manufacturera": "#4363d8",
+  "Electricidad, gas y agua": "#f58231",
+  Construcción: "#911eb4",
+  "Comercio mayorista, minorista y reparaciones": "#42d4f4",
+  "Hoteles y restaurantes": "#f032e6",
+  "Transporte y comunicaciones": "#bfef45",
+  "Intermediación financiera": "#fabebe",
+  "Actividades inmobiliarias, empresariales y de alquiler": "#469990",
+  "Adm. pública y defensa; planes de seguridad social": "#e6beff",
+  Enseñanza: "#9a6324",
+  "Servicios sociales y de salud": "#ffa66a",
+  "Otras actividades de servicios comunitarios, sociales y personales":
+    "#800000",
+  "Impuestos netos de subsidios": "#aaffc3",
+};
+
 export default function ActividadEconomica() {
+  const [generalOapertura, setGeneralOapertura] = useState("general");
+  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
+
   const data = [
     { mes: "ENERO", dato: 136.5, intermensual: -1.9, interanual: -4.1 },
     { mes: "FEBRERO", dato: 133, intermensual: -2.5, interanual: -3 },
-    { mes: "MARZO", dato: 141.7, intermensual: 94.82, interanual: 14.1 },
+    { mes: "MARZO", dato: 141.7, intermensual: 6.5, interanual: -8.4 },
   ];
 
   const dataApertura = {
@@ -108,199 +131,150 @@ export default function ActividadEconomica() {
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
-  const [generalOApertura, setGeneralOApertura] = useState(true);
-  const [mensualoAnual, setMensualoAnual] = useState(true);
 
   const handleChangeMes = (event) => {
     setMesSeleccionado(event.target.value);
   };
 
-  const dataForChart = meses.map((mes) => {
-    const dataObj = { mes };
-    for (const categoria in dataApertura) {
-      const dato = dataApertura[categoria].find((item) => item.mes === mes);
-      dataObj[categoria] = dato ? dato.dato : null;
-    }
-    return dataObj;
-  });
+  const handleToggleCategoria = (categoria) => {
+    setCategoriasSeleccionadas((prev) =>
+      prev.includes(categoria)
+        ? prev.filter((item) => item !== categoria)
+        : [...prev, categoria]
+    );
+  };
 
-  const colors = [
-    "#e6194b",
-    "#3cb44b",
-    "#ffe119",
-    "#4363d8",
-    "#f58231",
-    "#911eb4",
-    "#42d4f4",
-    "#f032e6",
-    "#bfef45",
-    "#fabebe",
-    "#469990",
-    "#e6beff",
-    "#9a6324",
-    "#fffac8",
-    "#800000",
-    "#aaffc3",
-  ];
+  const handleSelectTodas = () => {
+    setCategoriasSeleccionadas(categorias);
+  };
+
+  const handleBorrarSeleccion = () => {
+    setCategoriasSeleccionadas([]);
+  };
 
   return (
-    <div className="w-full h-full flex">
-      {generalOApertura ? (
-        <>
-          <div className="w-1/2 h-full bg-gray-900 flex items-center justify-start relative">
-            <div className="flex justify-center items-center absolute top-0 w-full">
-              <select
-                value={mesSeleccionado}
-                onChange={handleChangeMes}
-                className="p-2 w-full text-center bg-blue-900 rounded text-white font-semibold"
-              >
-                {meses.map((mes, index) => (
-                  <option key={index} value={mes}>
-                    {mes}
-                  </option>
-                ))}
-              </select>
-              <button
-                className={`w-32 text-xs mx-2 rounded ${
-                  mensualoAnual ? "bg-gray-400" : "bg-gray-200"
-                }`}
-                onClick={() => setMensualoAnual(false)}
-              >
-                Variación Intermensual
-              </button>
-              <button
-                className={`w-32 text-xs mx-2 rounded ${
-                  mensualoAnual ? "bg-gray-200" : "bg-gray-400"
-                }`}
-                onClick={() => setMensualoAnual(true)}
-              >
-                Variación Interanual
-              </button>
-            </div>
-            <ResponsiveContainer height={"80%"} width={"95%"}>
+    <div className="w-full h-full">
+      <div className="flex justify-center items-center h-[5%] w-full">
+        <select
+          value={mesSeleccionado}
+          onChange={handleChangeMes}
+          className="w-4/5  text-center bg-blue-900 text-gray-200 font-semibold h-full"
+        >
+          {meses.map((mes, index) => (
+            <option key={index} value={mes}>
+              {mes}
+            </option>
+          ))}
+        </select>
+
+        <div className="w-1/5 bg-blue-600 h-full flex items-center justify-evenly">
+          <button
+            className={`w-20 h-6 text-xs rounded  ${
+              generalOapertura === "general"
+                ? "bg-gray-300"
+                : "bg-gray-500 hover:bg-white"
+            }`}
+            onClick={() => setGeneralOapertura("general")}
+          >
+            GENERAL
+          </button>
+          <button
+            className={`w-20 h-6 text-xs rounded  ${
+              generalOapertura === "apertura"
+                ? "bg-gray-300"
+                : "bg-gray-500 hover:bg-white"
+            }`}
+            onClick={() => setGeneralOapertura("apertura")}
+          >
+            APERTURA
+          </button>
+        </div>
+      </div>
+      {generalOapertura === "general" ? (
+        <></>
+      ) : (
+        <div className="w-full h-[95%] flex">
+          <div className="w-1/2 h-full bg-gray-900 relative flex items-center justify-start">
+            <ResponsiveContainer width="95%" height="90%">
               <LineChart
-                data={dataForChart}
-                margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                data={meses.map((mes, index) => {
+                  const result = { mes };
+                  categoriasSeleccionadas.forEach((categoria) => {
+                    const datosMes = dataApertura[categoria].find(
+                      (item) => item.mes === mes
+                    );
+                    if (datosMes) {
+                      result[categoria] = datosMes.intermensual;
+                    } else {
+                      result[categoria] = null; // Opcional: manejar casos donde no haya datos
+                    }
+                  });
+                  return result;
+                })}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="mes" tick={{ fill: "white" }} />
-                <YAxis domain={[50, 200]} tick={{ fill: "white" }} />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#333",
-                    color: "#fff",
-                    fontSize: "12px",
-                  }}
-                  cursor={{ stroke: "#333", strokeWidth: 2 }}
-                />
-                {Object.keys(dataApertura).map((categoria, index) => (
+                <XAxis dataKey="mes" />
+                <YAxis />
+                <Tooltip />
+                {categoriasSeleccionadas.map((categoria) => (
                   <Line
-                    key={index}
+                    key={categoria}
                     type="monotone"
                     dataKey={categoria}
-                    stroke={colors[index % colors.length]}
+                    stroke={colors[categoria]}
                     strokeWidth={2}
-                    dot={{ fill: colors[index % colors.length] }}
                   />
                 ))}
               </LineChart>
             </ResponsiveContainer>
-
-            <button
-              onClick={() => setGeneralOApertura(false)}
-              className="absolute bottom-2 right-4 bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
-            >
-              VOLVER A VISTA GENERAL
-            </button>
+            {categoriasSeleccionadas.length === 0 && (
+              <div className="absolute inset-0 h-16 flex items-center justify-center text-white font-bold text-lg bg-red-500 top-1/3">
+                Seleccione alguna categoría para mostrar en el gráfico
+              </div>
+            )}
+            <div className="absolute bottom-2 w-full flex items-center justify-evenly text-[8px] text-gray-200 ">
+              <button
+                className="border-b border-gray-400 rounded-xl px-2"
+                onClick={handleSelectTodas}
+              >
+                Seleccionar todas
+              </button>
+              <button
+                className="border-b border-gray-400 rounded-xl px-2"
+                onClick={handleBorrarSeleccion}
+              >
+                Borrar selección
+              </button>
+            </div>
           </div>
-          <div className="w-1/2 h-full bg-gray-800 grid grid-cols-4 grid-rows-4">
+          <div className="w-1/2 h-full flex flex-col items-center justify-around overflow-y-auto">
             {categorias.map((categoria, index) => {
-              const datoObj = dataApertura[categoria].find(
+              const datosMes = dataApertura[categoria].find(
                 (item) => item.mes === mesSeleccionado
               );
-              const dato = datoObj?.dato;
-              const intermensual = datoObj?.intermensual;
-              const interanual = datoObj?.interanual;
-
-              const fila = Math.floor(index / 4);
-              const columna = index % 4;
-              const isEvenRow = fila % 2 === 0;
-              const isEvenColumn = columna % 2 === 0;
-              const backgroundColorClass =
-                (isEvenRow && !isEvenColumn) || (!isEvenRow && isEvenColumn)
-                  ? "bg-gray-200 text-gray-800"
-                  : "bg-gray-800 text-gray-200";
-
-              const getArrow = (value) => {
-                if (value > 0) {
-                  return (
-                    <FaArrowUp className="text-green-500 ml-2" size={15} />
-                  );
-                } else if (value < 0) {
-                  return (
-                    <FaArrowDown className="text-red-500 ml-2" size={15} />
-                  );
-                }
-                return null;
-              };
-
               return (
                 <div
                   key={index}
-                  className={`flex justify-center items-center flex-col ${backgroundColorClass}`}
+                  className="border-b border-gray-200 px-4 p-1 flex justify-between items-center w-full cursor-pointer relative"
+                  onClick={() => handleToggleCategoria(categoria)}
                 >
-                  <div className="h-full w-full flex items-center justify-between flex-col p-1">
-                    <div className="w-full h-1/5 flex">
-                      {" "}
-                      <div className="w-12 h-12">
-                        <img
-                          src={`/assets/emae/${categoria
-                            .split(" ")[0]
-                            .toLowerCase()}.png`}
-                          alt=""
-                        />
-                      </div>
-                      <p className="flex items-center justify-center w-full text-center text-xs font-semibold text-yellow-600">
-                        {categoria}
-                      </p>
-                    </div>
-                    <div className="w-full h-4/5 flex flex-col justify-evenly">
-                      <p className="flex flex-col items-center text-5xl">
-                        {dato}
-                      </p>
-                      {!mensualoAnual ? (
-                        <p className="flex flex-col items-center text-[8px]">
-                          VARIACION INTERMENSUAL:{" "}
-                          <span className="text-2xl flex items-center">
-                            {intermensual}pp {getArrow(intermensual)}
-                          </span>
-                        </p>
-                      ) : (
-                        <p className="flex flex-col items-center text-[8px]">
-                          VARIACION INTERANUAL:{" "}
-                          <span className="text-2xl flex items-center">
-                            {interanual}pp {getArrow(interanual)}
-                          </span>
-                        </p>
-                      )}
-                    </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-4 h-4 rounded-full mr-2 border border-black"
+                      style={{
+                        backgroundColor: categoriasSeleccionadas.includes(
+                          categoria
+                        )
+                          ? colors[categoria]
+                          : "#FFFFFF",
+                      }}
+                    ></div>
+                    <span>{categoria}</span>
                   </div>
+                  <span>{datosMes ? datosMes.intermensual : "-"} %</span>
                 </div>
               );
             })}
-          </div>{" "}
-        </>
-      ) : (
-        <div className="w-full h-full">
-          <div className="w-full h-1/2 bg-gray-800"></div>
-          <div className="w-full h-1/2 bg-gray-200">
-            {" "}
-            <button
-              onClick={() => setGeneralOApertura(true)}
-              className="bg-blue-600 rounded-xl w-48 text-white text-xs h-8"
-            >
-              VER APERTURA
-            </button>
           </div>
         </div>
       )}

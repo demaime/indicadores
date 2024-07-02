@@ -33,7 +33,7 @@ export default function Encabezado({ title, description, mensual }) {
         </a>
         {title}
         <span
-          className={`m-4 w-24 text-xs h-6 text-white absolute right-12 rounded-xl flex items-center justify-center ${
+          className={`m-4 w-24 text-xs h-6 text-white absolute right-12 rounded-xl flex items-center justify-center border border-white ${
             mensual === "mensual" ? "bg-red-600" : "bg-green-600"
           }`}
         >

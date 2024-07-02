@@ -11,22 +11,23 @@ import {
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const colors = {
+  GENERAL: "red",
   "Agricultura, ganadería, caza y silvicultura": "#e6194b",
-  Pesca: "#3cb44b",
+  Pesca: "#800000",
   "Explotación de minas y canteras": "#ffe119",
-  "Industria manufacturera": "#4363d8",
-  "Electricidad, gas y agua": "#f58231",
-  Construcción: "#911eb4",
-  "Comercio mayorista, minorista y reparaciones": "#42d4f4",
-  "Hoteles y restaurantes": "#f032e6",
-  "Transporte y comunicaciones": "#bfef45",
-  "Intermediación financiera": "#fabebe",
-  "Actividades inmobiliarias, empresariales y de alquiler": "#469990",
-  "Adm. pública y defensa; planes de seguridad social": "#e6beff",
-  Enseñanza: "#9a6324",
-  "Servicios sociales y de salud": "#ffa66a",
+  "Industria manufacturera": "#bfef45",
+  "Electricidad, gas y agua": "#3cb44b",
+  Construcción: "#12661b",
+  "Comercio mayorista, minorista y reparaciones": "#ff820d",
+  "Hoteles y restaurantes": "#ffa66a",
+  "Transporte y comunicaciones": "#9a6324",
+  "Intermediación financiera": "#f032e6",
+  "Actividades inmobiliarias, empresariales y de alquiler": "#fabebe",
+  "Adm. pública y defensa; planes de seguridad social": "#911eb4",
+  Enseñanza: "#4363d8",
+  "Servicios sociales y de salud": "#469990",
   "Otras actividades de servicios comunitarios, sociales y personales":
-    "#800000",
+    "#42d4f4",
   "Impuestos netos de subsidios": "#aaffc3",
 };
 
@@ -35,13 +36,12 @@ export default function ActividadEconomica() {
 
   const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
 
-  const data = [
-    { mes: "ENERO", dato: 136.5, intermensual: -1.9, interanual: -4.1 },
-    { mes: "FEBRERO", dato: 133, intermensual: -2.5, interanual: -3 },
-    { mes: "MARZO", dato: 141.7, intermensual: 6.5, interanual: -8.4 },
-  ];
-
-  const dataApertura = {
+  const data = {
+    GENERAL: [
+      { mes: "ENERO", dato: 136.5, intermensual: -1.9, interanual: -4.1 },
+      { mes: "FEBRERO", dato: 133, intermensual: -2.5, interanual: -3 },
+      { mes: "MARZO", dato: 141.7, intermensual: 6.5, interanual: -8.4 },
+    ],
     "Agricultura, ganadería, caza y silvicultura": [
       { mes: "ENERO", dato: 91.4, intermensual: -17.07, interanual: 11.9 },
       { mes: "FEBRERO", dato: 73.7, intermensual: -19.39, interanual: 5 },
@@ -124,10 +124,10 @@ export default function ActividadEconomica() {
     ],
   };
 
-  const meses = dataApertura["Agricultura, ganadería, caza y silvicultura"].map(
+  const meses = data["Agricultura, ganadería, caza y silvicultura"].map(
     (item) => item.mes
   );
-  const categorias = Object.keys(dataApertura);
+  const categorias = Object.keys(data);
 
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
@@ -201,13 +201,13 @@ export default function ActividadEconomica() {
                 data={meses.map((mes, index) => {
                   const result = { mes };
                   categoriasSeleccionadas.forEach((categoria) => {
-                    const datosMes = dataApertura[categoria].find(
+                    const datosMes = data[categoria].find(
                       (item) => item.mes === mes
                     );
                     if (datosMes) {
                       result[categoria] = datosMes.dato;
                     } else {
-                      result[categoria] = null; // Opcional: manejar casos donde no haya datos
+                      result[categoria] = null;
                     }
                   });
                   return result;
@@ -223,17 +223,18 @@ export default function ActividadEconomica() {
                     type="monotone"
                     dataKey={categoria}
                     stroke={colors[categoria]}
-                    strokeWidth={2}
+                    strokeWidth={categoria === "GENERAL" ? "4" : "2"}
                     dot={{
                       stroke: colors[categoria],
                       fill: colors[categoria],
                     }}
+                    strokeDasharray={categoria === "GENERAL" ? "5 5" : "0"}
                   />
                 ))}
               </LineChart>
             </ResponsiveContainer>
             {categoriasSeleccionadas.length === 0 && (
-              <div className="absolute inset-0 h-16 flex items-center justify-center text-white font-bold text-lg bg-red-500 top-1/3">
+              <div className="absolute inset-0 h-16 flex items-center justify-center text-white font-bold text-lg bg-blue-800 top-[40%]">
                 Seleccione alguna categoría para mostrar en el gráfico
               </div>
             )}
@@ -253,42 +254,65 @@ export default function ActividadEconomica() {
               </button>
             </div>
           </div>
-          <div className="w-1/2 h-full flex flex-col items-center justify-around overflow-y-auto">
-            {categorias.map((categoria, index) => {
-              const datosMes = dataApertura[categoria].find(
-                (item) => item.mes === mesSeleccionado
-              );
-              return (
-                <div
-                  key={index}
-                  className="border-b border-gray-200 px-4 p-1 flex justify-between items-center w-full cursor-pointer relative"
-                  onClick={() => handleToggleCategoria(categoria)}
-                >
-                  <div className="flex items-center">
-                    <div
-                      className="w-4 h-4 rounded-full mr-2 border border-black"
-                      style={{
-                        backgroundColor: categoriasSeleccionadas.includes(
-                          categoria
-                        )
-                          ? colors[categoria]
-                          : "#FFFFFF",
-                      }}
-                    ></div>
-                    <span>{categoria}</span>
-                  </div>
-                  <span
-                    className={
-                      categoriasSeleccionadas.includes(categoria)
-                        ? ""
-                        : "text-gray-300"
-                    }
+          <div className="w-1/2 h-full">
+            <div className="w-full h-[5%] bg-gray-900 text-gray-100 flex items-center justify-center">
+              Estimador mensual de actividad económica - Valor y Variación
+              mensual
+            </div>
+            <div className="w-full h-[95%] flex flex-col items-center justify-around overflow-y-auto">
+              {categorias.map((categoria, index) => {
+                const datosMes = data[categoria].find(
+                  (item) => item.mes === mesSeleccionado
+                );
+                return (
+                  <div
+                    key={index}
+                    className="border-b border-gray-200 px-4 p-1 flex justify-between items-center w-full cursor-pointer relative"
+                    onClick={() => handleToggleCategoria(categoria)}
                   >
-                    {datosMes ? datosMes.intermensual : "-"} %
-                  </span>
-                </div>
-              );
-            })}
+                    <div className="flex items-center">
+                      <div
+                        className="w-4 h-4 rounded-full mr-2 border border-black"
+                        style={{
+                          backgroundColor: categoriasSeleccionadas.includes(
+                            categoria
+                          )
+                            ? colors[categoria]
+                            : "#FFFFFF",
+                        }}
+                      ></div>
+                      <span>{categoria}</span>
+                    </div>
+                    <div className="flex w-32 justify-between">
+                      <span
+                        className={`font-semibold w-16 rounded text-center ${
+                          categoriasSeleccionadas.includes(categoria)
+                            ? ""
+                            : "text-gray-300"
+                        }`}
+                        style={
+                          categoriasSeleccionadas.includes(categoria)
+                            ? { color: colors[categoria] }
+                            : {}
+                        }
+                      >
+                        {datosMes.dato}
+                      </span>
+
+                      <span
+                        className={
+                          categoriasSeleccionadas.includes(categoria)
+                            ? ""
+                            : "text-gray-300"
+                        }
+                      >
+                        {datosMes ? datosMes.intermensual : "-"} %
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

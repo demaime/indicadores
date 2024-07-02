@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   LabelList,
+  ReferenceLine,
 } from "recharts";
 
 export default function Industria() {
@@ -964,6 +965,12 @@ export default function Industria() {
                       }}
                     />
                   ))}
+                  <ReferenceLine
+                    x="DIC-23"
+                    stroke="black"
+                    strokeWidth={2}
+                    strokeDasharray="5 5"
+                  />{" "}
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -987,6 +994,12 @@ export default function Industria() {
                       }}
                     />
                   ))}
+                  <ReferenceLine
+                    x="DIC-23"
+                    stroke="white"
+                    strokeWidth={2}
+                    strokeDasharray="5 5"
+                  />{" "}
                 </LineChart>
               </ResponsiveContainer>
             </div>

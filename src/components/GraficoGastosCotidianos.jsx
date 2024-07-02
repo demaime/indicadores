@@ -14,40 +14,10 @@ export default function GraficoGastosCotidianos({
   variaciones,
   mesData,
 }) {
-  const CustomizedAxisTick = ({ x, y, payload }) => {
-    return (
-      <g transform={`translate(${x},${y})`}>
-        <text
-          x={0}
-          y={0}
-          dy={16}
-          textAnchor="end"
-          transform="rotate(-35)"
-          fontWeight="semibold"
-        >
-          {payload.value}
-        </text>
-      </g>
-    );
-  };
-
-  // Función para formatear números con separadores de miles y símbolo de dólar
   const formatCurrency = (value) => {
     return `$${value.toLocaleString()}`;
   };
 
-  // Transformar los datos para tener una serie por cada categoría excepto "alquiler" e "internet"
-  const chartData = Object.keys(data).map((month) => {
-    const monthData = { ...data[month] };
-    delete monthData.alquiler;
-
-    return {
-      name: month,
-      ...monthData,
-    };
-  });
-
-  // Definir colores fijos para cada categoría
   const colors = {
     luz: "#FF0000",
     gas: "#00FF00",
@@ -63,116 +33,45 @@ export default function GraficoGastosCotidianos({
     fideos: "#a464d1",
   };
 
+  const months = Object.keys(variaciones);
   const categories = Object.keys(data[Object.keys(data)[0]]).filter(
     (category) => category !== "alquiler"
   );
 
-  const serviceCategories = ["luz", "gas", "internet", "celular"];
-  const foodCategories = Object.keys(colors).filter(
-    (category) => !serviceCategories.includes(category)
-  );
+  const chartData = months.map((month) => {
+    const monthData = { name: month };
+    categories.forEach((category) => {
+      monthData[category] = parseFloat(variaciones[month][category]) || 0;
+    });
+    return monthData;
+  });
 
   return (
     <div className="w-full h-full flex items-end justify-center bg-gray-600">
       <div className="w-2/3 h-full flex flex-col items-center justify-center bg-gray-200">
-        <div className="w-full h-1/2 items-center justify-center flex">
-          <ResponsiveContainer
-            width={"85%"}
-            height={"90%"}
-            className={"relative"}
-          >
-            <h2 className="absolute left-1/2 bg-gray-400 p-1 px-4 rounded-xl -top-2 font-semibold z-50 text-gray-700">
-              SERVICIOS
-            </h2>
-            <LineChart
-              width={800}
-              height={400}
-              data={chartData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
-              <YAxis
-                tickFormatter={formatCurrency} // Formatear el eje Y
+        <ResponsiveContainer width="90%" height="90%">
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+            <YAxis tick={{ fontSize: 10 }} />
+            <Tooltip />
+
+            {categories.map((category) => (
+              <Line
+                key={category}
+                type="monotone"
+                dataKey={category}
+                stroke={colors[category]}
+                strokeWidth={2}
+                dot={{ r: 4 }}
               />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "#333",
-                  border: "none",
-                  color: "#fff",
-                }}
-                formatter={(value, name) => [
-                  `${name}: ${formatCurrency(value)}`,
-                  <span style={{ color: colors[name] || "#fff" }}>{name}</span>,
-                ]}
-              />
-              {/* Mapear cada categoría para renderizar una línea */}
-              {serviceCategories.map((category, index) => (
-                <Line
-                  key={index}
-                  type="monotone"
-                  dataKey={category}
-                  stroke={colors[category] || "#000000"} // Usar color predefinido o negro si no se encuentra
-                  strokeWidth={2} // Línea más gruesa
-                  dot={{ fill: colors[category] }}
-                  activeDot={{ r: 8 }}
-                ></Line>
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="w-full h-1/2 items-end justify-center flex border-gray-500 border-t-2">
-          {" "}
-          <ResponsiveContainer
-            width={"85%"}
-            height={"90%"}
-            className={"relative"}
-          >
-            <h2 className="absolute left-1/2 bg-gray-400 p-1 px-4 rounded-xl -top-2 font-semibold z-50 text-gray-700">
-              ALIMENTOS
-            </h2>
-            <LineChart
-              width={800}
-              height={400}
-              data={chartData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
-              <YAxis
-                tickFormatter={formatCurrency} // Formatear el eje Y
-              />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "#333",
-                  border: "none",
-                  color: "#fff",
-                }}
-                formatter={(value, name) => [
-                  `${name}: ${formatCurrency(value)}`,
-                  <span style={{ color: colors[name] || "#fff" }}>{name}</span>,
-                ]}
-              />
-              {/* Mapear cada categoría para renderizar una línea */}
-              {foodCategories.map((category, index) => (
-                <Line
-                  key={index}
-                  type="monotone"
-                  dataKey={category}
-                  stroke={colors[category] || "#000000"} // Usar color predefinido o negro si no se encuentra
-                  strokeWidth={2} // Línea más gruesa
-                  dot={{ fill: colors[category] }}
-                  activeDot={{ r: 8 }}
-                ></Line>
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
       </div>
       <div className="w-1/3 h-full flex pl-4">
         <div className="w-1/3 h-full flex items-end justify-start pb-4">
           <div className="w-[90%] h-[90%] bg-gray-400 rounded-xl px-4">
-            {" "}
             <ul className="w-full h-full flex flex-col items-center justify-evenly">
               {categories.map((category) => (
                 <li
@@ -216,8 +115,9 @@ export default function GraficoGastosCotidianos({
                   }}
                   key={category}
                 >
-                  {data[mesData] && data[mesData][category] !== undefined
-                    ? formatCurrency(data[mesData][category])
+                  {data[months[months.length - 1]] &&
+                  data[months[months.length - 1]][category] !== undefined
+                    ? formatCurrency(data[months[months.length - 1]][category])
                     : "No disponible"}
                 </li>
               ))}

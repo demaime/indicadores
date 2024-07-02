@@ -215,7 +215,7 @@ export default function ActividadEconomica() {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="mes" />
-                <YAxis />
+                <YAxis domain={[50, 200]} />
                 <Tooltip />
                 {categoriasSeleccionadas.map((categoria) => (
                   <Line
@@ -255,7 +255,7 @@ export default function ActividadEconomica() {
             </div>
           </div>
           <div className="w-1/2 h-full">
-            <div className="w-full h-[5%] bg-gray-900 text-gray-100 flex items-center justify-center">
+            <div className="w-full h-[5%] bg-gray-900 text-gray-100 flex items-center justify-center text-xs font-bold">
               Estimador mensual de actividad económica - Valor y Variación
               mensual
             </div>

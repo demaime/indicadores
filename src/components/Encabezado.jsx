@@ -3,7 +3,7 @@ import { GoMultiSelect } from "react-icons/go";
 import { LuHome } from "react-icons/lu";
 import { IoArrowRedoCircleOutline } from "react-icons/io5";
 
-export default function Encabezado({ title, description }) {
+export default function Encabezado({ title, description, mensual }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const menuRef = useRef(null);
 
@@ -27,11 +27,18 @@ export default function Encabezado({ title, description }) {
 
   return (
     <>
-      <div className="font-bold py-1 bg-gray-700 text-white text-2xl w-full flex items-center justify-between px-4">
+      <div className="font-bold py-1 bg-gray-700 text-white text-2xl w-full flex items-center justify-between px-4 relative">
         <a href="#home">
           <LuHome className="hover:scale-125 cursor-pointer transition-all" />
         </a>
         {title}
+        <span
+          className={`m-4 w-24 text-xs h-6 text-white absolute right-12 rounded-xl flex items-center justify-center ${
+            mensual === "mensual" ? "bg-red-600" : "bg-green-600"
+          }`}
+        >
+          {mensual === "mensual" ? "MENSUAL" : "TRIMESTRAL"}
+        </span>
         <div className="relative" ref={menuRef}>
           <GoMultiSelect
             onClick={toggleMenu}

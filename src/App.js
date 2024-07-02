@@ -20,6 +20,7 @@ export default function App() {
         <Encabezado
           title={"INFLACION"}
           description={"Nacional: INDEC - CABA: Estadisticas Ciudad"}
+          mensual="mensual"
         />
         <InflacionDesglose />
       </section>
@@ -29,6 +30,7 @@ export default function App() {
           description={
             "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad. SMVM y Jubilación mínima: ANSES"
           }
+          mensual="mensual"
         />
         <CanastaSalario />
       </section>
@@ -38,6 +40,7 @@ export default function App() {
           description={
             "DolarAPI - Registro histórico y valores promedio del dolar y sus distintas cotizaciones"
           }
+          mensual="mensual"
         />
         <Dolar />
       </section>
@@ -48,6 +51,7 @@ export default function App() {
           description={
             "Valor del litro de nafta, peajes, pasajes de transportes públicos y cantidad de patentamientos vehiculares a nivel nacional"
           }
+          mensual="mensual"
         />
         <Transporte />
       </section>
@@ -58,6 +62,7 @@ export default function App() {
           description={
             "Promedio alquileres departamento 2 ambientes . Fuente: ZonaProp"
           }
+          mensual="mensual"
         />
         <Alquiler />
       </section>
@@ -67,6 +72,7 @@ export default function App() {
           description={
             "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Estadísticas CABA / IIEP"
           }
+          mensual="mensual"
         />
 
         <GastosCotidianos />
@@ -78,7 +84,9 @@ export default function App() {
           description={
             "Promedio de precios de actividades recreativas CABA. Fuente: Estadísticas CABA y fuentes específicas"
           }
+          mensual="mensual"
         />
+
         <Ocio />
       </section>
       <section className="section" id="industrial">
@@ -87,6 +95,7 @@ export default function App() {
           description={
             "Evolución de la facturación de la industria manufacturera PyME (CAME) - Proporción de la capacidad instalada del sector industrial de nuestro país que está siendo actualmente utilizada (INDEC)"
           }
+          mensual="mensual"
         />
         <Industria />
       </section>
@@ -96,6 +105,7 @@ export default function App() {
           description={
             "Indicador provisorio de la evolución del PIB a precios constantes de 2004, difundido con un rezago de 50 a 60 días de concluido el mes de referencia. Fuente: INDEC"
           }
+          mensual="trimestral"
         />
         <ActividadEconomica />
       </section>

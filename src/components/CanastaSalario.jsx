@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   Line,
+  ReferenceLine,
   LineChart,
 } from "recharts";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -383,7 +384,6 @@ export default function CanastaSalario() {
                 }}
                 strokeWidth={2}
               />
-
               <Line
                 type="monotone"
                 dataKey="Salario Mínimo Vital y Móvil"
@@ -413,6 +413,13 @@ export default function CanastaSalario() {
                   fill: "#32a852",
                 }}
                 strokeWidth={2}
+              />
+              <ReferenceLine
+                style={{ opacity: 0.2 }}
+                x={mesSeleccionado}
+                stroke="gray"
+                strokeWidth={18}
+                // strokeDasharray="1 1"
               />
             </LineChart>
           </ResponsiveContainer>

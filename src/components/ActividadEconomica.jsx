@@ -264,6 +264,12 @@ export default function ActividadEconomica() {
                 const datosMes = data[categoria].find(
                   (item) => item.mes === mesSeleccionado
                 );
+                const variationClass =
+                  datosMes && datosMes.intermensual > 0
+                    ? "text-green-500"
+                    : datosMes && datosMes.intermensual < 0
+                    ? "text-red-500"
+                    : "";
                 return (
                   <div
                     key={index}
@@ -300,11 +306,11 @@ export default function ActividadEconomica() {
                       </span>
 
                       <span
-                        className={
+                        className={`${variationClass} ${
                           categoriasSeleccionadas.includes(categoria)
                             ? ""
                             : "text-gray-300"
-                        }
+                        }`}
                       >
                         {datosMes ? datosMes.intermensual : "-"} %
                       </span>

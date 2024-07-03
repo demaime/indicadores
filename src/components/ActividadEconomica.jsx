@@ -8,7 +8,6 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const colors = {
   GENERAL: "red",
@@ -153,6 +152,48 @@ export default function ActividadEconomica() {
     setCategoriasSeleccionadas([]);
   };
 
+  const generalLargoPlazo = [
+    { fecha: "ene-21", valor: 131.8 },
+    { fecha: "feb-21", valor: 126.5 },
+    { fecha: "mar-21", valor: 146.2 },
+    { fecha: "abr-21", valor: 147.3 },
+    { fecha: "may-21", valor: 151.2 },
+    { fecha: "jun-21", valor: 149 },
+    { fecha: "jul-21", valor: 142.6 },
+    { fecha: "ago-21", valor: 141.2 },
+    { fecha: "sep-21", valor: 141.5 },
+    { fecha: "oct-21", valor: 140.4 },
+    { fecha: "nov-21", valor: 144.7 },
+    { fecha: "dic-21", valor: 148.1 },
+    { fecha: "ene-22", valor: 138.2 },
+    { fecha: "feb-22", valor: 136.9 },
+    { fecha: "mar-22", valor: 152.8 },
+    { fecha: "abr-22", valor: 155.8 },
+    { fecha: "may-22", valor: 163 },
+    { fecha: "jun-22", valor: 159.4 },
+    { fecha: "jul-22", valor: 151.2 },
+    { fecha: "ago-22", valor: 150.2 },
+    { fecha: "sep-22", valor: 148.1 },
+    { fecha: "oct-22", valor: 146.3 },
+    { fecha: "nov-22", valor: 147.8 },
+    { fecha: "dic-22", valor: 145.7 },
+    { fecha: "ene-23", valor: 142.2 },
+    { fecha: "feb-23", valor: 137.1 },
+    { fecha: "mar-23", valor: 154.6 },
+    { fecha: "abr-23", valor: 149.3 },
+    { fecha: "may-23", valor: 153 },
+    { fecha: "jun-23", valor: 151.8 },
+    { fecha: "jul-23", valor: 148.7 },
+    { fecha: "ago-23", valor: 150.3 },
+    { fecha: "sep-23", valor: 147.1 },
+    { fecha: "oct-23", valor: 147.7 },
+    { fecha: "nov-23", valor: 146.5 },
+    { fecha: "dic-23", valor: 139.2 },
+    { fecha: "ene-24", valor: 136.5 },
+    { fecha: "feb-24", valor: 133 },
+    { fecha: "mar-24", valor: 141.7 },
+  ];
+
   return (
     <div className="w-full h-full">
       <div className="flex justify-center items-center h-[5%] w-full">
@@ -192,7 +233,29 @@ export default function ActividadEconomica() {
         </div>
       </div>
       {generalOapertura === "general" ? (
-        <></>
+        <div className="w-full h-full bg-blue-900 border-t-2 border-blue-600">
+          <div className="w-full h-3/5"></div>
+          <div className="w-full h-2/5 flex items-center justify-center">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart
+                data={generalLargoPlazo}
+                margin={{ top: 0, right: 40, left: 0, bottom: 40 }}
+              >
+                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                <XAxis dataKey="fecha" />
+                <YAxis domain={[120, 170]} />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="valor"
+                  stroke="#8884d8"
+                  strokeWidth={2}
+                  dot={{ stroke: "#8884d8", fill: "#8884d8" }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       ) : (
         <div className="w-full h-[95%] flex">
           <div className="w-1/2 h-full bg-gray-900 relative flex items-center justify-start">
@@ -257,7 +320,7 @@ export default function ActividadEconomica() {
           <div className="w-1/2 h-full">
             <div className="w-full h-[5%] bg-gray-900 text-gray-100 flex items-center justify-center text-xs font-bold">
               Estimador mensual de actividad económica - Valor y Variación
-              mensual
+              interanual
             </div>
             <div className="w-full h-[95%] flex flex-col items-center justify-around overflow-y-auto">
               {categorias.map((categoria, index) => {
@@ -265,9 +328,9 @@ export default function ActividadEconomica() {
                   (item) => item.mes === mesSeleccionado
                 );
                 const variationClass =
-                  datosMes && datosMes.intermensual > 0
+                  datosMes && datosMes.interanual > 0
                     ? "text-green-500"
-                    : datosMes && datosMes.intermensual < 0
+                    : datosMes && datosMes.interanual < 0
                     ? "text-red-500"
                     : "";
                 return (
@@ -312,7 +375,7 @@ export default function ActividadEconomica() {
                             : "text-gray-300"
                         }`}
                       >
-                        {datosMes ? datosMes.intermensual : "-"} %
+                        {datosMes ? datosMes.interanual : "-"} %
                       </span>
                     </div>
                   </div>

@@ -105,7 +105,7 @@ export default function App() {
           description={
             "Indicador provisorio de la evolución del PIB a precios constantes de 2004, difundido con un rezago de 50 a 60 días de concluido el mes de referencia. Fuente: INDEC"
           }
-          mensual="trimestral"
+          mensual="mensual"
         />
         <ActividadEconomica />
       </section>

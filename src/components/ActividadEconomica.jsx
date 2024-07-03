@@ -234,7 +234,47 @@ export default function ActividadEconomica() {
       </div>
       {generalOapertura === "general" ? (
         <div className="w-full h-full bg-blue-900 border-t-2 border-blue-600">
-          <div className="w-full h-3/5"></div>
+          <div className="w-full h-3/5 flex">
+            <div className="w-1/3 h-full flex items-center justify-center">
+              <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                <h1 className="text-blue-200 text-6xl font-black">
+                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                    ?.dato || "N/A"}
+                </h1>
+                <img
+                  src="/assets/esfera.png"
+                  className="w-64 h-64 absolute"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="w-1/3 h-full flex items-center justify-center">
+              <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                <h1 className="text-blue-200 text-6xl font-black">
+                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                    ?.intermensual || "N/A"}
+                </h1>
+                <img
+                  src="/assets/esfera.png"
+                  className="w-64 h-64 absolute"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="w-1/3 h-full flex items-center justify-center">
+              <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                <h1 className="text-blue-200 text-6xl font-black">
+                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                    ?.interanual || "-"}
+                </h1>
+                <img
+                  src="/assets/esfera.png"
+                  className="w-64 h-64 absolute"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
           <div className="w-full h-2/5 flex items-center justify-center">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
@@ -242,15 +282,15 @@ export default function ActividadEconomica() {
                 margin={{ top: 0, right: 40, left: 0, bottom: 40 }}
               >
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="fecha" />
-                <YAxis domain={[120, 170]} />
+                <XAxis dataKey="fecha" tick={{ fill: "#bfdbfe" }} />
+                <YAxis domain={[120, 170]} tick={{ fill: "#bfdbfe" }} />
                 <Tooltip />
                 <Line
                   type="monotone"
                   dataKey="valor"
-                  stroke="#8884d8"
+                  stroke="#fef08a"
                   strokeWidth={2}
-                  dot={{ stroke: "#8884d8", fill: "#8884d8" }}
+                  dot={{ stroke: "#fef08a", fill: "#fef08a" }}
                 />
               </LineChart>
             </ResponsiveContainer>

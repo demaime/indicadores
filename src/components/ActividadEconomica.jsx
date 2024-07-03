@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import CountUp from "react-countup";
 
 const colors = {
   GENERAL: "red",
@@ -237,10 +238,14 @@ export default function ActividadEconomica() {
           <div className="w-full h-3/5 flex">
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
-                <h1 className="text-blue-200 text-6xl font-black">
-                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
-                    ?.dato || "N/A"}
-                </h1>
+                <CountUp
+                  className="text-blue-200 text-6xl font-black"
+                  duration={1.5}
+                  end={
+                    data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                      ?.dato || "N/A"
+                  }
+                />
                 <img
                   src="/assets/esfera.png"
                   className="w-64 h-64 absolute"
@@ -250,10 +255,15 @@ export default function ActividadEconomica() {
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
-                <h1 className="text-blue-200 text-6xl font-black">
-                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
-                    ?.intermensual || "N/A"}
-                </h1>
+                <CountUp
+                  decimals="2"
+                  className="text-blue-200 text-6xl font-black"
+                  duration={1.5}
+                  end={
+                    data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                      ?.intermensual || "N/A"
+                  }
+                />
                 <img
                   src="/assets/esfera.png"
                   className="w-64 h-64 absolute"
@@ -263,10 +273,15 @@ export default function ActividadEconomica() {
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
-                <h1 className="text-blue-200 text-6xl font-black">
-                  {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
-                    ?.interanual || "-"}
-                </h1>
+                <CountUp
+                  decimals="2"
+                  className="text-blue-200 text-6xl font-black"
+                  duration={1.5}
+                  end={
+                    data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                      ?.interanual || "N/A"
+                  }
+                />
                 <img
                   src="/assets/esfera.png"
                   className="w-64 h-64 absolute"

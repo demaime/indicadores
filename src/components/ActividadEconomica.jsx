@@ -9,6 +9,10 @@ import {
   Tooltip,
 } from "recharts";
 import CountUp from "react-countup";
+import {
+  MdOutlineKeyboardDoubleArrowUp,
+  MdOutlineKeyboardDoubleArrowDown,
+} from "react-icons/md";
 
 const colors = {
   GENERAL: "red",
@@ -255,8 +259,20 @@ export default function ActividadEconomica() {
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                  ?.intermensual > 0 ? (
+                  <MdOutlineKeyboardDoubleArrowUp
+                    size={120}
+                    className="absolute -left-28 text-green-500"
+                  />
+                ) : (
+                  <MdOutlineKeyboardDoubleArrowDown
+                    size={120}
+                    className="absolute -left-28 text-red-500"
+                  />
+                )}
                 <CountUp
-                  decimals="2"
+                  decimals={2}
                   className="text-blue-200 text-6xl font-black"
                   duration={1.5}
                   end={
@@ -273,8 +289,20 @@ export default function ActividadEconomica() {
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                  ?.interanual > 0 ? (
+                  <MdOutlineKeyboardDoubleArrowUp
+                    size={120}
+                    className="absolute -left-28 text-green-500"
+                  />
+                ) : (
+                  <MdOutlineKeyboardDoubleArrowDown
+                    size={120}
+                    className="absolute -left-28 text-red-500"
+                  />
+                )}
                 <CountUp
-                  decimals="2"
+                  decimals={2}
                   className="text-blue-200 text-6xl font-black"
                   duration={1.5}
                   end={

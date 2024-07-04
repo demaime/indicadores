@@ -6,6 +6,7 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
+  ReferenceLine,
   Tooltip,
 } from "recharts";
 import CountUp from "react-countup";
@@ -13,6 +14,8 @@ import {
   MdOutlineKeyboardDoubleArrowUp,
   MdOutlineKeyboardDoubleArrowDown,
 } from "react-icons/md";
+import { PiAlignBottomDuotone } from "react-icons/pi";
+import { FaMagnifyingGlassChart } from "react-icons/fa6";
 
 const colors = {
   GENERAL: "red",
@@ -205,7 +208,7 @@ export default function ActividadEconomica() {
         <select
           value={mesSeleccionado}
           onChange={handleChangeMes}
-          className="w-4/5  text-center bg-blue-900 text-gray-200 font-semibold h-full"
+          className="w-4/5  text-center bg-gray-500 text-gray-900 font-semibold h-full"
         >
           {meses.map((mes, index) => (
             <option key={index} value={mes}>
@@ -214,12 +217,12 @@ export default function ActividadEconomica() {
           ))}
         </select>
 
-        <div className="w-1/5 bg-blue-600 h-full flex items-center justify-evenly">
+        <div className="w-1/5 bg-gray-600 h-full flex items-center justify-evenly">
           <button
             className={`w-20 h-6 text-xs rounded  ${
               generalOapertura === "general"
-                ? "bg-blue-300"
-                : "bg-blue-500 hover:bg-blue-50"
+                ? "bg-gray-300"
+                : "bg-gray-500 hover:bg-gray-50"
             }`}
             onClick={() => setGeneralOapertura("general")}
           >
@@ -228,8 +231,8 @@ export default function ActividadEconomica() {
           <button
             className={`w-20 h-6 text-xs rounded  ${
               generalOapertura === "apertura"
-                ? "bg-blue-300"
-                : "bg-blue-500 hover:bg-blue-50"
+                ? "bg-gray-300"
+                : "bg-gray-500 hover:bg-gray-50"
             }`}
             onClick={() => setGeneralOapertura("apertura")}
           >
@@ -238,7 +241,7 @@ export default function ActividadEconomica() {
         </div>
       </div>
       {generalOapertura === "general" ? (
-        <div className="w-full h-full bg-blue-900 border-t-2 border-blue-600">
+        <div className="w-full h-full bg-gray-900">
           <div className="w-full h-3/5 flex">
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
@@ -255,6 +258,10 @@ export default function ActividadEconomica() {
                   className="w-64 h-64 absolute"
                   alt=""
                 />
+                <div className="absolute -top-14 -left-24 flex items-center justify-center h-12 text-2xl">
+                  <FaMagnifyingGlassChart className="mr-2 text-yellow-400 flex items-center justify-center " />
+                  <h1 className="italic text-blue-200  w-90">índice </h1>
+                </div>
               </div>
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
@@ -285,6 +292,12 @@ export default function ActividadEconomica() {
                   className="w-64 h-64 absolute"
                   alt=""
                 />
+                <div className="absolute -top-14 -left-24 flex items-center justify-center h-12 text-2xl">
+                  <PiAlignBottomDuotone className="mr-2 text-yellow-400 flex items-center justify-center " />
+                  <h1 className="italic text-blue-200  w-90">
+                    variación mensual
+                  </h1>
+                </div>
               </div>
             </div>
             <div className="w-1/3 h-full flex items-center justify-center">
@@ -315,6 +328,12 @@ export default function ActividadEconomica() {
                   className="w-64 h-64 absolute"
                   alt=""
                 />
+                <div className="absolute -top-14 -left-24 flex items-center justify-center h-12 text-2xl">
+                  <PiAlignBottomDuotone className="mr-2 text-yellow-400 flex items-center justify-center " />
+                  <h1 className="italic text-blue-200  w-90">
+                    variación interanual
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -327,7 +346,15 @@ export default function ActividadEconomica() {
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="fecha" tick={{ fill: "#bfdbfe" }} />
                 <YAxis domain={[120, 170]} tick={{ fill: "#bfdbfe" }} />
-                <Tooltip />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    border: "none",
+                    borderRadius: "5px  ",
+                    color: "white",
+                    textTransform: "uppercase",
+                  }}
+                />
                 <Line
                   type="monotone"
                   dataKey="valor"
@@ -335,6 +362,9 @@ export default function ActividadEconomica() {
                   strokeWidth={2}
                   dot={{ stroke: "#fef08a", fill: "#fef08a" }}
                 />
+                <ReferenceLine x={"ene-22"} stroke="#bfdbfe" strokeWidth={2} />
+                <ReferenceLine x={"ene-23"} stroke="#bfdbfe" strokeWidth={2} />
+                <ReferenceLine x={"ene-24"} stroke="#bfdbfe" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </div>

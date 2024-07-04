@@ -10,6 +10,7 @@ import {
   Line,
   CartesianGrid,
   ResponsiveContainer,
+  ReferenceLine,
 } from "recharts";
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -1784,6 +1785,13 @@ export default function Dolar() {
                     dot={{ stroke: getColorByName(tipo), strokeWidth: 4, r: 2 }} // Establecer el color del punto
                   />
                 ))}
+                <ReferenceLine
+                  style={{ opacity: 0.2 }}
+                  x={mesSeleccionado}
+                  stroke="gray"
+                  strokeWidth={18}
+                  // strokeDasharray="1 1"
+                />
               </LineChart>
             </ResponsiveContainer>
           </div>

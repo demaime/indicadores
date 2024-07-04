@@ -970,7 +970,14 @@ export default function Industria() {
                     stroke="black"
                     strokeWidth={2}
                     strokeDasharray="5 5"
-                  />{" "}
+                  />
+                  <ReferenceLine
+                    style={{ opacity: 0.2 }}
+                    x={mesSeleccionado.toUpperCase()}
+                    stroke="gray"
+                    strokeWidth={18}
+                    // strokeDasharray="1 1"
+                  />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -999,7 +1006,14 @@ export default function Industria() {
                     stroke="white"
                     strokeWidth={2}
                     strokeDasharray="5 5"
-                  />{" "}
+                  />
+                  <ReferenceLine
+                    style={{ opacity: 0.2 }}
+                    x={mesSeleccionado.toUpperCase()}
+                    stroke="gray"
+                    strokeWidth={18}
+                    // strokeDasharray="1 1"
+                  />
                 </LineChart>
               </ResponsiveContainer>
             </div>

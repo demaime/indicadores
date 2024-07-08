@@ -264,42 +264,7 @@ export default function ActividadEconomica() {
                 </div>
               </div>
             </div>
-            <div className="w-1/3 h-full flex items-center justify-center">
-              <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
-                {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
-                  ?.intermensual > 0 ? (
-                  <MdOutlineKeyboardDoubleArrowUp
-                    size={120}
-                    className="absolute -left-28 text-green-500"
-                  />
-                ) : (
-                  <MdOutlineKeyboardDoubleArrowDown
-                    size={120}
-                    className="absolute -left-28 text-red-500"
-                  />
-                )}
-                <CountUp
-                  decimals={2}
-                  className="text-blue-200 text-6xl font-black"
-                  duration={1.5}
-                  end={
-                    data["GENERAL"].find((item) => item.mes === mesSeleccionado)
-                      ?.intermensual || "N/A"
-                  }
-                />
-                <img
-                  src="/assets/esfera.png"
-                  className="w-64 h-64 absolute"
-                  alt=""
-                />
-                <div className="absolute -top-14 -left-24 flex items-center justify-center h-12 text-2xl">
-                  <PiAlignBottomDuotone className="mr-2 text-yellow-400 flex items-center justify-center " />
-                  <h1 className="italic text-blue-200  w-90">
-                    variación mensual
-                  </h1>
-                </div>
-              </div>
-            </div>
+
             <div className="w-1/3 h-full flex items-center justify-center">
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
                 {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
@@ -332,6 +297,42 @@ export default function ActividadEconomica() {
                   <PiAlignBottomDuotone className="mr-2 text-yellow-400 flex items-center justify-center " />
                   <h1 className="italic text-blue-200  w-90">
                     variación interanual
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/3 h-full flex items-center justify-center">
+              <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
+                {data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                  ?.intermensual > 0 ? (
+                  <MdOutlineKeyboardDoubleArrowUp
+                    size={120}
+                    className="absolute -left-28 text-green-500"
+                  />
+                ) : (
+                  <MdOutlineKeyboardDoubleArrowDown
+                    size={120}
+                    className="absolute -left-28 text-red-500"
+                  />
+                )}
+                <CountUp
+                  decimals={2}
+                  className="text-blue-200 text-6xl font-black"
+                  duration={1.5}
+                  end={
+                    data["GENERAL"].find((item) => item.mes === mesSeleccionado)
+                      ?.intermensual || "N/A"
+                  }
+                />
+                <img
+                  src="/assets/esfera.png"
+                  className="w-64 h-64 absolute"
+                  alt=""
+                />
+                <div className="absolute -top-14 -left-24 flex items-center justify-center h-12 text-2xl">
+                  <PiAlignBottomDuotone className="mr-2 text-yellow-400 flex items-center justify-center " />
+                  <h1 className="italic text-blue-200  w-90">
+                    variación mensual
                   </h1>
                 </div>
               </div>

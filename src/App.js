@@ -9,9 +9,7 @@ import GastosCotidianos from "./components/GastosCotidianos.jsx";
 import Ocio from "./components/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
-import Test from "./components/Test.jsx";
-
-// import Comparativa from "./components/Comparativa-DESARROLLO.jsx";
+// import Test from "./components/Test.jsx";
 
 export default function App() {
   return (
@@ -110,14 +108,14 @@ export default function App() {
         />
         <ActividadEconomica />
       </section>
-      <section className="section" id="test">
+      {/* <section className="section" id="test">
         <Encabezado
           title={"TEST"}
           description={"Testeando datos.gob.ar"}
           mensual="mensual"
         />
         <Test />
-      </section>
+      </section> */}
     </div>
   );
 }

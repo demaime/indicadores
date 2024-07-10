@@ -113,7 +113,6 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
 
     return parseFloat(number).toLocaleString();
   };
-  console.log(variaciones[mesData]);
 
   return (
     <div className="w-full h-full flex items-center justify-center relative ">

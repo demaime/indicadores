@@ -372,6 +372,8 @@ export default function ActividadEconomica() {
               <LineChart
                 data={formattedData.filter(
                   (entry) =>
+                    entry.date.includes("20") ||
+                    entry.date.includes("21") ||
                     entry.date.includes("22") ||
                     entry.date.includes("23") ||
                     !/\d+$/.test(entry.date)
@@ -383,7 +385,7 @@ export default function ActividadEconomica() {
                   dataKey="date"
                   tick={{ fill: "#bfdbfe", fontSize: "10px" }}
                 />
-                <YAxis domain={[120, 170]} tick={{ fill: "#bfdbfe" }} />
+                <YAxis domain={[110, 170]} tick={{ fill: "#bfdbfe" }} />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -403,6 +405,11 @@ export default function ActividadEconomica() {
                   stroke="#fef08a"
                   strokeWidth={2}
                   dot={{ stroke: "#fef08a", fill: "#fef08a" }}
+                />
+                <ReferenceLine
+                  x={"ENERO-21"}
+                  stroke="#bfdbfe"
+                  strokeWidth={2}
                 />
                 <ReferenceLine
                   x={"ENERO-22"}

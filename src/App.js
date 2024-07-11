@@ -9,6 +9,7 @@ import GastosCotidianos from "./components/GastosCotidianos.jsx";
 import Ocio from "./components/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
+import Supermercados from "./components/Supermercados.jsx";
 // import Test from "./components/Test.jsx";
 
 export default function App() {
@@ -107,6 +108,16 @@ export default function App() {
           mensual="mensual"
         />
         <ActividadEconomica />
+      </section>
+      <section className="section" id="supermercados">
+        <Encabezado
+          title={"SUPERMERCADOS"}
+          description={
+            "Encuesta sobre una nómina de supermercados que cuentan por lo menos con alguna boca de expendio cuya superficie sea igual o supere los 200 m2. Publicación: 2 meses de rezago. Fuente: INDEC"
+          }
+          mensual="mensual"
+        />
+        <Supermercados />
       </section>
       {/* <section className="section" id="test">
         <Encabezado

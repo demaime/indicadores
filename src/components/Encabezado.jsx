@@ -104,6 +104,12 @@ export default function Encabezado({ title, description, mensual }) {
                     ACTIVIDAD ECONOMICA
                   </li>
                 </a>
+                <a href="#supermercados">
+                  <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
+                    <IoArrowRedoCircleOutline className="mr-4" />
+                    SUPERMERCADOS
+                  </li>
+                </a>
               </ul>
             </div>
           )}

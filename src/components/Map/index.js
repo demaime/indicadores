@@ -27,7 +27,7 @@ class Map extends Component {
       <Fragment>
         <hr />
         <ComposableMap
-          projectionConfig={{ scale }}
+          projectionConfig={{ rotate: [45, 0, 0], scale }}
           width={width}
           height={height}
         >
@@ -41,7 +41,8 @@ class Map extends Component {
                   return (
                     <Geography
                       key={geography.properties.NAME}
-                      data-tip={`${geography.properties.NAME} ${geographyValue}`}
+                      data-tooltip-content={`${geography.properties.NAME} ${geographyValue}`}
+                      data-tooltip-id={geography.properties.NAME}
                       geography={geography}
                       projection={projection}
                       precision={0.5}

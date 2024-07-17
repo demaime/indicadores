@@ -605,7 +605,7 @@ export const MAP_JSON = {
   ],
   transform: {
     scale: [0.0052585227853309477, 0.004642034403764608],
-    translate: [-74.17581116, -58.05957794],
+    translate: [-75.17581116, -58.05957794],
   },
   objects: {
     gadm36_ARG_1: {

@@ -27,7 +27,7 @@ class Map extends Component {
       <Fragment>
         <hr />
         <ComposableMap
-          projectionConfig={{ rotate: [45, 0, 0], scale }}
+          projectionConfig={{ rotate: [50, 0, 0], scale }}
           width={width}
           height={height}
         >

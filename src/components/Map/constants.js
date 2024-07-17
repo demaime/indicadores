@@ -14,7 +14,7 @@ export const STYLES_MAP = {
     outline: "none",
   },
   hover: {
-    fill: "#607D8B",
+    fill: "#35a8ff",
     stroke: "#607D8B",
     strokeWidth: 0.75,
     outline: "none",

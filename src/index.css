@@ -75,3 +75,11 @@ input[type="checkbox"]:checked + label .checkbox {
 .writing-vertical {
   writing-mode: vertical-lr;
 }
+
+/* .img-hover {
+  transition: filter 0.3s ease;
+} */
+
+.img-hover:hover {
+  filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(180deg);
+}

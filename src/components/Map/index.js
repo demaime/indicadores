@@ -23,11 +23,13 @@ class Map extends Component {
 
   render() {
     const { width, height, center, scale, currency, map } = this.props.data;
+    const { onHover } = this.props;
+
     return (
       <Fragment>
         <hr />
         <ComposableMap
-          projectionConfig={{ rotate: [50, 0, 0], scale }}
+          projectionConfig={{ rotate: [45, 0, 0], scale }}
           width={width}
           height={height}
         >
@@ -51,6 +53,13 @@ class Map extends Component {
                         hover: STYLES_MAP.hover,
                         pressed: STYLES_MAP.pressed,
                       }}
+                      onMouseEnter={() =>
+                        onHover({
+                          name: geography.properties.NAME,
+                          value: geography.properties.VALUE,
+                        })
+                      }
+                      onMouseLeave={() => onHover(null)}
                     />
                   );
                 })
@@ -74,6 +83,7 @@ Map.defaultProps = {
 
 Map.propTypes = {
   data: PropTypes.object.isRequired,
+  onHover: PropTypes.func.isRequired,
 };
 
 export default Map;

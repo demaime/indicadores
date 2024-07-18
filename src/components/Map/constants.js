@@ -604,8 +604,8 @@ export const MAP_JSON = {
     ],
   ],
   transform: {
-    scale: [0.0052585227853309477, 0.004642034403764608],
-    translate: [-75.17581116, -58.05957794],
+    scale: [0.0055585227853309477, 0.005042034403764608],
+    translate: [-75.17581116, -60.05957794],
   },
   objects: {
     gadm36_ARG_1: {
@@ -625,7 +625,7 @@ export const MAP_JSON = {
             ENGTYPE_1: "Province",
             CC_1: "",
             HASC_1: "AR.BA",
-            VALUE: "16666000",
+            VALUE: 16666000,
           },
         },
         {
@@ -679,24 +679,7 @@ export const MAP_JSON = {
             VALUE: "556319",
           },
         },
-        {
-          arcs: [[26, -9]],
-          type: "Polygon",
-          properties: {
-            GID_0: "ARG",
-            NAME_0: "Argentina",
-            GID_1: "ARG.5_1",
-            NAME: "Ciudad de Buenos Aires",
-            COLOR:
-              "#FFFBUENOS AIRES D.F.|Capital Federal|Distretto Federale|Distrito Federal|Federal Capital",
-            NL_NAME_1: "",
-            TYPE_1: "Distrito Federal",
-            ENGTYPE_1: "Federal District",
-            CC_1: "",
-            HASC_1: "AR.DF",
-            VALUE: "797675",
-          },
-        },
+
         {
           arcs: [[27, 28, 29, -11, 30, 31, -5]],
           type: "Polygon",

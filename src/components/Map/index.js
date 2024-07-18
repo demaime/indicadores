@@ -29,7 +29,7 @@ class Map extends Component {
       <Fragment>
         <hr />
         <ComposableMap
-          projectionConfig={{ rotate: [45, 0, 0], scale }}
+          projectionConfig={{ rotate: [50, 0, 0], scale }}
           width={width}
           height={height}
         >
@@ -56,7 +56,10 @@ class Map extends Component {
                       onMouseEnter={() =>
                         onHover({
                           name: geography.properties.NAME,
-                          value: geography.properties.VALUE,
+                          habitantes: geography.properties.HABITANTES,
+                          totales: geography.properties.TOTALES,
+                          variaciones: geography.properties.VARIACIONES,
+                          porcentuales: geography.properties.PORCENTUALES,
                         })
                       }
                       onMouseLeave={() => onHover(null)}

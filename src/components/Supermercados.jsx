@@ -178,8 +178,6 @@ export default function Supermercados() {
     return (((actual - anterior) / anterior) * 100).toFixed(1);
   };
 
-  console.log(vista);
-
   return (
     <div className="w-full h-full bg-gray-200">
       <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center">
@@ -538,7 +536,11 @@ export default function Supermercados() {
       ) : vista === "ticket" ? (
         <TicketPromedio vista={vista} setVista={setVista} />
       ) : vista === "ventas" ? (
-        <VentasxM2 vista={vista} setVista={setVista} />
+        <VentasxM2
+          vista={vista}
+          setVista={setVista}
+          mesSeleccionado={mesSeleccionado}
+        />
       ) : vista === "personal" ? (
         <PersonalOcupado vista={vista} setVista={setVista} />
       ) : (

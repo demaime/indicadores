@@ -164,8 +164,6 @@ const TestComponent = () => {
     return acc;
   }, []);
 
-  console.log(formattedData);
-
   return (
     <div className="bg-gray-100 h-full w-full">
       <ResponsiveContainer width="100%" height={400}>

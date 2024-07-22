@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -114,6 +114,22 @@ export default function Supermercados() {
     const newIndex = currentIndex === meses.length - 1 ? 0 : currentIndex + 1;
     setMesSeleccionado(meses[newIndex]);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        handleMesAnterior();
+      } else if (event.key === "ArrowRight") {
+        handleMesSiguiente();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mesSeleccionado]);
 
   const getArrowAndColor = (value) => {
     if (value > 0) {

@@ -4,20 +4,18 @@ import { MAP_JSON } from "./Map/constants";
 import { FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { datosHabitantes } from "./Map/datosHabitantes";
 import { datosVentas } from "./Map/datosVentas";
-import { PieChart, Pie, Cell, Tooltip } from "recharts";
-
-const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#FF6384",
-  "#36A2EB",
-  "#FFCE56",
-  "#4BC0C0",
-  "#9966FF",
-  "#FF9F40",
-];
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 
 export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -99,9 +97,23 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
     );
   };
 
+  const habitantesChartData = hoveredItem
+    ? Object.keys(hoveredItem.habitantes).map((month) => ({
+        name: month,
+        VentasPorHabitante: hoveredItem.habitantes[month],
+      }))
+    : [];
+
+  const ventasChartData = hoveredItem
+    ? Object.keys(hoveredItem.totales).map((month) => ({
+        name: month,
+        VentasPorHabitante: hoveredItem.totales[month],
+      }))
+    : [];
+
   return (
     <div className="w-full h-[95%] flex">
-      <div className="w-1/3 h-full flex items-center justify-center">
+      <div className="w-1/3 h-full flex items-center justify-center ">
         <div className="w-[350px] h-[580px] border-4 rounded-xl border-gray-800 bg-blue-200 flex items-center justify-center relative">
           <div className="absolute bottom-0 right-0 h-28 w-28 flex items-center justify-center bg-blue-200 rounded ">
             <img
@@ -126,58 +138,143 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       </div>
       <div className="w-2/3 h-full flex justify-center items-center relative">
         <button
-          className="text-white bg-blue-900 rounded w-24 h-8 flex items-center justify-center absolute top-1 right-4 hover:bg-blue-600 border-black border-2"
+          className="text-white bg-blue-900 rounded w-24 h-8 flex items-center justify-center absolute top-2 right-4 hover:bg-blue-600 border-black border-2"
           onClick={() => setVista("general")}
         >
           Volver
         </button>
-
-        <div className="h-[580px] w-full border-4 rounded-xl border-gray-800 mr-8 p-4">
+        <div className="h-[580px] w-full border-4 rounded-xl border-gray-800 mr-8">
           {hoveredItem ? (
-            <div className="w-full h-full flex flex-col items-center justify-evenly">
-              <h3 className="text-4xl font-bold w-full text-center">
+            <div className="w-full h-full flex flex-col items-center justify-evenly text-gray-200 bg-gray-700">
+              <h3 className="text-5xl font-bold w-full text-center h-[10%] flex items-center justify-center">
                 {hoveredItem.name.toLocaleUpperCase()}
               </h3>
-              <div className="w-full h-full flex flex-col">
-                <div className="w-full flex h-1/2 items-center justify-evenly">
-                  <div className="w-1/3 h-full flex flex-col items-center justify-evenly">
-                    <div className="w-72 h-14 rounded text-gray-200 bg-green-700 flex flex-col items-center justify-center">
-                      <span className="text-2xl">VENTAS POR HABITANTE</span>
+              <div className="w-full h-[90%] flex ">
+                <div className="w-1/3 p-4">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col">
+                    <div className="w-full h-1/4 ">
+                      <div className="w-full h-14 rounded text-gray-200 bg-green-700 flex flex-col items-center justify-center">
+                        <span className="text-2xl">VENTAS POR HABITANTE</span>
+                      </div>
+                      <div className="w-full h-12 rounded text-green-700 flex items-center justify-center text-4xl font-semibold">
+                        {hoveredItem.habitantes[mesSeleccionado].toLocaleString(
+                          "es-AR"
+                        )}
+                      </div>
                     </div>
-                    <div className="w-24 h-12 rounded text-green-700 flex items-center justify-center text-4xl">
-                      {hoveredItem.habitantes[mesSeleccionado].toLocaleString(
-                        "es-AR"
-                      )}
+                    <div className="w-full h-3/4">
+                      <ResponsiveContainer width={"90%"} height={"90%"}>
+                        <LineChart
+                          data={habitantesChartData}
+                          margin={{
+                            top: 0,
+                            right: 5,
+                            left: -15,
+                            bottom: 0,
+                          }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis
+                            dataKey="name"
+                            tick={{ fontSize: 10, fill: "green" }}
+                          />
+                          <YAxis tick={{ fontSize: 10, fill: "green" }} />
+                          <Tooltip />
+                          <Line
+                            type="monotone"
+                            dataKey="VentasPorHabitante"
+                            stroke="#15803d"
+                            strokeWidth={2}
+                            activeDot={{ r: 8 }}
+                            dot={{
+                              stroke: "#15803d",
+                              fill: "#15803d",
+                            }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
                     </div>
                   </div>
-                  <div className="w-2/3 h-full flex">
-                    <div className="w-1/2 h-full flex flex-col items-center justify-evenly">
-                      <div className="w-72 h-14 rounded text-gray-200 bg-gray-700 flex flex-col items-center justify-center">
+                </div>
+                <div className="w-1/3 p-4 ">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col relative">
+                    <div className="absolute bottom-0 h-8 w-full bg-teal-800 flex items-center justify-evenly text-center">
+                      {hoveredItem.variaciones[mesSeleccionado] >= 0 ? (
+                        <div className="bg-white h-6 w-6 rounded-full flex items-center justify-center">
+                          <FaArrowUp className="text-green-500" size={15} />
+                        </div>
+                      ) : (
+                        <FaArrowDown className="text-red-500" size={30} />
+                      )}
+                      <p className="font-semibold text-xl">
+                        {hoveredItem.variaciones[
+                          mesSeleccionado
+                        ].toLocaleString("es-AR")}
+                        %
+                      </p>
+                      <p className="text-xs">vs. {mesSeleccionado} de 2023</p>
+                    </div>
+                    <div className="w-full h-1/4">
+                      <div className="w-full h-14 rounded text-gray-200 bg-teal-700 flex flex-col items-center justify-center">
                         <span className="text-2xl">VENTAS TOTALES</span>
                       </div>
-                      <div className="w-24 h-12 rounded text-gray-700 flex items-center justify-center text-4xl">
+                      <div className="w-full h-12 rounded text-teal-700 flex items-center justify-center text-4xl font-semibold">
                         {hoveredItem.totales[mesSeleccionado].toLocaleString(
                           "es-AR"
                         )}
                       </div>
                     </div>
-                    <div className="w-1/2 h-full flex flex-col items-center justify-evenly">
-                      <div className="w-full h-1/5 flex justify-center items-center">
-                        {hoveredItem.variaciones[mesSeleccionado] >= 0 ? (
-                          <FaArrowUp className="text-green-500" size={30} />
-                        ) : (
-                          <FaArrowDown className="text-red-500" size={30} />
-                        )}
-                        <p className="font-semibold text-xl">
-                          {hoveredItem.variaciones[
-                            mesSeleccionado
-                          ].toLocaleString("es-AR")}
-                          %
-                        </p>
-                        <p className="text-xs">vs. {mesSeleccionado} de 2023</p>
+                    <div className="w-full h-3/4">
+                      <ResponsiveContainer width={"90%"} height={"90%"}>
+                        <LineChart
+                          data={ventasChartData}
+                          margin={{
+                            top: 0,
+                            right: 5,
+                            left: 0,
+                            bottom: 0,
+                          }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis
+                            dataKey="name"
+                            tick={{ fontSize: 10, fill: "teal" }}
+                          />
+                          <YAxis tick={{ fontSize: 10, fill: "teal" }} />
+                          <Tooltip />
+
+                          <Line
+                            type="monotone"
+                            dataKey="VentasPorHabitante"
+                            stroke="#0f766e"
+                            strokeWidth={2}
+                            activeDot={{ r: 8 }}
+                            dot={{
+                              stroke: "#0f766e",
+                              fill: "#0f766e",
+                            }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-1/3 p-4">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col">
+                    <div className="w-full h-1/4 ">
+                      <div className="w-full h-14 rounded text-gray-200 bg-indigo-700 flex flex-col items-center justify-center">
+                        <span className="text-2xl">COMP. PORCENTUAL</span>
                       </div>
-                      <div className="w-full h-4/5">
-                        <PieChart width={400} height={400}>
+                      <div className="w-full h-12 rounded text-indigo-700 flex items-center justify-center text-4xl font-semibold">
+                        {hoveredItem.porcentuales[
+                          mesSeleccionado
+                        ].toLocaleString("es-AR")}
+                        %
+                      </div>
+                    </div>
+                    <div className="w-full h-3/4">
+                      <ResponsiveContainer width={"100%"} height={"70%"}>
+                        <PieChart>
                           <Pie
                             data={[
                               {
@@ -192,12 +289,10 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                                   hoveredItem.porcentuales[mesSeleccionado],
                               },
                             ]}
-                            cx={200}
-                            cy={200}
                             labelLine={false}
                             label={renderCustomizedLabel}
                             outerRadius={80}
-                            fill="#8884d8"
+                            fill="#4338ca"
                             dataKey="value"
                           >
                             {[
@@ -215,19 +310,19 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                             ].map((entry, index) => (
                               <Cell
                                 key={`cell-${index}`}
-                                fill={COLORS[index % COLORS.length]}
+                                fill={index === 0 ? "#4338ca" : "#6b7280"}
                               />
                             ))}
                           </Pie>
                           <Tooltip />
                         </PieChart>
+                      </ResponsiveContainer>
+                      <div className="h-[30%] w-full text-xl text-gray-500 font semibold flex items-center justify-center">
+                        {100 - hoveredItem.porcentuales[mesSeleccionado]} % -
+                        Resto del país
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="w-full flex h-1/2 items-center justify-evenly bg-red-300">
-                  graficos
                 </div>
               </div>
             </div>

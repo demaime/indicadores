@@ -44,7 +44,7 @@ export const datosVentas = {
       ENERO: 385548197,
       FEBRERO: 418317556,
       MARZO: 491712361,
-      ABRIL: 45527353,
+      ABRIL: 455273530,
     },
     variaciones: {
       ENERO: 495.5,

@@ -22,7 +22,7 @@ export const datosVentas = {
   "Ciudad de Buenos Aires": {
     totales: {
       ENERO: 162128358,
-      FEBRERO: 19056464,
+      FEBRERO: 190564640,
       MARZO: 239157194,
       ABRIL: 232152015,
     },
@@ -47,10 +47,10 @@ export const datosVentas = {
       ABRIL: 455273530,
     },
     variaciones: {
-      ENERO: 495.5,
-      FEBRERO: 554.5,
-      MARZO: 586.7,
-      ABRIL: 494.6,
+      ENERO: 242.8,
+      FEBRERO: 277.2,
+      MARZO: 293.3,
+      ABRIL: 247.3,
     },
     porcentuales: {
       ENERO: 35,
@@ -82,7 +82,7 @@ export const datosVentas = {
   Chaco: {
     totales: {
       ENERO: 9636513,
-      FEBRERO: 993561,
+      FEBRERO: 9935610,
       MARZO: 12439957,
       ABRIL: 11130754,
     },
@@ -222,9 +222,9 @@ export const datosVentas = {
   "La Pampa": {
     totales: {
       ENERO: 10669828,
-      FEBRERO: 1141704,
+      FEBRERO: 11417040,
       MARZO: 13882957,
-      ABRIL: 1322807,
+      ABRIL: 13228070,
     },
     variaciones: {
       ENERO: 241.8,
@@ -264,7 +264,7 @@ export const datosVentas = {
       ENERO: 57382479,
       FEBRERO: 59869734,
       MARZO: 70479569,
-      ABRIL: 6383551,
+      ABRIL: 63835510,
     },
     variaciones: {
       ENERO: 250.7,
@@ -344,7 +344,7 @@ export const datosVentas = {
       ENERO: 21312985,
       FEBRERO: 21309616,
       MARZO: 26602234,
-      ABRIL: 2507441,
+      ABRIL: 25074410,
     },
     variaciones: {
       ENERO: 231.5,
@@ -402,7 +402,7 @@ export const datosVentas = {
   "Santa Cruz": {
     totales: {
       ENERO: 24102302,
-      FEBRERO: 2698908,
+      FEBRERO: 26989080,
       MARZO: 33087323,
       ABRIL: 31316917,
     },

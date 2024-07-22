@@ -127,7 +127,7 @@ export const datosHabitantes = {
   },
   "Tierra del Fuego": {
     ENERO: 63409,
-    FEBRERO: 7113,
+    FEBRERO: 71113,
     MARZO: 88077,
     ABRIL: 83345,
   },

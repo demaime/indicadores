@@ -362,7 +362,7 @@ export default function Supermercados() {
                     </Pie>
                   </PieChart>
                 </ResponsiveContainer>
-                <div className="absolute bottom-2 right-2 h-4/5 w-1/2 text-xs text-center ">
+                <div className="absolute bottom-2 right-2 h-4/5 w-1/2 text-md text-center ">
                   <ul className="flex flex-col items-center justify-around h-full">
                     <li style={{ color: COLORS[0] }}>Efectivo</li>
                     <li>{data[mesSeleccionado].efectivo.toLocaleString()}</li>
@@ -423,7 +423,7 @@ export default function Supermercados() {
                     </Pie>
                   </PieChart>
                 </ResponsiveContainer>
-                <div className="absolute bottom-2 right-2 h-4/5 w-1/2 text-xs text-center ">
+                <div className="absolute bottom-2 right-2 h-4/5 w-1/2 text-md text-center ">
                   <ul className="flex flex-col items-center justify-around h-full py-8">
                     <li style={{ color: COLORS[0] }}>Salón de Ventas</li>
                     <li>
@@ -436,7 +436,7 @@ export default function Supermercados() {
               </div>
             </div>
           </div>
-          <div className="w-1/3 h-full flex flex-col items-center justify-evenly">
+          <div className="w-1/3 h-full flex flex-col items-center justify-evenly ">
             <div className="w-4/5 h-1/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
               <div className="absolute w-10 h-10 left-4">
                 <img src="/assets/factura.png" alt="" />

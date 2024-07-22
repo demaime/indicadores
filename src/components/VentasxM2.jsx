@@ -31,7 +31,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       },
       totales: {
         ENERO: 162128358,
-        FEBRERO: 19056464,
+        FEBRERO: 190564640,
         MARZO: 239157194,
         ABRIL: 232152015,
       },
@@ -151,7 +151,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
               </h3>
               <div className="w-full h-[90%] flex ">
                 <div className="w-1/3 p-4">
-                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col shadow-xl shadow-gray-950">
                     <div className="w-full h-1/4 ">
                       <div className="w-full h-14 rounded text-gray-200 bg-green-700 flex flex-col items-center justify-center">
                         <span className="text-2xl">VENTAS POR HABITANTE</span>
@@ -197,7 +197,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                   </div>
                 </div>
                 <div className="w-1/3 p-4 ">
-                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col relative">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col relative shadow-xl shadow-gray-950">
                     <div className="absolute bottom-0 h-8 w-full bg-teal-800 flex items-center justify-evenly text-center">
                       {hoveredItem.variaciones[mesSeleccionado] >= 0 ? (
                         <div className="bg-white h-6 w-6 rounded-full flex items-center justify-center">
@@ -260,7 +260,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                   </div>
                 </div>
                 <div className="w-1/3 p-4">
-                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col">
+                  <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col shadow-xl shadow-gray-950">
                     <div className="w-full h-1/4 ">
                       <div className="w-full h-14 rounded text-gray-200 bg-indigo-700 flex flex-col items-center justify-center">
                         <span className="text-2xl">COMP. PORCENTUAL</span>
@@ -317,7 +317,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                           <Tooltip />
                         </PieChart>
                       </ResponsiveContainer>
-                      <div className="h-[30%] w-full text-xl text-gray-500 font semibold flex items-center justify-center">
+                      <div className="h-[30%] w-full text-xl text-gray-500 font semibold flex items-center justify-center font-semibold">
                         {100 - hoveredItem.porcentuales[mesSeleccionado]} % -
                         Resto del país
                       </div>

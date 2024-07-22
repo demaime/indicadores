@@ -33,7 +33,14 @@ class Map extends Component {
           width={width}
           height={height}
         >
-          <ZoomableGroup zoom={this.state.zoom} center={center}>
+          <ZoomableGroup
+            zoom={this.state.zoom}
+            center={center}
+            // translateExtent={[
+            //   [-100, -100],
+            //   [500, 500],
+            // ]}
+          >
             <Geographies geography={map}>
               {({ geographies, projection }) =>
                 geographies.map((geography) => {

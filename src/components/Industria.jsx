@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaArrowDown } from "react-icons/fa";
 import {
   BarChart,
   Bar,
@@ -403,29 +403,29 @@ export default function Industria() {
 
   const variacionesManufacturera = {
     enero: {
-      intermensual: -0.5,
-      interanual: -12.6,
+      intermensual: -0.54,
+      interanual: -11.9,
       capacidad: 54.6,
     },
     febrero: {
-      intermensual: 5.3,
-      interanual: -12,
+      intermensual: 5.49,
+      interanual: -11.38,
       capacidad: 57.6,
     },
     marzo: {
-      intermensual: -7.5,
-      interanual: -23,
+      intermensual: -7.29,
+      interanual: -20.65,
       capacidad: 53.4,
     },
     abril: {
-      intermensual: 5.8,
-      interanual: -19.6,
+      intermensual: 5.9,
+      interanual: -17.8,
       capacidad: 56.6,
     },
     mayo: {
-      intermensual: "-",
-      interanual: "-",
-      capacidad: "-",
+      intermensual: 0.35,
+      interanual: -16.2,
+      capacidad: 56.8,
     },
     junio: {
       intermensual: "-",
@@ -692,6 +692,22 @@ export default function Industria() {
       PYME: 70.1,
     },
     MAYO: {
+      Textiles: 41.4,
+      "Alimentos y bebidas": 59.4,
+      "Minerales no metálicos": 47.2,
+      "Papel y cartón": 60.5,
+      "Refinación de petróleo": 84.1,
+      "Edición e impresión": 46,
+      Tabaco: 53,
+      Metálicas: 61.3,
+      "Caucho y plástico": 41.6,
+      Automotriz: 45.5,
+      "Sustancias y productos químicos": 67.7,
+      "Metalmecánica (sin automotriz)": 45.3,
+      MANUFACTURERA: 56.8,
+      PYME: 70.3,
+    },
+    JUNIO: {
       Textiles: "-",
       "Alimentos y bebidas": "-",
       "Minerales no metálicos": "-",
@@ -705,7 +721,7 @@ export default function Industria() {
       "Sustancias y productos químicos": "-",
       "Metalmecánica (sin automotriz)": "-",
       MANUFACTURERA: "-",
-      PYME: "-",
+      PYME: 60.1,
     },
   };
 
@@ -714,7 +730,7 @@ export default function Industria() {
     ...capacidadInstaladaIndustria[key],
   }));
 
-  const meses = ["enero", "febrero", "marzo", "abril", "mayo"];
+  const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
@@ -885,7 +901,12 @@ export default function Industria() {
       </div>
       {vista === "PYME" ? (
         <div className="w-full h-[95%]">
-          <div className="w-full h-1/5 bg-gray-400 flex items-center justify-evenly">
+          <div className="w-full h-1/5 bg-gray-400 flex items-center justify-evenly relative">
+            <FaArrowDown
+              className="text-yellow-400 absolute left-24 font-bolder -bottom-4"
+              size={50}
+            />
+
             <div className="w-1/6 h-3/4 rounded-xl bg-yellow-100 flex flex-col text-white text-xs">
               <span className="w-full h-1/4 bg-gray-700 flex items-center justify-center font-semibold">
                 VARIACIÓN INTERANUAL
@@ -1108,7 +1129,28 @@ export default function Industria() {
         </div>
       ) : (
         <div className="w-full h-[95%] flex">
-          <ResponsiveContainer width="75%" height={"100%"}>
+          <ResponsiveContainer
+            width="75%"
+            height={"100%"}
+            className={"relative"}
+          >
+            {mesSeleccionado === meses[meses.length - 1] ? (
+              <div className="text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 text-center p-4 rounded-xl border-gray-700 h-24 bg-yellow-200 z-50 text-gray-700 flex flex-col items-center justify-evenly">
+                <p>
+                  {" "}
+                  Este informe se produce con un mes más de rezago que el de
+                  industria Pyme.{" "}
+                </p>
+                <p className="flex">
+                  <span>El último disponible es el mes de&nbsp; </span>
+                  <span className="font-semibold">
+                    {meses[meses.length - 2]}
+                  </span>
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
             <BarChart
               layout="vertical"
               data={transformedIndustrialData}

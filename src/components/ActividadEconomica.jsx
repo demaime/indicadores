@@ -321,6 +321,7 @@ export default function ActividadEconomica() {
                   duration={1.5}
                   end={variacionInteranual}
                 />
+                <p className="text-blue-200 ml-1">pp.</p>
                 <img
                   src="/assets/esfera.png"
                   className="w-64 h-64 absolute"
@@ -352,7 +353,8 @@ export default function ActividadEconomica() {
                   className="text-blue-200 text-6xl font-black"
                   duration={1.5}
                   end={variacionIntermensual}
-                />
+                />{" "}
+                <p className="text-blue-200 ml-1">pp.</p>
                 <img
                   src="/assets/esfera.png"
                   className="w-64 h-64 absolute"

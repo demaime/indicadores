@@ -145,7 +145,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
         </button>
         <div className="h-[580px] w-full border-4 rounded-xl border-gray-800 mr-8">
           {hoveredItem ? (
-            <div className="w-full h-full flex flex-col items-center justify-evenly text-gray-200 bg-gray-700">
+            <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-gray-700">
               <h3 className="text-5xl font-bold w-full text-center h-[10%] flex items-center justify-center">
                 {hoveredItem.name.toLocaleUpperCase()}
               </h3>
@@ -154,7 +154,10 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                   <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col shadow-xl shadow-gray-950">
                     <div className="w-full h-1/4 ">
                       <div className="w-full h-14 rounded text-gray-200 bg-green-700 flex flex-col items-center justify-center">
-                        <span className="text-2xl">VENTAS POR HABITANTE</span>
+                        <span className="text-xl">VENTAS POR HABITANTE</span>
+                        <span className="text-xs">
+                          a precios corrientes, en pesos
+                        </span>
                       </div>
                       <div className="w-full h-12 rounded text-green-700 flex items-center justify-center text-4xl font-semibold">
                         {hoveredItem.habitantes[mesSeleccionado].toLocaleString(
@@ -167,7 +170,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                         <LineChart
                           data={habitantesChartData}
                           margin={{
-                            top: 0,
+                            top: 5,
                             right: 5,
                             left: -15,
                             bottom: 0,
@@ -216,7 +219,10 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                     </div>
                     <div className="w-full h-1/4">
                       <div className="w-full h-14 rounded text-gray-200 bg-teal-700 flex flex-col items-center justify-center">
-                        <span className="text-2xl">VENTAS TOTALES</span>
+                        <span className="text-xl">VENTAS TOTALES</span>
+                        <span className="text-xs">
+                          a precios corrientes, en millones de pesos
+                        </span>
                       </div>
                       <div className="w-full h-12 rounded text-teal-700 flex items-center justify-center text-4xl font-semibold">
                         {hoveredItem.totales[mesSeleccionado].toLocaleString(
@@ -229,7 +235,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                         <LineChart
                           data={ventasChartData}
                           margin={{
-                            top: 0,
+                            top: 5,
                             right: 5,
                             left: 0,
                             bottom: 0,
@@ -263,9 +269,10 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                   <div className="w-full h-full bg-gray-200 rounded-xl flex flex-col shadow-xl shadow-gray-950">
                     <div className="w-full h-1/4 ">
                       <div className="w-full h-14 rounded text-gray-200 bg-indigo-700 flex flex-col items-center justify-center">
-                        <span className="text-2xl">COMP. PORCENTUAL</span>
+                        <span className="text-xl">COMP. PORCENTUAL</span>
+                        <span className="text-xs">sobre total del país</span>
                       </div>
-                      <div className="w-full h-12 rounded text-indigo-700 flex items-center justify-center text-4xl font-semibold">
+                      <div className="w-full h-12 rounded text-indigo-700 flex items-center justify-center text-4xl font-semibold relative">
                         {hoveredItem.porcentuales[
                           mesSeleccionado
                         ].toLocaleString("es-AR")}

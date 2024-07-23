@@ -50,6 +50,21 @@ const data = {
     coca: 2067.18,
     fideos: 1226,
   },
+  junio: {
+    alquiler: 309151,
+    luz: 8519,
+    gas: 36136,
+    internet: 31499,
+    celular: 8608,
+    pan: 2469.38,
+    leche: 1269.29,
+    yerba: 4070.28,
+    cerveza: 2242.04,
+    cafe: 4400,
+    carne: 9315.7,
+    coca: 2163.52,
+    fideos: 1240.65,
+  },
 };
 
 const calculateSingleVariation = (current, previous) => {

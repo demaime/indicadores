@@ -18,7 +18,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export default function Dolar() {
   const [comparativoOEvolutivo, setComparativoOEvolutivo] =
     useState("comparativo");
-  const [mesSeleccionado, setMesSeleccionado] = useState("mayo");
+  const [mesSeleccionado, setMesSeleccionado] = useState("junio");
   const [porcentajeOmoneda, setPorcentajeOmoneda] = useState("porcentaje");
   const [promediosOficial2024, setPromediosOficial2024] = useState({
     enero: 0,
@@ -223,11 +223,6 @@ export default function Dolar() {
           mayo: calcularPromedio(
             dataOficial2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-05")
-            )
-          ),
-          junio: calcularPromedio(
-            dataOficial2024.filter((cotizacion) =>
-              cotizacion.fecha.startsWith("2024-06")
             )
           ),
           junio: calcularPromedio(

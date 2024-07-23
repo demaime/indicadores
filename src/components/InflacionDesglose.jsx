@@ -115,6 +115,23 @@ const dataNacion = [
       Educación: 7.6,
     },
   },
+  {
+    Junio: {
+      GENERAL: 4.6,
+      "Bienes y servicios": 2.8,
+      Transporte: 3.9,
+      Comunicación: 5.3,
+      "Recreación y cultura": 5.6,
+      "Equipamiento y mantenimiento del hogar": 2.3,
+      "Bebidas alcohólicas y tabaco": 2.1,
+      Salud: 4.7,
+      "Alimentos y bebidas no alcohólicas": 3,
+      "Restaurantes y hoteles": 6.3,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 14.3,
+      "Prendas de vestir y calzado": 2.7,
+      Educación: 5.7,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -218,6 +235,23 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 4.8,
       "Prendas de vestir y calzado": 2.2,
       Educación: 6.2,
+    },
+  },
+  {
+    Junio: {
+      GENERAL: 4.8,
+      "Bienes y servicios": 11.7,
+      Transporte: 4.7,
+      Comunicación: 4.9,
+      "Recreación y cultura": 4.4,
+      "Equipamiento y mantenimiento del hogar": 3.1,
+      "Bebidas alcohólicas y tabaco": 3.2,
+      Salud: -4.3,
+      "Alimentos y bebidas no alcohólicas": 2.7,
+      "Restaurantes y hoteles": 6.4,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 7.3,
+      "Prendas de vestir y calzado": 3.3,
+      Educación: 6.5,
     },
   },
 ];
@@ -397,6 +431,7 @@ const variacionAcumuladaNacion = {
   Marzo: "51.6%",
   Abril: "65%",
   Mayo: "71.9%",
+  Junio: "79.8%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
@@ -404,6 +439,7 @@ const variacionAcumuladaCaba = {
   Marzo: "57.3%",
   Abril: "67.1%",
   Mayo: "80.2%",
+  Junio: "88.9%",
 };
 const variacionAnualNacion = {
   Enero: "254.2%",
@@ -411,6 +447,7 @@ const variacionAnualNacion = {
   Marzo: "287.9%",
   Abril: "289.4%",
   Mayo: "276.4%",
+  Junio: "271.5%",
 };
 const variacionAnualCaba = {
   Enero: "238.5%",
@@ -418,6 +455,7 @@ const variacionAnualCaba = {
   Marzo: "285.3%",
   Abril: "292.5%",
   Mayo: "287.9%",
+  Junio: "272.7%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {

@@ -62,7 +62,7 @@ const data = [
     Nafta: 837,
     PeajeNorte: 946.25,
     PeajeOeste: 2276.08,
-    Patentamiento: "actualización trimestral",
+    Patentamiento: 21186,
   },
   {
     Mes: "mayo",
@@ -72,7 +72,17 @@ const data = [
     Nafta: 870,
     PeajeNorte: 1277.44,
     PeajeOeste: 3072.71,
-    Patentamiento: "actualización trimestral",
+    Patentamiento: 22107,
+  },
+  {
+    Mes: "junio",
+    Subte: 650,
+    Tren: 200,
+    Colectivo: 270,
+    Nafta: 908,
+    PeajeNorte: 1277.44,
+    PeajeOeste: 3072.71,
+    Patentamiento: 19609,
   },
 ];
 
@@ -353,14 +363,25 @@ export default function Transporte() {
       PeajeNorte: 233,
       PeajeOeste: 233,
     },
+    {
+      Mes: "junio",
+      Subte: 423.5,
+      Tren: 298.8,
+      Colectivo: 296.25,
+      Nafta: 52.92,
+      PeajeNorte: 233,
+      PeajeOeste: 233,
+    },
   ];
 
   const variacionInteranualPatentes = {
     diciembre: -20.8,
     enero: -33.5,
     febrero: -14.2,
-    marzo: -31.1,
-    abril: 0,
+    marzo: -31.9,
+    abril: -2.6,
+    mayo: -7.7,
+    junio: -21.8,
   };
 
   return (

@@ -30,6 +30,15 @@ const data = {
     libro: 22326,
     teatro: 15000,
   },
+  junio: {
+    fiesta: 10000,
+    plataforma: 4299,
+    gimnasio: 21240,
+    cine: 6716,
+    combo: 8600,
+    libro: 22626,
+    teatro: 15000,
+  },
 };
 
 const calcularVariacion = (valorActual, valorAnterior) => {
@@ -85,7 +94,7 @@ const formatearDatosParaGrafica = (variaciones) => {
 const datosGrafica = formatearDatosParaGrafica(variaciones);
 
 export default function Ocio() {
-  const meses = ["abril", "mayo"];
+  const meses = ["abril", "mayo", "junio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );

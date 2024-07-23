@@ -46,6 +46,12 @@ export default function Industria() {
       interanual: -19,
       capacidad: 70.3,
     },
+    junio: {
+      intermensual: -3.1,
+      acumulada: -19.2,
+      interanual: -20.4,
+      capacidad: 60.1,
+    },
   };
 
   const aperturaIntermensualPyme = {
@@ -88,6 +94,14 @@ export default function Industria() {
       "papel e impresiones": -1.5,
       "quimicos y plasticos": 3.9,
       "metal y maquinaria": 4.6,
+    },
+    junio: {
+      "textiles e indumentaria": -4.3,
+      "alimentos y bebidas": -4.8,
+      "madera y muebles": -3,
+      "papel e impresiones": -2.6,
+      "quimicos y plasticos": -2.3,
+      "metal y maquinaria": -1.5,
     },
   };
 
@@ -132,6 +146,14 @@ export default function Industria() {
       "quimicos y plasticos": -22.9,
       "metal y maquinaria": -20.6,
     },
+    junio: {
+      "textiles e indumentaria": -7.4,
+      "alimentos y bebidas": -17.4,
+      "madera y muebles": -20.7,
+      "papel e impresiones": -31.5,
+      "quimicos y plasticos": -30.3,
+      "metal y maquinaria": -20,
+    },
   };
 
   const aperturaAcumuladaPyme = {
@@ -174,6 +196,14 @@ export default function Industria() {
       "papel e impresiones": -25.9,
       "quimicos y plasticos": -27.1,
       "metal y maquinaria": -23,
+    },
+    junio: {
+      "textiles e indumentaria": -2.7,
+      "alimentos y bebidas": -16.7,
+      "madera y muebles": -18.7,
+      "papel e impresiones": -23.6,
+      "quimicos y plasticos": -27.2,
+      "metal y maquinaria": -22.4,
     },
   };
 
@@ -345,8 +375,18 @@ export default function Industria() {
       "Papel e impresiones": 78.8,
       "Químicos y plásticos": 68.8,
       "Metal, maquinaria y equipo, y material de transporte": 66.6,
-      MANUFACTURERA: "-",
+      MANUFACTURERA: 56.8,
       PYME: 70.3,
+    },
+    JUNIO: {
+      "Textiles e indumentaria": 63.3,
+      "Alimentos y bebidas": 58.1,
+      "Madera y muebles": 63.4,
+      "Papel e impresiones": 63.1,
+      "Químicos y plásticos": 63.1,
+      "Metal, maquinaria y equipo, y material de transporte": 57.9,
+      MANUFACTURERA: "-",
+      PYME: 60.1,
     },
   };
 
@@ -361,7 +401,7 @@ export default function Industria() {
     PYME: "blue",
   };
 
-  const variacionesIndustrial = {
+  const variacionesManufacturera = {
     enero: {
       intermensual: -0.5,
       interanual: -12.6,
@@ -383,6 +423,11 @@ export default function Industria() {
       capacidad: 56.6,
     },
     mayo: {
+      intermensual: "-",
+      interanual: "-",
+      capacidad: "-",
+    },
+    junio: {
       intermensual: "-",
       interanual: "-",
       capacidad: "-",
@@ -1090,7 +1135,7 @@ export default function Industria() {
                 CAPACIDAD INSUTRIAL UTILIZADA
               </span>
               <p className="text-5xl pb-8">
-                {variacionesIndustrial[mesSeleccionado].capacidad} %
+                {variacionesManufacturera[mesSeleccionado].capacidad} %
               </p>
             </div>
             <div className="rounded text-yellow-400 border-2 border-yellow-500 w-56 h-32 flex flex-col items-center justify-between">
@@ -1098,7 +1143,7 @@ export default function Industria() {
                 VARIACION INTERANUAL
               </span>
               <p className="text-5xl pb-8">
-                {variacionesIndustrial[mesSeleccionado].interanual} pp.
+                {variacionesManufacturera[mesSeleccionado].interanual} pp.
               </p>
             </div>{" "}
             <div className="rounded text-yellow-400 border-2 border-yellow-500 w-56 h-32 flex flex-col items-center justify-between">
@@ -1106,7 +1151,7 @@ export default function Industria() {
                 VARIACION INTERMENSUAL
               </span>
               <p className="text-5xl pb-8">
-                {variacionesIndustrial[mesSeleccionado].intermensual} pp.
+                {variacionesManufacturera[mesSeleccionado].intermensual} pp.
               </p>
             </div>
           </div>

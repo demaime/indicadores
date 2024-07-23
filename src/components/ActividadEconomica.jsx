@@ -19,7 +19,7 @@ import { FaMagnifyingGlassChart } from "react-icons/fa6";
 
 export default function ActividadEconomica() {
   const [generalOapertura, setGeneralOapertura] = useState("general");
-  const [mesSeleccionado, setMesSeleccionado] = useState("ABRIL"); // Cambiar cada mes a mano porque se me rompió mucho al hacerlo automatico
+  const [mesSeleccionado, setMesSeleccionado] = useState("MAYO"); // Cambiar cada mes a mano porque se me rompió mucho al hacerlo automatico
   const [selectedCategories, setSelectedCategories] = useState([
     "143.3_NO_PR_2004_A_21",
   ]);

@@ -40,6 +40,12 @@ const data = [
     norte: 397711,
     suroeste: 287977,
   },
+  {
+    mes: "Junio",
+    caba: 449915,
+    norte: 411526,
+    suroeste: 299728,
+  },
 ];
 
 export default function Alquiler() {

@@ -70,7 +70,7 @@ export default function App() {
         <Encabezado
           title={"GASTOS COTIDIANOS CABA"}
           description={
-            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Estadísticas CABA / IIEP"
+            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Elaboración propia"
           }
           mensual="mensual"
         />
@@ -82,7 +82,7 @@ export default function App() {
         <Encabezado
           title={"OCIO"}
           description={
-            "Promedio de precios de actividades recreativas CABA. Fuente: Estadísticas CABA y fuentes específicas"
+            "Promedio de precios de actividades recreativas CABA. Fuente: Elaboración propia"
           }
           mensual="mensual"
         />

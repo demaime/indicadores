@@ -68,7 +68,7 @@ const jubilacionSinBono = [
   { mes: "marzo", valor: 167941 },
   { mes: "abril", valor: 196650 },
   { mes: "mayo", valor: 203071 },
-  { mes: "junio", valor: 203931 },
+  { mes: "junio", valor: 206931 },
 ];
 
 const jubilacionConBono = [
@@ -194,15 +194,18 @@ export default function CanastaSalario() {
                     <XAxis
                       dataKey="mes"
                       type="category"
-                      tick={{ fill: "#1f2937" }}
+                      tick={{
+                        fill: "#1f2937",
+                        fontSize: "10",
+                      }}
                     />
                     <Tooltip formatter={formatNumber} />
                     <Bar
                       label={{
                         fill: "1f2937",
-                        fontSize: 8,
+                        fontSize: 10,
                         fontWeight: "bold",
-                        position: "inside",
+                        position: "top",
                         formatter: formatNumber,
                       }}
                       dataKey="valor"
@@ -286,20 +289,20 @@ export default function CanastaSalario() {
                       type="number"
                       domain={[0, 900000]}
                       tickFormatter={formatNumber}
-                      tick={{ fill: "white" }}
+                      tick={{ fill: "white", fontSize: "10" }}
                     />
                     <XAxis
                       dataKey="mes"
                       type="category"
-                      tick={{ fill: "white" }}
+                      tick={{ fill: "white", fontSize: "10" }}
                     />
                     <Tooltip formatter={formatNumber} />
                     <Bar
                       label={{
-                        fill: "#1f2937",
-                        fontSize: 8,
+                        fill: "#ffffff",
+                        fontSize: 10,
                         fontWeight: "bold",
-                        position: "inside",
+                        position: "top",
                         formatter: formatNumber,
                       }}
                       dataKey="valor"

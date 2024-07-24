@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   LineChart,
   Line,
@@ -14,6 +14,8 @@ export default function GraficoGastosCotidianos({
   variaciones,
   mesData,
 }) {
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
   const formatCurrency = (value) => {
     return `$${value.toLocaleString()}`;
   };
@@ -46,17 +48,30 @@ export default function GraficoGastosCotidianos({
     return monthData;
   });
 
+  const toggleCategory = (category) => {
+    setSelectedCategories((prevSelected) =>
+      prevSelected.includes(category)
+        ? prevSelected.filter((c) => c !== category)
+        : [...prevSelected, category]
+    );
+  };
+
   return (
-    <div className="w-full h-full flex items-end justify-center bg-gray-600">
+    <div className="w-full h-full flex items-end justify-center bg-gray-200">
       <div className="w-2/3 h-full flex flex-col items-center justify-center bg-gray-200">
-        <ResponsiveContainer width="90%" height="90%">
+        <ResponsiveContainer width="90%" height="90%" className={"relative"}>
+          {selectedCategories.length === 0 && (
+            <div className="text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 text-center p-4 rounded-xl border-gray-700 h-24 bg-yellow-200 z-50 text-gray-700 flex flex-col items-center justify-evenly">
+              <p>Seleccione alguna categoría para verla en el gráfico</p>
+            </div>
+          )}
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" tick={{ fontSize: 10 }} />
-            <YAxis tick={{ fontSize: 10 }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="black" />
+            <XAxis dataKey="name" tick={{ fontSize: 10, fill: "black" }} />
+            <YAxis tick={{ fontSize: 10, fill: "black" }} />
             <Tooltip />
 
-            {categories.map((category) => (
+            {selectedCategories.map((category) => (
               <Line
                 key={category}
                 type="monotone"
@@ -69,76 +84,84 @@ export default function GraficoGastosCotidianos({
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="w-1/3 h-full flex pl-4">
-        <div className="w-1/3 h-full flex items-end justify-start pb-4">
-          <div className="w-[90%] h-[90%] bg-gray-400 rounded-xl px-4">
-            <ul className="w-full h-full flex flex-col items-center justify-evenly">
-              {categories.map((category) => (
-                <li
-                  className="text-black font-semibold flex items-center justify-between w-[90%] h-8 rounded-xl"
-                  key={category}
-                >
-                  <div
-                    className="w-10 h-6 rounded-full border-r-4 pr-4"
-                    style={{
-                      borderColor: colors[category],
-                    }}
-                  >
-                    <img
-                      src={`/assets/${category}.png`}
-                      alt={category}
-                      className="w-6 h-full rounded-full"
-                    />
-                  </div>
-                  <p className="text-xs">{category.toUpperCase()}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="w-2/3 h-full flex items-end justify-center relative pb-4">
-          <div className="w-3/4 h-12 absolute left-10 top-2 text-[10px] flex items-center justify-evenly">
-            <div className="rounded-xl bg-gray-500 w-28 flex items-center justify-center text-white h-8 ">
-              Valor
-            </div>
-            <div className="rounded-xl bg-gray-500 w-28 flex items-center justify-center text-white h-8 ">
-              Variación Mensual
-            </div>
-          </div>
-          <div className="w-[80%] h-[90%] bg-gray-800 flex justify-evenly rounded-xl">
-            <ul className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs">
-              {categories.map((category) => (
-                <li
-                  className="text-black font-bold flex items-center justify-center w-full h-full"
+      <div className="w-1/3 h-full p-2 flex items-center justify-center">
+        <div className="w-[95%] h-[95%] rounded border border-black flex">
+          <ul className="w-1/3 h-full flex flex-col items-center justify-evenly">
+            {categories.map((category) => (
+              <li
+                className="text-black font-semibold flex items-center justify-between w-[90%] h-8 rounded-xl cursor-pointer pr-4 relative hover:bg-gray-300"
+                key={category}
+                onClick={() => toggleCategory(category)}
+              >
+                <span
+                  className="absolute h-[15%] opacity-85 bottom-0 w-[95%] -right-2"
                   style={{
-                    color: colors[category],
+                    backgroundColor: selectedCategories.includes(category)
+                      ? colors[category]
+                      : "transparent",
                   }}
-                  key={category}
-                >
-                  {data[months[months.length - 1]] &&
-                  data[months[months.length - 1]][category] !== undefined
-                    ? formatCurrency(data[months[months.length - 1]][category])
-                    : "No disponible"}
-                </li>
-              ))}
-            </ul>
-            <ul className="w-1/3 h-full flex flex-col items-center justify-evenly text-xs">
-              {categories.map((category) => (
-                <li
-                  className="text-black font-bold flex items-center justify-center w-full h-full"
+                ></span>
+                <div
+                  className="h-8 w-8 flex items-center justify-center bg-white rounded-full z-50 border-[4px]"
                   style={{
-                    color: colors[category],
+                    borderColor: selectedCategories.includes(category)
+                      ? colors[category]
+                      : "transparent",
                   }}
-                  key={category}
                 >
-                  {variaciones[mesData] &&
-                  variaciones[mesData][category] !== undefined
-                    ? variaciones[mesData][category]
-                    : "No disponible"}
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <img
+                    src={`/assets/${category}.png`}
+                    alt={category}
+                    className="w-3/5 h-3/5"
+                  />
+                </div>
+                <p className="text-xs">{category.toUpperCase()}</p>
+              </li>
+            ))}
+          </ul>
+          <ul className="w-1/3 h-full border-x border-gray-400 flex flex-col items-center justify-evenly">
+            {categories.map((category) => (
+              <li
+                className="text-black text-xs flex items-center justify-center w-full h-8 relative"
+                key={category}
+              >
+                {data[months[months.length - 1]] &&
+                data[months[months.length - 1]][category] !== undefined
+                  ? formatCurrency(data[months[months.length - 1]][category])
+                  : "No disponible"}
+                <span
+                  className="absolute h-[15%] opacity-85 bottom-0 w-full right-0"
+                  style={{
+                    backgroundColor: selectedCategories.includes(category)
+                      ? colors[category]
+                      : "transparent",
+                  }}
+                ></span>
+              </li>
+            ))}
+          </ul>
+          <ul className="w-1/3 h-full flex flex-col items-center justify-evenly">
+            {" "}
+            {categories.map((category) => (
+              <li
+                className="text-black font-semibold text-xs flex items-center justify-center w-full h-8 relative"
+                key={category}
+              >
+                {variaciones[mesData] &&
+                variaciones[mesData][category] !== undefined
+                  ? variaciones[mesData][category]
+                  : "No disponible"}
+                <div
+                  className="absolute h-[15%] opacity-85 bottom-0 w-full  right-0"
+                  style={{
+                    backgroundColor: selectedCategories.includes(category)
+                      ? colors[category]
+                      : "transparent",
+                  }}
+                ></div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

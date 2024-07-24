@@ -16,7 +16,7 @@ import { FaMinus, FaEllipsisH } from "react-icons/fa";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-const meses = ["enero", "febrero", "marzo", "abril", "mayo"];
+const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio"];
 
 const canastaAlimentariaNacio = [
   { mes: "enero", valor: 285561, variacion: 18.6, acumulada: 18.6 },
@@ -24,7 +24,7 @@ const canastaAlimentariaNacio = [
   { mes: "marzo", valor: 358049, variacion: 10.9, acumulada: 48.8 },
   { mes: "abril", valor: 373044, variacion: 4.2, acumulada: 55 },
   { mes: "mayo", valor: 386978, variacion: 3.7, acumulada: 60.8 },
-  //{ mes: "junio", valor: 393319, variacion: 1.63, acumulada: 60.8 },
+  { mes: "junio", valor: 393319, variacion: 1.63, acumulada: 63.4 },
 ];
 const canastaTotalNacio = [
   { mes: "enero", valor: 596823, variacion: 20.4, acumulada: 20.4 },
@@ -32,7 +32,7 @@ const canastaTotalNacio = [
   { mes: "marzo", valor: 773385, variacion: 11.94, acumulada: 56 },
   { mes: "abril", valor: 828158, variacion: 7.1, acumulada: 67 },
   { mes: "mayo", valor: 851351, variacion: 2.8, acumulada: 71.7 },
-  //{ mes: "junio", valor: 873169, variacion: 2.56, acumulada: 60.8 },
+  { mes: "junio", valor: 873169, variacion: 2.56, acumulada: 76.1 },
 ];
 
 const canastaAlimentariaCaba = [
@@ -41,7 +41,7 @@ const canastaAlimentariaCaba = [
   { mes: "marzo", valor: 442239, variacion: 9.8, acumulada: 52.3 },
   { mes: "abril", valor: 467177, variacion: 5.63, acumulada: 67.2 },
   { mes: "mayo", valor: 486068, variacion: 4, acumulada: 73.8 },
-  //{ mes: "junio", valor: 543225, variacion: 11.75, acumulada: 60.8 },
+  { mes: "junio", valor: 496898, variacion: 2.23, acumulada: 82.1 },
 ];
 
 const canastaTotalCaba = [
@@ -50,7 +50,7 @@ const canastaTotalCaba = [
   { mes: "marzo", valor: 766146, variacion: 11.99, acumulada: 54.9 },
   { mes: "abril", valor: 825809, variacion: 7.78, acumulada: 70.1 },
   { mes: "mayo", valor: 860100, variacion: 2.8, acumulada: 77.2 },
-  //{ mes: "junio", valor: 1112738, variacion: 29.37, acumulada: 60.8 },
+  { mes: "junio", valor: 890590, variacion: 3.54, acumulada: 85.7 },
 ];
 
 const smvm = [
@@ -59,6 +59,7 @@ const smvm = [
   { mes: "marzo", valor: 202800 },
   { mes: "abril", valor: 221252 },
   { mes: "mayo", valor: 234315 },
+  { mes: "junio", valor: 234315 },
 ];
 
 const jubilacionSinBono = [
@@ -67,6 +68,7 @@ const jubilacionSinBono = [
   { mes: "marzo", valor: 167941 },
   { mes: "abril", valor: 196650 },
   { mes: "mayo", valor: 203071 },
+  { mes: "junio", valor: 203931 },
 ];
 
 const jubilacionConBono = [
@@ -75,6 +77,7 @@ const jubilacionConBono = [
   { mes: "marzo", valor: 255380 },
   { mes: "abril", valor: 277017 },
   { mes: "mayo", valor: 277831 },
+  { mes: "junio", valor: 276931 },
 ];
 
 const contenidoTippy = {

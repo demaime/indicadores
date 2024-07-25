@@ -5,6 +5,7 @@ import {
   FaArrowUp,
   FaArrowDown,
 } from "react-icons/fa";
+import { AiOutlineFilePdf } from "react-icons/ai";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import TicketPromedio from "./TicketPromedio";
 import VentasxM2 from "./VentasxM2";
@@ -210,13 +211,26 @@ export default function Supermercados() {
 
   return (
     <div className="w-full h-full bg-gray-200">
-      <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center">
+      <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center relative">
+        <div className="h-[100%] w-10 flex items-center justify-center  absolute top-0 right-4">
+          <div className="p-[6px] rounded-full border border-white flex items-center justify-center ">
+            <a
+              target="_blank"
+              href="https://www.indec.gob.ar/ftp/cuadros/economia/cuestionario_supermercados.pdf"
+              rel="noreferrer"
+            >
+              <AiOutlineFilePdf className="text-white" />
+            </a>
+          </div>
+        </div>
+
         <FaArrowLeft className="cursor-pointer" onClick={handleMesAnterior} />
         <span className="mx-4 flex items-center justify-center w-1/3">
           {mesSeleccionado.toUpperCase()}
         </span>
         <FaArrowRight className="cursor-pointer" onClick={handleMesSiguiente} />
       </div>
+
       {vista === "general" ? (
         <div className="w-full h-[95%] flex">
           <div className="w-2/3 h-full">

@@ -30,9 +30,9 @@ export default function GraficoGastosCotidianos({
     carne: "#f765b3",
     pan: "#FFA500",
     cafe: "#32a852",
-    yerba: "#3b81b5",
-    coca: "#FFC0CB",
-    cerveza: "#ADC2E2",
+    yerba: "#561bf7",
+    coca: "#f55427",
+    cerveza: "#00ffea",
     fideos: "#a464d1",
   };
 

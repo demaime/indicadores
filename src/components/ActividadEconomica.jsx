@@ -286,7 +286,7 @@ export default function ActividadEconomica() {
               <div className="w-64 h-64 rounded-full relative flex items-center justify-center">
                 <CountUp
                   decimals="2"
-                  className="text-yellow-400 text-6xl font-black"
+                  className="text-yellow-300 text-6xl font-black"
                   duration={1}
                   end={valoresGenerales}
                 />

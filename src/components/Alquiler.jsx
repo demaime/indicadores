@@ -93,7 +93,7 @@ export default function Alquiler() {
 
   // Función para formatear los números que se muestran sobre las barras
   const formatBarLabel = (value) => {
-    return formatWithCommas(value);
+    return "$" + formatWithCommas(value);
   };
 
   const calculateVariation = (location) => {
@@ -233,14 +233,18 @@ export default function Alquiler() {
               <XAxis dataKey="mes" tick={{ fontWeight: "bold" }} />
               <YAxis
                 domain={[0, max + paddingTop]}
-                tickFormatter={formatWithCommas} // Formatear con separadores de miles
+                tickFormatter={formatBarLabel}
                 tick={{ fontWeight: "bold", fontSize: "12px" }}
               />
               <Tooltip />
               <Bar
                 dataKey="caba"
                 fill="#ffc658" // Cambio de color a amarillo
-                label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
+                label={{
+                  position: "top",
+                  formatter: formatBarLabel,
+                  fontSize: "12px",
+                }} // Formatear el número sobre la barra
               />
             </BarChart>
           </ResponsiveContainer>
@@ -263,14 +267,18 @@ export default function Alquiler() {
               <XAxis dataKey="mes" tick={{ fontWeight: "bold" }} />
               <YAxis
                 domain={[0, max + paddingTop]}
-                tickFormatter={formatWithCommas} // Formatear con separadores de miles
+                tickFormatter={formatBarLabel}
                 tick={{ fontWeight: "bold", fontSize: "12px" }}
               />
               <Tooltip />
               <Bar
                 dataKey="norte"
                 fill="#82ca9d" // Cambio de color a violeta
-                label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
+                label={{
+                  position: "top",
+                  formatter: formatBarLabel,
+                  fontSize: "12px",
+                }} // Formatear el número sobre la barra
               />
             </BarChart>
           </ResponsiveContainer>
@@ -293,14 +301,18 @@ export default function Alquiler() {
               <XAxis dataKey="mes" tick={{ fontWeight: "bold" }} />
               <YAxis
                 domain={[0, max + paddingTop]}
-                tickFormatter={formatWithCommas} // Formatear con separadores de miles
+                tickFormatter={formatBarLabel}
                 tick={{ fontWeight: "bold", fontSize: "12px" }}
               />
               <Tooltip />
               <Bar
                 dataKey="suroeste"
                 fill="#8884d8" // Cambio de color a gris
-                label={{ position: "top", formatter: formatBarLabel }} // Formatear el número sobre la barra
+                label={{
+                  position: "top",
+                  formatter: formatBarLabel,
+                  fontSize: "12px",
+                }} // Formatear el número sobre la barra
               />
             </BarChart>
           </ResponsiveContainer>

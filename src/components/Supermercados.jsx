@@ -24,7 +24,7 @@ import {
   Cell,
 } from "recharts";
 
-const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL"];
+const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO"];
 const data = {
   ENERO: {
     intermensual: -3.4,
@@ -81,6 +81,20 @@ const data = {
     ticketPromedio: 17564,
     ventasPorM2: 397215,
     personalOcupado: 99257,
+  },
+  MAYO: {
+    intermensual: 3.9,
+    interanual: -9.7,
+    acumulada: -12.4,
+    efectivo: 243754,
+    debito: 426181,
+    credito: 623234,
+    otrosMediosDePago: 120907,
+    salonDeVenta: 1362228,
+    online: 51849,
+    ticketPromedio: 18625,
+    ventasPorM2: 420571,
+    personalOcupado: 98761,
   },
 };
 

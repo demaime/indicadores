@@ -28,24 +28,28 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
         FEBRERO: 61762,
         MARZO: 77510,
         ABRIL: 75240,
+        MAYO: 79990,
       },
       totales: {
         ENERO: 162128358,
         FEBRERO: 190564640,
         MARZO: 239157194,
         ABRIL: 232152015,
+        MAYO: 246808287,
       },
       variaciones: {
         ENERO: 264.3,
         FEBRERO: 303.0,
         MARZO: 309.9,
         ABRIL: 273.0,
+        MAYO: 287.8,
       },
       porcentuales: {
         ENERO: 14.7,
         FEBRERO: 16.0,
         MARZO: 16.8,
         ABRIL: 17.4,
+        MAYO: 17.5,
       },
     });
   };

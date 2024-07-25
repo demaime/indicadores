@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  ReferenceLine,
 } from "recharts";
 
 export default function GraficoGastosCotidianos({
@@ -56,6 +57,8 @@ export default function GraficoGastosCotidianos({
     );
   };
 
+  console.log(mesData);
+
   return (
     <div className="w-full h-full flex items-end justify-center bg-gray-200">
       <div className="w-2/3 h-full flex flex-col items-center justify-center bg-gray-200">
@@ -65,12 +68,22 @@ export default function GraficoGastosCotidianos({
               <p>Seleccione alguna categoría para verla en el gráfico</p>
             </div>
           )}
-          <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="black" />
+          <div className="w-2/3 text-xs h-6 absolute left-1/2 transform -translate-x-1/2 bg-gray-700 text-gray-200 font-semibold text-center flex items-center justify-center rounded z-50 -bottom-4">
+            Variaciones intermensuales de Servicios y Alimentos
+          </div>
+          <LineChart data={chartData} margin={{ left: 0, bottom: 5, right: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="black" />{" "}
             <XAxis dataKey="name" tick={{ fontSize: 10, fill: "black" }} />
             <YAxis tick={{ fontSize: 10, fill: "black" }} />
-            <Tooltip />
-
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                border: "none",
+                borderRadius: "5px",
+                color: "white",
+                textTransform: "uppercase",
+              }}
+            />
             {selectedCategories.map((category) => (
               <Line
                 key={category}
@@ -81,20 +94,45 @@ export default function GraficoGastosCotidianos({
                 dot={{ r: 4 }}
               />
             ))}
+            <ReferenceLine
+              x={mesData}
+              stroke="#999999"
+              strokeWidth={8}
+              opacity={0.5}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="w-1/3 h-full p-2 flex items-center justify-center">
+      <div className="w-1/3 h-full p-2 flex items-center justify-center relative">
+        <div className="w-full absolute h-4 top-4 flex items-center justify-evenly pl-2">
+          <div className="rounded-md bg-gray-700 text-gray-200 w-1/4 text-[8px] font-semibold h-full flex items-center justify-center">
+            CATEGORIA
+          </div>
+          <div className="rounded-md bg-gray-700 text-gray-200 w-1/4 text-[8px] font-semibold h-full flex items-center justify-center">
+            VALOR
+          </div>
+          <div className="rounded-md bg-gray-700 text-gray-200 w-1/4 text-[8px] font-semibold h-full flex items-center justify-center">
+            VARIACIÓN MENSUAL
+          </div>
+        </div>
         <div className="w-[95%] h-[95%] rounded border border-black flex">
           <ul className="w-1/3 h-full flex flex-col items-center justify-evenly">
             {categories.map((category) => (
               <li
-                className="text-black font-semibold flex items-center justify-between w-[90%] h-8 rounded-xl cursor-pointer pr-4 relative hover:bg-gray-300"
+                className="text-black font-semibold flex items-center justify-between w-[90%] h-8 rounded-xl cursor-1pointer pr-4 relative hover:bg-gray-300 cursor-pointer"
                 key={category}
                 onClick={() => toggleCategory(category)}
               >
                 <span
                   className="absolute h-[15%] opacity-85 bottom-0 w-[95%] -right-2"
+                  style={{
+                    backgroundColor: selectedCategories.includes(category)
+                      ? colors[category]
+                      : "transparent",
+                  }}
+                ></span>
+                <span
+                  className="absolute h-[95%] opacity-15 bottom-0 w-[320%] left-2"
                   style={{
                     backgroundColor: selectedCategories.includes(category)
                       ? colors[category]
@@ -125,9 +163,9 @@ export default function GraficoGastosCotidianos({
                 className="text-black text-xs flex items-center justify-center w-full h-8 relative"
                 key={category}
               >
-                {data[months[months.length - 1]] &&
-                data[months[months.length - 1]][category] !== undefined
-                  ? formatCurrency(data[months[months.length - 1]][category])
+                ${" "}
+                {data[mesData] && data[mesData][category] !== undefined
+                  ? data[mesData][category]
                   : "No disponible"}
                 <span
                   className="absolute h-[15%] opacity-85 bottom-0 w-full right-0"
@@ -144,7 +182,7 @@ export default function GraficoGastosCotidianos({
             {" "}
             {categories.map((category) => (
               <li
-                className="text-black font-semibold text-xs flex items-center justify-center w-full h-8 relative"
+                className="text-black font-semibold text-xs flex items-center justify-center w-full h-8 relative cursor-pointer"
                 key={category}
               >
                 {variaciones[mesData] &&

@@ -240,7 +240,7 @@ export default function Supermercados() {
         <div className="w-full h-[95%] flex">
           <div className="w-2/3 h-full">
             <div className="w-full h-1/2 flex items-center justify-evenly">
-              <div className="w-1/4 h-3/4 rounded border shadow-lg flex flex-col items-center justify-between p-1">
+              <div className="w-1/4 h-3/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-between p-1">
                 <p className="text-xs font-semibold">Variación intermensual</p>
                 <div className={`flex items-center text-5xl ${color}`}>
                   {arrow}
@@ -279,7 +279,7 @@ export default function Supermercados() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <div className="w-1/4 h-3/4 rounded border shadow-lg flex flex-col items-center justify-between p-1">
+              <div className="w-1/4 h-3/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-between p-1">
                 <p className="text-xs font-semibold">Variación interanual</p>
                 <div
                   className={`flex items-center text-5xl ${
@@ -322,7 +322,7 @@ export default function Supermercados() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <div className="w-1/4 h-3/4 rounded border shadow-lg flex flex-col items-center justify-between p-1">
+              <div className="w-1/4 h-3/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-between p-1">
                 <p className="text-xs font-semibold">Variación acumulada</p>
                 <div
                   className={`flex items-center text-5xl ${
@@ -367,7 +367,7 @@ export default function Supermercados() {
               </div>
             </div>
             <div className="w-full h-1/2 flex items-center justify-evenly">
-              <div className="w-2/5 h-3/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
+              <div className="w-2/5 h-3/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-center relative">
                 <p className="text-xs text-center mb-1 font-semibold">
                   Ventas por medio de pago{" "}
                 </p>
@@ -410,7 +410,7 @@ export default function Supermercados() {
                   </ul>
                 </div>
               </div>
-              <div className="w-2/5 h-3/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
+              <div className="w-2/5 h-3/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-center relative">
                 <p className="text-xs text-center mb-1 font-semibold">
                   Ventas por tipo de canal
                 </p>
@@ -470,7 +470,7 @@ export default function Supermercados() {
             </div>
           </div>
           <div className="w-1/3 h-full flex flex-col items-center justify-evenly ">
-            <div className="w-4/5 h-1/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
+            <div className="w-4/5 h-1/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-center relative">
               <div className="absolute w-10 h-10 left-4">
                 <img src="/assets/factura.png" alt="" />
               </div>
@@ -507,7 +507,7 @@ export default function Supermercados() {
                 </span>
               )}
             </div>
-            <div className="w-4/5 h-1/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
+            <div className="w-4/5 h-1/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-center relative">
               <div className="absolute w-10 h-10 left-4">
                 <img src="/assets/argentina.png" alt="" />
               </div>
@@ -542,7 +542,7 @@ export default function Supermercados() {
                 </span>
               )}
             </div>
-            <div className="w-4/5 h-1/4 rounded border shadow-lg flex flex-col items-center justify-center relative">
+            <div className="w-4/5 h-1/4 rounded border shadow-lg shadow-gray-600 flex flex-col items-center justify-center relative">
               <div className="absolute w-10 h-10 left-4">
                 <img src="/assets/equipo.png" alt="" />
               </div>

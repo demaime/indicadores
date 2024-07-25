@@ -24,6 +24,8 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO"];
 const data = {
@@ -117,6 +119,7 @@ export default function Supermercados() {
     meses[meses.length - 1]
   );
   const [vista, setVista] = useState("general");
+  const contenidoTippy = "Ver encuesta de Supermercados";
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -213,15 +216,17 @@ export default function Supermercados() {
     <div className="w-full h-full bg-gray-200">
       <div className="w-full h-[5%] bg-gray-600 text-white flex justify-center items-center relative">
         <div className="h-[100%] w-10 flex items-center justify-center  absolute top-0 right-4">
-          <div className="p-[6px] rounded-full border border-white flex items-center justify-center ">
-            <a
-              target="_blank"
-              href="https://www.indec.gob.ar/ftp/cuadros/economia/cuestionario_supermercados.pdf"
-              rel="noreferrer"
-            >
-              <AiOutlineFilePdf className="text-white" />
-            </a>
-          </div>
+          <Tippy content={contenidoTippy} placement="bottom">
+            <div className="p-[5.5px] rounded-full border border-white flex items-center justify-center ">
+              <a
+                target="_blank"
+                href="https://www.indec.gob.ar/ftp/cuadros/economia/cuestionario_supermercados.pdf"
+                rel="noreferrer"
+              >
+                <AiOutlineFilePdf className="text-white" />
+              </a>{" "}
+            </div>
+          </Tippy>
         </div>
 
         <FaArrowLeft className="cursor-pointer" onClick={handleMesAnterior} />

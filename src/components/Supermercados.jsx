@@ -591,7 +591,11 @@ export default function Supermercados() {
           mesSeleccionado={mesSeleccionado}
         />
       ) : vista === "personal" ? (
-        <PersonalOcupado vista={vista} setVista={setVista} />
+        <PersonalOcupado
+          vista={vista}
+          setVista={setVista}
+          mesSeleccionado={mesSeleccionado}
+        />
       ) : (
         <></>
       )}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Map from "./Map";
 import { MAP_JSON } from "./Map/constants";
-import { FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { datosHabitantes } from "./Map/datosHabitantes";
 import { datosVentas } from "./Map/datosVentas";
 import {
@@ -15,43 +15,46 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
+  ReferenceLine,
 } from "recharts";
 
 export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
   const [hoveredItem, setHoveredItem] = useState(null);
 
+  const ciudadDeBuenosAiresData = {
+    name: "Ciudad de Buenos Aires",
+    habitantes: {
+      ENERO: 52546,
+      FEBRERO: 61762,
+      MARZO: 77510,
+      ABRIL: 75240,
+      MAYO: 79990,
+    },
+    totales: {
+      ENERO: 162128358,
+      FEBRERO: 190564640,
+      MARZO: 239157194,
+      ABRIL: 232152015,
+      MAYO: 246808287,
+    },
+    variaciones: {
+      ENERO: 264.3,
+      FEBRERO: 303.0,
+      MARZO: 309.9,
+      ABRIL: 273.0,
+      MAYO: 287.8,
+    },
+    porcentuales: {
+      ENERO: 14.7,
+      FEBRERO: 16.0,
+      MARZO: 16.8,
+      ABRIL: 17.4,
+      MAYO: 17.5,
+    },
+  };
+
   const handleImageHover = () => {
-    setHoveredItem({
-      name: "Ciudad de Buenos Aires",
-      habitantes: {
-        ENERO: 52546,
-        FEBRERO: 61762,
-        MARZO: 77510,
-        ABRIL: 75240,
-        MAYO: 79990,
-      },
-      totales: {
-        ENERO: 162128358,
-        FEBRERO: 190564640,
-        MARZO: 239157194,
-        ABRIL: 232152015,
-        MAYO: 246808287,
-      },
-      variaciones: {
-        ENERO: 264.3,
-        FEBRERO: 303.0,
-        MARZO: 309.9,
-        ABRIL: 273.0,
-        MAYO: 287.8,
-      },
-      porcentuales: {
-        ENERO: 14.7,
-        FEBRERO: 16.0,
-        MARZO: 16.8,
-        ABRIL: 17.4,
-        MAYO: 17.5,
-      },
-    });
+    setHoveredItem(ciudadDeBuenosAiresData);
   };
 
   const handleImageLeave = () => {
@@ -114,6 +117,13 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
         VentasPorHabitante: hoveredItem.totales[month],
       }))
     : [];
+
+  const ranking = Object.keys(datosVentas)
+    .map((provincia) => ({
+      name: provincia,
+      porcentual: datosVentas[provincia].porcentuales[mesSeleccionado],
+    }))
+    .sort((a, b) => b.porcentual - a.porcentual);
 
   return (
     <div className="w-full h-[95%] flex">
@@ -187,6 +197,12 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                           />
                           <YAxis tick={{ fontSize: 10, fill: "green" }} />
                           <Tooltip />
+                          <ReferenceLine
+                            style={{ opacity: 0.5 }}
+                            x={mesSeleccionado}
+                            stroke="black"
+                            strokeWidth={1}
+                          />
                           <Line
                             type="monotone"
                             dataKey="VentasPorHabitante"
@@ -252,7 +268,12 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
                           />
                           <YAxis tick={{ fontSize: 10, fill: "teal" }} />
                           <Tooltip />
-
+                          <ReferenceLine
+                            style={{ opacity: 0.5 }}
+                            x={mesSeleccionado}
+                            stroke="black"
+                            strokeWidth={1}
+                          />
                           <Line
                             type="monotone"
                             dataKey="VentasPorHabitante"
@@ -338,15 +359,30 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
               </div>
             </div>
           ) : (
-            <div className="w-full h-full items-center justify-evenly flex-col">
-              <p className="h-1/3 text-center flex items-center justify-center">
-                Pasa el mouse sobre un elemento del mapa para ver la
-                información.
-              </p>
-
-              <div className="w-full h-1/3 flex items-center justify-center">
-                <FaArrowLeft className="opacity-10 animate-pulse" size={150} />
-              </div>
+            <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-gray-700 overflow-scroll">
+              <h3 className="text-xl font-bold h-[5%]">
+                Composición porcentual por Provincia
+              </h3>
+              <ul className="w-full flex flex-col items-center h-[95%]">
+                {[
+                  ...ranking.filter((item) => item.name !== "nacional"),
+                  {
+                    name: "Ciudad de Buenos Aires",
+                    porcentual:
+                      ciudadDeBuenosAiresData.porcentuales[mesSeleccionado],
+                  },
+                ]
+                  .sort((a, b) => b.porcentual - a.porcentual) // Ordena de mayor a menor
+                  .map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex justify-between w-2/3 text-md p-2 border-b border-gray-600"
+                    >
+                      <span>{item.name}</span>
+                      <span>{item.porcentual}%</span>
+                    </li>
+                  ))}
+              </ul>
             </div>
           )}
         </div>

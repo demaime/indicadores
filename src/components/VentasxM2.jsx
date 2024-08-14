@@ -159,7 +159,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
         </button>
         <div className="h-[580px] w-full border-4 rounded-xl border-gray-800 mr-8">
           {hoveredItem ? (
-            <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-gray-700">
+            <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-gray-700 rounded-lg">
               <h3 className="text-5xl font-bold w-full text-center h-[10%] flex items-center justify-center">
                 {hoveredItem.name.toLocaleUpperCase()}
               </h3>
@@ -359,30 +359,32 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
               </div>
             </div>
           ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-gray-700 overflow-scroll">
-              <h3 className="text-xl font-bold h-[5%]">
+            <div className="h-full w-full bg-gray-200 rounded-lg flex flex-col items-center justify-evenly text-gray-200 ">
+              <div className="w-full h-[10%] bg-gray-400 text-gray-900 rounded-t-lg text-2xl font-bold flex items-center justify-center text-center">
                 Composición porcentual por Provincia
-              </h3>
-              <ul className="w-full flex flex-col items-center h-[95%]">
-                {[
-                  ...ranking.filter((item) => item.name !== "nacional"),
-                  {
-                    name: "Ciudad de Buenos Aires",
-                    porcentual:
-                      ciudadDeBuenosAiresData.porcentuales[mesSeleccionado],
-                  },
-                ]
-                  .sort((a, b) => b.porcentual - a.porcentual) // Ordena de mayor a menor
-                  .map((item, index) => (
-                    <li
-                      key={index}
-                      className="flex justify-between w-2/3 text-md p-2 border-b border-gray-600"
-                    >
-                      <span>{item.name}</span>
-                      <span>{item.porcentual}%</span>
-                    </li>
-                  ))}
-              </ul>
+              </div>
+              <div className="w-full h-[90%] bg-gray-900">
+                <ul className="w-full flex flex-col items-center h-[95%] overflow-scroll">
+                  {[
+                    ...ranking.filter((item) => item.name !== "nacional"),
+                    {
+                      name: "Ciudad de Buenos Aires",
+                      porcentual:
+                        ciudadDeBuenosAiresData.porcentuales[mesSeleccionado],
+                    },
+                  ]
+                    .sort((a, b) => b.porcentual - a.porcentual) // Ordena de mayor a menor
+                    .map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex justify-between w-3/4 text-md p-2 border-b border-gray-600"
+                      >
+                        <span>{item.name}</span>
+                        <span>{item.porcentual}%</span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
             </div>
           )}
         </div>

@@ -516,7 +516,7 @@ export default function Supermercados() {
                 className="absolute -right-5 bottom-1/2 transform translate-y-1/2 text-gray-600 w-10 h-10 hover:scale-125 hover:text-gray-700 hover:cursor-pointer"
               />
               <p className="text-xs text-center font-semibold">
-                Ventas totales por m2
+                Ventas totales
               </p>
               <div className="flex items-center text-5xl text-gray-500">
                 <h1>${data[mesSeleccionado].ventasPorM2.toLocaleString()}</h1>

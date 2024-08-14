@@ -4,7 +4,7 @@ import React from "react";
 export default function Portada() {
   return (
     <div className="section" id="home">
-      <div className="w-full h-full flex flex-col jusitfy-between  bg-gray-800">
+      <div className="w-full h-full flex flex-col jusitfy-between bg-gray-800">
         <div className="flex justify-between p-2 items-center border-b-4 border-gray-700 ">
           <img src="/assets/caba.png" alt="logo-caba" className="w-1/12" />
 

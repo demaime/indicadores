@@ -10,10 +10,48 @@ import Ocio from "./components/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";
+import { useState } from "react";
 // import Test from "./components/Test.jsx";
 
 export default function App() {
-  return (
+  const [password, setPassword] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [error, setError] = useState("");
+
+  const handlePasswordSubmit = () => {
+    const correctPassword = "dgop"; // contraseña sin requerimientos de seguridad
+    if (password === correctPassword) {
+      setIsAuthenticated(true);
+      setError("");
+    } else {
+      setError("Contraseña incorrecta. Inténtalo de nuevo.");
+      setIsAuthenticated(false);
+    }
+  };
+
+  return !isAuthenticated ? (
+    <div className="full-container">
+      <section className="section !justify-evenly bg-gray-800">
+        <img src="/assets/indi.png" />
+        <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Ingresa la contraseña"
+            className="p-2 border-2 rounded-lg w-1/2"
+          />
+          <button
+            className="p-2 w-44 bg-gray-200 mt-4 rounded-lg font-semibold"
+            onClick={handlePasswordSubmit}
+          >
+            Entrar
+          </button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </div>
+      </section>
+    </div>
+  ) : (
     <div className="full-container">
       <Portada />
       <section className="section" id="inflacion">

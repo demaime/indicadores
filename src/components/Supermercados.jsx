@@ -583,7 +583,11 @@ export default function Supermercados() {
           </div>
         </div>
       ) : vista === "ticket" ? (
-        <TicketPromedio vista={vista} setVista={setVista} />
+        <TicketPromedio
+          vista={vista}
+          setVista={setVista}
+          mesSeleccionado={mesSeleccionado}
+        />
       ) : vista === "ventas" ? (
         <VentasxM2
           vista={vista}

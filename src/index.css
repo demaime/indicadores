@@ -20,6 +20,13 @@
   background-color: rgb(253 224 71);
 }
 
+.logo {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 4rem;
+}
+
 .full-container {
   position: relative;
   overflow-y: scroll;

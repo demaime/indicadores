@@ -32,7 +32,11 @@ export default function App() {
   return !isAuthenticated ? (
     <div className="full-container">
       <section className="section !justify-evenly bg-gray-800">
-        <img src="/assets/indi.png" />
+        <h1 className="text-yellow-500 logo flex flex-col items-center justify-evenly">
+          INDICADORES
+          <span className="!text-xl">DE</span>
+          REALIDAD
+        </h1>
         <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
           <input
             type="password"
@@ -47,7 +51,7 @@ export default function App() {
           >
             Entrar
           </button>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p style={{ color: "#fa776b" }}>{error}</p>}
         </div>
       </section>
     </div>

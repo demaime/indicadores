@@ -7,7 +7,7 @@ import "tippy.js/dist/tippy.css";
 const data = {
   marzo: {
     alquiler: 284561,
-    luz: 7699,
+    luz: 25988,
     gas: 5043,
     internet: 24000,
     celular: 6948,
@@ -22,7 +22,7 @@ const data = {
   },
   abril: {
     alquiler: 290615,
-    luz: 7699,
+    luz: 21675,
     gas: 19567,
     internet: 27999,
     celular: 7988,
@@ -37,7 +37,7 @@ const data = {
   },
   mayo: {
     alquiler: 298724,
-    luz: 7699,
+    luz: 27924,
     gas: 29634,
     internet: 31499,
     celular: 8608,
@@ -52,7 +52,7 @@ const data = {
   },
   junio: {
     alquiler: 309151,
-    luz: 8519,
+    luz: 41504,
     gas: 36136,
     internet: 31499,
     celular: 8608,
@@ -153,6 +153,11 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
             <div className="w-72 h-24 bg-yellow-200 rounded-xl border-yellow-400 border-2 relative flex items-end pb-5 pl-4 justify-around shadow-lg">
               <div className="w-72 h-8 absolute -top-4 -right-6 rounded-xl bg-yellow-100 border-yellow-400 border flex items-center justify-center font-bold">
                 LUZ
+                <Tippy content={"PROMEDIO PAIS SIN SUBSIDIOS (N1)"}>
+                  <span className="ml-4 flex rounded-full bg-yellow-600 text-white items-center justify-center w-3 h-3 text-[8px]">
+                    ?
+                  </span>
+                </Tippy>
               </div>
               <div className="w-16 h-14 bg-white rounded-full absolute -left-4 p-2 border-l-4 border-yellow-500">
                 <img src="/assets/luz.png" alt="" />

@@ -101,7 +101,7 @@ const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text
@@ -132,7 +132,7 @@ const CustomizedLabelTren = ({ x, y, stroke, value, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text
@@ -163,7 +163,7 @@ const CustomizedLabelColectivo = ({ x, y, stroke, value, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text
@@ -196,7 +196,7 @@ const CustomizedLabelNafta = ({ x, y, stroke, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text
@@ -229,7 +229,7 @@ const CustomizedLabelPeajeNorte = ({ x, y, stroke, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text
@@ -262,7 +262,7 @@ const CustomizedLabelPeajeOeste = ({ x, y, stroke, index }) => {
   }
   const formattedVariation = isNaN(variation)
     ? "0%"
-    : variation.toFixed(2) + "pp";
+    : variation.toFixed(2) + "%";
 
   return (
     <text

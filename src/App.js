@@ -10,6 +10,8 @@ import Ocio from "./components/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";
+import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
+
 import { useState } from "react";
 
 export default function App() {
@@ -38,7 +40,7 @@ export default function App() {
         <video autoPlay muted loop className="video">
           <source src="/assets/bgvideo.mp4" type="video/mp4" />
         </video>
-        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8">
+        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8 text-7xl">
           INDICADORES
           <span className="!text-xl">DE</span>
           REALIDAD
@@ -166,6 +168,9 @@ export default function App() {
           mensual="mensual"
         />
         <Supermercados />
+      </section>
+      <section className="section" id="supermercados">
+        <InformeMensual />
       </section>
     </div>
   );

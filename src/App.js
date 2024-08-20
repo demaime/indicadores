@@ -11,7 +11,6 @@ import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";
 import { useState } from "react";
-// import Test from "./components/Test.jsx";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -31,13 +30,17 @@ export default function App() {
 
   return !isAuthenticated ? (
     <div className="full-container">
-      <section className="section !justify-evenly gradient-bg video-background overflow-hidden">
-        <video autoplay muted loop class="video">
+      <section className="section !justify-evenly  video-background overflow-hidden relative">
+        <div
+          style={{ zIndex: "-1" }}
+          className="bg-black h-[90%] w-3/4 rounded-md absolute opacity-80"
+        ></div>
+        <video autoPlay muted loop className="video">
           <source src="/assets/bgvideo.mp4" type="video/mp4" />
         </video>
-        <h1 className="text-yellow-300 logo flex flex-col items-center justify-evenly tracking-wider">
+        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8">
           INDICADORES
-          <span className="!text-xl text-yellow-500">DE</span>
+          <span className="!text-xl">DE</span>
           REALIDAD
         </h1>
         <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
@@ -164,14 +167,6 @@ export default function App() {
         />
         <Supermercados />
       </section>
-      {/* <section className="section" id="test">
-        <Encabezado
-          title={"TEST"}
-          description={"Testeando datos.gob.ar"}
-          mensual="mensual"
-        />
-        <Test />
-      </section> */}
     </div>
   );
 }

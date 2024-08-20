@@ -2,6 +2,11 @@
 import React from "react";
 
 export default function Portada() {
+  const handleOpenInformeMensual = () => {
+    // Abre el informe mensual en una nueva pestaña
+    window.open(`${window.location.origin}/informe-mensual`, "_blank");
+  };
+
   return (
     <div className="section" id="home">
       <div className="w-full h-full flex flex-col jusitfy-between bg-gray-800">
@@ -17,6 +22,12 @@ export default function Portada() {
           <img src="/assets/dgioc.png" alt="logo-dgioc " className="w-1/12" />
         </div>
         <div className="w-full text-white flex flex-col items-center justify-evenly h-5/6">
+          <button
+            className="text-md font-bold tracking-wider w-1/4 text-center hover:text-yellow-300 rounded-lg bg-yellow-600 text-gray-200 p-2"
+            onClick={handleOpenInformeMensual}
+          >
+            INFORME DEL MES
+          </button>
           <a
             className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
             href="#inflacion"

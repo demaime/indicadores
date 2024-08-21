@@ -84,6 +84,16 @@ const data = [
     PeajeOeste: 3072.71,
     Patentamiento: 19609,
   },
+  {
+    Mes: "julio",
+    Subte: 650,
+    Tren: 200,
+    Colectivo: 371.13,
+    Nafta: 941,
+    PeajeNorte: 1277.44,
+    PeajeOeste: 3072.71,
+    Patentamiento: "actualización trimestral",
+  },
 ];
 
 const CustomizedLabelSubte = ({ x, y, stroke, index }) => {
@@ -372,6 +382,15 @@ export default function Transporte() {
       PeajeNorte: 233,
       PeajeOeste: 233,
     },
+    {
+      Mes: "julio",
+      Subte: 423.5,
+      Tren: 298.8,
+      Colectivo: 333.71,
+      Nafta: 56.9,
+      PeajeNorte: 233,
+      PeajeOeste: 233,
+    },
   ];
 
   const variacionInteranualPatentes = {
@@ -532,13 +551,12 @@ export default function Transporte() {
               <div className="w-[80%] h-[80%] rounded-xl bg-gray-700 ">
                 <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
                   <div className="text-md font-semibold">Valor</div>
-                  {data[mesSeleccionadoIndex].Patentamiento ===
-                  "actualización trimestral" ? (
+                  {data[mesSeleccionadoIndex].Patentamiento === "|" ? (
                     <div className="bg-[#e95faa] flex items-center w-3/4 justify-center rounded-xl font-bold text-center text-md italic">
                       {data[mesSeleccionadoIndex].Patentamiento}
                     </div>
                   ) : (
-                    <div className="bg-[#e95faa] flex items-center w-2/3 justify-center rounded-xl font-bold text-center text-2xl">
+                    <div className="bg-[#e95faa] flex items-center w-2/3 justify-center rounded-xl font-bold text-center text-md">
                       {data[mesSeleccionadoIndex].Patentamiento}
                       <span className="text-[14px] flex items-center pl-2 ">
                         Automóviles

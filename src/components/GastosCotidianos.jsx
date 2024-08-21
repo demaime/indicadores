@@ -4,7 +4,7 @@ import ServiciosMes from "./ServiciosMes";
 export default function GastosCotidianos() {
   const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
 
-  const meses = ["marzo", "abril", "mayo", "junio"];
+  const meses = ["marzo", "abril", "mayo", "junio", "julio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );

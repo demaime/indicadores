@@ -27,6 +27,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosBlue2024, setPromediosBlue2024] = useState({
     enero: 0,
@@ -35,6 +36,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosMep2024, setPromediosMep2024] = useState({
     enero: 0,
@@ -43,6 +45,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosTarjeta2024, setPromediosTarjeta2024] = useState({
     enero: 0,
@@ -51,6 +54,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosCcl2024, setPromediosCcl2024] = useState({
     enero: 0,
@@ -59,6 +63,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosCripto2024, setPromediosCripto2024] = useState({
     enero: 0,
@@ -67,6 +72,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
   const [promediosMayorista2024, setPromediosMayorista2024] = useState({
     enero: 0,
@@ -75,6 +81,7 @@ export default function Dolar() {
     abril: 0,
     mayo: 0,
     junio: 0,
+    julio: 0,
   });
 
   const [promedios2023, setPromedios2023] = useState();
@@ -230,6 +237,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-06")
             )
           ),
+          julio: calcularPromedio(
+            dataOficial2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -364,6 +376,11 @@ export default function Dolar() {
           junio: calcularPromedio(
             dataBlue2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataBlue2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
             )
           ),
           // Agrega más meses si es necesario
@@ -503,6 +520,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-06")
             )
           ),
+          julio: calcularPromedio(
+            dataMep2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -637,6 +659,11 @@ export default function Dolar() {
           junio: calcularPromedio(
             dataTarjeta2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataTarjeta2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
             )
           ),
         };
@@ -775,6 +802,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-06")
             )
           ),
+          julio: calcularPromedio(
+            dataCcl2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -909,6 +941,11 @@ export default function Dolar() {
           junio: calcularPromedio(
             dataCripto2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataCripto2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
             )
           ),
         };
@@ -1046,6 +1083,11 @@ export default function Dolar() {
           junio: calcularPromedio(
             dataMayorista2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-06")
+            )
+          ),
+          julio: calcularPromedio(
+            dataMayorista2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-07")
             )
           ),
         };
@@ -1256,6 +1298,16 @@ export default function Dolar() {
       ccl: promediosCcl2024.junio,
       cripto: promediosCripto2024.junio,
       tarjeta: promediosTarjeta2024.junio,
+    },
+    {
+      mes: "julio",
+      oficial: promediosOficial2024.julio,
+      mayorista: promediosMayorista2024.julio,
+      blue: promediosBlue2024.julio,
+      mep: promediosMep2024.julio,
+      ccl: promediosCcl2024.julio,
+      cripto: promediosCripto2024.julio,
+      tarjeta: promediosTarjeta2024.julio,
     },
   ];
 

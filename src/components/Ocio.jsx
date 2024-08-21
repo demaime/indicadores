@@ -39,6 +39,15 @@ const data = {
     libro: 22626,
     teatro: 15000,
   },
+  julio: {
+    combo: 9500,
+    plataforma: 5121,
+    cine: 7295,
+    teatro: 19000,
+    gimnasio: 22690,
+    libro: 23642,
+    fiesta: 14000,
+  },
 };
 
 const calcularVariacion = (valorActual, valorAnterior) => {
@@ -80,7 +89,9 @@ const formatearDatosParaGrafica = (variaciones) => {
     return []; // Retorna un array vacío si variaciones no está definido o no tiene datos
   }
 
-  const meses = Object.keys(variaciones);
+  // Excluimos el primer mes (abril) para comenzar en mayo
+  const meses = Object.keys(variaciones).filter((mes) => mes !== "abril");
+
   const categorias = Object.keys(variaciones[meses[0]]);
   return meses.map((mes) => {
     const datosMes = { mes };
@@ -94,7 +105,7 @@ const formatearDatosParaGrafica = (variaciones) => {
 const datosGrafica = formatearDatosParaGrafica(variaciones);
 
 export default function Ocio() {
-  const meses = ["abril", "mayo", "junio"];
+  const meses = ["abril", "mayo", "junio", "julio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );

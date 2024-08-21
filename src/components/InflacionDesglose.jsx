@@ -132,6 +132,23 @@ const dataNacion = [
       Educación: 5.7,
     },
   },
+  {
+    Julio: {
+      GENERAL: 4,
+      "Bienes y servicios": 3.5,
+      Transporte: 2.6,
+      Comunicación: 3.5,
+      "Recreación y cultura": 5.7,
+      "Equipamiento y mantenimiento del hogar": 3.5,
+      "Bebidas alcohólicas y tabaco": 6.1,
+      Salud: 5.8,
+      "Alimentos y bebidas no alcohólicas": 3.2,
+      "Restaurantes y hoteles": 6.5,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 6,
+      "Prendas de vestir y calzado": 1.6,
+      Educación: 4.2,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -252,6 +269,23 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 7.3,
       "Prendas de vestir y calzado": 3.3,
       Educación: 6.5,
+    },
+  },
+  {
+    Julio: {
+      GENERAL: 5.1,
+      "Bienes y servicios": 3.8,
+      Transporte: 6.8,
+      Comunicación: 0.8,
+      "Recreación y cultura": 5.7,
+      "Equipamiento y mantenimiento del hogar": 1,
+      "Bebidas alcohólicas y tabaco": 7.3,
+      Salud: 3.6,
+      "Alimentos y bebidas no alcohólicas": 3.9,
+      "Restaurantes y hoteles": 7.6,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 5.8,
+      "Prendas de vestir y calzado": 9.3,
+      Educación: 6.7,
     },
   },
 ];
@@ -432,6 +466,7 @@ const variacionAcumuladaNacion = {
   Abril: "65%",
   Mayo: "71.9%",
   Junio: "79.8%",
+  Julio: "87%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
@@ -440,22 +475,25 @@ const variacionAcumuladaCaba = {
   Abril: "67.1%",
   Mayo: "80.2%",
   Junio: "88.9%",
+  Julio: "98.5%",
 };
-const variacionAnualNacion = {
+const variacionInteranualNacion = {
   Enero: "254.2%",
   Febrero: "276.2%",
   Marzo: "287.9%",
   Abril: "289.4%",
   Mayo: "276.4%",
   Junio: "271.5%",
+  Julio: "263.4",
 };
-const variacionAnualCaba = {
+const variacionInteranualCaba = {
   Enero: "238.5%",
   Febrero: "264.5%",
   Marzo: "285.3%",
   Abril: "292.5%",
   Mayo: "287.9%",
   Junio: "272.7%",
+  Julio: "264.9",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {
@@ -498,7 +536,9 @@ export default function InflacionDesglose() {
   };
 
   let variacionAnual =
-    dataInflacion === "nacional" ? variacionAnualNacion : variacionAnualCaba;
+    dataInflacion === "nacional"
+      ? variacionInteranualNacion
+      : variacionInteranualCaba;
 
   let variacionAcumulada =
     dataInflacion === "nacional"

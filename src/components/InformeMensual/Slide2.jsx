@@ -33,7 +33,7 @@ export default function Slide2() {
         <BarChart
           data={filteredData}
           layout="vertical"
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 20, right: 30, left: -30, bottom: 5 }}
         >
           <XAxis
             type="number"

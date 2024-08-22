@@ -551,7 +551,8 @@ export default function Transporte() {
               <div className="w-[80%] h-[80%] rounded-xl bg-gray-700 ">
                 <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
                   <div className="text-md font-semibold">Valor</div>
-                  {data[mesSeleccionadoIndex].Patentamiento === "|" ? (
+                  {data[mesSeleccionadoIndex].Patentamiento ===
+                  "actualización trimestral" ? (
                     <div className="bg-[#e95faa] flex items-center w-3/4 justify-center rounded-xl font-bold text-center text-md italic">
                       {data[mesSeleccionadoIndex].Patentamiento}
                     </div>

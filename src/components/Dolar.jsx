@@ -18,7 +18,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export default function Dolar() {
   const [comparativoOEvolutivo, setComparativoOEvolutivo] =
     useState("comparativo");
-  const [mesSeleccionado, setMesSeleccionado] = useState("junio");
+  const [mesSeleccionado, setMesSeleccionado] = useState("julio");
   const [porcentajeOmoneda, setPorcentajeOmoneda] = useState("porcentaje");
   const [promediosOficial2024, setPromediosOficial2024] = useState({
     enero: 0,

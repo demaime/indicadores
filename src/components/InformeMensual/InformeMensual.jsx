@@ -36,10 +36,7 @@ export default function InformeMensual() {
         <strong className="tracking-wider">- AGOSTO - </strong>&nbsp; DÍA DEL
         NIÑO
       </div>
-      <div
-        className="w-[90%] h-[90%] border-2 border-black rounded-xl overflow-hidden bg-gray-100"
-        id="informeMensual"
-      >
+      <div className="w-[90%] h-[90%] border-2 border-black rounded-xl overflow-hidden bg-gray-100">
         <div
           className="flex transition-transform duration-300 h-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}

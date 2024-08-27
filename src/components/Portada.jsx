@@ -78,12 +78,12 @@ export default function Portada() {
           >
             SUPERMERCADOS
           </a>
-          <a
+          {/* <a
             className="text-md font-bold tracking-wider w-1/4 text-center hover:text-yellow-300 rounded-lg bg-yellow-600 text-gray-200 p-2"
             href="#informeMensual"
           >
             INFORME DEL MES
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

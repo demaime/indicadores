@@ -92,6 +92,24 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       otros: { ventas: 85587418, interanual: 236, porcentual: 6 },
       total: { ventas: 1414076701, interanual: 263.6, porcentual: 100 },
     },
+    JUNIO: {
+      bebidas: { ventas: 163848987, interanual: 227.3, porcentual: 10.7 },
+      almacen: { ventas: 440806348, interanual: 262.3, porcentual: 28.7 },
+      panaderia: { ventas: 63839234, interanual: 292.7, porcentual: 4.2 },
+      lacteos: { ventas: 181720856, interanual: 283.9, porcentual: 11.8 },
+      carnes: { ventas: 166418217, interanual: 252.7, porcentual: 10.8 },
+      verduleria: { ventas: 66166061, interanual: 275.2, porcentual: 4.3 },
+      alimentosPreparados: {
+        ventas: 15283531,
+        interanual: 239.5,
+        porcentual: 1,
+      },
+      limpieza: { ventas: 220751638, interanual: 301.2, porcentual: 14.4 },
+      indumentaria: { ventas: 41946543, interanual: 259.3, porcentual: 2.7 },
+      electronicos: { ventas: 73285899, interanual: 173.4, porcentual: 4.8 },
+      otros: { ventas: 100120574, interanual: 262, porcentual: 6.5 },
+      total: { ventas: 1534137882, interanual: 260.3, porcentual: 100 },
+    },
   };
 
   const imagenes = {

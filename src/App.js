@@ -169,9 +169,10 @@ export default function App() {
         />
         <Supermercados />
       </section>
-      <section className="section" id="supermercados">
+      {/* <section className="section" id="informeMensual">
         <InformeMensual />
-      </section>
+      </section> */}
     </div>
   );
 }
+//

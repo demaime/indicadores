@@ -28,6 +28,11 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       gerentes: { valor: 10931, interanual: 0, intermensual: -0.6 },
       cajeros: { valor: 87830, interanual: 3.5, intermensual: -0.6 },
     },
+    JUNIO: {
+      total: { valor: 98523, interanual: 2, intermensual: -0.2 },
+      gerentes: { valor: 10892, interanual: -0.5, intermensual: -0.4 },
+      cajeros: { valor: 87631, interanual: 2.3, intermensual: -0.2 },
+    },
   };
 
   const sueldos = {
@@ -55,6 +60,11 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       total: { valor: 939333, interanual: 206.3, intermensual: -3 },
       gerentes: { valor: 2040570, interanual: 270.6, intermensual: -5 },
       cajeros: { valor: 802277, interanual: 191.5, intermensual: -2.6 },
+    },
+    JUNIO: {
+      total: { valor: 1388639, interanual: 207.5, intermensual: 47.8 },
+      gerentes: { valor: 2921451, interanual: 270.9, intermensual: 46.7 },
+      cajeros: { valor: 1198120, interanual: 193.2, intermensual: 49.3 },
     },
   };
 
@@ -100,6 +110,15 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         intermensual: -7.3,
       },
     },
+    JUNIO: {
+      total: { valor: 169162742, interanual: 204.4, intermensual: 46.7 },
+      sueldos: { valor: 136812906, interanual: 213.6, intermensual: 47.5 },
+      contribuciones: {
+        valor: 32349836,
+        interanual: 170.7,
+        intermensual: 43.5,
+      },
+    },
   };
 
   const costoLaboralGerentes = {
@@ -107,7 +126,7 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       total: { valor: 20186440, interanual: 270.2, intermensual: -1.2 },
       sueldos: { valor: 16143105, interanual: 271.1, intermensual: -1.5 },
       contribuciones: {
-        valor: 404335,
+        valor: 4043335,
         interanual: 266.9,
         intermensual: -0.2,
       },
@@ -148,12 +167,21 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         intermensual: -7.4,
       },
     },
+    JUNIO: {
+      total: { valor: 39586132, interanual: 264.3, intermensual: 42.3 },
+      sueldos: { valor: 31820441, interanual: 269, intermensual: 42.7 },
+      contribuciones: {
+        valor: 7768691,
+        interanual: 246.2,
+        intermensual: 40.7,
+      },
+    },
   };
 
   const costoLaboralCajeros = {
     ENERO: {
       total: { valor: 74526804, interanual: 337.8, intermensual: -2.1 },
-      sueldos: { valor: 5880328, interanual: 330.8, intermensual: -3.1 },
+      sueldos: { valor: 58803280, interanual: 330.8, intermensual: -3.1 },
       contribuciones: {
         valor: 15723524,
         interanual: 366.1,
@@ -194,6 +222,15 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         valor: 17016052,
         interanual: 163.9,
         intermensual: -7.2,
+      },
+    },
+    JUNIO: {
+      total: { valor: 129573611, interanual: 189.8, intermensual: 49.1 },
+      sueldos: { valor: 104992466, interanual: 200, intermensual: 49 },
+      contribuciones: {
+        valor: 24581145,
+        interanual: 153.3,
+        intermensual: 44.5,
       },
     },
   };
@@ -477,7 +514,7 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
               <ResponsiveContainer height={150} width={300}>
                 <PieChart>
                   <Pie
-                    data={dataGraficoCostosCajeros}
+                    data={dataGraficoCostosGerentes}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
@@ -512,7 +549,7 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
                       );
                     }}
                   >
-                    {dataGraficoCostosCajeros.map((entry, index) => (
+                    {dataGraficoCostosGerentes.map((entry, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={

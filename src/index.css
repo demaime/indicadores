@@ -18,6 +18,34 @@
   z-index: -2; /* Coloca el video detrás del contenido */
 }
 
+.cube {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  --d: 20px; /* control the depth */
+  height: 150px;
+  padding: 10px;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border: solid #0000;
+  border-width: 0 0 var(--d) var(--d);
+  clip-path: polygon(
+    100% 0,
+    var(--d) 0,
+    0 var(--d),
+    0 100%,
+    calc(100% - var(--d)) 100%,
+    100% calc(100% - var(--d))
+  );
+  background: conic-gradient(
+      at var(--d) calc(100% - var(--d)),
+      #0000 25%,
+      #0008 0 62.5%,
+      #0004 0
+    )
+    border-box #111827; /* the color */
+}
+
 .redirect-message {
   display: flex;
   flex-direction: column;

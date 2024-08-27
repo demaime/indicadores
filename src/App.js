@@ -2,7 +2,7 @@ import InflacionDesglose from "./components/InflacionDesglose.jsx";
 import Portada from "./components/Portada.jsx";
 import Dolar from "./components/Dolar.jsx";
 import Encabezado from "./components/Encabezado.jsx";
-import Transporte from "./components/Transporte.jsx";
+import Transporte from "./components/Transporte/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
@@ -10,7 +10,7 @@ import Ocio from "./components/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";
-import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
+// import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
 
 import { useState } from "react";
 

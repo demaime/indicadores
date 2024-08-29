@@ -22,8 +22,8 @@
   position: absolute;
   left: -10px;
   top: -10px;
-  --d: 20px; /* control the depth */
-  height: 150px;
+  --d: 10px; /* control the depth */
+  height: 120px;
   padding: 10px;
   aspect-ratio: 1;
   box-sizing: border-box;

@@ -105,8 +105,10 @@ export default function Publico({ setPublicoOParticular }) {
       <div className="w-full h-[95%] flex">
         <div className="w-1/3 h-full">
           <div className="w-full h-2/3 flex items-center justify-center">
-            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center">
-              {" "}
+            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center relative">
+              <div className="absolute w-20 shadow shadow-gray-900 h-6 -top-2 bg-green-400 -left-2 rounded flex items-center justify-center text-xs font-semibold">
+                SUBTE
+              </div>
               <ResponsiveContainer width="90%" height="90%">
                 <LineChart
                   data={dataSubte}
@@ -147,15 +149,44 @@ export default function Publico({ setPublicoOParticular }) {
           </div>
           <div className="w-full h-1/3 flex items-center justify-center">
             <div className="w-[90%] h-[90%] rounded bg-gray-500 relative shadow shadow-gray-900">
-              {" "}
-              <div className="cube"></div>
+              <div className="w-full h-1/2 flex">
+                <div className="w-1/3 h-full"></div>
+                <div className="w-full flex items-center justify-center">
+                  <div className="w-2/3 h-[80%] rounded bg-gray-800 text-green-500 text-4xl flex items-center justify-center text-center font-black shadow-lg shadow-gray-700 relative">
+                    <div className="absolute h-6 text-sm shadow shadow-gray-900 bg-green-500 p-2 flex items-center justify-center font-semibold rounded -top-2 -right-2 text-black">
+                      BOLETO
+                    </div>
+                    $ {dataPublico[mesSeleccionado].Subte.valor}
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-1/2 flex items-end pb-4 justify-evenly">
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-green-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-green-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Variación Intermensual
+                  </div>
+                  {dataPublico[mesSeleccionado].Subte.intermensual} %
+                </div>
+
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-green-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-green-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Acumulada Anual
+                  </div>
+                  {dataPublico[mesSeleccionado].Subte.acumulada} %
+                </div>
+              </div>
+              <div className="cube">
+                <img src="/assets/subte.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
         <div className="w-1/3 h-full border-x-4 border-gray-800">
           <div className="w-full h-2/3 flex items-center justify-center">
-            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center">
-              {" "}
+            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center relative">
+              <div className="absolute w-20 shadow shadow-gray-900 h-6 -top-2 bg-blue-500 -left-2 rounded flex items-center justify-center text-xs font-semibold">
+                TREN
+              </div>
               <ResponsiveContainer width="90%" height="90%">
                 <LineChart
                   data={dataTren}
@@ -196,15 +227,44 @@ export default function Publico({ setPublicoOParticular }) {
           </div>
           <div className="w-full h-1/3 flex items-center justify-center">
             <div className="w-[90%] h-[90%] rounded bg-gray-500 relative shadow shadow-gray-900">
-              {" "}
-              <div className="cube"></div>
+              <div className="w-full h-1/2 flex">
+                <div className="w-1/3 h-full"></div>
+                <div className="w-full flex items-center justify-center">
+                  <div className="w-2/3 h-[80%] rounded bg-gray-800 text-blue-500 text-4xl flex items-center justify-center text-center font-black shadow-lg shadow-gray-700 relative">
+                    <div className="absolute h-6 text-sm shadow shadow-gray-900 bg-blue-500 p-2 flex items-center justify-center font-semibold rounded -top-2 -right-2 text-black">
+                      BOLETO
+                    </div>
+                    $ {dataPublico[mesSeleccionado].Tren.valor}
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-1/2 flex items-end pb-4 justify-evenly">
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-blue-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-blue-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Variación Intermensual
+                  </div>
+                  {dataPublico[mesSeleccionado].Tren.intermensual} %
+                </div>
+
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-blue-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-blue-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Acumulada Anual
+                  </div>
+                  {dataPublico[mesSeleccionado].Tren.acumulada} %
+                </div>
+              </div>
+              <div className="cube">
+                <img src="/assets/tren.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
         <div className="w-1/3 h-full">
           <div className="w-full h-2/3 flex items-center justify-center">
-            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center">
-              {" "}
+            <div className="w-[90%] h-[90%] rounded bg-gray-800 flex items-center justify-center relative">
+              <div className="absolute w-20 shadow shadow-gray-900 h-6 -top-2 bg-red-400 -left-2 rounded flex items-center justify-center text-xs font-semibold">
+                COLECTIVO
+              </div>
               <ResponsiveContainer width="90%" height="90%">
                 <LineChart
                   data={dataColectivo}
@@ -246,7 +306,35 @@ export default function Publico({ setPublicoOParticular }) {
           </div>
           <div className="w-full h-1/3 flex items-center justify-center">
             <div className="w-[90%] h-[90%] rounded bg-gray-500 relative shadow shadow-gray-900">
-              <div className="cube"></div>
+              <div className="w-full h-1/2 flex">
+                <div className="w-1/3 h-full"></div>
+                <div className="w-full flex items-center justify-center">
+                  <div className="w-2/3 h-[80%] rounded bg-gray-800 text-red-500 text-4xl flex items-center justify-center text-center font-black shadow-lg shadow-gray-700 relative">
+                    <div className="absolute h-6 text-sm shadow shadow-gray-900 bg-red-500 p-2 flex items-center justify-center font-semibold rounded -top-2 -right-1 text-black">
+                      BOLETO
+                    </div>
+                    $ {dataPublico[mesSeleccionado].Colectivo.valor}
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-1/2 flex items-end pb-4 justify-evenly">
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-red-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-red-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Variación Intermensual
+                  </div>
+                  {dataPublico[mesSeleccionado].Colectivo.intermensual} %
+                </div>
+
+                <div className="w-1/3 h-1/2 rounded bg-gray-800 text-red-500 shadow-lg shadow-gray-700 flex items-center justify-center font-bold relative">
+                  <div className="absolute h-4 text-[10px] shadow shadow-gray-900 bg-red-500 p-2 flex items-center justify-center font-semibold rounded -top-3 -left-2 text-black">
+                    Acumulada Anual
+                  </div>
+                  {dataPublico[mesSeleccionado].Colectivo.acumulada} %
+                </div>
+              </div>
+              <div className="cube">
+                <img src="/assets/bondi.png" alt="" />
+              </div>
             </div>
           </div>
         </div>

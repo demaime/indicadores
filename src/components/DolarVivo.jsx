@@ -16,6 +16,8 @@ export default function DolarVivo() {
       .catch((error) => {
         console.error("Error al obtener datos:", error);
       });
+
+      
   }, []);
 
   useEffect(() => {

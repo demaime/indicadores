@@ -16,57 +16,57 @@ export default function Particular({ setPublicoOParticular }) {
       Nafta: { valor: 699, intermensual: 26.4, acumulada: 26.4 },
       PeajeNorte: { valor: 378.5, intermensual: 49, acumulada: 49 },
       PeajeOeste: { valor: 910.43, intermensual: 49, acumulada: 49 },
-      Autos: { valor: 21729, intermensual: -11.1, acumulada: -11.1 },
-      Motos: { valor: 34116, intermensual: -35.5, acumulada: -35.5 },
+      Autos: { valor: 21729, intermensual: 133.14, interanual: -33.5 },
+      Motos: { valor: 34116, intermensual: 1.58, interanual: -20.3 },
     },
     FEBRERO: {
       Nafta: { valor: 744, intermensual: 6.43, acumulada: 32.83 },
       PeajeNorte: { valor: 378.5, intermensual: 0, acumulada: 49 },
       PeajeOeste: { valor: 910.43, intermensual: 0, acumulada: 49 },
-      Autos: { valor: 16614, intermensual: 21.6, acumulada: -26.3 },
-      Motos: { valor: 31492, intermensual: 23, acumulada: -17.4 },
+      Autos: { valor: 16614, intermensual: -23.54, interanual: -14.2 },
+      Motos: { valor: 31492, intermensual: -7.69, interanual: -14.1 },
     },
     MARZO: {
       Nafta: { valor: 800, intermensual: 7.52, acumulada: 40.35 },
       PeajeNorte: { valor: 378.5, intermensual: 0, acumulada: 49 },
       PeajeOeste: { valor: 910.43, intermensual: 0, acumulada: 49 },
-      Autos: { valor: 17289, intermensual: -2, acumulada: -28.1 },
-      Motos: { valor: 29381, intermensual: -8.5, acumulada: -26.4 },
+      Autos: { valor: 17289, intermensual: 4.1, interanual: -31.9 },
+      Motos: { valor: 29381, intermensual: -6.7, interanual: -40.8 },
     },
     ABRIL: {
       Nafta: { valor: 837, intermensual: 4.63, acumulada: 44.98 },
       PeajeNorte: { valor: 946.25, intermensual: 150, acumulada: 199 },
       PeajeOeste: { valor: 2276.08, intermensual: 150, acumulada: 199 },
-      Autos: { valor: 21186, intermensual: 22.5, acumulada: -22.5 },
-      Motos: { valor: 39183, intermensual: 25.1, acumulada: -21.1 },
+      Autos: { valor: 21186, intermensual: 22.5, interanual: -2.6 },
+      Motos: { valor: 39183, intermensual: 33.4, interanual: -4.2 },
     },
     MAYO: {
       Nafta: { valor: 870, intermensual: 3.94, acumulada: 48.92 },
       PeajeNorte: { valor: 1277.44, intermensual: 34, acumulada: 233 },
       PeajeOeste: { valor: 3072.71, intermensual: 35, acumulada: 234 },
-      Autos: { valor: 22107, intermensual: -3.5, acumulada: -19.6 },
-      Motos: { valor: 39871, intermensual: 17.1, acumulada: -17.5 },
+      Autos: { valor: 22107, intermensual: 4.3, interanual: -7.7 },
+      Motos: { valor: 39871, intermensual: 1.8, interanual: -2.9 },
     },
     JUNIO: {
       Nafta: { valor: 905, intermensual: 4, acumulada: 52.92 },
       PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 233 },
       PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
-      Autos: { valor: 19609, intermensual: -5.2, acumulada: -20 },
-      Motos: { valor: 33483, intermensual: 8.8, acumulada: -15.5 },
+      Autos: { valor: 19609, intermensual: -11.3, interanual: -21.8 },
+      Motos: { valor: 33483, intermensual: -16, interanual: -3.1 },
     },
     JULIO: {
       Nafta: { valor: 941, intermensual: 3.98, acumulada: 56.9 },
-      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 233 },
-      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 233 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, interanual: 234 },
       Autos: {
-        valor: "Próximo informe: Septiembre",
+        valor: "Próximo informe: Octubre",
         intermensual: 0,
-        acumulada: 0,
+        interanual: 0,
       },
       Motos: {
-        valor: "Próximo informe: Septiembre",
+        valor: "Próximo informe: Octubre",
         intermensual: 0,
-        acumulada: 0,
+        interanual: 0,
       },
     },
   };
@@ -335,7 +335,7 @@ export default function Particular({ setPublicoOParticular }) {
                     <Line
                       type="monotone"
                       dataKey="Peaje Oeste"
-                      stroke="#f7fd5d" // Puedes elegir un color diferente
+                      stroke="#f7fd5d"
                       strokeWidth={2}
                       dot={{ stroke: "#f7fd5d", fill: "#f7fd5d" }}
                       activeDot={{ r: 8 }}
@@ -360,7 +360,7 @@ export default function Particular({ setPublicoOParticular }) {
               <div className="w-[45%] h-[95%] bg-[#e95faa] rounded relative text-[#e95faa]">
                 <div className="w-full h-1/3 flex flex-col items-center justify-center">
                   <p className="text-center w-full rounded  font-bold text-gray-800 font-semibold text-sm mt-2">
-                    Patenamientos
+                    Patentamientos
                   </p>
                   <p
                     className={`text-center w-2/3 rounded p-2 bg-gray-800 font-bold ${
@@ -390,10 +390,10 @@ export default function Particular({ setPublicoOParticular }) {
 
                   <div className="w-full h-1/2 flex flex-col items-center justify-center">
                     <p className="text-center w-full rounded  font-bold text-gray-800 font-semibold text-xs">
-                      Variación anual acumulada
+                      Variación interanual
                     </p>
                     <p className="text-center w-2/3 rounded p-2 bg-gray-800 font-bold text-sm text-gray-200">
-                      {dataParticular[mesSeleccionado].Autos.acumulada} %
+                      {dataParticular[mesSeleccionado].Autos.interanual} %
                     </p>
                   </div>
                 </div>
@@ -434,10 +434,10 @@ export default function Particular({ setPublicoOParticular }) {
 
                   <div className="w-full h-1/2 flex flex-col items-center justify-center">
                     <p className="text-center w-full rounded  font-bold text-gray-800 font-semibold text-xs">
-                      Variación anual acumulada
+                      Variación interanual
                     </p>
                     <p className="text-center w-2/3 rounded p-2 bg-gray-800 font-bold text-sm text-gray-200">
-                      {dataParticular[mesSeleccionado].Motos.acumulada} %
+                      {dataParticular[mesSeleccionado].Motos.interanual} %
                     </p>
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export default function Particular({ setPublicoOParticular }) {
                 <ResponsiveContainer width="90%" height="90%">
                   <LineChart
                     data={dataPatentamientos}
-                    margin={{ left: -25, top: 10, right: 10 }}
+                    margin={{ left: -15, top: 10, right: 10 }}
                   >
                     <XAxis
                       dataKey="mes"
@@ -478,7 +478,7 @@ export default function Particular({ setPublicoOParticular }) {
                       }}
                     />
 
-                    {/* Línea para Peaje Norte */}
+                    {/* Línea para Autos */}
                     <Line
                       type="monotone"
                       dataKey="Autos"
@@ -488,11 +488,11 @@ export default function Particular({ setPublicoOParticular }) {
                       activeDot={{ r: 8 }}
                     />
 
-                    {/* Línea para Peaje Oeste */}
+                    {/* Línea para Motos */}
                     <Line
                       type="monotone"
                       dataKey="Motos"
-                      stroke="#f590eb" // Puedes elegir un color diferente
+                      stroke="#f590eb" 
                       strokeWidth={2}
                       dot={{ stroke: "#f590eb", fill: "#f590eb" }}
                       activeDot={{ r: 8 }}

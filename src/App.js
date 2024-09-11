@@ -6,7 +6,7 @@ import Transporte from "./components/Transporte/Transporte.jsx";
 import CanastaSalario from "./components/CanastaSalario.jsx";
 import Alquiler from "./components/Alquiler.jsx";
 import GastosCotidianos from "./components/GastosCotidianos.jsx";
-import Ocio from "./components/Ocio.jsx";
+import Ocio from "./components/Ocio/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";

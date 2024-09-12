@@ -9,7 +9,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function OcioGrafico({ data, mesSeleccionado }) {
+export default function OcioGrafico({
+  data,
+  mesSeleccionado,
+  variacionesItermensuales,
+}) {
   const meses = Object.keys(data);
   const categorias = Object.keys(data[meses[0]]);
 
@@ -31,6 +35,8 @@ export default function OcioGrafico({ data, mesSeleccionado }) {
     libro: "#fb923c",
     teatro: "#c084fc",
   };
+
+  console.log(variacionesItermensuales[mesSeleccionado]);
 
   return (
     <div className="w-1/2 h-full flex flex-col items-center justify-evenly ">
@@ -78,8 +84,9 @@ export default function OcioGrafico({ data, mesSeleccionado }) {
             ))}
             <ReferenceLine
               x={mesSeleccionado}
-              stroke="gray"
+              stroke="white"
               strokeDasharray="3 3"
+              strokeWidth={2}
             />
           </LineChart>
         </ResponsiveContainer>

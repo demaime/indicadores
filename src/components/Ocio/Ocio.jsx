@@ -45,7 +45,7 @@ const calcularVariacion = (valorActual, valorAnterior) => {
   return ((valorActual - valorAnterior) / valorAnterior) * 100;
 };
 
-const calcularVariaciones = (data) => {
+const calcularVariacionesIntermensuales = (data) => {
   const variaciones = {};
   const meses = Object.keys(data);
 
@@ -64,7 +64,6 @@ const calcularVariaciones = (data) => {
     }
   }
 
-  // Añadir un valor predeterminado para el primer mes
   variaciones[meses[0]] = {};
   for (const categoria in data[meses[0]]) {
     variaciones[meses[0]][categoria] = "-";
@@ -73,33 +72,14 @@ const calcularVariaciones = (data) => {
   return variaciones;
 };
 
-const variaciones = calcularVariaciones(data);
-
-const formatearDatosParaGrafica = (variaciones) => {
-  if (!variaciones || Object.keys(variaciones).length === 0) {
-    return [];
-  }
-
-  const meses = Object.keys(variaciones).filter((mes) => mes !== "abril");
-
-  const categorias = Object.keys(variaciones[meses[0]]);
-  return meses.map((mes) => {
-    const datosMes = { mes };
-    categorias.forEach((categoria) => {
-      datosMes[categoria] = variaciones[mes][categoria];
-    });
-    return datosMes;
-  });
-};
-
-const datosGrafica = formatearDatosParaGrafica(variaciones);
+const variacionesItermensuales = calcularVariacionesIntermensuales(data);
 
 export default function Ocio() {
   const meses = ["abril", "mayo", "junio", "julio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
-  const [tarjetasOgrafico, setTarjetasOgrafico] = useState("tarjetas");
+
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -111,16 +91,6 @@ export default function Ocio() {
     const currentIndex = meses.indexOf(mesSeleccionado);
     const newIndex = currentIndex === meses.length - 1 ? 0 : currentIndex + 1;
     setMesSeleccionado(meses[newIndex]);
-  };
-
-  const colors = {
-    fiesta: "#60a5fa",
-    plataforma: "#f87171",
-    gimnasio: "#4ade80",
-    cine: "#facc15",
-    combo: "#f472b6",
-    libro: "#fb923c",
-    teatro: "#c084fc",
   };
 
   return (
@@ -243,7 +213,11 @@ export default function Ocio() {
             </div>
           </div>
         </div>
-        <OcioGrafico data={data} mesSeleccionado={mesSeleccionado} />
+        <OcioGrafico
+          data={data}
+          mesSeleccionado={mesSeleccionado}
+          variacionesItermensuales={variacionesItermensuales}
+        />
       </div>
     </div>
   );

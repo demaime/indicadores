@@ -80,7 +80,6 @@ export default function Ocio() {
     meses[meses.length - 1]
   );
 
-
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
     const newIndex = currentIndex === 0 ? meses.length - 1 : currentIndex - 1;
@@ -105,7 +104,7 @@ export default function Ocio() {
       <div className="w-full h-[95%] flex texture-bg ">
         <div className="w-1/2 h-full pt-6">
           <div className="w-full h-1/3 flex justify-evenly">
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-blue-500 text-3xl font-bold">
                 ${data[mesSeleccionado].fiesta.toLocaleString()}
               </h1>
@@ -120,7 +119,7 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center    shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center    shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-red-500 text-3xl font-bold">
                 ${data[mesSeleccionado].combo.toLocaleString()}
               </h1>
@@ -137,7 +136,7 @@ export default function Ocio() {
 
           <div className="w-full h-1/3 flex justify-evenly">
             {" "}
-            <div className="w-44 h-44 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative     shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative     shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-green-500 text-3xl font-bold">
                 ${data[mesSeleccionado].gimnasio.toLocaleString()}
               </h1>
@@ -153,7 +152,7 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative   shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-yellow-500 text-3xl font-bold">
                 ${data[mesSeleccionado].cine.toLocaleString()}
               </h1>
@@ -165,7 +164,7 @@ export default function Ocio() {
                 <img src="/assets/cine.png" className="w-full h-full" alt="" />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative   shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-purple-500 text-3xl font-bold">
                 ${data[mesSeleccionado].teatro.toLocaleString()}
               </h1>
@@ -184,7 +183,7 @@ export default function Ocio() {
           </div>
 
           <div className="w-full h-1/3 flex justify-evenly">
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative   shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-pink-500 text-3xl font-bold">
                 ${data[mesSeleccionado].plataforma.toLocaleString()}
               </h1>
@@ -200,7 +199,7 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative   shadow-xl shadow-gray-500">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
               <h1 className="text-orange-500 text-3xl font-bold">
                 ${data[mesSeleccionado].libro.toLocaleString()}
               </h1>

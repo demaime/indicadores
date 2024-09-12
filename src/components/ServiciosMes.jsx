@@ -307,7 +307,7 @@ const ServiciosMes = ({ mesData, graficoOEtiquetas }) => {
                   <img src="/assets/leche.png" alt="" />
                 </div>
                 <div className="w-16 h-8 bg-white rounded-xl absolute bottom-1 text-xs flex items-center justify-center font-semibold -left-4 p-2 border-2 border-yellow-500">
-                  {variaciones[mesData].pan}
+                  {variaciones[mesData].leche}
                 </div>
                 <div className="text-4xl">
                   <div className="text-4xl">

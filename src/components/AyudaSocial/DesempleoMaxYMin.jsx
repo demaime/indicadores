@@ -66,6 +66,7 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
                     fontSize: "10px",
                     fontWeight: "600",
                   }}
+                  domain={[90000, 150000]}
                 />
                 <Tooltip
                   contentStyle={{
@@ -136,6 +137,7 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
                     fontSize: "10px",
                     fontWeight: "600",
                   }}
+                  domain={[190000, 300000]}
                 />
                 <Tooltip
                   contentStyle={{

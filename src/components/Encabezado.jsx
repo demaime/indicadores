@@ -59,6 +59,12 @@ export default function Encabezado({ title, description, mensual }) {
                     SALARIO - CANASTA - JUBILACION
                   </li>
                 </a>
+                <a href="#ayuda-social">
+                  <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
+                    <IoArrowRedoCircleOutline className="mr-4" />
+                    AYUDA SOCIAL
+                  </li>
+                </a>
                 <a href="#dolar">
                   <li className="hover:bg-blue-900 hover:text-gray-200 text-sm p-2 flex items-center  ">
                     <IoArrowRedoCircleOutline className="mr-4" />

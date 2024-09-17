@@ -13,6 +13,7 @@ import Supermercados from "./components/Supermercados.jsx";
 // import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
 
 import { useState } from "react";
+import AyudaSocial from "./components/AyudaSocial/AyudaSocial.jsx";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -83,6 +84,14 @@ export default function App() {
           mensual="mensual"
         />
         <CanastaSalario />
+      </section>
+      <section className="section" id="ayuda-social">
+        <Encabezado
+          title={"AYUDA SOCIAL"}
+          description={"Planes sociales"}
+          mensual="mensual"
+        />
+        <AyudaSocial />
       </section>
       <section className="section" id="dolar">
         <Encabezado

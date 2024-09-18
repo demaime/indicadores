@@ -29,6 +29,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       MARZO: 77510,
       ABRIL: 75240,
       MAYO: 79990,
+      JUNIO: 84572,
     },
     totales: {
       ENERO: 162128358,
@@ -36,6 +37,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       MARZO: 239157194,
       ABRIL: 232152015,
       MAYO: 246808287,
+      JUNIO: 260944316,
     },
     variaciones: {
       ENERO: 264.3,
@@ -43,6 +45,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       MARZO: 309.9,
       ABRIL: 273.0,
       MAYO: 287.8,
+      JUNIO: 278.2,
     },
     porcentuales: {
       ENERO: 14.7,
@@ -50,6 +53,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       MARZO: 16.8,
       ABRIL: 17.4,
       MAYO: 17.5,
+      JUNIO: 17,
     },
   };
 

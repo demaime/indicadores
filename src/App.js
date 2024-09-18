@@ -10,7 +10,7 @@ import Ocio from "./components/Ocio/Ocio.jsx";
 import Industria from "./components/Industria.jsx";
 import ActividadEconomica from "./components/ActividadEconomica.jsx";
 import Supermercados from "./components/Supermercados.jsx";
-// import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
+import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
 
 import { useState } from "react";
 import AyudaSocial from "./components/AyudaSocial/AyudaSocial.jsx";
@@ -88,7 +88,9 @@ export default function App() {
       <section className="section" id="ayuda-social">
         <Encabezado
           title={"AYUDA SOCIAL"}
-          description={"Planes sociales"}
+          description={
+            "Indicadores de políticas y acciones para mejorar las condiciones de trabajo, capacitación, inserción laboral y cobertura social de todos los ciudadanos."
+          }
           mensual="mensual"
         />
         <AyudaSocial />
@@ -178,9 +180,9 @@ export default function App() {
         />
         <Supermercados />
       </section>
-      {/* <section className="section" id="informeMensual">
+      <section className="section" id="informeMensual">
         <InformeMensual />
-      </section> */}
+      </section>
     </div>
   );
 }

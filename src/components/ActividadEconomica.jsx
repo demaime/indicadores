@@ -90,6 +90,10 @@ export default function ActividadEconomica() {
       name: "Industria Manufacturera",
       color: "#f7b6d2",
     },
+    "11.3_VMATC_2004_M_12": {
+      name: "Construcción",
+      color: "#72ff3b",
+    },
   };
   const formatDate = (dateString) => {
     const dateParts = dateString.split("-");

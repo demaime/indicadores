@@ -72,13 +72,45 @@ const calcularVariacionesIntermensuales = (data) => {
   return variaciones;
 };
 
+const calcularVariacionesAcumuladas = (data) => {
+  const variaciones = {};
+  const meses = Object.keys(data);
+  const mesInicial = meses[0]; // abril
+
+  for (let i = 2; i < meses.length; i++) {
+    const mesActual = meses[i];
+    variaciones[mesActual] = {};
+
+    for (const categoria in data[mesActual]) {
+      const valorActual = data[mesActual][categoria];
+      const valorInicial = data[mesInicial][categoria];
+      variaciones[mesActual][categoria] = calcularVariacion(
+        valorActual,
+        valorInicial
+      ).toFixed(2);
+    }
+  }
+
+  // No hay variaciones acumuladas para abril y mayo
+  variaciones[meses[0]] = {};
+  variaciones[meses[1]] = {};
+  for (const categoria in data[meses[0]]) {
+    variaciones[meses[0]][categoria] = "-";
+    variaciones[meses[1]][categoria] = "-";
+  }
+
+  return variaciones;
+};
+
 const variacionesItermensuales = calcularVariacionesIntermensuales(data);
+const variacionesAcumuladas = calcularVariacionesAcumuladas(data);
 
 export default function Ocio() {
   const meses = ["abril", "mayo", "junio", "julio"];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMesAnterior = () => {
     const currentIndex = meses.indexOf(mesSeleccionado);
@@ -90,6 +122,10 @@ export default function Ocio() {
     const currentIndex = meses.indexOf(mesSeleccionado);
     const newIndex = currentIndex === meses.length - 1 ? 0 : currentIndex + 1;
     setMesSeleccionado(meses[newIndex]);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
   };
 
   return (
@@ -104,7 +140,10 @@ export default function Ocio() {
       <div className="w-full h-[95%] flex texture-bg ">
         <div className="w-1/2 h-full pt-6">
           <div className="w-full h-1/3 flex justify-evenly">
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-blue-400 bg-blue-200 relative shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("fiesta")}
+            >
               <h1 className="text-blue-500 text-3xl font-bold">
                 ${data[mesSeleccionado].fiesta.toLocaleString()}
               </h1>
@@ -119,7 +158,10 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center    shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-red-400 bg-red-200 relative flex items-center justify-center    shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("combo")}
+            >
               <h1 className="text-red-500 text-3xl font-bold">
                 ${data[mesSeleccionado].combo.toLocaleString()}
               </h1>
@@ -136,7 +178,10 @@ export default function Ocio() {
 
           <div className="w-full h-1/3 flex justify-evenly">
             {" "}
-            <div className="w-44 h-44 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative     shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-end pr-2 rounded-full border-8 border-green-400 bg-green-200 relative     shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("gimnasio")}
+            >
               <h1 className="text-green-500 text-3xl font-bold">
                 ${data[mesSeleccionado].gimnasio.toLocaleString()}
               </h1>
@@ -152,7 +197,10 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-yellow-400 bg-yellow-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("cine")}
+            >
               <h1 className="text-yellow-500 text-3xl font-bold">
                 ${data[mesSeleccionado].cine.toLocaleString()}
               </h1>
@@ -164,7 +212,10 @@ export default function Ocio() {
                 <img src="/assets/cine.png" className="w-full h-full" alt="" />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-start pl-2 rounded-full border-8 border-purple-400 bg-purple-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("teatro")}
+            >
               <h1 className="text-purple-500 text-3xl font-bold">
                 ${data[mesSeleccionado].teatro.toLocaleString()}
               </h1>
@@ -183,7 +234,10 @@ export default function Ocio() {
           </div>
 
           <div className="w-full h-1/3 flex justify-evenly">
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-pink-400 bg-pink-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("plataforma")}
+            >
               <h1 className="text-pink-500 text-3xl font-bold">
                 ${data[mesSeleccionado].plataforma.toLocaleString()}
               </h1>
@@ -199,7 +253,10 @@ export default function Ocio() {
                 />
               </div>
             </div>
-            <div className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-full border-8 border-orange-400 bg-orange-200 relative   shadow-xl shadow-gray-500 hover:scale-105 cursor-pointer"
+              onClick={() => handleCategoryClick("libro")}
+            >
               <h1 className="text-orange-500 text-3xl font-bold">
                 ${data[mesSeleccionado].libro.toLocaleString()}
               </h1>
@@ -216,6 +273,8 @@ export default function Ocio() {
           data={data}
           mesSeleccionado={mesSeleccionado}
           variacionesItermensuales={variacionesItermensuales}
+          variacionesAcumuladas={variacionesAcumuladas}
+          selectedCategory={selectedCategory}
         />
       </div>
     </div>

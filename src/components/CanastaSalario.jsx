@@ -16,7 +16,16 @@ import { FaMinus, FaEllipsisH } from "react-icons/fa";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio"];
+const meses = [
+  "enero",
+  "febrero",
+  "marzo",
+  "abril",
+  "mayo",
+  "junio",
+  "julio",
+  "agosto",
+];
 
 const canastaAlimentariaNacio = [
   { mes: "enero", valor: 285561, variacion: 18.6, acumulada: 18.6 },
@@ -26,6 +35,7 @@ const canastaAlimentariaNacio = [
   { mes: "mayo", valor: 386978, variacion: 3.7, acumulada: 60.8 },
   { mes: "junio", valor: 393319, variacion: 1.63, acumulada: 63.4 },
   { mes: "julio", valor: 405697, variacion: 3.14, acumulada: 68.6 },
+  { mes: "agosto", valor: 421474, variacion: 3.9, acumulada: 75.1 },
 ];
 
 const canastaTotalNacio = [
@@ -36,26 +46,29 @@ const canastaTotalNacio = [
   { mes: "mayo", valor: 851351, variacion: 2.8, acumulada: 71.7 },
   { mes: "junio", valor: 873169, variacion: 2.56, acumulada: 76.1 },
   { mes: "julio", valor: 900648, variacion: 3.15, acumulada: 81.7 },
+  { mes: "agosto", valor: 939887, variacion: 4.4, acumulada: 89.6 },
 ];
 
 const canastaAlimentariaCaba = [
   { mes: "enero", valor: 350564, variacion: 20.7, acumulada: 20.7 },
   { mes: "febrero", valor: 402752, variacion: 14.9, acumulada: 38.7 },
   { mes: "marzo", valor: 442239, variacion: 9.8, acumulada: 52.3 },
-  { mes: "abril", valor: 467177, variacion: 5.63, acumulada: 67.2 },
-  { mes: "mayo", valor: 486068, variacion: 4, acumulada: 73.8 },
-  { mes: "junio", valor: 496898, variacion: 2.23, acumulada: 82.1 },
-  { mes: "julio", valor: 521602, variacion: 4.41, acumulada: 95.2 },
+  { mes: "abril", valor: 467177, variacion: 5.63, acumulada: 60.9 },
+  { mes: "mayo", valor: 486068, variacion: 4, acumulada: 67.4 },
+  { mes: "junio", valor: 496898, variacion: 2.23, acumulada: 71.1 },
+  { mes: "julio", valor: 521602, variacion: 4.41, acumulada: 79.6 },
+  { mes: "agosto", valor: 536493, variacion: 2.9, acumulada: 84.7 },
 ];
 
 const canastaTotalCaba = [
   { mes: "enero", valor: 590042, variacion: 19.3, acumulada: 19.3 },
   { mes: "febrero", valor: 684115, variacion: 15.9, acumulada: 38.3 },
-  { mes: "marzo", valor: 766146, variacion: 11.99, acumulada: 54.9 },
-  { mes: "abril", valor: 825809, variacion: 7.78, acumulada: 70.1 },
-  { mes: "mayo", valor: 860100, variacion: 2.8, acumulada: 77.2 },
-  { mes: "junio", valor: 890590, variacion: 3.54, acumulada: 85.7 },
-  { mes: "julio", valor: 929845, variacion: 4.41, acumulada: 95.2 },
+  { mes: "marzo", valor: 766146, variacion: 11.99, acumulada: 54.8 },
+  { mes: "abril", valor: 825809, variacion: 7.78, acumulada: 66.9 },
+  { mes: "mayo", valor: 860100, variacion: 2.8, acumulada: 73.8 },
+  { mes: "junio", valor: 890590, variacion: 3.54, acumulada: 80 },
+  { mes: "julio", valor: 929845, variacion: 4.41, acumulada: 87.9 },
+  { mes: "agosto", valor: 966228, variacion: 3.9, acumulada: 95.3 },
 ];
 
 const smvm = [
@@ -66,6 +79,7 @@ const smvm = [
   { mes: "mayo", valor: 234315 },
   { mes: "junio", valor: 234315 },
   { mes: "julio", valor: 254232 },
+  { mes: "agosto", valor: 262433 },
 ];
 
 const jubilacionSinBono = [
@@ -76,6 +90,7 @@ const jubilacionSinBono = [
   { mes: "mayo", valor: 203071 },
   { mes: "junio", valor: 206931 },
   { mes: "julio", valor: 215622 },
+  { mes: "agosto", valor: 225454 },
 ];
 
 const jubilacionConBono = [
@@ -86,6 +101,7 @@ const jubilacionConBono = [
   { mes: "mayo", valor: 277831 },
   { mes: "junio", valor: 276931 },
   { mes: "julio", valor: 285622 },
+  { mes: "julio", valor: 295454 },
 ];
 
 const contenidoTippy = {
@@ -209,20 +225,28 @@ export default function CanastaSalario() {
                     />
                     <Tooltip formatter={formatNumber} />
                     <Bar
-                      label={{
-                        fill: "1f2937",
-                        fontSize: 10,
-                        fontWeight: "bold",
-                        position: "top",
-                        formatter: formatNumber,
-                      }}
                       dataKey="valor"
                       fill={
                         dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"
                       }
+                      label={({ index, x, y, width, value }) =>
+                        index % 2 !== 0 ? (
+                          <text
+                            x={x + width / 2}
+                            y={y - 5}
+                            fill="#1f2937"
+                            fontSize={10}
+                            fontWeight="bold"
+                            textAnchor="middle"
+                          >
+                            {formatNumber(value)}
+                          </text>
+                        ) : null
+                      }
                     />
                   </BarChart>
                 </ResponsiveContainer>
+
                 <div className="w-1/2 h-full">
                   <div className="h-full w-full flex flex-col items-center justify-evenly">
                     <div className="w-2/3 text-xs h-1/5 bg-gray-700 text-white rounded flex flex-col items-center justify-evenly">
@@ -306,16 +330,23 @@ export default function CanastaSalario() {
                     />
                     <Tooltip formatter={formatNumber} />
                     <Bar
-                      label={{
-                        fill: "#ffffff",
-                        fontSize: 10,
-                        fontWeight: "bold",
-                        position: "top",
-                        formatter: formatNumber,
-                      }}
                       dataKey="valor"
                       fill={
                         dataCanasta === "nacional" ? "#f57b6dff" : "#facc15"
+                      }
+                      label={({ index, x, y, width, value }) =>
+                        index % 2 !== 0 ? (
+                          <text
+                            x={x + width / 2}
+                            y={y - 5}
+                            fill="#ffffff"
+                            fontSize={10}
+                            fontWeight="bold"
+                            textAnchor="middle"
+                          >
+                            {formatNumber(value)}
+                          </text>
+                        ) : null
                       }
                     />
                   </BarChart>

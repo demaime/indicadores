@@ -67,7 +67,7 @@ const data = {
   },
   julio: {
     alquiler: 318737,
-    celular: 9112,
+    celular: 9110,
     luz: 41319,
     internet: 31499,
     gas: 37131,
@@ -79,6 +79,21 @@ const data = {
     carne: 9446.69,
     coca: 2222.48,
     fideos: 1228.15,
+  },
+  agosto: {
+    alquiler: 337794,
+    celular: 9110,
+    luz: 38137,
+    internet: 35999,
+    gas: 34973,
+    pan: 2666.95,
+    leche: 1323.27,
+    yerba: 4114.35,
+    cerveza: 2403.13,
+    cafe: 4450,
+    carne: 9596.99,
+    coca: 2297.65,
+    fideos: 1267.92,
   },
 };
 

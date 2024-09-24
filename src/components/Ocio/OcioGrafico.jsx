@@ -8,7 +8,7 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
-import { FaArrowUp, FaArrowDown, FaEquals } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaEquals, FaArrowLeft } from "react-icons/fa";
 
 export default function OcioGrafico({
   data,
@@ -168,8 +168,8 @@ export default function OcioGrafico({
               </div>
             </>
           ) : (
-            <div className="text-white text-center">
-              <span>No se ha seleccionado ninguna categoría</span>
+            <div className="text-white text-center text-xl">
+              <span>Seleccione alguna categoría para ver información</span>
             </div>
           )}
         </div>

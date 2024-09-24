@@ -39,6 +39,15 @@ const data = {
     libro: 23642,
     fiesta: 14000,
   },
+  agosto: {
+    combo: 9700,
+    plataforma: 5121,
+    cine: 7389,
+    teatro: 20000,
+    gimnasio: 24648,
+    libro: 24028,
+    fiesta: 17000,
+  },
 };
 
 const calcularVariacion = (valorActual, valorAnterior) => {
@@ -106,7 +115,7 @@ const variacionesItermensuales = calcularVariacionesIntermensuales(data);
 const variacionesAcumuladas = calcularVariacionesAcumuladas(data);
 
 export default function Ocio() {
-  const meses = ["abril", "mayo", "junio", "julio"];
+  const meses = Object.keys(data);
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );

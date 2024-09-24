@@ -42,7 +42,7 @@ export default function Particular({ setPublicoOParticular }) {
     },
     MAYO: {
       Nafta: { valor: 870, intermensual: 3.94, acumulada: 48.92 },
-      PeajeNorte: { valor: 1277.44, intermensual: 34, acumulada: 233 },
+      PeajeNorte: { valor: 1277.44, intermensual: 34, acumulada: 234 },
       PeajeOeste: { valor: 3072.71, intermensual: 35, acumulada: 234 },
       Autos: { valor: 22107, intermensual: 4.3, interanual: -7.7 },
       Motos: { valor: 39871, intermensual: 1.8, interanual: -2.9 },
@@ -56,7 +56,22 @@ export default function Particular({ setPublicoOParticular }) {
     },
     JULIO: {
       Nafta: { valor: 941, intermensual: 3.98, acumulada: 56.9 },
-      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 233 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, interanual: 234 },
+      Autos: {
+        valor: "Próximo informe: Octubre",
+        intermensual: 0,
+        interanual: 0,
+      },
+      Motos: {
+        valor: "Próximo informe: Octubre",
+        intermensual: 0,
+        interanual: 0,
+      },
+    },
+    AGOSTO: {
+      Nafta: { valor: 992, intermensual: 5.4, acumulada: 58.4 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 234 },
       PeajeOeste: { valor: 3072.71, intermensual: 0, interanual: 234 },
       Autos: {
         valor: "Próximo informe: Octubre",

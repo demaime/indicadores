@@ -5,13 +5,15 @@ import { BsHandIndexThumb } from "react-icons/bs";
 export default function Portada() {
   return (
     <div className="section" id="home">
-      <div className="w-full h-full flex flex-col jusitfy-between bg-gray-800">
+      <div className="w-full h-full flex flex-col jusitfy-between bg-gray-900">
         <div className="flex justify-between px-4 py-2 items-center gradient-border border-b-4">
           <img src="/assets/caba.png" alt="logo-caba" className="w-1/12" />
 
-          <div className="flex flex-col w-full text-center justify-between py-2 text-white font-bold ">
+          <div className="flex flex-col w-full text-center justify-between py-2 font-bold ">
             <p className="text-xl text-yellow-300">MONITOR DE</p>
-            <h1 className="text-5xl">INDICADORES ECONÓMICOS</h1>
+            <h1 className="text-5xl text-[#87d9ce] tracking-wider">
+              INDICADORES ECONÓMICOS
+            </h1>
             {/* <h2 className="text-yellow-400 text-2-xl">MENSUAL - ANUAL 2024</h2> */}
           </div>
           <img src="/assets/dgioc.png" alt="logo-dgioc " className="w-1/12" />
@@ -41,74 +43,91 @@ export default function Portada() {
             </div>
             <div className="w-[96%] h-[98%] bg-black opacity-70 rounded-lg shadow shadow-black flex items-center"></div>
           </div>
-          <div className="w-3/4 h-full text-white flex flex-col items-center justify-evenly">
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#inflacion"
-            >
-              INFLACION
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#canasta-salario"
-            >
-              SALARIO - CANASTA - JUBILACION
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#ayuda-social"
-            >
-              AYUDA SOCIAL
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#dolar"
-            >
-              DOLAR
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#transporte"
-            >
-              TRANSPORTE
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#alquiler"
-            >
-              ALQUILER
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#cotidianos"
-            >
-              GASTOS COTIDIANOS CABA
-            </a>
-
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#ocio"
-            >
-              OCIO
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#industrial"
-            >
-              INDUSTRIA
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#actividadeconomica"
-            >
-              ACTIVIDAD ECONOMICA
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
-              href="#supermercados"
-            >
-              SUPERMERCADOS
-            </a>
+          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-center p-4">
+            {[
+              {
+                href: "#inflacion",
+                categoria: "INFLACION",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#canasta-salario",
+                categoria: "SALARIO - CANASTA - JUBILACION",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#ayuda-social",
+                categoria: "AYUDA SOCIAL",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#dolar",
+                categoria: "DOLAR",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#transporte",
+                categoria: "TRANSPORTE",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#alquiler",
+                categoria: "ALQUILER",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#cotidianos",
+                categoria: "GASTOS COTIDIANOS CABA",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#ocio",
+                categoria: "OCIO",
+                periodo: "mensual",
+                actual: "agosto",
+              },
+              {
+                href: "#industrial",
+                categoria: "INDUSTRIA",
+                periodo: "mensual",
+                actual: "julio / agosto",
+              },
+              {
+                href: "#actividadeconomica",
+                categoria: "ACTIVIDAD ECONOMICA",
+                periodo: "mensual",
+                actual: "junio",
+              },
+              {
+                href: "#supermercados",
+                categoria: "SUPERMERCADOS",
+                periodo: "mensual",
+                actual: "junio",
+              },
+            ].map((item, index) => (
+              <a
+                key={index}
+                className="w-[30%] h-28 m-2 flex flex-col items-center justify-around text-center rounded-lg bg-gray-700 shadow shadow-gray-100 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300"
+                href={item.href}
+              >
+                <p className="text-lg font-bold w-full px-2 border-b-2 gradient-border">
+                  {item.categoria}
+                </p>
+                <p className="text-xs text-blue-200 tracking-wider ">
+                  {item.periodo.toLocaleUpperCase()}
+                </p>
+                <p className="text-md font-bold tracking-wider text-yellow-300">
+                  {item.actual.toLocaleUpperCase()}
+                </p>
+              </a>
+            ))}
           </div>
         </div>
       </div>

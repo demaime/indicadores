@@ -148,16 +148,19 @@ export default function Slide3() {
                   tick={{ fontSize: 10 }}
                 />
                 <Tooltip
-                  formatter={(value) => `${value}%`}
                   contentStyle={{
-                    backgroundColor: "#333",
-                    color: "#fff",
-                    borderRadius: "10px",
+                    backgroundColor: "#999",
+                    border: "black",
+                    borderRadius: "15px",
+                    color: "white",
                   }}
+                  formatter={(valor) =>
+                    `${valor.toLocaleString()} millones de toneladas`
+                  }
                 />
 
                 <Bar dataKey="Consumo" stackId="a" fill="#f2465a" />
-                <Bar dataKey="Exportacion" stackId="a" fill="#d6293d" />
+                <Bar dataKey="Exportacion" stackId="a" fill="#a30013" />
               </BarChart>
             </ResponsiveContainer>
             <div className="w-full h-2/3 bg-gray-800 rounded absolute -right-[90%] top-1/2 transform -translate-y-1/2 text-gray-200 flex justify-center items-center">

@@ -18,6 +18,24 @@
   z-index: -2; /* Coloca el video detrás del contenido */
 }
 
+.gradient-border {
+  --angle: 0deg;
+  border-image: linear-gradient(var(--angle), #c8aa6e, #cdfafa) 1;
+  animation: 5s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .cube {
   position: absolute;
   left: -10px;

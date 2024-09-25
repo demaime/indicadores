@@ -41,10 +41,10 @@ export default function App() {
         <video autoPlay muted loop className="video">
           <source src="/assets/bgvideo.mp4" type="video/mp4" />
         </video>
-        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8 text-7xl">
-          INDICADORES
+        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8 text-6xl">
+          MONITOR
           <span className="!text-xl">DE</span>
-          REALIDAD
+          INDICADORES ECONOMICOS
         </h1>
         <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
           <input
@@ -181,6 +181,13 @@ export default function App() {
         <Supermercados />
       </section>
       <section className="section" id="informeMensual">
+        <Encabezado
+          title={"INFORME MENSUAL"}
+          description={
+            "Informes específicos de publicación única o esporádica. Un informe diferente cada mes."
+          }
+          mensual="mensual"
+        />
         <InformeMensual />
       </section>
     </div>

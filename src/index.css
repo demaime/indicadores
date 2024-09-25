@@ -8,6 +8,12 @@
   background-size: cover;
 }
 
+.image-bg {
+  background: url("https://xn--unabuenamaana-rkb.com.ar/wp-content/uploads/2024/04/Carne.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
 .video-background .video {
   position: absolute;
   top: 0;
@@ -20,7 +26,7 @@
 
 .gradient-border {
   --angle: 0deg;
-  border-image: linear-gradient(var(--angle), #c8aa6e, #cdfafa) 1;
+  border-image: linear-gradient(var(--angle), #ffcb00, #87d9ce) 1;
   animation: 5s rotate linear infinite;
 }
 

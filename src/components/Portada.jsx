@@ -1,5 +1,6 @@
 //@ts-nocheck
 import React from "react";
+import { BsHandIndexThumb } from "react-icons/bs";
 
 export default function Portada() {
   return (
@@ -16,7 +17,30 @@ export default function Portada() {
           <img src="/assets/dgioc.png" alt="logo-dgioc " className="w-1/12" />
         </div>
         <div className="w-full h-full flex">
-          <div className="w-1/4 h-full border-r-2 gradient-border"></div>
+          <div className="w-1/4 h-full border-r-4 gradient-border image-bg flex items-center justify-center relative">
+            <a
+              className="z-50 flex items-center justify-evenly w-2/3 absolute top-4 left-1/2 transform -translate-x-1/2 text-md font-bold tracking-wider text-center hover:text-[#f57b6dff] rounded-lg bg-gradient text-yellow-300 p-2"
+              href="#informeMensual"
+            >
+              <span>INFORME DEL MES</span>
+              <BsHandIndexThumb size={20} />
+            </a>
+            <div className="w-full absolute left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center flex-col text-center">
+              <p className="text-xl text-white font-semibold mb-2">
+                EL CONSUMO DE CARNE VACUNA
+              </p>
+              <p className="text-lg text-white font-semibold mb-2">
+                SE ENCUENTRA EN EL{" "}
+              </p>
+              <h1 className="text-[#87d9ce] text-5xl font-bold p-4">
+                NIVEL HISTÓRICO MÁS BAJO
+              </h1>
+            </div>
+            <div className="z-50 flex items-center justify-evenly w-2/3 absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-yellow-300 p-2">
+              <span>AGOSTO 2024</span>
+            </div>
+            <div className="w-[96%] h-[98%] bg-black opacity-70 rounded-lg shadow shadow-black flex items-center"></div>
+          </div>
           <div className="w-3/4 h-full text-white flex flex-col items-center justify-evenly">
             <a
               className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-gray-700 p-2"
@@ -84,12 +108,6 @@ export default function Portada() {
               href="#supermercados"
             >
               SUPERMERCADOS
-            </a>
-            <a
-              className="text-md font-bold tracking-wider w-1/4 text-center hover:text-[#f57b6dff] rounded-lg bg-yellow-300 text-gray-700 p-2"
-              href="#informeMensual"
-            >
-              INFORME DEL MES
             </a>
           </div>
         </div>

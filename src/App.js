@@ -31,6 +31,12 @@ export default function App() {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handlePasswordSubmit();
+    }
+  };
+
   return !isAuthenticated ? (
     <div className="full-container">
       <section className="section !justify-evenly  video-background overflow-hidden relative">
@@ -51,6 +57,7 @@ export default function App() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={handleKeyPress}
             placeholder="Ingresa la contraseña"
             className="p-2 border-2 rounded-lg w-1/2"
           />

@@ -43,7 +43,7 @@ export default function Portada() {
             </div>
             <div className="w-[96%] h-[98%] bg-black opacity-70 rounded-lg shadow shadow-black flex items-center"></div>
           </div>
-          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-center p-4">
+          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-evenly p-4">
             {[
               {
                 href: "#inflacion",
@@ -114,7 +114,7 @@ export default function Portada() {
             ].map((item, index) => (
               <a
                 key={index}
-                className="w-[30%] h-28 m-2 flex flex-col items-center justify-around text-center rounded-lg bg-gray-700 shadow shadow-gray-100 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300"
+                className="w-[30%] h-28 m-2 flex flex-col items-center justify-around text-center rounded-lg bg-gray-700 shadow shadow-gray-300 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300"
                 href={item.href}
               >
                 <p className="text-lg font-bold w-full px-2 border-b-2 gradient-border">

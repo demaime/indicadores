@@ -1081,7 +1081,7 @@ export default function Industria() {
                 />
                 <YAxis domain={[-50, 50]} y tickCount={9} />
                 <Tooltip />
-
+                <ReferenceLine y={0} stroke="black" strokeWidth={1} />
                 <Bar
                   dataKey="valor"
                   label={{ position: "insideTop", fill: "#000" }}

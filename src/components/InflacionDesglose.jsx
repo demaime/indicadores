@@ -304,6 +304,8 @@ const dataCaba = [
       "Prendas de vestir y calzado": 9.3,
       Educación: 6.7,
     },
+  },
+  {
     Agosto: {
       GENERAL: 4.2,
       "Bienes y servicios": 6.6,

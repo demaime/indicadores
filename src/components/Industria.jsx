@@ -455,7 +455,7 @@ export default function Industria() {
       "Papel e impresiones": 77.5,
       "Químicos y plásticos": 65.8,
       "Metal, maquinaria y equipo, y material de transporte": 69.9,
-      MANUFACTURERA: "-",
+      MANUFACTURERA: 59.7,
       PYME: 71.9,
     },
     AGOSTO: {

@@ -60,6 +60,7 @@ export default function App() {
             onKeyDown={handleKeyPress}
             placeholder="Ingresa la contraseña"
             className="p-2 border-2 rounded-lg w-1/2"
+            autoFocus // Add this line
           />
           <button
             className="p-2 w-44 bg-gray-200 mt-4 rounded-lg font-semibold"

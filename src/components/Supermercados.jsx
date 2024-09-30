@@ -27,7 +27,7 @@ import {
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO"];
+const meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO"];
 const data = {
   ENERO: {
     intermensual: -3.4,
@@ -112,6 +112,20 @@ const data = {
     ticketPromedio: 20822,
     ventasPorM2: 456039,
     personalOcupado: 98523,
+  },
+  JULIO: {
+    intermensual: -0.1,
+    interanual: -12.3,
+    acumulada: -11.7,
+    efectivo: 290297,
+    debito: 461854,
+    credito: 688819,
+    otrosMediosDePago: 147267,
+    salonDeVenta: 1537266,
+    online: 50972,
+    ticketPromedio: 21400,
+    ventasPorM2: 471918,
+    personalOcupado: 98628,
   },
 };
 

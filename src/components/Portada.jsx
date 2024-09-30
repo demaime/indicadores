@@ -43,7 +43,7 @@ export default function Portada() {
             </div>
             <div className="w-[96%] h-[98%] bg-black opacity-70 rounded-lg shadow shadow-black flex items-center"></div>
           </div>
-          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-evenly p-4">
+          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-evenly   p-4">
             {[
               {
                 href: "#inflacion",
@@ -103,13 +103,13 @@ export default function Portada() {
                 href: "#actividadeconomica",
                 categoria: "ACTIVIDAD ECONOMICA",
                 periodo: "mensual",
-                actual: "junio",
+                actual: "julio",
               },
               {
                 href: "#supermercados",
                 categoria: "SUPERMERCADOS",
                 periodo: "mensual",
-                actual: "junio",
+                actual: "julio",
               },
             ].map((item, index) => (
               <a

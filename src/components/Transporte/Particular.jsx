@@ -49,15 +49,15 @@ export default function Particular({ setPublicoOParticular }) {
     },
     JUNIO: {
       Nafta: { valor: 905, intermensual: 4, acumulada: 52.92 },
-      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 233 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
       PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
       Autos: { valor: 19609, intermensual: -11.3, interanual: -21.8 },
       Motos: { valor: 33483, intermensual: -16, interanual: -3.1 },
     },
     JULIO: {
       Nafta: { valor: 941, intermensual: 3.98, acumulada: 56.9 },
-      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 234 },
-      PeajeOeste: { valor: 3072.71, intermensual: 0, interanual: 234 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
       Autos: {
         valor: "Próximo informe: Octubre",
         intermensual: 0,
@@ -71,8 +71,8 @@ export default function Particular({ setPublicoOParticular }) {
     },
     AGOSTO: {
       Nafta: { valor: 992, intermensual: 5.4, acumulada: 58.4 },
-      PeajeNorte: { valor: 1277.44, intermensual: 0, interanual: 234 },
-      PeajeOeste: { valor: 3072.71, intermensual: 0, interanual: 234 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
       Autos: {
         valor: "Próximo informe: Octubre",
         intermensual: 0,
@@ -507,7 +507,7 @@ export default function Particular({ setPublicoOParticular }) {
                     <Line
                       type="monotone"
                       dataKey="Motos"
-                      stroke="#f590eb" 
+                      stroke="#f590eb"
                       strokeWidth={2}
                       dot={{ stroke: "#f590eb", fill: "#f590eb" }}
                       activeDot={{ r: 8 }}

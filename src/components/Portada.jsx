@@ -1,6 +1,7 @@
 //@ts-nocheck
 import React from "react";
 import { BsHandIndexThumb } from "react-icons/bs";
+import { VscFileSymlinkDirectory } from "react-icons/vsc";
 
 export default function Portada() {
   return (
@@ -38,12 +39,24 @@ export default function Portada() {
                 NIVEL HISTÓRICO MÁS BAJO
               </h1>
             </div>
-            <div className="z-50 flex items-center justify-evenly w-2/3 absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-yellow-300 p-2">
+            <div className="z-50 flex items-center justify-evenly w-2/3 absolute top-12 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-blue-200 p-2">
               <span>AGOSTO 2024</span>
             </div>
+            <a
+              href="/catalogo"
+              className="z-50 flex items-center justify-evenly w-full absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-yellow-300 p-2"
+            >
+              <span className="flex items-center">
+                <VscFileSymlinkDirectory
+                  className="mr-2 text-blue-200"
+                  size={25}
+                />
+                CATALOGO DE INFORMES ANTERIORES
+              </span>
+            </a>
             <div className="w-[96%] h-[98%] bg-black opacity-70 rounded-lg shadow shadow-black flex items-center"></div>
           </div>
-          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-evenly   p-4">
+          <div className="w-3/4 h-full text-white flex flex-wrap items-center justify-evenly p-4">
             {[
               {
                 href: "#inflacion",

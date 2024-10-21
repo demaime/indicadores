@@ -14,6 +14,11 @@ import InformeMensual from "./components/InformeMensual/InformeMensual.jsx";
 
 import { useState } from "react";
 import AyudaSocial from "./components/AyudaSocial/AyudaSocial.jsx";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Catalogo from "./components/Catalogo/Catalogo";
+import InformeMensualAgosto from "./components/Catalogo/Agosto/InformeMensual.jsx";
+// import InformeMensualSeptiembre from "./components/Catalogo/Septiembre/InformeMensual.jsx";
+// import InformeMensualOctubre from "./components/Catalogo/Octubre/InformeMensual";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -37,168 +42,191 @@ export default function App() {
     }
   };
 
-  return !isAuthenticated ? (
-    <div className="full-container">
-      <section className="section !justify-evenly  video-background overflow-hidden relative">
-        <div
-          style={{ zIndex: "-1" }}
-          className="bg-black h-[90%] w-3/4 rounded-md absolute opacity-80"
-        ></div>
-        <video autoPlay muted loop className="video">
-          <source src="/assets/bgvideo.mp4" type="video/mp4" />
-        </video>
-        <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8 text-6xl">
-          MONITOR
-          <span className="!text-xl">DE</span>
-          INDICADORES ECONOMICOS
-        </h1>
-        <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="Ingresa la contraseña"
-            className="p-2 border-2 rounded-lg w-1/2"
-            autoFocus // Add this line
-          />
-          <button
-            className="p-2 w-44 bg-gray-200 mt-4 rounded-lg font-semibold"
-            onClick={handlePasswordSubmit}
-          >
-            Entrar
-          </button>
-          {error && <p style={{ color: "#fa776b" }}>{error}</p>}
-        </div>
-      </section>
-    </div>
-  ) : (
-    <div className="full-container">
-      <Portada />
-      <section className="section" id="inflacion">
-        <Encabezado
-          title={"INFLACION"}
-          description={"Nacional: INDEC - CABA: Estadisticas Ciudad"}
-          mensual="mensual"
-        />
-        <InflacionDesglose />
-      </section>
-      <section className="section" id="canasta-salario">
-        <Encabezado
-          title={"CANASTA BASICA - SALARIO MINIMO - JUBILACION"}
-          description={
-            "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad. SMVM y Jubilación mínima: ANSES"
-          }
-          mensual="mensual"
-        />
-        <CanastaSalario />
-      </section>
-      <section className="section" id="ayuda-social">
-        <Encabezado
-          title={"AYUDA SOCIAL"}
-          description={
-            "Indicadores de políticas y acciones para mejorar las condiciones de trabajo, capacitación, inserción laboral y cobertura social de todos los ciudadanos."
-          }
-          mensual="mensual"
-        />
-        <AyudaSocial />
-      </section>
-      <section className="section" id="dolar">
-        <Encabezado
-          title={"DOLAR"}
-          description={
-            "DolarAPI - Registro histórico y valores promedio del dolar y sus distintas cotizaciones"
-          }
-          mensual="mensual"
-        />
-        <Dolar />
-      </section>
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            !isAuthenticated ? (
+              <div className="full-container">
+                <section className="section !justify-evenly  video-background overflow-hidden relative">
+                  <div
+                    style={{ zIndex: "-1" }}
+                    className="bg-black h-[90%] w-3/4 rounded-md absolute opacity-80"
+                  ></div>
+                  <video autoPlay muted loop className="video">
+                    <source src="/assets/bgvideo.mp4" type="video/mp4" />
+                  </video>
+                  <h1 className="text-yellow-400 logo flex flex-col items-center justify-evenly tracking-wider mt-8 text-6xl">
+                    MONITOR
+                    <span className="!text-xl">DE</span>
+                    INDICADORES ECONOMICOS
+                  </h1>
+                  <div className="w-full h-1/2 flex flex-col items-center justify-evenly">
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      onKeyDown={handleKeyPress}
+                      placeholder="Ingresa la contraseña"
+                      className="p-2 border-2 rounded-lg w-1/2"
+                      autoFocus
+                    />
+                    <button
+                      className="p-2 w-44 bg-gray-200 mt-4 rounded-lg font-semibold"
+                      onClick={handlePasswordSubmit}
+                    >
+                      Entrar
+                    </button>
+                    {error && <p style={{ color: "#fa776b" }}>{error}</p>}
+                  </div>
+                </section>
+              </div>
+            ) : (
+              <div className="full-container">
+                <Portada />
+                <section className="section" id="inflacion">
+                  <Encabezado
+                    title={"INFLACION"}
+                    description={"Nacional: INDEC - CABA: Estadisticas Ciudad"}
+                    mensual="mensual"
+                  />
+                  <InflacionDesglose />
+                </section>
+                <section className="section" id="canasta-salario">
+                  <Encabezado
+                    title={"CANASTA BASICA - SALARIO MINIMO - JUBILACION"}
+                    description={
+                      "Hogar 4 integrantes: Matrimonio con 2 hijos. Nacional: INDEC - CABA: Estadisticas Ciudad. SMVM y Jubilación mínima: ANSES"
+                    }
+                    mensual="mensual"
+                  />
+                  <CanastaSalario />
+                </section>
+                <section className="section" id="ayuda-social">
+                  <Encabezado
+                    title={"AYUDA SOCIAL"}
+                    description={
+                      "Indicadores de políticas y acciones para mejorar las condiciones de trabajo, capacitación, inserción laboral y cobertura social de todos los ciudadanos."
+                    }
+                    mensual="mensual"
+                  />
+                  <AyudaSocial />
+                </section>
+                <section className="section" id="dolar">
+                  <Encabezado
+                    title={"DOLAR"}
+                    description={
+                      "DolarAPI - Registro histórico y valores promedio del dolar y sus distintas cotizaciones"
+                    }
+                    mensual="mensual"
+                  />
+                  <Dolar />
+                </section>
 
-      <section className="section" id="transporte">
-        <Encabezado
-          title={"TRANSPORTE"}
-          description={
-            "Valor del litro de nafta, peajes, pasajes de transportes públicos y cantidad de patentamientos vehiculares a nivel nacional"
-          }
-          mensual="mensual"
-        />
-        <Transporte />
-      </section>
+                <section className="section" id="transporte">
+                  <Encabezado
+                    title={"TRANSPORTE"}
+                    description={
+                      "Valor del litro de nafta, peajes, pasajes de transportes públicos y cantidad de patentamientos vehiculares a nivel nacional"
+                    }
+                    mensual="mensual"
+                  />
+                  <Transporte />
+                </section>
 
-      <section className="section" id="alquiler">
-        <Encabezado
-          title={"ALQUILER"}
-          description={
-            "Promedio alquileres departamento 2 ambientes . Fuente: ZonaProp"
-          }
-          mensual="mensual"
-        />
-        <Alquiler />
-      </section>
-      <section className="section" id="cotidianos">
-        <Encabezado
-          title={"GASTOS COTIDIANOS CABA"}
-          description={
-            "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Elaboración propia"
-          }
-          mensual="mensual"
-        />
+                <section className="section" id="alquiler">
+                  <Encabezado
+                    title={"ALQUILER"}
+                    description={
+                      "Promedio alquileres departamento 2 ambientes . Fuente: ZonaProp"
+                    }
+                    mensual="mensual"
+                  />
+                  <Alquiler />
+                </section>
+                <section className="section" id="cotidianos">
+                  <Encabezado
+                    title={"GASTOS COTIDIANOS CABA"}
+                    description={
+                      "Precios de referencia de servicios y alimentos básicos para joven adulto independiente residente en CABA. Fuente: Elaboración propia"
+                    }
+                    mensual="mensual"
+                  />
 
-        <GastosCotidianos />
-      </section>
+                  <GastosCotidianos />
+                </section>
 
-      <section className="section" id="ocio">
-        <Encabezado
-          title={"OCIO"}
-          description={
-            "Promedio de precios de actividades recreativas CABA. Fuente: Elaboración propia"
-          }
-          mensual="mensual"
-        />
+                <section className="section" id="ocio">
+                  <Encabezado
+                    title={"OCIO"}
+                    description={
+                      "Promedio de precios de actividades recreativas CABA. Fuente: Elaboración propia"
+                    }
+                    mensual="mensual"
+                  />
 
-        <Ocio />
-      </section>
-      <section className="section" id="industrial">
-        <Encabezado
-          title={"INDUSTRIA"}
-          description={
-            "Evolución de la facturación de la industria manufacturera PyME (CAME) - Proporción de la capacidad instalada del sector industrial de nuestro país que está siendo actualmente utilizada (INDEC)"
+                  <Ocio />
+                </section>
+                <section className="section" id="industrial">
+                  <Encabezado
+                    title={"INDUSTRIA"}
+                    description={
+                      "Evolución de la facturación de la industria manufacturera PyME (CAME) - Proporción de la capacidad instalada del sector industrial de nuestro país que está siendo actualmente utilizada (INDEC)"
+                    }
+                    mensual="mensual"
+                  />
+                  <Industria />
+                </section>
+                <section className="section" id="actividadeconomica">
+                  <Encabezado
+                    title={"ACTIVIDAD ECONOMICA"}
+                    description={
+                      "Indicador provisorio de la evolución del PIB a precios constantes de 2004, difundido con un rezago de 50 a 60 días de concluido el mes de referencia. Fuente: INDEC"
+                    }
+                    mensual="mensual"
+                  />
+                  <ActividadEconomica />
+                </section>
+                <section className="section" id="supermercados">
+                  <Encabezado
+                    title={"SUPERMERCADOS"}
+                    description={
+                      "Encuesta sobre una nómina de supermercados que cuentan por lo menos con alguna boca de expendio cuya superficie sea igual o supere los 200 m2. Publicación: 2 meses de rezago. Fuente: INDEC"
+                    }
+                    mensual="mensual"
+                  />
+                  <Supermercados />
+                </section>
+                <section className="section" id="informeMensual">
+                  <Encabezado
+                    title={"INFORME MENSUAL"}
+                    description={
+                      "Informes específicos de publicación única o esporádica. Un informe diferente cada mes."
+                    }
+                    mensual="mensual"
+                  />
+                  <InformeMensual />
+                </section>
+              </div>
+            )
           }
-          mensual="mensual"
         />
-        <Industria />
-      </section>
-      <section className="section" id="actividadeconomica">
-        <Encabezado
-          title={"ACTIVIDAD ECONOMICA"}
-          description={
-            "Indicador provisorio de la evolución del PIB a precios constantes de 2004, difundido con un rezago de 50 a 60 días de concluido el mes de referencia. Fuente: INDEC"
-          }
-          mensual="mensual"
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route
+          path="/catalogo/agosto/informemensual"
+          element={<InformeMensualAgosto />}
         />
-        <ActividadEconomica />
-      </section>
-      <section className="section" id="supermercados">
-        <Encabezado
-          title={"SUPERMERCADOS"}
-          description={
-            "Encuesta sobre una nómina de supermercados que cuentan por lo menos con alguna boca de expendio cuya superficie sea igual o supere los 200 m2. Publicación: 2 meses de rezago. Fuente: INDEC"
-          }
-          mensual="mensual"
+        {/* <Route
+          path="/catalogo/septiembre/informemensual"
+          element={<InformeMensualSeptiembre />}
         />
-        <Supermercados />
-      </section>
-      <section className="section" id="informeMensual">
-        <Encabezado
-          title={"INFORME MENSUAL"}
-          description={
-            "Informes específicos de publicación única o esporádica. Un informe diferente cada mes."
-          }
-          mensual="mensual"
-        />
-        <InformeMensual />
-      </section>
-    </div>
+        <Route
+          path="/catalogo/octubre/informemensual"
+          element={<InformeMensualOctubre />}
+        /> */}
+      </Routes>
+    </Router>
   );
 }
-//

@@ -20,7 +20,7 @@ export default function InformeMensual() {
   };
 
   return (
-    <div className="section w-full h-full flex flex-col items-center justify-evenly relative bg-red-700 ">
+    <div className="w-full h-full flex flex-col items-center justify-evenly relative bg-red-700 ">
       <IoIosArrowBack
         onClick={handlePrev}
         size={35}

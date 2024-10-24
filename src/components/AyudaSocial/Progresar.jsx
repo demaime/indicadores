@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 export default function Progresar({ data, meses, mesSeleccionado }) {
   const dataProgresar = meses.map((mes) => ({
@@ -92,8 +94,13 @@ export default function Progresar({ data, meses, mesSeleccionado }) {
       </div>
       <div className="w-full h-1/2 py-2">
         <div className="w-full h-1/3">
-          <div className="h-1/2 w-full">
+          <div className="h-1/2 w-full flex items-center">
             <h1 className="ml-2 text-2xl font-bold">ACOMPAÑAMIENTO SOCIAL</h1>
+            <Tippy content={"ex potenciar trabajo"}>
+              <span className="ml-1 flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                ?
+              </span>
+            </Tippy>
           </div>
           <div className="h-1/2 w-full flex items-center justify-end">
             <h1 className="mr-4 text-5xl font-black flex items-center">

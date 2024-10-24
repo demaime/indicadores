@@ -62,25 +62,25 @@ export default function Portada() {
                 href: "#inflacion",
                 categoria: "INFLACION",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#canasta-salario",
                 categoria: "SALARIO - CANASTA - JUBILACION",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#ayuda-social",
                 categoria: "AYUDA SOCIAL",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#dolar",
                 categoria: "DOLAR",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#transporte",
@@ -116,7 +116,7 @@ export default function Portada() {
                 href: "#actividadeconomica",
                 categoria: "ACTIVIDAD ECONOMICA",
                 periodo: "mensual",
-                actual: "julio",
+                actual: "agosto",
               },
               {
                 href: "#supermercados",

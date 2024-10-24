@@ -4,6 +4,7 @@ import AUH from "./AUH";
 import Progresar from "./Progresar";
 import DesempleoMaxYMin from "./DesempleoMaxYMin";
 
+
 export default function AyudaSocial() {
   const data = {
     marzo: {
@@ -59,6 +60,15 @@ export default function AyudaSocial() {
       acomp_social: { valor: 78000, intermensual: 0 },
       desempleo_minimo: { valor: 127116, intermensual: 8.5 },
       desempleo_maximo: { valor: 254232, intermensual: 8.5 },
+    },
+    septiembre: {
+      auh: { valor: 84275, intermensual: 4 },
+      tope_individual: { valor: 1727688, intermensual: 4 },
+      tope_familiar: { valor: 3455376, intermensual: 4 },
+      progresar: { valor: 35000, intermensual: 75 },
+      acomp_social: { valor: 78000, intermensual: 0 },
+      desempleo_minimo: { valor: 134028, intermensual: 5.4 },
+      desempleo_maximo: { valor: 268057, intermensual: 5.4 },
     },
   };
 

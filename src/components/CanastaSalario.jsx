@@ -25,6 +25,7 @@ const meses = [
   "junio",
   "julio",
   "agosto",
+  "septiembre",
 ];
 
 const canastaAlimentariaNacio = [
@@ -36,6 +37,7 @@ const canastaAlimentariaNacio = [
   { mes: "junio", valor: 393319, variacion: 1.63, acumulada: 63.4 },
   { mes: "julio", valor: 405697, variacion: 3.14, acumulada: 68.6 },
   { mes: "agosto", valor: 421474, variacion: 3.9, acumulada: 75.1 },
+  { mes: "septiembre", valor: 428720, variacion: 1.7, acumulada: 78.1 },
 ];
 
 const canastaTotalNacio = [
@@ -47,6 +49,7 @@ const canastaTotalNacio = [
   { mes: "junio", valor: 873169, variacion: 2.56, acumulada: 76.1 },
   { mes: "julio", valor: 900648, variacion: 3.15, acumulada: 81.7 },
   { mes: "agosto", valor: 939887, variacion: 4.4, acumulada: 89.6 },
+  { mes: "septiembre", valor: 964620, variacion: 2.6, acumulada: 94.6 },
 ];
 
 const canastaAlimentariaCaba = [
@@ -58,6 +61,7 @@ const canastaAlimentariaCaba = [
   { mes: "junio", valor: 496898, variacion: 2.23, acumulada: 71.1 },
   { mes: "julio", valor: 521602, variacion: 4.41, acumulada: 79.6 },
   { mes: "agosto", valor: 536493, variacion: 2.9, acumulada: 84.7 },
+  { mes: "septiembre", valor: 545183, variacion: 1.6, acumulada: 87.7 },
 ];
 
 const canastaTotalCaba = [
@@ -69,6 +73,7 @@ const canastaTotalCaba = [
   { mes: "junio", valor: 890590, variacion: 3.54, acumulada: 80 },
   { mes: "julio", valor: 929845, variacion: 4.41, acumulada: 87.9 },
   { mes: "agosto", valor: 966228, variacion: 3.9, acumulada: 95.3 },
+  { mes: "septiembre", valor: 993854, variacion: 2.9, acumulada: 100.9 },
 ];
 
 const smvm = [
@@ -80,6 +85,7 @@ const smvm = [
   { mes: "junio", valor: 234315 },
   { mes: "julio", valor: 254232 },
   { mes: "agosto", valor: 262433 },
+  { mes: "septiembre", valor: 268057 },
 ];
 
 const jubilacionSinBono = [
@@ -91,6 +97,7 @@ const jubilacionSinBono = [
   { mes: "junio", valor: 206931 },
   { mes: "julio", valor: 215622 },
   { mes: "agosto", valor: 225454 },
+  { mes: "septiembre", valor: 234540 },
 ];
 
 const jubilacionConBono = [
@@ -100,8 +107,9 @@ const jubilacionConBono = [
   { mes: "abril", valor: 277017 },
   { mes: "mayo", valor: 277831 },
   { mes: "junio", valor: 276931 },
-  { mes: "julio", valor: 285622 },
-  { mes: "julio", valor: 295454 },
+  { mes: "julio", valor: 285851 },
+  { mes: "agosto", valor: 295454 },
+  { mes: "septiembre", valor: 304540 },
 ];
 
 const contenidoTippy = {

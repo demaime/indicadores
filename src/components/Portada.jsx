@@ -20,7 +20,7 @@ export default function Portada() {
           <img src="/assets/dgioc.png" alt="logo-dgioc " className="w-1/12" />
         </div>
         <div className="w-full h-full flex">
-          <div className="w-1/4 h-full border-r-4 gradient-border image-bg flex items-center justify-center relative">
+          <div className="image-bg w-1/4 h-full border-r-4 gradient-border  flex items-center justify-center relative">
             <a
               className="z-50 flex items-center justify-evenly w-2/3 absolute top-4 left-1/2 transform -translate-x-1/2 text-md font-bold tracking-wider text-center hover:text-[#f57b6dff] rounded-lg bg-gradient text-yellow-300 p-2"
               href="#informeMensual"
@@ -30,17 +30,15 @@ export default function Portada() {
             </a>
             <div className="w-full absolute left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center flex-col text-center">
               <p className="text-xl text-white font-semibold mb-2">
-                EL CONSUMO DE CARNE VACUNA
+                EL SECTOR METALÚRGICO
               </p>
-              <p className="text-lg text-white font-semibold mb-2">
-                SE ENCUENTRA EN EL{" "}
+              <p className="text-5xl text-[#87d9ce] font-semibold mb-2">
+                REGISTRÓ SU PEOR CAÍDA
               </p>
-              <h1 className="text-[#87d9ce] text-5xl font-bold p-4">
-                NIVEL HISTÓRICO MÁS BAJO
-              </h1>
+              <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1>
             </div>
             <div className="z-50 flex items-center justify-evenly w-2/3 absolute top-12 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-blue-200 p-2">
-              <span>AGOSTO 2024</span>
+              <span>SEPTIEMBRE 2024</span>
             </div>
             <a
               href="/catalogo"
@@ -86,31 +84,31 @@ export default function Portada() {
                 href: "#transporte",
                 categoria: "TRANSPORTE",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#alquiler",
                 categoria: "ALQUILER",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#cotidianos",
                 categoria: "GASTOS COTIDIANOS CABA",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#ocio",
                 categoria: "OCIO",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#industrial",
                 categoria: "INDUSTRIA",
                 periodo: "mensual",
-                actual: "julio / agosto",
+                actual: "agosto / septiembre",
               },
               {
                 href: "#actividadeconomica",

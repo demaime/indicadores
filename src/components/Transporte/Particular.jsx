@@ -59,14 +59,14 @@ export default function Particular({ setPublicoOParticular }) {
       PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
       PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
       Autos: {
-        valor: "Próximo informe: Octubre",
-        intermensual: 0,
-        interanual: 0,
+        valor: 26951,
+        intermensual: 37.4,
+        interanual: -3.8,
       },
       Motos: {
-        valor: "Próximo informe: Octubre",
-        intermensual: 0,
-        interanual: 0,
+        valor: 40962,
+        intermensual: 22.3,
+        interanual: 6.9,
       },
     },
     AGOSTO: {
@@ -74,16 +74,46 @@ export default function Particular({ setPublicoOParticular }) {
       PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
       PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
       Autos: {
-        valor: "Próximo informe: Octubre",
-        intermensual: 0,
-        interanual: 0,
+        valor: 25171,
+        intermensual: 0.5,
+        interanual: 7.5,
       },
       Motos: {
-        valor: "Próximo informe: Octubre",
-        intermensual: 0,
-        interanual: 0,
+        valor: 55615,
+        intermensual: 26.8,
+        interanual: 27.9,
       },
     },
+    SEPTIEMBRE: {
+      Nafta: { valor: 1059, intermensual: 6.8, acumulada: 59.7 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
+      Autos: {
+        valor: 26814,
+        intermensual: 15.9,
+        interanual: 42.1,
+      },
+      Motos: {
+        valor: 41191,
+        intermensual: -23.1,
+        interanual: 16,
+      },
+    },
+    // OCTUBRE: {
+    //   Nafta: { valor: 1059, intermensual: 6.8, acumulada: 59.7 },
+    //   PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+    //   PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
+    //   Autos: {
+    //     valor: "Próximo informe: Octubre",
+    //     intermensual: 0,
+    //     interanual: 0,
+    //   },
+    //   Motos: {
+    //     valor: "Próximo informe: Octubre",
+    //     intermensual: 0,
+    //     interanual: 0,
+    //   },
+    // },
   };
 
   const meses = Object.keys(dataParticular);

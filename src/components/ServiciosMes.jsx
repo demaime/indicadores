@@ -95,6 +95,21 @@ const data = {
     coca: 2297.65,
     fideos: 1267.92,
   },
+  septiembre: {
+    alquiler: 348915,
+    celular: 9100,
+    luz: 32202,
+    internet: 35999,
+    gas: 28342,
+    pan: 2739.26,
+    leche: 1322.22,
+    yerba: 4124.39,
+    cerveza: 2590.45,
+    cafe: 4450,
+    carne: 9730.54,
+    coca: 2393.01,
+    fideos: 1248.71,
+  },
 };
 
 const calculateSingleVariation = (current, previous) => {

@@ -4,7 +4,15 @@ import ServiciosMes from "./ServiciosMes";
 export default function GastosCotidianos() {
   const [graficoOEtiquetas, setGraficoOEtiquetas] = useState(true);
 
-  const meses = ["marzo", "abril", "mayo", "junio", "julio", "agosto"];
+  const meses = [
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+  ];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
@@ -15,7 +23,7 @@ export default function GastosCotidianos() {
         {meses.map((mes) => (
           <button
             key={mes}
-            className={`h-8 w-60 rounded-xl text-sm font-bold ${
+            className={`h-8 w-48 rounded-xl text-sm font-bold ${
               mes === mesSeleccionado ? "bg-pink-200" : "bg-gray-200"
             }`}
             onClick={() => setMesSeleccionado(mes)}

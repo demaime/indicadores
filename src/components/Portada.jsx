@@ -120,7 +120,7 @@ export default function Portada() {
                 href: "#supermercados",
                 categoria: "SUPERMERCADOS",
                 periodo: "mensual",
-                actual: "julio",
+                actual: "agosto",
               },
             ].map((item, index) => (
               <a

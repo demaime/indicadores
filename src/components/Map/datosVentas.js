@@ -8,6 +8,7 @@ export const datosVentas = {
       MAYO: 1414076699,
       JUNIO: 1534137882,
       JULIO: 1588237799,
+      AGOSTO: 1667462117,
     },
     variaciones: {
       ENERO: 248.4,
@@ -17,6 +18,7 @@ export const datosVentas = {
       MAYO: 263.6,
       JUNIO: 260.3,
       JULIO: 229.1,
+      AGOSTO: 210.3,
     },
     porcentuales: {
       ENERO: 100.0,
@@ -26,6 +28,7 @@ export const datosVentas = {
       MAYO: 100.0,
       JUNIO: 100.0,
       JULIO: 100.0,
+      AGOSTO: 100,
     },
   },
 
@@ -38,6 +41,7 @@ export const datosVentas = {
       MAYO: 479469217,
       JUNIO: 522853937,
       JULIO: 528005123,
+      AGOSTO: 560296554,
     },
     variaciones: {
       ENERO: 242.8,
@@ -47,6 +51,7 @@ export const datosVentas = {
       MAYO: 264.9,
       JUNIO: 267.1,
       JULIO: 229.2,
+      AGOSTO: 212.3,
     },
     porcentuales: {
       ENERO: 35,
@@ -56,6 +61,7 @@ export const datosVentas = {
       MAYO: 33.9,
       JUNIO: 34,
       JULIO: 33.2,
+      AGOSTO: 33.6,
     },
   },
   Catamarca: {
@@ -67,6 +73,7 @@ export const datosVentas = {
       MAYO: 7861296,
       JUNIO: 85113265,
       JULIO: 9134133,
+      AGOSTO: 9053431,
     },
     variaciones: {
       ENERO: 240.0,
@@ -76,6 +83,7 @@ export const datosVentas = {
       MAYO: 257.4,
       JUNIO: 252.8,
       JULIO: 245.6,
+      AGOSTO: 218,
     },
     porcentuales: {
       ENERO: 0.6,
@@ -85,6 +93,7 @@ export const datosVentas = {
       MAYO: 0.6,
       JUNIO: 0.6,
       JULIO: 0.6,
+      AGOSTO: 0.5,
     },
   },
   Chaco: {
@@ -96,6 +105,7 @@ export const datosVentas = {
       MAYO: 11916644,
       JUNIO: 12663343,
       JULIO: 13678181,
+      AGOSTO: 14615955,
     },
     variaciones: {
       ENERO: 222.6,
@@ -105,6 +115,7 @@ export const datosVentas = {
       MAYO: 210.3,
       JUNIO: 220.6,
       JULIO: 206,
+      AGOSTO: 186.7,
     },
     porcentuales: {
       ENERO: 0.9,
@@ -114,6 +125,7 @@ export const datosVentas = {
       MAYO: 0.8,
       JUNIO: 0.8,
       JULIO: 0.9,
+      AGOSTO: 0.9,
     },
   },
   Chubut: {
@@ -125,6 +137,7 @@ export const datosVentas = {
       MAYO: 40751709,
       JUNIO: 45261586,
       JULIO: 48150074,
+      AGOSTO: 50148785,
     },
     variaciones: {
       ENERO: 233.2,
@@ -134,6 +147,7 @@ export const datosVentas = {
       MAYO: 273.3,
       JUNIO: 271.3,
       JULIO: 243.5,
+      AGOSTO: 233.2,
     },
     porcentuales: {
       ENERO: 3.0,
@@ -143,6 +157,7 @@ export const datosVentas = {
       MAYO: 2.9,
       JUNIO: 3,
       JULIO: 3,
+      AGOSTO: 3,
     },
   },
   Córdoba: {
@@ -154,6 +169,7 @@ export const datosVentas = {
       MAYO: 134191784,
       JUNIO: 144561839,
       JULIO: 149880761,
+      AGOSTO: 156074387,
     },
     variaciones: {
       ENERO: 259.7,
@@ -162,7 +178,8 @@ export const datosVentas = {
       ABRIL: 258.5,
       MAYO: 274.8,
       JUNIO: 262.1,
-      JULIO: 2369,
+      JULIO: 236.9,
+      AGOSTO: 209.3,
     },
     porcentuales: {
       ENERO: 9.8,
@@ -172,6 +189,7 @@ export const datosVentas = {
       MAYO: 9.5,
       JUNIO: 9.4,
       JULIO: 9.4,
+      AGOSTO: 9.4,
     },
   },
   Corrientes: {
@@ -183,6 +201,7 @@ export const datosVentas = {
       MAYO: 14380412,
       JUNIO: 15697116,
       JULIO: 17555002,
+      AGOSTO: 17013660,
     },
     variaciones: {
       ENERO: 218.4,
@@ -192,6 +211,7 @@ export const datosVentas = {
       MAYO: 154.4,
       JUNIO: 221.1,
       JULIO: 205.8,
+      AGOSTO: 160.2,
     },
     porcentuales: {
       ENERO: 1.2,
@@ -201,6 +221,7 @@ export const datosVentas = {
       MAYO: 1.0,
       JUNIO: 1.0,
       JULIO: 1.1,
+      AGOSTO: 1,
     },
   },
   "Entre Ríos": {
@@ -212,6 +233,7 @@ export const datosVentas = {
       MAYO: 33174091,
       JUNIO: 35698130,
       JULIO: 38178828,
+      AGOSTO: 39117645,
     },
     variaciones: {
       ENERO: 244.5,
@@ -221,6 +243,7 @@ export const datosVentas = {
       MAYO: 239.7,
       JUNIO: 229.9,
       JULIO: 200.3,
+      AGOSTO: 172.5,
     },
     porcentuales: {
       ENERO: 2.6,
@@ -230,6 +253,7 @@ export const datosVentas = {
       MAYO: 2.3,
       JUNIO: 2.3,
       JULIO: 2.4,
+      AGOSTO: 2.3,
     },
   },
   Formosa: {
@@ -241,6 +265,7 @@ export const datosVentas = {
       MAYO: 6879234,
       JUNIO: 7785557,
       JULIO: 8208419,
+      AGOSTO: 8226181,
     },
     variaciones: {
       ENERO: 153.4,
@@ -250,6 +275,7 @@ export const datosVentas = {
       MAYO: 156.4,
       JUNIO: 154.6,
       JULIO: 153.3,
+      AGOSTO: 124.8,
     },
     porcentuales: {
       ENERO: 0.6,
@@ -259,6 +285,7 @@ export const datosVentas = {
       MAYO: 0.5,
       JUNIO: 0.5,
       JULIO: 0.5,
+      AGOSTO: 0.5,
     },
   },
   Jujuy: {
@@ -270,6 +297,7 @@ export const datosVentas = {
       MAYO: 18037291,
       JUNIO: 19075141,
       JULIO: 20163693,
+      AGOSTO: 20896668,
     },
     variaciones: {
       ENERO: 237.7,
@@ -279,6 +307,7 @@ export const datosVentas = {
       MAYO: 218.1,
       JUNIO: 206.1,
       JULIO: 178,
+      AGOSTO: 154,
     },
     porcentuales: {
       ENERO: 1.4,
@@ -288,6 +317,7 @@ export const datosVentas = {
       MAYO: 1.3,
       JUNIO: 1.2,
       JULIO: 1.3,
+      AGOSTO: 1.3,
     },
   },
   "La Pampa": {
@@ -299,6 +329,7 @@ export const datosVentas = {
       MAYO: 14416913,
       JUNIO: 15424900,
       JULIO: 16346484,
+      AGOSTO: 16956097,
     },
     variaciones: {
       ENERO: 241.8,
@@ -308,6 +339,7 @@ export const datosVentas = {
       MAYO: 275,
       JUNIO: 271.7,
       JULIO: 252.2,
+      AGOSTO: 223.2,
     },
     porcentuales: {
       ENERO: 1.0,
@@ -317,6 +349,7 @@ export const datosVentas = {
       MAYO: 1.0,
       JUNIO: 1.0,
       JULIO: 1.0,
+      AGOSTO: 1.0,
     },
   },
   "La Rioja": {
@@ -328,6 +361,7 @@ export const datosVentas = {
       MAYO: 6887659,
       JUNIO: 7081388,
       JULIO: 7876243,
+      AGOSTO: 8207751,
     },
     variaciones: {
       ENERO: 225.1,
@@ -337,6 +371,7 @@ export const datosVentas = {
       MAYO: 249.9,
       JUNIO: 230.3,
       JULIO: 238.2,
+      AGOSTO: 185.4,
     },
     porcentuales: {
       ENERO: 0.5,
@@ -346,6 +381,7 @@ export const datosVentas = {
       MAYO: 0.5,
       JUNIO: 0.5,
       JULIO: 0.5,
+      AGOSTO: 0.5,
     },
   },
   Mendoza: {
@@ -357,6 +393,7 @@ export const datosVentas = {
       MAYO: 67243012,
       JUNIO: 75067683,
       JULIO: 78692531,
+      AGOSTO: 80033293,
     },
     variaciones: {
       ENERO: 250.7,
@@ -366,6 +403,7 @@ export const datosVentas = {
       MAYO: 234.8,
       JUNIO: 242,
       JULIO: 213,
+      AGOSTO: 190.5,
     },
     porcentuales: {
       ENERO: 5.2,
@@ -375,6 +413,7 @@ export const datosVentas = {
       MAYO: 4.8,
       JUNIO: 4.9,
       JULIO: 5,
+      AGOSTO: 4.8,
     },
   },
   Misiones: {
@@ -386,6 +425,7 @@ export const datosVentas = {
       MAYO: 19201973,
       JUNIO: 20623365,
       JULIO: 20927584,
+      AGOSTO: 20178759,
     },
     variaciones: {
       ENERO: 196.2,
@@ -395,6 +435,7 @@ export const datosVentas = {
       MAYO: 237.6,
       JUNIO: 210.5,
       JULIO: 185.4,
+      AGOSTO: 154.9,
     },
     porcentuales: {
       ENERO: 1.2,
@@ -404,6 +445,7 @@ export const datosVentas = {
       MAYO: 1.4,
       JUNIO: 1.3,
       JULIO: 1.3,
+      AGOSTO: 1.2,
     },
   },
   Neuquén: {
@@ -415,6 +457,7 @@ export const datosVentas = {
       MAYO: 58529354,
       JUNIO: 64793370,
       JULIO: 69482834,
+      AGOSTO: 72928377,
     },
     variaciones: {
       ENERO: 264.3,
@@ -424,6 +467,7 @@ export const datosVentas = {
       MAYO: 272.4,
       JUNIO: 274.6,
       JULIO: 244.5,
+      AGOSTO: 237.7,
     },
     porcentuales: {
       ENERO: 4.3,
@@ -433,6 +477,7 @@ export const datosVentas = {
       MAYO: 4.1,
       JUNIO: 4.2,
       JULIO: 4.4,
+      AGOSTO: 4.4,
     },
   },
   "Río Negro": {
@@ -444,6 +489,7 @@ export const datosVentas = {
       MAYO: 49369446,
       JUNIO: 53304266,
       JULIO: 61626594,
+      AGOSTO: 62855684,
     },
     variaciones: {
       ENERO: 252.0,
@@ -453,6 +499,7 @@ export const datosVentas = {
       MAYO: 261.2,
       JUNIO: 260.7,
       JULIO: 241.8,
+      AGOSTO: 226.2,
     },
     porcentuales: {
       ENERO: 4.2,
@@ -462,6 +509,7 @@ export const datosVentas = {
       MAYO: 3.5,
       JUNIO: 3.5,
       JULIO: 3.9,
+      AGOSTO: 3.8,
     },
   },
   Salta: {
@@ -473,6 +521,7 @@ export const datosVentas = {
       MAYO: 25121300,
       JUNIO: 27548278,
       JULIO: 28898175,
+      AGOSTO: 29313167,
     },
     variaciones: {
       ENERO: 231.5,
@@ -482,6 +531,7 @@ export const datosVentas = {
       MAYO: 237.7,
       JUNIO: 231,
       JULIO: 195.2,
+      AGOSTO: 164.7,
     },
     porcentuales: {
       ENERO: 1.9,
@@ -491,6 +541,7 @@ export const datosVentas = {
       MAYO: 1.8,
       JUNIO: 1.8,
       JULIO: 1.8,
+      AGOSTO: 1.8,
     },
   },
   "San Juan": {
@@ -502,6 +553,7 @@ export const datosVentas = {
       MAYO: 12426358,
       JUNIO: 13905012,
       JULIO: 14136669,
+      AGOSTO: 14480208,
     },
     variaciones: {
       ENERO: 230.8,
@@ -511,6 +563,7 @@ export const datosVentas = {
       MAYO: 247.5,
       JUNIO: 244.1,
       JULIO: 215.2,
+      AGOSTO: 174.2,
     },
     porcentuales: {
       ENERO: 0.9,
@@ -520,6 +573,7 @@ export const datosVentas = {
       MAYO: 0.9,
       JUNIO: 0.9,
       JULIO: 0.9,
+      AGOSTO: 0.9,
     },
   },
   "San Luis": {
@@ -531,6 +585,7 @@ export const datosVentas = {
       MAYO: 11461814,
       JUNIO: 12651662,
       JULIO: 13052088,
+      AGOSTO: 13400344,
     },
     variaciones: {
       ENERO: 233.6,
@@ -540,6 +595,7 @@ export const datosVentas = {
       MAYO: 249.7,
       JUNIO: 240.2,
       JULIO: 208.8,
+      AGOSTO: 192.4,
     },
     porcentuales: {
       ENERO: 0.9,
@@ -549,6 +605,7 @@ export const datosVentas = {
       MAYO: 0.8,
       JUNIO: 0.8,
       JULIO: 0.8,
+      AGOSTO: 0.8,
     },
   },
   "Santa Cruz": {
@@ -560,6 +617,7 @@ export const datosVentas = {
       MAYO: 34285496,
       JUNIO: 38706489,
       JULIO: 39253510,
+      AGOSTO: 41782991,
     },
     variaciones: {
       ENERO: 254.1,
@@ -569,6 +627,7 @@ export const datosVentas = {
       MAYO: 272,
       JUNIO: 269.7,
       JULIO: 232.9,
+      AGOSTO: 233.3,
     },
     porcentuales: {
       ENERO: 2.2,
@@ -578,6 +637,7 @@ export const datosVentas = {
       MAYO: 2.4,
       JUNIO: 2.5,
       JULIO: 2.5,
+      AGOSTO: 2.5,
     },
   },
   "Santa Fe": {
@@ -589,6 +649,7 @@ export const datosVentas = {
       MAYO: 75252130,
       JUNIO: 80526095,
       JULIO: 83284856,
+      AGOSTO: 88725955,
     },
     variaciones: {
       ENERO: 275.6,
@@ -598,6 +659,7 @@ export const datosVentas = {
       MAYO: 298.8,
       JUNIO: 286.6,
       JULIO: 250.6,
+      AGOSTO: 225,
     },
     porcentuales: {
       ENERO: 4.9,
@@ -607,6 +669,7 @@ export const datosVentas = {
       MAYO: 5.3,
       JUNIO: 5.2,
       JULIO: 5.2,
+      AGOSTO: 5.3,
     },
   },
   "Santiago del Estero": {
@@ -618,6 +681,7 @@ export const datosVentas = {
       MAYO: 8011056,
       JUNIO: 8584454,
       JULIO: 8466746,
+      AGOSTO: 9567483,
     },
     variaciones: {
       ENERO: 182.9,
@@ -627,6 +691,7 @@ export const datosVentas = {
       MAYO: 212.3,
       JUNIO: 186.3,
       JULIO: 185.8,
+      AGOSTO: 167.8,
     },
     porcentuales: {
       ENERO: 0.6,
@@ -636,6 +701,7 @@ export const datosVentas = {
       MAYO: 0.6,
       JUNIO: 0.6,
       JULIO: 0.6,
+      AGOSTO: 0.6,
     },
   },
   "Tierra del Fuego": {
@@ -647,6 +713,7 @@ export const datosVentas = {
       MAYO: 17096205,
       JUNIO: 19282201,
       JULIO: 20620740,
+      AGOSTO: 22090294,
     },
     variaciones: {
       ENERO: 248.6,
@@ -656,6 +723,7 @@ export const datosVentas = {
       MAYO: 254.7,
       JUNIO: 260.1,
       JULIO: 231.8,
+      AGOSTO: 231.9,
     },
     porcentuales: {
       ENERO: 1.1,
@@ -665,6 +733,7 @@ export const datosVentas = {
       MAYO: 1.2,
       JUNIO: 1.3,
       JULIO: 1.3,
+      AGOSTO: 1.3,
     },
   },
   Tucumán: {
@@ -676,6 +745,7 @@ export const datosVentas = {
       MAYO: 21268020,
       JUNIO: 225584540,
       JULIO: 23860940,
+      AGOSTO: 24457033,
     },
     variaciones: {
       ENERO: 204.5,
@@ -685,6 +755,7 @@ export const datosVentas = {
       MAYO: 229.7,
       JUNIO: 214.4,
       JULIO: 193.1,
+      AGOSTO: 161.7,
     },
     porcentuales: {
       ENERO: 1.4,
@@ -694,6 +765,7 @@ export const datosVentas = {
       MAYO: 1.5,
       JUNIO: 1.5,
       JULIO: 1.5,
+      AGOSTO: 1.5,
     },
   },
 };

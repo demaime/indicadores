@@ -48,7 +48,7 @@ const data = {
     libro: 24028,
     fiesta: 17000,
   },
-  sepptiembre: {
+  septiembre: {
     combo: 9700,
     plataforma: 5121,
     cine: 7389,

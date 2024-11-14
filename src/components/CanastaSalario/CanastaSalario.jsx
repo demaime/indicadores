@@ -28,6 +28,54 @@ const meses = [
   "septiembre",
 ];
 
+const individualAlimentariaNacio = [
+  { mes: "enero", valor: 92415 },
+  { mes: "febrero", valor: 104483 },
+  { mes: "marzo", valor: 115873 },
+  { mes: "abril", valor: 120726 },
+  { mes: "mayo", valor: 125235 },
+  { mes: "junio", valor: 127288 },
+  { mes: "julio", valor: 131294 },
+  { mes: "agosto", valor: 136399 },
+  { mes: "septiembre", valor: 138744 },
+];
+
+const individualTotalNacio = [
+  { mes: "enero", valor: 193147 },
+  { mes: "febrero", valor: 223593 },
+  { mes: "marzo", valor: 250286 },
+  { mes: "abril", valor: 268012 },
+  { mes: "mayo", valor: 275518 },
+  { mes: "junio", valor: 282579 },
+  { mes: "julio", valor: 291472 },
+  { mes: "agosto", valor: 304170 },
+  { mes: "septiembre", valor: 312175 },
+];
+
+const individualAlimentariaCaba = [
+  { mes: "enero", valor: 114939 },
+  { mes: "febrero", valor: 132050 },
+  { mes: "marzo", valor: 144996 },
+  { mes: "abril", valor: 153173 },
+  { mes: "mayo", valor: 159367 },
+  { mes: "junio", valor: 162917 },
+  { mes: "julio", valor: 171017 },
+  { mes: "agosto", valor: 175899 },
+  { mes: "septiembre", valor: 178748 },
+];
+
+const individualTotalCaba = [
+  { mes: "enero", valor: 194892 },
+  { mes: "febrero", valor: 231638 },
+  { mes: "marzo", valor: 261355 },
+  { mes: "abril", valor: 288293 },
+  { mes: "mayo", valor: 300990 },
+  { mes: "junio", valor: 314801 },
+  { mes: "julio", valor: 328596 },
+  { mes: "agosto", valor: 342870 },
+  { mes: "septiembre", valor: 353289 },
+];
+
 const canastaAlimentariaNacio = [
   { mes: "enero", valor: 285561, variacion: 18.6, acumulada: 18.6 },
   { mes: "febrero", valor: 322851, variacion: 13.1, acumulada: 34.4 },
@@ -119,11 +167,30 @@ const contenidoTippy = {
     "La Canasta Básica Total (CBT), se obtiene mediante la ampliación de la CBA considerando los bienes y servicios no alimentarios (vestimenta, transporte, educación, salud, etcétera) consumidos por la población de referencia. Considerada “línea de pobreza.",
 };
 
+const tippyGraficos = (
+  <div style={{ fontSize: "14px", textAlign: "justify", padding: "4px" }}>
+    <ul>
+      <li>
+        <strong>Individual</strong>: Gráfico evolutivo de variables de ingresos
+        individuales comparando las líneas de pobreza e indigencia con los
+        ingresos de un salario mínimo o un jubilado.
+      </li>
+      <br />
+      <li>
+        <strong>Grupo familiar</strong>: Gráfico evolutivo de variables de
+        ingresos de una familia tipo, con dos adultos que perciben el salario
+        mínimo + 2 hijos en edad escolar y dos jubilados que perciben la mínima.
+      </li>
+    </ul>
+  </div>
+);
+
 export default function CanastaSalario() {
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
   );
   const [dataCanasta, setDataCanasta] = useState("nacional");
+  const [chartType, setChartType] = useState("individual");
 
   const handleMesChange = (event) => {
     setMesSeleccionado(event.target.value);
@@ -133,20 +200,39 @@ export default function CanastaSalario() {
     return `$${number.toLocaleString()}`;
   };
 
-  const dataGrafico = meses.map((mes, index) => ({
-    mes,
-    "Canasta Alimentaria":
-      dataCanasta === "nacional"
-        ? canastaAlimentariaNacio[index].valor
-        : canastaAlimentariaCaba[index].valor,
-    "Canasta Total":
-      dataCanasta === "nacional"
-        ? canastaTotalNacio[index].valor
-        : canastaTotalCaba[index].valor,
-    "Salario Mínimo Vital y Móvil": smvm[index].valor,
-    "Jubilación sin Bono": jubilacionSinBono[index].valor,
-    "Jubilación con Bono": jubilacionConBono[index].valor,
-  }));
+  const dataGrafico = meses.map((mes, index) => {
+    if (chartType === "individual") {
+      return {
+        mes,
+        "Canasta Alimentaria":
+          dataCanasta === "nacional"
+            ? individualAlimentariaNacio[index].valor
+            : individualAlimentariaCaba[index].valor,
+        "Canasta Total":
+          dataCanasta === "nacional"
+            ? individualTotalNacio[index].valor
+            : individualTotalCaba[index].valor,
+        "Salario Mínimo Vital y Móvil": smvm[index].valor,
+        "Jubilación sin Bono": jubilacionSinBono[index].valor,
+        "Jubilación con Bono": jubilacionConBono[index].valor,
+      };
+    } else {
+      return {
+        mes,
+        "Canasta Alimentaria":
+          dataCanasta === "nacional"
+            ? canastaAlimentariaNacio[index].valor
+            : canastaAlimentariaCaba[index].valor,
+        "Canasta Total":
+          dataCanasta === "nacional"
+            ? canastaTotalNacio[index].valor
+            : canastaTotalCaba[index].valor,
+        "Salario Mínimo Vital y Móvil": smvm[index].valor * 2,
+        "Jubilación sin Bono": jubilacionSinBono[index].valor * 2,
+        "Jubilación con Bono": jubilacionConBono[index].valor * 2,
+      };
+    }
+  });
 
   return (
     <div className="w-full h-full flex flex-col bg-gray-200">
@@ -198,7 +284,7 @@ export default function CanastaSalario() {
             <div className="h-1/2">
               <h1 className="bg-gray-700 text-white px-2 w-full flex items-center justify-between">
                 CANASTA BASICA ALIMENTARIA (HOGAR 4 INTEGRANTES)
-                <Tippy content={contenidoTippy.basica}>
+                <Tippy content={contenidoTippy.basica} allowHTML="true">
                   <span className="mr-1 flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
                     ?
                   </span>
@@ -306,7 +392,7 @@ export default function CanastaSalario() {
             <div className="h-1/2">
               <h1 className="bg-gray-400 text-black px-2 w-full flex items-center justify-between">
                 CANASTA BASICA TOTAL (HOGAR 4 INTEGRANTES)
-                <Tippy content={contenidoTippy.total}>
+                <Tippy content={contenidoTippy.total} allowHTML="true">
                   <span className="mr-1 flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
                     ?
                   </span>
@@ -410,7 +496,34 @@ export default function CanastaSalario() {
           </div>
         </div>
         <div className="h-full w-1/2 bg-white flex flex-col items-center justify-evenly">
-          <ResponsiveContainer width="90%" height="90%">
+          <div className="w-1/2 h-[10%] flex items-center justify-evenly relative">
+            <button
+              onClick={() => setChartType("individual")}
+              className={`w-32 h-8 px-2 text-xs rounded shadow shadow-black font-semibold hover:scale-105 ${
+                chartType === "individual"
+                  ? "bg-gray-500 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              INDIVIDUAL
+            </button>
+            <button
+              onClick={() => setChartType("grupo")}
+              className={`w-32 h-8 px-2 text-xs rounded shadow shadow-black font-semibold hover:scale-105 ${
+                chartType === "grupo"
+                  ? "bg-gray-500 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              GRUPO FAMILIAR
+            </button>
+            <Tippy content={tippyGraficos} allowHTML="true">
+              <span className="absolute mr-1 flex rounded-full bg-gray-200 font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                ?
+              </span>
+            </Tippy>
+          </div>
+          <ResponsiveContainer width="90%" height="75%">
             <LineChart
               data={dataGrafico}
               margin={{ top: 30, right: 20, left: 25, bottom: 20 }}

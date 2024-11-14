@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import AUH from "./AUH";
+import Progresar from "./Progresar";
 import DesempleoMaxYMin from "./DesempleoMaxYMin";
+
 
 export default function AyudaSocial() {
   const data = {
@@ -88,7 +90,7 @@ export default function AyudaSocial() {
   };
 
   return (
-    <div className="w-full h-full bg-gray-400">
+    <div className="w-full h-full bg-gray-200">
       <div className="w-full h-[5%] bg-gray-800 text-white flex justify-center items-center">
         <FaArrowLeft className="cursor-pointer" onClick={handleMesAnterior} />
         <span className="mx-4 flex items-center justify-center w-1/3">
@@ -98,6 +100,11 @@ export default function AyudaSocial() {
       </div>
       <div className="w-full h-[95%] flex">
         <AUH data={data} meses={meses} mesSeleccionado={mesSeleccionado} />
+        <Progresar
+          data={data}
+          meses={meses}
+          mesSeleccionado={mesSeleccionado}
+        />
         <DesempleoMaxYMin
           data={data}
           meses={meses}

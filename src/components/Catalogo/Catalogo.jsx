@@ -27,14 +27,14 @@ export default function Catalogo() {
           >
             AGOSTO
           </Link>
-          {/* <Link
+          <Link
             target="_blank"
-            to="Septiembre/informemensual"
+            to="Septiembre/InformeMensual"
             className="w-1/4 h-16 flex items-center justify-center text-center text-white cursor-pointer rounded-lg bg-gray-700 shadow shadow-gray-300 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300 tracking-wider"
           >
             SEPTIEMBRE
           </Link>
-          <Link
+          {/* <Link
             target="_blank"
             to="Octubre/informemensual"
             className="w-1/4 h-16 flex items-center justify-center text-center text-white cursor-pointer rounded-lg bg-gray-700 shadow shadow-gray-300 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300 tracking-wider"

@@ -17,7 +17,7 @@ import AyudaSocial from "./components/AyudaSocial/AyudaSocial.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Catalogo from "./components/Catalogo/Catalogo";
 import InformeMensualAgosto from "./components/Catalogo/Agosto/InformeMensual.jsx";
-// import InformeMensualSeptiembre from "./components/Catalogo/Septiembre/InformeMensual.jsx";
+import InformeMensualSeptiembre from "./components/Catalogo/Septiembre/InformeMensual.jsx";
 // import InformeMensualOctubre from "./components/Catalogo/Octubre/InformeMensual";
 
 export default function App() {
@@ -218,11 +218,11 @@ export default function App() {
           path="/catalogo/agosto/informemensual"
           element={<InformeMensualAgosto />}
         />
-        {/* <Route
+        <Route
           path="/catalogo/septiembre/informemensual"
           element={<InformeMensualSeptiembre />}
         />
-        <Route
+        {/* <Route
           path="/catalogo/octubre/informemensual"
           element={<InformeMensualOctubre />}
         /> */}

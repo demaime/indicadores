@@ -107,25 +107,25 @@ export default function AUH({ data, meses, mesSeleccionado }) {
               <Line
                 type="monotone"
                 dataKey="Asignación Universal por Hijo"
-                stroke="#f9d900"
+                stroke="#f9e6a0"
                 strokeWidth={2}
-                dot={{ stroke: "#f9d900", fill: "#f9d900" }}
+                dot={{ stroke: "#f9e6a0", fill: "#f9e6a0" }}
                 activeDot={{ r: 8 }}
               />
               <Line
                 type="monotone"
                 dataKey="Acompañamiento Social"
-                stroke="#00bfff"
+                stroke="#99ccff"
                 strokeWidth={2}
-                dot={{ stroke: "#00bfff", fill: "#00bfff" }}
+                dot={{ stroke: "#99ccff", fill: "#99ccff" }}
                 activeDot={{ r: 8 }}
               />
               <Line
                 type="monotone"
                 dataKey="Progresar"
-                stroke="#ff4500"
+                stroke="#ffb3b3"
                 strokeWidth={2}
-                dot={{ stroke: "#ff4500", fill: "#ff4500" }}
+                dot={{ stroke: "#ffb3b3", fill: "#ffb3b3" }}
                 activeDot={{ r: 8 }}
               />
               <ReferenceLine
@@ -154,7 +154,7 @@ export default function AUH({ data, meses, mesSeleccionado }) {
               Asignación Universal por Hijo
             </div>
           </div>
-          <div className="w-full h-3/5 bg-[#f9d900] text-gray-800 flex flex-col items-center justify-between py-2">
+          <div className="w-full h-3/5 bg-[#f9e6a0] text-gray-800 flex flex-col items-center justify-between py-2">
             {" "}
             <h1 className="w-full h-1/5 text-xs text-center flex items-center justify-center  font-bold">
               <IntermensualDisplay
@@ -194,7 +194,7 @@ export default function AUH({ data, meses, mesSeleccionado }) {
               Progresar{" "}
             </div>
           </div>
-          <div className="w-full h-3/5 bg-[#ff4500] text-gray-800 flex flex-col items-center justify-evenly py-2">
+          <div className="w-full h-3/5 bg-[#ffb3b3] text-gray-800 flex flex-col items-center justify-evenly py-2">
             <h1 className="w-full h-1/5 text-xs text-center flex items-center justify-center  font-bold">
               <IntermensualDisplay
                 intermensual={data[mesSeleccionado].progresar.intermensual}
@@ -221,7 +221,7 @@ export default function AUH({ data, meses, mesSeleccionado }) {
               Acompañamiento social
             </div>
           </div>
-          <div className="w-full h-3/5 bg-[#00bfff] text-gray-800 flex flex-col items-center justify-evenly py-2">
+          <div className="w-full h-3/5 bg-[#99ccff] text-gray-800 flex flex-col items-center justify-evenly py-2">
             {" "}
             <h1 className="w-full h-1/5 text-xs text-center flex items-center justify-center  font-bold">
               <IntermensualDisplay

@@ -30,15 +30,15 @@ export default function Portada() {
             </a>
             <div className="w-full absolute left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center flex-col text-center">
               <p className="text-xl text-white font-semibold mb-2">
-                EL SECTOR METALÚRGICO
+                LAS VENTAS POR EL DÍA DE LA MADRE
               </p>
               <p className="text-5xl text-[#87d9ce] font-semibold mb-2">
-                REGISTRÓ SU PEOR CAÍDA
+                CAYERON POR <strong>TERCER AÑO CONSECUTIVO</strong>
               </p>
-              <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1>
+              {/* <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1> */}
             </div>
             <div className="z-50 flex items-center justify-evenly w-2/3 absolute top-12 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-blue-200 p-2">
-              <span>SEPTIEMBRE 2024</span>
+              <span>OCTUBRE 2024</span>
             </div>
             <a
               href="/catalogo"
@@ -60,49 +60,49 @@ export default function Portada() {
                 href: "#inflacion",
                 categoria: "INFLACION",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#canasta-salario",
                 categoria: "SALARIO - CANASTA - JUBILACION",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#ayuda-social",
                 categoria: "AYUDA SOCIAL",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#dolar",
                 categoria: "DOLAR",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#transporte",
                 categoria: "TRANSPORTE",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#alquiler",
                 categoria: "ALQUILER",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#cotidianos",
                 categoria: "GASTOS COTIDIANOS CABA",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#ocio",
                 categoria: "OCIO",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
               {
                 href: "#industrial",

@@ -183,6 +183,23 @@ const dataNacion = [
       Educación: 4.3,
     },
   },
+  {
+    Octubre: {
+      GENERAL: 2.7,
+      "Bienes y servicios": 3.30,
+      Transporte: 3.40,
+      Comunicación: 3.00,
+      "Recreación y cultura": 2.10,
+      "Equipamiento y mantenimiento del hogar": 2.70,
+      "Bebidas alcohólicas y tabaco": 2.20,
+      Salud: 3.30,
+      "Alimentos y bebidas no alcohólicas": 2.30,
+      "Restaurantes y hoteles": 3.70,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 7.30,
+      "Prendas de vestir y calzado": 6.00,
+      Educación: 4.30,
+    },
+  },
 ];
 
 const dataCaba = [
@@ -354,6 +371,23 @@ const dataCaba = [
       "Vivienda, agua, electricidad, gas y otros combustibles": 4.3,
       "Prendas de vestir y calzado": 5.6,
       Educación: 3.6,
+    },
+  },
+  {
+    Octubre: {
+      GENERAL: 3.2,
+      "Bienes y servicios": 6.6,
+      Transporte: 9.0,
+      Comunicación: 4.2,
+      "Recreación y cultura": 0.6,
+      "Equipamiento y mantenimiento del hogar": 1.9,
+      "Bebidas alcohólicas y tabaco": 4.8,
+      Salud: 5.4,
+      "Alimentos y bebidas no alcohólicas": 3.1,
+      "Restaurantes y hoteles": 2.3,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 4.4,
+      "Prendas de vestir y calzado": 3.7,
+      Educación: 6.0,
     },
   },
 ];
@@ -537,6 +571,7 @@ const variacionAcumuladaNacion = {
   Julio: "87%",
   Agosto: "94.8%",
   Septiembre: "101.6%",
+  Octubre: "107%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
@@ -548,6 +583,7 @@ const variacionAcumuladaCaba = {
   Julio: "98.5%",
   Agosto: "106.8%",
   Septiembre: "115.1%",
+  Octubre: "122.1%",
 };
 const variacionInteranualNacion = {
   Enero: "254.2%",
@@ -559,6 +595,7 @@ const variacionInteranualNacion = {
   Julio: "263.4%",
   Agosto: "236.7%",
   Septiembre: "209%",
+  Octubre: "193%",
 };
 const variacionInteranualCaba = {
   Enero: "238.5%",
@@ -570,6 +607,7 @@ const variacionInteranualCaba = {
   Julio: "264.9%",
   Agosto: "243.1%",
   Septiembre: "218.8%",
+  Octubre: "200.9%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {

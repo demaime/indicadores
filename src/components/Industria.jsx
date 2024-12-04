@@ -70,6 +70,12 @@ export default function Industria() {
       interanual: -6.6,
       capacidad: 60.6,
     },
+    octubre: {
+      intermensual: 3.7,
+      acumulada: -15.1,
+      interanual: -6.6,
+      capacidad: 60.6,
+    },
   };
 
   const aperturaIntermensualPyme = {

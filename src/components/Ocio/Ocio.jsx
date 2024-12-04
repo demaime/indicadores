@@ -57,6 +57,15 @@ const data = {
     libro: 24325,
     fiesta: 17000,
   },
+  octubre: {
+    combo: 10000,
+    plataforma: 5121,
+    cine: 7903.8,
+    teatro: 20000,
+    gimnasio: 28108.1,
+    libro: 26551.3,
+    fiesta: 17000,
+  },
 };
 
 const calcularVariacion = (valorActual, valorAnterior) => {

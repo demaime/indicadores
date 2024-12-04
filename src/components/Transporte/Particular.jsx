@@ -99,21 +99,21 @@ export default function Particular({ setPublicoOParticular }) {
         interanual: 16,
       },
     },
-    // OCTUBRE: {
-    //   Nafta: { valor: 1059, intermensual: 6.8, acumulada: 59.7 },
-    //   PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
-    //   PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
-    //   Autos: {
-    //     valor: "Próximo informe: Octubre",
-    //     intermensual: 0,
-    //     interanual: 0,
-    //   },
-    //   Motos: {
-    //     valor: "Próximo informe: Octubre",
-    //     intermensual: 0,
-    //     interanual: 0,
-    //   },
-    // },
+    OCTUBRE: {
+      Nafta: { valor: 1048, intermensual: -1, acumulada: 51.9 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
+      Autos: {
+        valor: "Próximo informe: Enero",
+        intermensual: 0,
+        interanual: 0,
+      },
+      Motos: {
+        valor: "Próximo informe: Enero",
+        intermensual: 0,
+        interanual: 0,
+      },
+    },
   };
 
   const meses = Object.keys(dataParticular);

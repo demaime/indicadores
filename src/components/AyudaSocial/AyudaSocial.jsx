@@ -68,6 +68,15 @@ export default function AyudaSocial() {
       desempleo_minimo: { valor: 134028, intermensual: 5.4 },
       desempleo_maximo: { valor: 268057, intermensual: 5.4 },
     },
+    octubre: {
+      auh: { valor: 87790, intermensual: 4.2 },
+      tope_individual: { valor: 1799733, intermensual: 4.2 },
+      tope_familiar: { valor: 3599466, intermensual: 4.2 },
+      progresar: { valor: 35000, intermensual: 0 },
+      acomp_social: { valor: 78000, intermensual: 0 },
+      desempleo_minimo: { valor: 135786, intermensual: 1.3 },
+      desempleo_maximo: { valor: 271571, intermensual: 1.3 },
+    },
   };
 
   const meses = Object.keys(data);

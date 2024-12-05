@@ -38,6 +38,16 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       gerentes: { valor: 10940, interanual: -0.3, intermensual: 0.4 },
       cajeros: { valor: 87688, interanual: 1.6, intermensual: 0.1 },
     },
+    AGOSTO: {
+      total: { valor: 99619, interanual: 1.8, intermensual: 1 },
+      gerentes: { valor: 11058, interanual: -0.2, intermensual: 1.1 },
+      cajeros: { valor: 88561, interanual: 2.1, intermensual: 1 },
+    },
+    SEPTIEMBRE: {
+      total: { valor: 98519, interanual: 0.5, intermensual: -0.1 },
+      gerentes: { valor: 10890, interanual: -2, intermensual: -0.4 },
+      cajeros: { valor: 87269, interanual: 0.8, intermensual: 0.1 },
+    },
   };
 
   const sueldos = {
@@ -75,6 +85,16 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       total: { valor: 1055789, interanual: 206.8, intermensual: -24.3 },
       gerentes: { valor: 2345568, interanual: 271.7, intermensual: -19.8 },
       cajeros: { valor: 894838, interanual: 190.9, intermensual: -25.6 },
+    },
+    AGOSTO: {
+      total: { valor: 1078987, interanual: 184.3, intermensual: 2.9 },
+      gerentes: { valor: 2630539, interanual: 229.1, intermensual: 12.1 },
+      cajeros: { valor: 885255, interanual: 171.6, intermensual: -0.2 },
+    },
+    SEPTIEMBRE: {
+      total: { valor: 1114924, interanual: 181.4, intermensual: 1.8 },
+      gerentes: { valor: 2473016, interanual: 234.4, intermensual: -6.7 },
+      cajeros: { valor: 946149, interanual: 168.5, intermensual: 4.9 },
     },
   };
 
@@ -136,6 +156,24 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         valor: 25095417,
         interanual: 176,
         intermensual: -22.8,
+      },
+    },
+    AGOSTO: {
+      total: { valor: 133293695, interanual: 183.4, intermensual: 3.8 },
+      sueldos: { valor: 107487603, interanual: 189.5, intermensual: 3.9 },
+      contribuciones: {
+        valor: 25806092,
+        interanual: 160.7,
+        intermensual: 3.6,
+      },
+    },
+    SEPTIEMBRE: {
+      total: { valor: 135357947, interanual: 179.6, intermensual: 1 },
+      sueldos: { valor: 109841222, interanual: 182.7, intermensual: 1.6 },
+      contribuciones: {
+        valor: 25516725,
+        interanual: 166.9,
+        intermensual: -1.5,
       },
     },
   };
@@ -204,6 +242,24 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         intermensual: -16.6,
       },
     },
+    AGOSTO: {
+      total: { valor: 36387747, interanual: 226.5, intermensual: 13.1 },
+      sueldos: { valor: 29088506, interanual: 228.5, intermensual: 13.3 },
+      contribuciones: {
+        valor: 7299241,
+        interanual: 219,
+        intermensual: 12.5,
+      },
+    },
+    SEPTIEMBRE: {
+      total: { valor: 32952221, interanual: 221, intermensual: -9.1 },
+      sueldos: { valor: 26931149, interanual: 227.8, intermensual: -7 },
+      contribuciones: {
+        valor: 6021072,
+        interanual: 193.7,
+        intermensual: -17.2,
+      },
+    },
   };
 
   const costoLaboralCajeros = {
@@ -268,6 +324,24 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         valor: 18605907,
         interanual: 156.2,
         intermensual: -24.7,
+      },
+    },
+    AGOSTO: {
+      total: { valor: 96905948, interanual: 170, intermensual: 0.7 },
+      sueldos: { valor: 78399097, interanual: 177.3, intermensual: 0.8 },
+      contribuciones: {
+        valor: 18506851,
+        interanual: 143.1,
+        intermensual: 0.5,
+      },
+    },
+    SEPTIEMBRE: {
+      total: { valor: 102405726, interanual: 168.4, intermensual: 4.8 },
+      sueldos: { valor: 82910073, interanual: 170.6, intermensual: 4.8 },
+      contribuciones: {
+        valor: 19495653,
+        interanual: 159.6,
+        intermensual: 4.6,
       },
     },
   };

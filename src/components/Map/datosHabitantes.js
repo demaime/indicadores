@@ -8,6 +8,7 @@ export const datosHabitantes = {
     JUNIO: 55039,
     JULIO: 56072,
     AGOSTO: 59208,
+    SEPTIEMBRE: 55772,
   },
   Catamarca: {
     ENERO: 15581,
@@ -18,6 +19,7 @@ export const datosHabitantes = {
     JUNIO: 19835,
     JULIO: 21281,
     AGOSTO: 21093,
+    SEPTIEMBRE: 20281,
   },
   Chaco: {
     ENERO: 7709,
@@ -28,6 +30,7 @@ export const datosHabitantes = {
     JUNIO: 10131,
     JULIO: 10943,
     AGOSTO: 11693,
+    SEPTIEMBRE: 10671,
   },
   Chubut: {
     ENERO: 49865,
@@ -38,6 +41,7 @@ export const datosHabitantes = {
     JUNIO: 68653,
     JULIO: 73034,
     AGOSTO: 76066,
+    SEPTIEMBRE: 72564,
   },
   Córdoba: {
     ENERO: 27703,
@@ -48,6 +52,7 @@ export const datosHabitantes = {
     JUNIO: 36977,
     JULIO: 38338,
     AGOSTO: 39922,
+    SEPTIEMBRE: 38303,
   },
   Corrientes: {
     ENERO: 11030,
@@ -58,6 +63,7 @@ export const datosHabitantes = {
     JUNIO: 13563,
     JULIO: 15168,
     AGOSTO: 14700,
+    SEPTIEMBRE: 14835,
   },
   "Entre Ríos": {
     ENERO: 19667,
@@ -68,6 +74,7 @@ export const datosHabitantes = {
     JUNIO: 24874,
     JULIO: 26602,
     AGOSTO: 27256,
+    SEPTIEMBRE: 25774,
   },
   Formosa: {
     ENERO: 10027,
@@ -78,6 +85,7 @@ export const datosHabitantes = {
     JUNIO: 12845,
     JULIO: 13163,
     AGOSTO: 13191,
+    SEPTIEMBRE: 12783,
   },
   Jujuy: {
     ENERO: 19287,
@@ -88,6 +96,7 @@ export const datosHabitantes = {
     JUNIO: 23740,
     JULIO: 25095,
     AGOSTO: 26007,
+    SEPTIEMBRE: 25682,
   },
   "La Pampa": {
     ENERO: 28834,
@@ -98,6 +107,7 @@ export const datosHabitantes = {
     JUNIO: 41684,
     JULIO: 44174,
     AGOSTO: 45821,
+    SEPTIEMBRE: 41478,
   },
   "La Rioja": {
     ENERO: 12735,
@@ -108,6 +118,7 @@ export const datosHabitantes = {
     JUNIO: 17116,
     JULIO: 19037,
     AGOSTO: 26007,
+    SEPTIEMBRE: 18070,
   },
   Mendoza: {
     ENERO: 27743,
@@ -118,6 +129,7 @@ export const datosHabitantes = {
     JUNIO: 36293,
     JULIO: 38045,
     AGOSTO: 45821,
+    SEPTIEMBRE: 36641,
   },
   Misiones: {
     ENERO: 10325,
@@ -128,6 +140,7 @@ export const datosHabitantes = {
     JUNIO: 15687,
     JULIO: 15918,
     AGOSTO: 19838,
+    SEPTIEMBRE: 15172,
   },
   Neuquén: {
     ENERO: 68850,
@@ -138,6 +151,7 @@ export const datosHabitantes = {
     JUNIO: 92983,
     JULIO: 99712,
     AGOSTO: 104657,
+    SEPTIEMBRE: 98174,
   },
   "Río Negro": {
     ENERO: 58857,
@@ -148,6 +162,7 @@ export const datosHabitantes = {
     JUNIO: 69203,
     JULIO: 78534,
     AGOSTO: 80100,
+    SEPTIEMBRE: 75094,
   },
   Salta: {
     ENERO: 14271,
@@ -158,6 +173,7 @@ export const datosHabitantes = {
     JUNIO: 18446,
     JULIO: 19350,
     AGOSTO: 19628,
+    SEPTIEMBRE: 19341,
   },
   "San Juan": {
     ENERO: 12596,
@@ -168,6 +184,7 @@ export const datosHabitantes = {
     JUNIO: 17085,
     JULIO: 17370,
     AGOSTO: 17792,
+    SEPTIEMBRE: 16884,
   },
   "San Luis": {
     ENERO: 18411,
@@ -178,6 +195,7 @@ export const datosHabitantes = {
     JUNIO: 23731,
     JULIO: 24482,
     AGOSTO: 25135,
+    SEPTIEMBRE: 23357,
   },
   "Santa Cruz": {
     ENERO: 59958,
@@ -188,6 +206,7 @@ export const datosHabitantes = {
     JUNIO: 96289,
     JULIO: 97649,
     AGOSTO: 103942,
+    SEPTIEMBRE: 99162,
   },
   "Santa Fe": {
     ENERO: 14866,
@@ -198,6 +217,7 @@ export const datosHabitantes = {
     JUNIO: 22110,
     JULIO: 22867,
     AGOSTO: 24361,
+    SEPTIEMBRE: 22335,
   },
   "Santiago del Estero": {
     ENERO: 6292,
@@ -208,6 +228,7 @@ export const datosHabitantes = {
     JUNIO: 8437,
     JULIO: 9305,
     AGOSTO: 9404,
+    SEPTIEMBRE: 8718,
   },
   "Tierra del Fuego": {
     ENERO: 63409,
@@ -218,6 +239,7 @@ export const datosHabitantes = {
     JUNIO: 101165,
     JULIO: 108188,
     AGOSTO: 115898,
+    SEPTIEMBRE: 110644,
   },
   Tucumán: {
     ENERO: 9020,
@@ -228,5 +250,6 @@ export const datosHabitantes = {
     JUNIO: 12740,
     JULIO: 13460,
     AGOSTO: 13797,
+    SEPTIEMBRE: 13187,
   },
 };

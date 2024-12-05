@@ -108,19 +108,19 @@ export default function Portada() {
                 href: "#industrial",
                 categoria: "INDUSTRIA",
                 periodo: "mensual",
-                actual: "agosto / septiembre",
+                actual: "septiembre / octubre",
               },
               {
                 href: "#actividadeconomica",
                 categoria: "ACTIVIDAD ECONOMICA",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
               {
                 href: "#supermercados",
                 categoria: "SUPERMERCADOS",
                 periodo: "mensual",
-                actual: "agosto",
+                actual: "septiembre",
               },
             ].map((item, index) => (
               <a

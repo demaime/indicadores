@@ -36,6 +36,7 @@ const meses = [
   "JUNIO",
   "JULIO",
   "AGOSTO",
+  "SEPTIEMBRE",
 ];
 const data = {
   ENERO: {
@@ -149,6 +150,20 @@ const data = {
     ticketPromedio: 22256,
     ventasPorM2: 494451,
     personalOcupado: 99619,
+  },
+  SEPTIEMBRE: {
+    intermensual: -0.4,
+    interanual: -12.8,
+    acumulada: -11.6,
+    efectivo: 270775,
+    debito: 425958,
+    credito: 718253,
+    otrosMediosDePago: 170361,
+    salonDeVenta: 1534660,
+    online: 50687,
+    ticketPromedio: 22942,
+    ventasPorM2: 470171,
+    personalOcupado: 98519,
   },
 };
 

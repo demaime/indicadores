@@ -81,11 +81,11 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
   }));
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-1/3 bg-gray-200">
       <div className="w-full h-full">
         <div className="w-full h-1/3 flex items-center justify-center">
           <div className="w-[90%] h-[90%] rounded bg-gray-800">
-            <div className="w-full h-1/3 text-2xl flex items-center justify-center text-center text-gray-200 relative font-semibold relative">
+            <div className="w-full h-1/3 text-2xl flex items-center justify-center text-center text-gray-200 relative">
               <Tippy
                 content={
                   <span dangerouslySetInnerHTML={{ __html: tooltipContent }} />
@@ -95,16 +95,13 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
                   ?
                 </div>
               </Tippy>
-                <p className="absolute bg-gray-700 rounded -top-2 text-lg px-4 py-2 shadow shadow-green-200">
-                  {" "}
-                  SEGURO POR DESEMPLEO
-                </p>
+              SEGURO POR DESEMPLEO
             </div>
             <div className="w-full h-2/3 flex">
               <div className="w-3/4 h-full">
                 <div className="w-full h-1/2 flex items-start justify-center">
                   {" "}
-                  <div className="w-[90%] h-[60%] rounded text-gray-   bg-[#3a993a] relative flex items-center justify-center">
+                  <div className="w-[90%] h-[90%] rounded text-gray-800 bg-[#3a993a] relative flex items-center justify-center">
                     <h1 className="flex items-center justify-center font-semibold w-16 h-4 text-xs bg-gray-200 rounded -top-2 -left-2 absolute">
                       Máximo
                     </h1>
@@ -118,10 +115,10 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
                 </div>
                 <div className="w-full h-1/2 flex items-start justify-center">
                   {" "}
-                  <div className="w-[90%] h-[60%] rounded text-gray-   bg-[#28fa28] relative flex items-center justify-center">
-                    <h1 className="flex items-center justify-center font-semibold w-16 h-4 text-xs bg-gray-200 rounded -top-2 -left-2 absolute">
-                      Mínimo
-                    </h1>
+                  <div className="w-[90%] h-[90%] rounded text-gray-800 bg-[#28fa28] relative flex items-center justify-center">
+                    <h1í className="flex items-center justify-center font-semibold w-16 h-4 text-xs bg-gray-200 rounded -top-2 -left-2 absolute">
+                      Máximo
+                    </h1í>
                     <h2 className="text-3xl font-bold">
                       ${" "}
                       {data[
@@ -132,7 +129,7 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
                 </div>
               </div>
               <div className="w-1/4 h-full flex items-center justify-center">
-                <div className="h-20 w-20 rounded-full bg-gray-200 flex items-center justify-center text-sm">
+                <div className="h-[90%] w-[90%] rounded-full bg-gray-200 flex items-center justify-center text-xl">
                   <IntermensualDisplay
                     intermensual={
                       data[mesSeleccionado].desempleo_minimo.intermensual
@@ -150,7 +147,7 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
               height="90%"
               className={"relative"}
             >
-              <div className="w-2/5 h-6 absolute rounded bg-gray-600 text-gray-300 -top-8 text-xs font-semibold text-center flex items-center justify-center left-1/2 transform -translate-x-1/2 shadow shadow-green-200">
+              <div className="w-2/5 h-6 absolute rounded bg-gray-600 text-gray-300 -top-8 text-xs font-semibold text-center flex items-center justify-center left-1/2 transform -translate-x-1/2">
                 Variaciones intermensuales
               </div>
               <AreaChart
@@ -208,3 +205,19 @@ export default function DesempleoMaxYMin({ data, meses, mesSeleccionado }) {
     </div>
   );
 }
+
+// <h1 className="mr-4 text-5xl font-black flex items-center">
+//   {" "}
+//   $ {data[
+//     mesSeleccionado
+//   ].desempleo_minimo.valor.toLocaleString()}{" "}
+//   - ${" "}
+//   {data[mesSeleccionado].desempleo_maximo.valor.toLocaleString()}
+//   <span className="bg-gray-200 rounded text-sm ml-2 flex items-center justify-center rounded px-1">
+//     <IntermensualDisplay
+//       intermensual={
+//         data[mesSeleccionado].desempleo_minimo.intermensual
+//       }
+//     />
+//   </span>
+// </h1>;

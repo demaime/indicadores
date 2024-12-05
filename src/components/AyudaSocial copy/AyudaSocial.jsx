@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import AUH from "./AUH";
 import DesempleoMaxYMin from "./DesempleoMaxYMin";
-import Planes from "./Planes";
 
 export default function AyudaSocial() {
   const data = {
@@ -97,7 +97,7 @@ export default function AyudaSocial() {
   };
 
   return (
-    <div className="w-full h-full bg-gray-200">
+    <div className="w-full h-full bg-gray-400">
       <div className="w-full h-[5%] bg-gray-800 text-white flex justify-center items-center">
         <FaArrowLeft className="cursor-pointer" onClick={handleMesAnterior} />
         <span className="mx-4 flex items-center justify-center w-1/3">
@@ -106,22 +106,12 @@ export default function AyudaSocial() {
         <FaArrowRight className="cursor-pointer" onClick={handleMesSiguiente} />
       </div>
       <div className="w-full h-[95%] flex">
-        <div className="w-1/3 h-full shadow shadow-gray-500">
-          <DesempleoMaxYMin
-            data={data}
-            meses={meses}
-            mesSeleccionado={mesSeleccionado}
-          />
-        </div>
-        <div className="w-2/3 h-full flex items-center justify-center">
-          <div className="w-[90%] h-[90%] rounded bg-gray-400  shadow shadow-black">
-            <Planes
-              data={data}
-              meses={meses}
-              mesSeleccionado={mesSeleccionado}
-            />
-          </div>
-        </div>
+        <AUH data={data} meses={meses} mesSeleccionado={mesSeleccionado} />
+        <DesempleoMaxYMin
+          data={data}
+          meses={meses}
+          mesSeleccionado={mesSeleccionado}
+        />
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ export default function Planes({ data, meses, mesSeleccionado }) {
     });
   }, []);
 
-  const dataauh = meses.map((mes) => ({
+  const dataPlanes = meses.map((mes) => ({
     mes,
     "Asignación Universal por Hijo": data[mes].auh.valor,
     "Acompañamiento Social": data[mes].acomp_social.valor,
@@ -77,10 +77,13 @@ export default function Planes({ data, meses, mesSeleccionado }) {
           height="95%"
           className={"relative bg-gray-700 p-4 rounded"}
         >
-          <div className="w-2/5 h-6 absolute rounded bg-gray-200 text-gray-800 -bottom-4 shadow shadow-black text-xs font-semibold text-center flex items-center justify-center left-1/2 transform -translate-x-1/2">
+          <div className="w-2/5 h-6 absolute rounded bg-gray-400 text-gray-900 -top-4 shadow shadow-black text-xs font-semibold text-center flex items-center justify-center left-1/2 transform -translate-x-1/2">
             Variaciones intermensuales
           </div>
-          <LineChart data={dataauh} margin={{ left: -20, top: 10, right: 10 }}>
+          <LineChart
+            data={dataPlanes}
+            margin={{ left: -20, top: 10, right: 10 }}
+          >
             <XAxis
               dataKey="mes"
               tick={{
@@ -145,16 +148,42 @@ export default function Planes({ data, meses, mesSeleccionado }) {
               <img src="/assets/ayudasocial.png" alt="" />
             </span>
           </h1>
-          <div className="w-[90%] rounded h-[75%] bg-gray-800"></div>
+          <div className="w-[90%] rounded h-[75%] bg-gray-800">
+            <div className="w-full h-1/2 flex items-center justify-center text-4xl font-semibold text-center text-[#f1fe50]">
+              {" "}
+              $ {data[mesSeleccionado].auh.valor.toLocaleString()}
+            </div>
+            <IntermensualDisplay
+              intermensual={data[mesSeleccionado].auh.intermensual}
+            />
+            <div className="w-full h-1/5 flex items-end justify-center">
+              <div className="tooltip-auh cursor-pointer flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                ?
+              </div>
+            </div>
+          </div>
         </div>
         <div className="h-full w-1/3 p-2 border-x border-gray-200 flex flex-col items-center justify-evenly">
           <h1 className="w-full text-end border-r-4 border-gray-900 text-sm shadow shadow-black bg-gray-700 rounded p-2 font-semibold text-gray-200 relative">
-            PROCREAR
+            PROGRESAR
             <span className="w-14 h-14 absolute bg-gray-900 rounded-full -left-2 -top-2 p-1 flex items-center justify-center">
               <img src="/assets/beca.png" alt="" />
             </span>
           </h1>
-          <div className="w-[90%] rounded h-[75%] bg-gray-800"></div>
+          <div className="w-[90%] rounded h-[75%] bg-gray-800">
+            <div className="w-full h-1/2 flex items-center justify-center text-4xl font-semibold text-center text-[#fe9150]">
+              {" "}
+              $ {data[mesSeleccionado].progresar.valor.toLocaleString()}
+            </div>
+            <IntermensualDisplay
+              intermensual={data[mesSeleccionado].progresar.intermensual}
+            />
+            <div className="w-full h-1/5 flex items-end justify-center">
+              <div className="tooltip-progresar cursor-pointer flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                ?
+              </div>
+            </div>
+          </div>
         </div>
         <div className="h-full w-1/3 p-2 flex flex-col items-center justify-evenly">
           <h1 className="w-full text-end border-r-4 border-gray-900 text-sm shadow shadow-black bg-gray-700 rounded p-2 font-semibold text-gray-200 relative">
@@ -163,7 +192,20 @@ export default function Planes({ data, meses, mesSeleccionado }) {
               <img src="/assets/trabajo.png" alt="" />
             </span>
           </h1>
-          <div className="w-[90%] rounded h-[75%] bg-gray-800"></div>
+          <div className="w-[90%] rounded h-[75%] bg-gray-800">
+            <div className="w-full h-1/2 flex items-center justify-center text-4xl font-semibold text-center text-[#63b0fc]">
+              $ {data[mesSeleccionado].acomp_social.valor.toLocaleString()}
+            </div>
+            <IntermensualDisplay
+              className="text-2xl"
+              intermensual={data[mesSeleccionado].acomp_social.intermensual}
+            />
+            <div className="w-full h-1/5 flex items-end justify-center">
+              <div className="tooltip-acomp_social cursor-pointer flex rounded-full bg-white font-black text-black items-center justify-center w-4 h-4 text-[10px]">
+                ?
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

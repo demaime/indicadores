@@ -263,12 +263,21 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="caba"
-                fill="#ffc658" // Cambio de color a amarillo
-                label={{
-                  position: "top",
-                  formatter: formatBarLabel,
-                  fontSize: "12px",
-                }} // Formatear el número sobre la barra
+                fill="#ffc658"
+                label={({ index, x, y, width, value }) =>
+                  index % 2 !== 0 ? (
+                    <text
+                      x={x + width / 2}
+                      y={y - 5}
+                      fill="#1f2937"
+                      fontSize={10}
+                      fontWeight="bold"
+                      textAnchor="middle"
+                    >
+                      {formatBarLabel(value)}
+                    </text>
+                  ) : null
+                }
               />
             </BarChart>
           </ResponsiveContainer>
@@ -297,12 +306,21 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="norte"
-                fill="#82ca9d" // Cambio de color a violeta
-                label={{
-                  position: "top",
-                  formatter: formatBarLabel,
-                  fontSize: "12px",
-                }} // Formatear el número sobre la barra
+                fill="#82ca9d"
+                label={({ index, x, y, width, value }) =>
+                  index % 2 !== 0 ? (
+                    <text
+                      x={x + width / 2}
+                      y={y - 5}
+                      fill="#1f2937"
+                      fontSize={10}
+                      fontWeight="bold"
+                      textAnchor="middle"
+                    >
+                      {formatBarLabel(value)}
+                    </text>
+                  ) : null
+                }
               />
             </BarChart>
           </ResponsiveContainer>
@@ -331,12 +349,21 @@ export default function Alquiler() {
               <Tooltip />
               <Bar
                 dataKey="suroeste"
-                fill="#8884d8" // Cambio de color a gris
-                label={{
-                  position: "top",
-                  formatter: formatBarLabel,
-                  fontSize: "12px",
-                }} // Formatear el número sobre la barra
+                fill="#8884d8"
+                label={({ index, x, y, width, value }) =>
+                  index % 2 !== 0 ? (
+                    <text
+                      x={x + width / 2}
+                      y={y - 5}
+                      fill="#1f2937"
+                      fontSize={10}
+                      fontWeight="bold"
+                      textAnchor="middle"
+                    >
+                      {formatBarLabel(value)}
+                    </text>
+                  ) : null
+                }
               />
             </BarChart>
           </ResponsiveContainer>

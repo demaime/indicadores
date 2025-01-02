@@ -98,12 +98,12 @@ export default function Portada() {
                 periodo: "mensual",
                 actual: "octubre",
               },
-              {
-                href: "#ocio",
-                categoria: "OCIO",
-                periodo: "mensual",
-                actual: "octubre",
-              },
+              // {
+              //   href: "#ocio",
+              //   categoria: "OCIO",
+              //   periodo: "mensual",
+              //   actual: "octubre",
+              // },
               {
                 href: "#industrial",
                 categoria: "INDUSTRIA",

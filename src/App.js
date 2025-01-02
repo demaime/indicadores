@@ -158,7 +158,7 @@ export default function App() {
                   <GastosCotidianos />
                 </section>
 
-                <section className="section" id="ocio">
+                {/* <section className="section" id="ocio">
                   <Encabezado
                     title={"OCIO"}
                     description={
@@ -168,7 +168,7 @@ export default function App() {
                   />
 
                   <Ocio />
-                </section>
+                </section> */}
                 <section className="section" id="industrial">
                   <Encabezado
                     title={"INDUSTRIA"}

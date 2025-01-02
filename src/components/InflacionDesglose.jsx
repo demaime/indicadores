@@ -623,7 +623,7 @@ const CustomizedLabel = ({ x, y, stroke, value }) => {
       textAnchor="middle"
     >
       {`%${value}`}
-    </text>
+    </text> 
   );
 };
 

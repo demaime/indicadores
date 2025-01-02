@@ -12,7 +12,7 @@ export default function GastosCotidianos() {
     "julio",
     "agosto",
     "septiembre",
-    "octubre"
+    "octubre",
   ];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]
@@ -20,18 +20,18 @@ export default function GastosCotidianos() {
 
   return (
     <div className="w-full h-full bg-gray-200 flex flex-col relative">
-      <div className="w-full h-[8%] bg-gray-800 flex items-center justify-evenly">
-        {meses.map((mes) => (
-          <button
-            key={mes}
-            className={`h-8 w-48 rounded-xl text-sm font-bold ${
-              mes === mesSeleccionado ? "bg-pink-200" : "bg-gray-200"
-            }`}
-            onClick={() => setMesSeleccionado(mes)}
-          >
-            {mes.toUpperCase()}
-          </button>
-        ))}
+      <div className="w-full h-[8%] bg-gray-800 flex items-center justify-center">
+        <select
+          value={mesSeleccionado}
+          onChange={(e) => setMesSeleccionado(e.target.value)}
+          className="h-8 w-48 rounded-xl text-sm font-bold bg-gray-200 pr-4"
+        >
+          {meses.map((mes) => (
+            <option key={mes} value={mes}>
+              {mes.toUpperCase()}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="absolute w-6 top-24 h-5/6 left-0 text-gray-700 z-50">
         <div

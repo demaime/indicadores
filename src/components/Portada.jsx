@@ -66,13 +66,13 @@ export default function Portada() {
                 href: "#canasta-salario",
                 categoria: "SALARIO - CANASTA - JUBILACION",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#ayuda-social",
                 categoria: "AYUDA SOCIAL",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#dolar",

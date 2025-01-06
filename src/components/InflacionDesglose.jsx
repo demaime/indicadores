@@ -186,18 +186,35 @@ const dataNacion = [
   {
     Octubre: {
       GENERAL: 2.7,
-      "Bienes y servicios": 3.30,
-      Transporte: 3.40,
-      Comunicación: 3.00,
-      "Recreación y cultura": 2.10,
-      "Equipamiento y mantenimiento del hogar": 2.70,
-      "Bebidas alcohólicas y tabaco": 2.20,
-      Salud: 3.30,
-      "Alimentos y bebidas no alcohólicas": 2.30,
-      "Restaurantes y hoteles": 3.70,
-      "Vivienda, agua, electricidad, gas y otros combustibles": 7.30,
-      "Prendas de vestir y calzado": 6.00,
-      Educación: 4.30,
+      "Bienes y servicios": 3.3,
+      Transporte: 3.4,
+      Comunicación: 3.0,
+      "Recreación y cultura": 2.1,
+      "Equipamiento y mantenimiento del hogar": 2.7,
+      "Bebidas alcohólicas y tabaco": 2.2,
+      Salud: 3.3,
+      "Alimentos y bebidas no alcohólicas": 2.3,
+      "Restaurantes y hoteles": 3.7,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 7.3,
+      "Prendas de vestir y calzado": 6.0,
+      Educación: 4.3,
+    },
+  },
+  {
+    Noviembre: {
+      GENERAL: 2.4,
+      "Bienes y servicios": 2.3,
+      Transporte: 3.4,
+      Comunicación: 1.5,
+      "Recreación y cultura": 3.0,
+      "Equipamiento y mantenimiento del hogar": 1.5,
+      "Bebidas alcohólicas y tabaco": 4.0,
+      Salud: 2.9,
+      "Alimentos y bebidas no alcohólicas": 0.9,
+      "Restaurantes y hoteles": 3.6,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 4.5,
+      "Prendas de vestir y calzado": 1.9,
+      Educación: 5.1,
     },
   },
 ];
@@ -390,6 +407,23 @@ const dataCaba = [
       Educación: 6.0,
     },
   },
+  {
+    Noviembre: {
+      GENERAL: 3.2,
+      "Bienes y servicios": 3.2,
+      Transporte: 4.7,
+      Comunicación: 1.2,
+      "Recreación y cultura": 2.8,
+      "Equipamiento y mantenimiento del hogar": 3.3,
+      "Bebidas alcohólicas y tabaco": 3.9,
+      Salud: 4.2,
+      "Alimentos y bebidas no alcohólicas": 1.7,
+      "Restaurantes y hoteles": 3.1,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 4.2,
+      "Prendas de vestir y calzado": 2.2,
+      Educación: 2.9,
+    },
+  },
 ];
 
 const coloresCategorias = {
@@ -572,6 +606,7 @@ const variacionAcumuladaNacion = {
   Agosto: "94.8%",
   Septiembre: "101.6%",
   Octubre: "107%",
+  Noviembre: "112%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
@@ -584,6 +619,7 @@ const variacionAcumuladaCaba = {
   Agosto: "106.8%",
   Septiembre: "115.1%",
   Octubre: "122.1%",
+  Noviembre: "129.1%",
 };
 const variacionInteranualNacion = {
   Enero: "254.2%",
@@ -596,6 +632,7 @@ const variacionInteranualNacion = {
   Agosto: "236.7%",
   Septiembre: "209%",
   Octubre: "193%",
+  Noviembre: "166%",
 };
 const variacionInteranualCaba = {
   Enero: "238.5%",
@@ -608,6 +645,7 @@ const variacionInteranualCaba = {
   Agosto: "243.1%",
   Septiembre: "218.8%",
   Octubre: "200.9%",
+  Noviembre: "177.4%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {
@@ -623,7 +661,7 @@ const CustomizedLabel = ({ x, y, stroke, value }) => {
       textAnchor="middle"
     >
       {`%${value}`}
-    </text> 
+    </text>
   );
 };
 

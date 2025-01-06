@@ -60,7 +60,7 @@ export default function Portada() {
                 href: "#inflacion",
                 categoria: "INFLACION",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#canasta-salario",
@@ -78,7 +78,7 @@ export default function Portada() {
                 href: "#dolar",
                 categoria: "DOLAR",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#transporte",

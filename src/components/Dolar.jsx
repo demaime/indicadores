@@ -18,7 +18,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export default function Dolar() {
   const [comparativoOEvolutivo, setComparativoOEvolutivo] =
     useState("comparativo");
-  const [mesSeleccionado, setMesSeleccionado] = useState("octubre");
+  const [mesSeleccionado, setMesSeleccionado] = useState("noviembre");
   const [porcentajeOmoneda, setPorcentajeOmoneda] = useState("porcentaje");
   const [promediosOficial2024, setPromediosOficial2024] = useState({});
   const [promediosBlue2024, setPromediosBlue2024] = useState({});
@@ -201,6 +201,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-10")
             )
           ),
+          noviembre: calcularPromedio(
+            dataOficial2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -355,6 +360,11 @@ export default function Dolar() {
           octubre: calcularPromedio(
             dataBlue2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataBlue2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
             )
           ),
           // Agrega más meses si es necesario
@@ -514,6 +524,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-10")
             )
           ),
+          noviembre: calcularPromedio(
+            dataMep2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -668,6 +683,11 @@ export default function Dolar() {
           octubre: calcularPromedio(
             dataTarjeta2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataTarjeta2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
             )
           ),
         };
@@ -826,6 +846,11 @@ export default function Dolar() {
               cotizacion.fecha.startsWith("2024-10")
             )
           ),
+          noviembre: calcularPromedio(
+            dataCcl2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
+            )
+          ),
         };
         const promedios2023 = {
           enero: calcularPromedio(
@@ -980,6 +1005,11 @@ export default function Dolar() {
           octubre: calcularPromedio(
             dataCripto2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataCripto2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
             )
           ),
         };
@@ -1137,6 +1167,11 @@ export default function Dolar() {
           octubre: calcularPromedio(
             dataMayorista2024.filter((cotizacion) =>
               cotizacion.fecha.startsWith("2024-10")
+            )
+          ),
+          noviembre: calcularPromedio(
+            dataMayorista2024.filter((cotizacion) =>
+              cotizacion.fecha.startsWith("2024-11")
             )
           ),
         };
@@ -1387,6 +1422,16 @@ export default function Dolar() {
       ccl: promediosCcl2024.octubre,
       cripto: promediosCripto2024.octubre,
       tarjeta: promediosTarjeta2024.octubre,
+    },
+    {
+      mes: "noviembre",
+      oficial: promediosOficial2024.noviembre,
+      mayorista: promediosMayorista2024.noviembre,
+      blue: promediosBlue2024.noviembre,
+      mep: promediosMep2024.noviembre,
+      ccl: promediosCcl2024.noviembre,
+      cripto: promediosCripto2024.noviembre,
+      tarjeta: promediosTarjeta2024.noviembre,
     },
   ];
 

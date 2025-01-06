@@ -24,7 +24,7 @@ export default function GastosCotidianos() {
         <select
           value={mesSeleccionado}
           onChange={(e) => setMesSeleccionado(e.target.value)}
-          className="h-8 w-48 rounded-xl text-sm font-bold bg-gray-200 pr-4"
+          className="h-8 w-64 rounded-xl text-lg font-semibold bg-gray-200 pl-4"
         >
           {meses.map((mes) => (
             <option key={mes} value={mes}>

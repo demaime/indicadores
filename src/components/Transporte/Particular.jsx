@@ -114,6 +114,21 @@ export default function Particular({ setPublicoOParticular }) {
         interanual: 0,
       },
     },
+    NOVIEMBRE: {
+      Nafta: { valor: 1077, intermensual: 2.8, acumulada: 55.7 },
+      PeajeNorte: { valor: 1277.44, intermensual: 0, acumulada: 234 },
+      PeajeOeste: { valor: 3072.71, intermensual: 0, acumulada: 234 },
+      Autos: {
+        valor: "Próximo informe: Enero",
+        intermensual: 0,
+        interanual: 0,
+      },
+      Motos: {
+        valor: "Próximo informe: Enero",
+        intermensual: 0,
+        interanual: 0,
+      },
+    },
   };
 
   const meses = Object.keys(dataParticular);

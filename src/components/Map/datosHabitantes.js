@@ -9,6 +9,7 @@ export const datosHabitantes = {
     JULIO: 56072,
     AGOSTO: 59208,
     SEPTIEMBRE: 55772,
+    OCTUBRE: 60311,
   },
   Catamarca: {
     ENERO: 15581,
@@ -20,6 +21,7 @@ export const datosHabitantes = {
     JULIO: 21281,
     AGOSTO: 21093,
     SEPTIEMBRE: 20281,
+    OCTUBRE: 22682,
   },
   Chaco: {
     ENERO: 7709,
@@ -31,6 +33,7 @@ export const datosHabitantes = {
     JULIO: 10943,
     AGOSTO: 11693,
     SEPTIEMBRE: 10671,
+    OCTUBRE: 11605,
   },
   Chubut: {
     ENERO: 49865,
@@ -42,6 +45,7 @@ export const datosHabitantes = {
     JULIO: 73034,
     AGOSTO: 76066,
     SEPTIEMBRE: 72564,
+    OCTUBRE: 78701,
   },
   Córdoba: {
     ENERO: 27703,
@@ -53,6 +57,7 @@ export const datosHabitantes = {
     JULIO: 38338,
     AGOSTO: 39922,
     SEPTIEMBRE: 38303,
+    OCTUBRE: 41063,
   },
   Corrientes: {
     ENERO: 11030,
@@ -64,6 +69,7 @@ export const datosHabitantes = {
     JULIO: 15168,
     AGOSTO: 14700,
     SEPTIEMBRE: 14835,
+    OCTUBRE: 15751,
   },
   "Entre Ríos": {
     ENERO: 19667,
@@ -75,6 +81,7 @@ export const datosHabitantes = {
     JULIO: 26602,
     AGOSTO: 27256,
     SEPTIEMBRE: 25774,
+    OCTUBRE: 26726,
   },
   Formosa: {
     ENERO: 10027,
@@ -86,6 +93,7 @@ export const datosHabitantes = {
     JULIO: 13163,
     AGOSTO: 13191,
     SEPTIEMBRE: 12783,
+    OCTUBRE: 13430,
   },
   Jujuy: {
     ENERO: 19287,
@@ -97,6 +105,7 @@ export const datosHabitantes = {
     JULIO: 25095,
     AGOSTO: 26007,
     SEPTIEMBRE: 25682,
+    OCTUBRE: 28831,
   },
   "La Pampa": {
     ENERO: 28834,
@@ -108,6 +117,7 @@ export const datosHabitantes = {
     JULIO: 44174,
     AGOSTO: 45821,
     SEPTIEMBRE: 41478,
+    OCTUBRE: 45059,
   },
   "La Rioja": {
     ENERO: 12735,
@@ -117,8 +127,9 @@ export const datosHabitantes = {
     MAYO: 16648,
     JUNIO: 17116,
     JULIO: 19037,
-    AGOSTO: 26007,
+    AGOSTO: 19838,
     SEPTIEMBRE: 18070,
+    OCTUBRE: 21619,
   },
   Mendoza: {
     ENERO: 27743,
@@ -128,8 +139,9 @@ export const datosHabitantes = {
     MAYO: 32510,
     JUNIO: 36293,
     JULIO: 38045,
-    AGOSTO: 45821,
+    AGOSTO: 38693,
     SEPTIEMBRE: 36641,
+    OCTUBRE: 38495,
   },
   Misiones: {
     ENERO: 10325,
@@ -141,6 +153,7 @@ export const datosHabitantes = {
     JULIO: 15918,
     AGOSTO: 19838,
     SEPTIEMBRE: 15172,
+    OCTUBRE: 16262,
   },
   Neuquén: {
     ENERO: 68850,
@@ -152,6 +165,7 @@ export const datosHabitantes = {
     JULIO: 99712,
     AGOSTO: 104657,
     SEPTIEMBRE: 98174,
+    OCTUBRE: 107433,
   },
   "Río Negro": {
     ENERO: 58857,
@@ -163,6 +177,7 @@ export const datosHabitantes = {
     JULIO: 78534,
     AGOSTO: 80100,
     SEPTIEMBRE: 75094,
+    OCTUBRE: 82799,
   },
   Salta: {
     ENERO: 14271,
@@ -174,6 +189,7 @@ export const datosHabitantes = {
     JULIO: 19350,
     AGOSTO: 19628,
     SEPTIEMBRE: 19341,
+    OCTUBRE: 21110,
   },
   "San Juan": {
     ENERO: 12596,
@@ -185,6 +201,7 @@ export const datosHabitantes = {
     JULIO: 17370,
     AGOSTO: 17792,
     SEPTIEMBRE: 16884,
+    OCTUBRE: 17486,
   },
   "San Luis": {
     ENERO: 18411,
@@ -196,6 +213,7 @@ export const datosHabitantes = {
     JULIO: 24482,
     AGOSTO: 25135,
     SEPTIEMBRE: 23357,
+    OCTUBRE: 25725,
   },
   "Santa Cruz": {
     ENERO: 59958,
@@ -207,6 +225,7 @@ export const datosHabitantes = {
     JULIO: 97649,
     AGOSTO: 103942,
     SEPTIEMBRE: 99162,
+    OCTUBRE: 106494,
   },
   "Santa Fe": {
     ENERO: 14866,
@@ -218,6 +237,7 @@ export const datosHabitantes = {
     JULIO: 22867,
     AGOSTO: 24361,
     SEPTIEMBRE: 22335,
+    OCTUBRE: 24367,
   },
   "Santiago del Estero": {
     ENERO: 6292,
@@ -229,6 +249,7 @@ export const datosHabitantes = {
     JULIO: 9305,
     AGOSTO: 9404,
     SEPTIEMBRE: 8718,
+    OCTUBRE: 9590,
   },
   "Tierra del Fuego": {
     ENERO: 63409,
@@ -240,6 +261,7 @@ export const datosHabitantes = {
     JULIO: 108188,
     AGOSTO: 115898,
     SEPTIEMBRE: 110644,
+    OCTUBRE: 117455,
   },
   Tucumán: {
     ENERO: 9020,
@@ -251,5 +273,6 @@ export const datosHabitantes = {
     JULIO: 13460,
     AGOSTO: 13797,
     SEPTIEMBRE: 13187,
+    OCTUBRE: 14304,
   },
 };

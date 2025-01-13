@@ -13,6 +13,7 @@ export default function GastosCotidianos() {
     "agosto",
     "septiembre",
     "octubre",
+    "noviembre",
   ];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]

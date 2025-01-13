@@ -20,7 +20,7 @@ export default function InformeMensual() {
   };
 
   return (
-    <div className="section w-full h-full flex flex-col items-center justify-evenly relative bg-blue-900 ">
+    <div className="section w-full h-full flex flex-col items-center justify-evenly relative bg-amber-200 ">
       <IoIosArrowBack
         onClick={handlePrev}
         size={35}
@@ -32,8 +32,8 @@ export default function InformeMensual() {
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white z-50 p-2 rounded-full"
       ></IoIosArrowForward>
       <div className="w-[90%] h-[5%] border-2 border-black rounded-xl flex items-center justify-center text-center font-semibold text-lg bg-gray-200">
-        Confederación Argentina de la Mediana Empresa (CAME)&nbsp;
-        <strong className="tracking-wider">- OCTUBRE </strong>
+        Cámara Argentina de Comercio Electrónico (CACE)&nbsp;
+        <strong className="tracking-wider">- NOVIEMBRE </strong>
       </div>
       <div className="w-[90%] h-[90%] border-2 border-black rounded-xl overflow-hidden bg-gray-100">
         <div

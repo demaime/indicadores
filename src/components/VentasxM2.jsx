@@ -33,6 +33,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       JULIO: 86780,
       AGOSTO: 93030,
       SEPTIEMBRE: 90247,
+      OCTUBRE: 94564,
     },
     totales: {
       ENERO: 162128358,
@@ -44,6 +45,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       JULIO: 267757593,
       AGOSTO: 287041594,
       SEPTIEMBRE: 278455883,
+      OCTUBRE: 291776607,
     },
     variaciones: {
       ENERO: 264.3,
@@ -55,6 +57,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       JULIO: 249.9,
       AGOSTO: 234.5,
       SEPTIEMBRE: 199.8,
+      OCTUBRE: 159.7,
     },
     porcentuales: {
       ENERO: 14.7,
@@ -66,6 +69,7 @@ export default function VentasxM2({ vista, setVista, mesSeleccionado }) {
       JULIO: 16.9,
       AGOSTO: 17.2,
       SEPTIEMBRE: 17.6,
+      OCTUBRE: 17.2,
     },
   };
 

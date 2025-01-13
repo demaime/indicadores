@@ -48,6 +48,11 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       gerentes: { valor: 10890, interanual: -2, intermensual: -0.4 },
       cajeros: { valor: 87269, interanual: 0.8, intermensual: 0.1 },
     },
+    OCTUBRE: {
+      total: { valor: 98548, interanual: 0.1, intermensual: 0 },
+      gerentes: { valor: 10906, interanual: -2, intermensual: 0.1 },
+      cajeros: { valor: 87642, interanual: 0.4, intermensual: 0 },
+    },
   };
 
   const sueldos = {
@@ -95,6 +100,11 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
       total: { valor: 1114924, interanual: 181.4, intermensual: 1.8 },
       gerentes: { valor: 2473016, interanual: 234.4, intermensual: -6.7 },
       cajeros: { valor: 946149, interanual: 168.5, intermensual: 4.9 },
+    },
+    OCTUBRE: {
+      total: { valor: 1242842, interanual: 153.9, intermensual: 11.4 },
+      gerentes: { valor: 2809917, interanual: 211.2, intermensual: 13.6 },
+      cajeros: { valor: 1047838, interanual: 139.9, intermensual: 10.7 },
     },
   };
 
@@ -174,6 +184,15 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         valor: 25516725,
         interanual: 166.9,
         intermensual: -1.5,
+      },
+    },
+    OCTUBRE: {
+      total: { valor: 152650880, interanual: 149.9, intermensual: 12.2 },
+      sueldos: { valor: 122479596, interanual: 154.1, intermensual: 11.5 },
+      contribuciones: {
+        valor: 30171284,
+        interanual: 134.2,
+        intermensual: 15.4,
       },
     },
   };
@@ -260,6 +279,11 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         intermensual: -17.2,
       },
     },
+    OCTUBRE: {
+      total: { valor: 38135267, interanual: 201, intermensual: 13.6 },
+      sueldos: { valor: 30644954, interanual: 205, intermensual: 13.8 },
+      contribuciones: { valor: 7490313, interanual: 185.6, intermensual: 13 },
+    },
   };
 
   const costoLaboralCajeros = {
@@ -342,6 +366,15 @@ export default function TicketPromedio({ vista, setVista, mesSeleccionado }) {
         valor: 19495653,
         interanual: 159.6,
         intermensual: 4.6,
+      },
+    },
+    OCTUBRE: {
+      total: { valor: 114515613, interanual: 153.9, intermensual: 11.4 },
+      sueldos: { valor: 91834642, interanual: 211.2, intermensual: 13.6 },
+      contribuciones: {
+        valor: 22680971,
+        interanual: 139.9,
+        intermensual: 10.7,
       },
     },
   };

@@ -30,15 +30,15 @@ export default function Portada() {
             </a>
             <div className="w-full absolute left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center flex-col text-center">
               <p className="text-xl text-white font-semibold mb-2">
-                LAS VENTAS POR EL DÍA DE LA MADRE
+                EL CYBERMONDAY GENERÓ
               </p>
               <p className="text-5xl text-[#87d9ce] font-semibold mb-2">
-                CAYERON POR <strong>TERCER AÑO CONSECUTIVO</strong>
+                <strong>493 MILLONES EN VENTAS</strong>
               </p>
               {/* <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1> */}
             </div>
             <div className="z-50 flex items-center justify-evenly w-2/3 absolute top-12 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-blue-200 p-2">
-              <span>OCTUBRE 2024</span>
+              <span>NOVIEMBRE 2024</span>
             </div>
             <a
               href="/catalogo"
@@ -84,19 +84,19 @@ export default function Portada() {
                 href: "#transporte",
                 categoria: "TRANSPORTE",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#alquiler",
                 categoria: "ALQUILER",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               {
                 href: "#cotidianos",
                 categoria: "GASTOS COTIDIANOS CABA",
                 periodo: "mensual",
-                actual: "octubre",
+                actual: "noviembre",
               },
               // {
               //   href: "#ocio",
@@ -120,7 +120,7 @@ export default function Portada() {
                 href: "#supermercados",
                 categoria: "SUPERMERCADOS",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "octubre",
               },
             ].map((item, index) => (
               <a

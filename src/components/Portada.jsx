@@ -108,7 +108,7 @@ export default function Portada() {
                 href: "#industrial",
                 categoria: "INDUSTRIA",
                 periodo: "mensual",
-                actual: "septiembre / octubre",
+                actual: "octubre / noviembre",
               },
               {
                 href: "#actividadeconomica",

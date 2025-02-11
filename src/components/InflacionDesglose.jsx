@@ -14,7 +14,7 @@ import "tippy.js/dist/tippy.css";
 
 const dataNacion = [
   {
-    Diciembre: {
+    "Diciembre '23 ": {
       GENERAL: 25.5,
       "Bienes y servicios": 32.7,
       Transporte: 31.7,
@@ -217,11 +217,28 @@ const dataNacion = [
       Educación: 5.1,
     },
   },
+  {
+    Diciembre: {
+      GENERAL: 2.1,
+      "Bienes y servicios": 2.2,
+      Transporte: 5.0,
+      Comunicación: 2.8,
+      "Recreación y cultura": 0.9,
+      "Equipamiento y mantenimiento del hogar": 2.5,
+      "Bebidas alcohólicas y tabaco": 2.1,
+      Salud: 2.2,
+      "Alimentos y bebidas no alcohólicas": 4.6,
+      "Restaurantes y hoteles": 5.3,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 1.6,
+      "Prendas de vestir y calzado": 2.2,
+      Educación: 6.2,
+    },
+  },
 ];
 
 const dataCaba = [
   {
-    Diciembre: {
+    "Diciembre '23": {
       GENERAL: 21.7,
       "Bienes y servicios": 12.4,
       Transporte: 30.4,
@@ -424,6 +441,23 @@ const dataCaba = [
       Educación: 2.9,
     },
   },
+  {
+    Diciembre: {
+      GENERAL: 5.8,
+      "Bienes y servicios": 3.5,
+      Transporte: 4.3,
+      Comunicación: 2.3,
+      "Recreación y cultura": 0.6,
+      "Equipamiento y mantenimiento del hogar": 4.4,
+      "Bebidas alcohólicas y tabaco": 3.7,
+      Salud: 2.3,
+      "Alimentos y bebidas no alcohólicas": 5.2,
+      "Restaurantes y hoteles": 3.9,
+      "Vivienda, agua, electricidad, gas y otros combustibles": 0.5,
+      "Prendas de vestir y calzado": 4.0,
+      Educación: 3.0,
+    },
+  },
 ];
 
 const coloresCategorias = {
@@ -607,6 +641,7 @@ const variacionAcumuladaNacion = {
   Septiembre: "101.6%",
   Octubre: "107%",
   Noviembre: "112%",
+  Diciembre: "117.8%",
 };
 const variacionAcumuladaCaba = {
   Enero: "21.7%",
@@ -620,6 +655,7 @@ const variacionAcumuladaCaba = {
   Septiembre: "115.1%",
   Octubre: "122.1%",
   Noviembre: "129.1%",
+  Diciembre: "136.7%",
 };
 const variacionInteranualNacion = {
   Enero: "254.2%",
@@ -633,6 +669,7 @@ const variacionInteranualNacion = {
   Septiembre: "209%",
   Octubre: "193%",
   Noviembre: "166%",
+  Diciembre: "117.8%",
 };
 const variacionInteranualCaba = {
   Enero: "238.5%",
@@ -646,6 +683,7 @@ const variacionInteranualCaba = {
   Septiembre: "218.8%",
   Octubre: "200.9%",
   Noviembre: "177.4%",
+  Diciembre: "136.7%",
 };
 
 const CustomizedLabel = ({ x, y, stroke, value }) => {
@@ -675,7 +713,8 @@ export default function InflacionDesglose() {
     data.length - 1
   );
 
-  const categorias = Object.keys(data[0].Diciembre);
+  const categorias =
+    (data[0] && Object.keys(data[0][Object.keys(data[0])[0]])) || [];
 
   const handleCategoriaSeleccionada = (categoria) => {
     if (categoriasSeleccionadas.includes(categoria)) {

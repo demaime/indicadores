@@ -28,6 +28,7 @@ const meses = [
   "septiembre",
   "octubre",
   "noviembre",
+  "diciembre",
 ];
 
 const individualAlimentariaNacio = [
@@ -42,6 +43,7 @@ const individualAlimentariaNacio = [
   { mes: "septiembre", valor: 138744 },
   { mes: "octubre", valor: 140654 },
   { mes: "noviembre", valor: 142149 },
+  { mes: "diciembre", valor: 145409 },
 ];
 
 const individualTotalNacio = [
@@ -56,6 +58,7 @@ const individualTotalNacio = [
   { mes: "septiembre", valor: 312175 },
   { mes: "octubre", valor: 319284 },
   { mes: "noviembre", valor: 324099 },
+  { mes: "diciembre", valor: 331532 },
 ];
 
 const individualAlimentariaCaba = [
@@ -69,7 +72,7 @@ const individualAlimentariaCaba = [
   { mes: "agosto", valor: 175899 },
   { mes: "septiembre", valor: 178748 },
   { mes: "octubre", valor: 180442 },
-  { mes: "noviembre", valor: 188878 },
+  { mes: "noviembre", valor: 182585 },
 ];
 
 const individualTotalCaba = [
@@ -84,6 +87,7 @@ const individualTotalCaba = [
   { mes: "septiembre", valor: 353289 },
   { mes: "octubre", valor: 361868 },
   { mes: "noviembre", valor: 369010 },
+  { mes: "diciembre", valor: 375048 },
 ];
 
 const canastaAlimentariaNacio = [
@@ -98,6 +102,7 @@ const canastaAlimentariaNacio = [
   { mes: "septiembre", valor: 428720, variacion: 1.7, acumulada: 78.1 },
   { mes: "octubre", valor: 434620, variacion: 1.4, acumulada: 80.6 },
   { mes: "noviembre", valor: 439420, variacion: 1.1, acumulada: 82.6 },
+  { mes: "diciembre", valor: 449314, variacion: 3.4, acumulada: 86.7 },
 ];
 
 const canastaTotalNacio = [
@@ -112,6 +117,7 @@ const canastaTotalNacio = [
   { mes: "septiembre", valor: 964620, variacion: 2.6, acumulada: 94.6 },
   { mes: "octubre", valor: 986586, variacion: 2.3, acumulada: 99 },
   { mes: "noviembre", valor: 1001466, variacion: 1.5, acumulada: 102 },
+  { mes: "diciembre", valor: 1024435, variacion: 3.8, acumulada: 106.7 },
 ];
 
 const canastaAlimentariaCaba = [
@@ -126,6 +132,7 @@ const canastaAlimentariaCaba = [
   { mes: "septiembre", valor: 545183, variacion: 1.6, acumulada: 87.7 },
   { mes: "octubre", valor: 550350, variacion: 0.9, acumulada: 89.5 },
   { mes: "noviembre", valor: 551679, variacion: 0.2, acumulada: 90 },
+  { mes: "diciembre", valor: 556885, variacion: 1.2, acumulada: 91.8 },
 ];
 
 const canastaTotalCaba = [
@@ -140,6 +147,7 @@ const canastaTotalCaba = [
   { mes: "septiembre", valor: 993854, variacion: 2.9, acumulada: 100.9 },
   { mes: "octubre", valor: 1015908, variacion: 2.2, acumulada: 105.3 },
   { mes: "noviembre", valor: 1032246, variacion: 1.6, acumulada: 108.6 },
+  { mes: "diciembre", valor: 1047981, variacion: 3.2, acumulada: 111.8 },
 ];
 
 const smvm = [
@@ -154,6 +162,7 @@ const smvm = [
   { mes: "septiembre", valor: 268057 },
   { mes: "septiembre", valor: 271571 },
   { mes: "noviembre", valor: 271571 },
+  { mes: "diciembre", valor: 271571 },
 ];
 
 const jubilacionSinBono = [
@@ -168,6 +177,7 @@ const jubilacionSinBono = [
   { mes: "septiembre", valor: 234540 },
   { mes: "octubre", valor: 244321 },
   { mes: "noviembre", valor: 252799 },
+  { mes: "diciembre", valor: 259599 },
 ];
 
 const jubilacionConBono = [
@@ -182,6 +192,7 @@ const jubilacionConBono = [
   { mes: "septiembre", valor: 304540 },
   { mes: "octubre", valor: 314321 },
   { mes: "noviembre", valor: 322799 },
+  { mes: "diciembre", valor: 329599 },
 ];
 
 const contenidoTippy = {

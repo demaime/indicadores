@@ -107,7 +107,7 @@ export default function Slide3() {
               >
                 <XAxis
                   type="number"
-                  domain={[-35, 10]}
+                  domain={[-30, 10]}
                   tick={{ fontSize: 12, fill: "#fff" }}
                 />
                 <YAxis

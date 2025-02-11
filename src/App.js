@@ -190,7 +190,7 @@ export default function App() {
                   />
                   <ActividadEconomica />
                 </section>
-                <section className="section" id="supermercados">
+                {/* <section className="section" id="supermercados">
                   <Encabezado
                     title={"SUPERMERCADOS"}
                     description={
@@ -199,7 +199,7 @@ export default function App() {
                     mensual="mensual"
                   />
                   <Supermercados />
-                </section>
+                </section> */}
                 <section className="section" id="informeMensual">
                   <Encabezado
                     title={"INFORME MENSUAL"}

@@ -30,15 +30,15 @@ export default function Portada() {
             </a>
             <div className="w-full absolute left-1/2 top-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center justify-center flex-col text-center">
               <p className="text-xl text-white font-semibold mb-2">
-                EL CYBERMONDAY GENERÓ
+                LAS VENTAS NAVIDEÑAS
               </p>
               <p className="text-5xl text-[#87d9ce] font-semibold mb-2">
-                <strong>493 MILLONES EN VENTAS</strong>
+                <strong>CRECIERON %1</strong>
               </p>
               {/* <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1> */}
             </div>
             <div className="z-50 flex items-center justify-evenly w-2/3 absolute top-12 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-wider text-center  text-blue-200 p-2">
-              <span>NOVIEMBRE 2024</span>
+              <span>DICIEMBRE 2024</span>
             </div>
             <a
               href="/catalogo"
@@ -60,13 +60,13 @@ export default function Portada() {
                 href: "#inflacion",
                 categoria: "INFLACION",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#canasta-salario",
                 categoria: "SALARIO - CANASTA - JUBILACION",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#ayuda-social",
@@ -116,12 +116,12 @@ export default function Portada() {
                 periodo: "mensual",
                 actual: "septiembre",
               },
-              {
-                href: "#supermercados",
-                categoria: "SUPERMERCADOS",
-                periodo: "mensual",
-                actual: "octubre",
-              },
+              // {
+              //   href: "#supermercados",
+              //   categoria: "SUPERMERCADOS",
+              //   periodo: "mensual",
+              //   actual: "octubre",
+              // },
             ].map((item, index) => (
               <a
                 key={index}

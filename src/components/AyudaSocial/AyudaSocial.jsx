@@ -86,6 +86,15 @@ export default function AyudaSocial() {
       desempleo_minimo: { valor: 135786, intermensual: 0 },
       desempleo_maximo: { valor: 271571, intermensual: 0 },
     },
+    diciembre: {
+      auh: { valor: 93281, intermensual: 2.7 },
+      tope_individual: { valor: 1912277, intermensual: 2.7 },
+      tope_familiar: { valor: 3824554, intermensual: 2.7 },
+      progresar: { valor: 35000, intermensual: 0 },
+      acomp_social: { valor: 78000, intermensual: 0 },
+      desempleo_minimo: { valor: 135786, intermensual: 0 },
+      desempleo_maximo: { valor: 271571, intermensual: 0 },
+    },
   };
 
   const meses = Object.keys(data);
@@ -104,6 +113,15 @@ export default function AyudaSocial() {
     const newIndex = currentIndex === meses.length - 1 ? 0 : currentIndex + 1;
     setMesSeleccionado(meses[newIndex]);
   };
+
+  fetch('https://especialess3.lanacion.com.ar/monitor-economia-real/data/trabajadores_registrados.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Datos de trabajadores registrados:', data);
+    })
+    .catch(error => {
+      console.error('Error al obtener los datos:', error);
+    });
 
   return (
     <div className="w-full h-full bg-gray-200">

@@ -82,6 +82,12 @@ export default function Industria() {
       interanual: -3.7,
       capacidad: 63.1,
     },
+    diciembre: {
+      intermensual: 4.3,
+      acumulada: -9.8,
+      interanual: 7.3,
+      capacidad: 62,
+    },
   };
 
   const aperturaIntermensualPyme = {
@@ -172,6 +178,14 @@ export default function Industria() {
       "papel e impresiones": 1.5,
       "quimicos y plasticos": 7.8,
       "metal y maquinaria": 3.3,
+    },
+    diciembre: {
+      "textiles e indumentaria": 4.1,
+      "alimentos y bebidas": 4.3,
+      "madera y muebles": 4.7,
+      "papel e impresiones": 7.8,
+      "quimicos y plasticos": 6.7,
+      "metal y maquinaria": 2.6,
     },
   };
 
@@ -264,6 +278,14 @@ export default function Industria() {
       "quimicos y plasticos": -0.9,
       "metal y maquinaria": -6.1,
     },
+    diciembre: {
+      "textiles e indumentaria": 12.4,
+      "alimentos y bebidas": 4.8,
+      "madera y muebles": 18.1,
+      "papel e impresiones": 3.4,
+      "quimicos y plasticos": 9.2,
+      "metal y maquinaria": 5.2,
+    },
   };
 
   const aperturaAcumuladaPyme = {
@@ -354,6 +376,14 @@ export default function Industria() {
       "papel e impresiones": -15.7,
       "quimicos y plasticos": -0.9,
       "metal y maquinaria": -6.1,
+    },
+    diciembre: {
+      "textiles e indumentaria": -4.1,
+      "alimentos y bebidas": -12.3,
+      "madera y muebles": -5.5,
+      "papel e impresiones": -11.1,
+      "quimicos y plasticos": -12.2,
+      "metal y maquinaria": -9.4,
     },
   };
 
@@ -585,8 +615,18 @@ export default function Industria() {
       "Papel e impresiones": 66.5,
       "Químicos y plásticos": 65,
       "Metal, maquinaria y equipo, y material de transporte": 60.9,
-      MANUFACTURERA: "-",
+      MANUFACTURERA: 62.3,
       PYME: 63.1,
+    },
+    DICIEMBRE: {
+      "Textiles e indumentaria": 59.6,
+      "Alimentos y bebidas": 62.1,
+      "Madera y muebles": 66.6,
+      "Papel e impresiones": 64.2,
+      "Químicos y plásticos": 62.9,
+      "Metal, maquinaria y equipo, y material de transporte": 60.8,
+      MANUFACTURERA: "-",
+      PYME: 62,
     },
   };
 
@@ -653,6 +693,11 @@ export default function Industria() {
       capacidad: 63.2,
     },
     noviembre: {
+      intermensual: -1.42,
+      interanual: -6.17,
+      capacidad: 62.3,
+    },
+    diciembre: {
       intermensual: "-",
       interanual: "-",
       capacidad: "-",
@@ -1013,6 +1058,22 @@ export default function Industria() {
       PYME: 62.3,
     },
     NOVIEMBRE: {
+      Textiles: 48.2,
+      "Alimentos y bebidas": 66.9,
+      "Minerales no metálicos": 60.6,
+      "Papel y cartón": 68.6,
+      "Refinación de petróleo": 82.1,
+      "Edición e impresión": 53.0,
+      Tabaco: 47.6,
+      Metálicas: 67.2,
+      "Caucho y plástico": 46.8,
+      Automotriz: 64.7,
+      "Sustancias y productos químicos": 66.1,
+      "Metalmecánica (sin automotriz)": 50.0,
+      MANUFACTURERA: 62.3,
+      PYME: 63.1,
+    },
+    DICIEMBRE: {
       Textiles: "-",
       "Alimentos y bebidas": "-",
       "Minerales no metálicos": "-",
@@ -1026,7 +1087,7 @@ export default function Industria() {
       "Sustancias y productos químicos": "-",
       "Metalmecánica (sin automotriz)": "-",
       MANUFACTURERA: "-",
-      PYME: 63.1,
+      PYME: 62,
     },
   };
 
@@ -1047,6 +1108,7 @@ export default function Industria() {
     "septiembre",
     "octubre",
     "noviembre",
+    "diciembre",
   ];
   const [mesSeleccionado, setMesSeleccionado] = useState(
     meses[meses.length - 1]

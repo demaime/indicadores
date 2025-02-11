@@ -142,6 +142,21 @@ const data = {
     fideos: 1237.35,
     agua: 27022,
   },
+  diciembre: {
+    alquiler: 373182,
+    luz: 40905,
+    gas: 17901,
+    internet: 35999,
+    celular: 9783,
+    pan: 2927.51,
+    leche: 1424.76,
+    yerba: 4143.92,
+    cerveza: 3110.42,
+    cafe: 5100,
+    carne: 11190.1,
+    coca: 2675.15,
+    fideos: 1269.73,
+  },
 };
 
 const calculateSingleVariation = (current, previous) => {

@@ -67,6 +67,11 @@ export default function Publico({ setPublicoOParticular }) {
       Tren: { valor: 280, intermensual: 0, acumulada: 338.8 },
       Colectivo: { valor: 371.13, intermensual: 0, acumulada: 333.71 },
     },
+    DICIEMBRE: {
+      Subte: { valor: 757, intermensual: 0, acumulada: 440 },
+      Tren: { valor: 280, intermensual: 0, acumulada: 338.8 },
+      Colectivo: { valor: 371.13, intermensual: 0, acumulada: 333.71 },
+    },
   };
 
   const meses = Object.keys(dataPublico);

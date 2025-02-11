@@ -18,7 +18,8 @@ export default function Slide1() {
       <p className="text-center text-3xl flex flex-col text-gray-600">
         NAVIDAD: LAS VENTAS MINORISTAS&nbsp;
         <strong className="text-6xl m-2 text-gray-800">
-SUBIERON %1 INTERANUAL        </strong>
+          SUBIERON 1% INTERANUAL{" "}
+        </strong>
       </p>
       <div className="w-full flex items-center justify-evenly">
         <div className="w-1/4 h-32 bg-slate-700 text-gray-200 text-xl rounded-xl shadow-lg shadow-black text-center flex flex-col items-center justify-end">
@@ -36,7 +37,9 @@ SUBIERON %1 INTERANUAL        </strong>
         <div className="w-1/4 h-32 bg-slate-700 text-gray-200 text-xl rounded-xl shadow-lg shadow-black text-center flex flex-col items-center justify-end">
           <p className="w-full h-1/2 text-6xl font-semibold">86.2 %</p>
           <p className="w-full h-1/4 text-xs mt-2 tracking-wider">
-            <strong className="text-green-400">REALIZARON PROMOCIONES 🎄</strong>
+            <strong className="text-green-400">
+              REALIZARON PROMOCIONES 🎄
+            </strong>
           </p>
         </div>
       </div>

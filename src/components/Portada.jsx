@@ -33,7 +33,7 @@ export default function Portada() {
                 LAS VENTAS NAVIDEÑAS
               </p>
               <p className="text-5xl text-[#87d9ce] font-semibold mb-2">
-                <strong>CRECIERON %1</strong>
+                <strong>CRECIERON 1%</strong>
               </p>
               {/* <h1 className="text-white text-lg font-bold p-4"> EN 5 AÑOS</h1> */}
             </div>
@@ -72,31 +72,31 @@ export default function Portada() {
                 href: "#ayuda-social",
                 categoria: "AYUDA SOCIAL",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#dolar",
                 categoria: "DOLAR",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#transporte",
                 categoria: "TRANSPORTE",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#alquiler",
                 categoria: "ALQUILER",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               {
                 href: "#cotidianos",
                 categoria: "GASTOS COTIDIANOS CABA",
                 periodo: "mensual",
-                actual: "noviembre",
+                actual: "diciembre",
               },
               // {
               //   href: "#ocio",
@@ -108,13 +108,13 @@ export default function Portada() {
                 href: "#industrial",
                 categoria: "INDUSTRIA",
                 periodo: "mensual",
-                actual: "octubre / noviembre",
+                actual: "noviembre / diciembre",
               },
               {
                 href: "#actividadeconomica",
                 categoria: "ACTIVIDAD ECONOMICA",
                 periodo: "mensual",
-                actual: "septiembre",
+                actual: "noviembre",
               },
               // {
               //   href: "#supermercados",

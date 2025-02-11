@@ -19,6 +19,7 @@ import Catalogo from "./components/Catalogo/Catalogo";
 import InformeMensualAgosto from "./components/Catalogo/Agosto/InformeMensual.jsx";
 import InformeMensualSeptiembre from "./components/Catalogo/Septiembre/InformeMensual.jsx";
 import InformeMensualOctubre from "./components/Catalogo/Octubre/InformeMensual";
+import InformeMensualNoviembre from "./components/Catalogo/Noviembre/InformeMensual";
 
 export default function App() {
   const [password, setPassword] = useState("");
@@ -225,6 +226,10 @@ export default function App() {
         <Route
           path="/catalogo/octubre/informemensual"
           element={<InformeMensualOctubre />}
+        />{" "}
+        <Route
+          path="/catalogo/noviembre/informemensual"
+          element={<InformeMensualNoviembre />}
         />
       </Routes>
     </Router>

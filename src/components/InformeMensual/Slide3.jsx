@@ -1,5 +1,5 @@
 import React from "react";
-
+import { MdArrowForward } from "react-icons/md";
 import {
   BarChart,
   Bar,
@@ -7,189 +7,136 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-  Legend,
 } from "recharts";
 
-const dataDescuentos = {
-  Servicios: 74,
-  "Supermercados y Bodegas": 36,
-  "Salud y Belleza": 34,
-  "Bebés y Niños": 33,
-  Varios: 33,
-  "Muebles, Hogar y Deco": 32,
-  "Indumentaria y Calzado": 29,
-  "Deportes y Fitness": 28,
-  Viajes: 25,
-  "Motos y Autos": 24,
-  "Electro y Tecnología": 23,
-};
-
-// Convertir el objeto a un array para Recharts
-const dataForChart = Object.entries(dataDescuentos).map(
-  ([name, porcentaje]) => ({
-    name,
-    porcentaje,
-  })
-);
-
-// Agregar datos para el pie chart
-const dataPie = [
-  { name: "Indumentaria", value: 41.3, ticketPromedio: 83630 },
-  { name: "Deco y hogar", value: 5.8, ticketPromedio: 144468 },
-  { name: "Salud y belleza", value: 8.5, ticketPromedio: 64741 },
-  { name: "Comida y bebida", value: 2.4, ticketPromedio: 63799 },
-  { name: "Electronica y tecnologia", value: 1.1, ticketPromedio: 151080 },
-  { name: "Libreria, arte y educacion", value: 3.8, ticketPromedio: 50737 },
-  { name: "Otros segmentos", value: 37.1, ticketPromedio: 74577 },
-];
-
-// Colores en tonos amber
-const COLORS = [
-  "#d97706", // amber-900
-  "#f59e0b", // amber-500
-  "#fbbf24", // amber-400
-  "#fcd34d", // amber-300
-  "#fde68a", // amber-200
-  "#fef3c7", // amber-100
-  "#fffbeb", // amber-50
-];
-
 export default function Slide3() {
+  const data2023 = [
+    { name: "Calzado y marroquinería", value: 6.7 },
+    { name: "Cosmética y Perfumería", value: 3.1 },
+    { name: "Equipos de audio y video", value: 2.5 },
+    { name: "Indumentaria", value: 1.2 },
+    { name: "Promedio ponderado", value: 1.0 },
+    { name: "Juguetería", value: -1.9 },
+    { name: "Librería", value: -5.8 },
+  ];
+
+  const data2024 = [
+    { name: "Indumentaria", value: 9.2 },
+    { name: "Librerías", value: 8.8 },
+    { name: "Juguetería", value: -0.3 },
+    { name: "Promedio", value: -2.8 },
+    { name: "Electrodomésticos", value: -7.9 },
+    { name: "Calzado y marroquinería", value: -13.6 },
+    { name: "Cosmética y Perfumería", value: -23.5 },
+  ];
+
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="w-full h-1/2 flex">
-        <div className="w-1/2 h-full flex items-center justify-center ">
-          <div className="w-[90%] h-[90]% rounded bg-amber-400 font-semibold p-4 text-center flex items-center justify-center">
-            La Facultad de Ciencias Sociales de la Universidad de Buenos Aires
-            realizó una auditoría para garantizar “la transparencia y veracidad
-            de las ofertas publicadas” por las empresas que se sumaron al Cyber
-            Monday. <br />
-            <br />
-            El descuento promedio del evento fue de 29%, traccionado hacia
-            arriba por categorías como Servicios (74%) -que incluyó propuestas
-            para cursos de capacitación y de seguros de hogar o viajes, así como
-            también para la adquisición de líneas para celulares-, Supermercados
-            y Bodegas (36%), y Salud y Belleza (34%).
-          </div>
+      <div className="w-full h-1/5 flex items-center justify-around">
+        <div className=" bg-red-200 w-1/2 h-4 text-6xl font-semibold relative">
+          <p className="absolute -top-6 font-black tracking-wider left-4">
+            2023
+          </p>
         </div>
-        <div className="w-1/2 h-full flex items-center justify-center">
-          <ResponsiveContainer width="100%">
-            <BarChart
-              layout="vertical"
-              data={dataForChart}
-              margin={{
-                top: 20,
-                right: 50,
-                left: 50,
-                bottom: 5,
-              }}
-            >
-              <XAxis type="number" tick={{ fontSize: 10 }} />
-              <YAxis
-                dataKey="name"
-                type="category"
-                tick={{
-                  fontSize: 14,
-                  width: 500,
-                  wordWrap: "break-word",
-                }}
-                width={150}
-              />
-              <Tooltip />
-              <Bar
-                dataKey="porcentaje"
-                fill="#f59e0b"
-                label={{ position: "inside", fill: "white" }}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+        <div className=" bg-red-400 w-1/2 h-4 text-6xl font-semibold relative">
+          <p className="absolute -top-6 font-black tracking-wider right-4">
+            2024
+          </p>
         </div>
       </div>
-      <div className="w-full h-1/2 bg-gray-700 flex">
-        <div className="w-1/2 h-full flex items-center justify-center px-8">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={dataPie}
-                cx="35%"
-                cy="50%"
-                labelLine={false}
-                label={({
-                  cx,
-                  cy,
-                  midAngle,
-                  innerRadius,
-                  outerRadius,
-                  percent,
-                }) => {
-                  const radius = outerRadius * 0.8;
-                  const x = cx + radius * Math.cos((-midAngle * Math.PI) / 180);
-                  const y = cy + radius * Math.sin((-midAngle * Math.PI) / 180);
-                  return (
-                    <text
-                      x={x}
-                      y={y}
-                      fill="black"
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={12}
-                    >
-                      {`${(percent * 100).toFixed(1)}%`}
-                    </text>
-                  );
-                }}
-                outerRadius={120}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {dataPie.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Legend
-                layout="vertical"
-                align="right"
-                verticalAlign="middle"
-                iconType="circle"
-                formatter={(value, entry) => {
-                  const item = dataPie.find((d) => d.name === value);
-                  return `${value}: $${item.ticketPromedio.toLocaleString()}`;
-                }}
-              />
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="w-1/2 h-full flex items-center justify-center">
-          <div className="w-[90%] h-[90%] bg-amber-200 text-gray-700 rounded p-4 flex flex-col items-center justify-evenly text-center">
-            <p>
-              El ticket promedio fue de <strong>$ 81.215</strong>, siendo
-              <strong> indumentaria </strong>una de las categorías con mayor
-              flujo de transacciones.{" "}
-            </p>
-            <p>
-              El <strong>71% </strong> de las ventas fueron abonadas a través de
-              tarjetas de crédito, la transferencia bancaria representó el{" "}
-              <strong>14% </strong>, las tarjetas de débito el{" "}
-              <strong>4% </strong>, el dinero en cuenta y los pagos
-              personalizados el <strong>5% </strong>, y el efectivo el{" "}
-              <strong>1% </strong>.
-            </p>
-            <p>
-              En cuanto a las opciones de financiamiento, el{" "}
-              <strong>53%</strong> de los pagos se realizaron en una cuota, el{" "}
-              <strong>23%</strong> en tres cuotas, el <strong>17% </strong>en
-              seis cuotas, el<strong> 4% </strong>en nueve cuotas, y el{" "}
-              <strong>3%</strong> en doce cuotas.
-            </p>
+      <div className="w-full h-3/5 flex items-center justify-center text-xl font-semibold">
+        <div className="w-[45%] h-full flex flex-col items-center justify-evenly">
+          <div className="w-[90%] p-2 rounded bg-red-200">
+            Variación vs año anterior: 🔽 2.8%
           </div>
+          <div className="w-[90%] p-2 rounded bg-red-200">
+            Ticket Promedio: $25.860
+          </div>
+          <div className="w-[90%] flex items-center justify-center h-[200px] p-2 rounded bg-red-200">
+            <ResponsiveContainer width="90%" height="90%">
+              <BarChart
+                layout="vertical"
+                data={data2023}
+                margin={{ top: 5, right: 5, left: 40, bottom: 5 }}
+              >
+                <XAxis
+                  type="number"
+                  domain={[-25, 10]}
+                  tick={{ fontSize: 12 }}
+                />
+                <YAxis
+                  type="category"
+                  dataKey="name"
+                  width={100}
+                  tick={{ fontSize: 12 }}
+                />
+                <Tooltip contentStyle={{ fontSize: 12 }} />
+                <Bar
+                  dataKey="value"
+                  fill="#4ade80"
+                  label={{
+                    position: "right",
+                    fill: "#000",
+                    fontSize: 12,
+                    formatter: (value) => `${value}%`,
+                  }}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        <div className="w-[10%] h-full flex flex-col items-center justify-evenly">
+          <MdArrowForward size={25} className="text-green-600" />
+          <MdArrowForward size={25} className="text-green-600" />
+          <MdArrowForward size={25} className="text-green-600" />
+        </div>
+        <div className="w-[45%] h-full flex flex-col items-center justify-evenly">
+          <div className="w-[90%] p-2 rounded bg-red-400">
+            Variación vs año anterior: 🔼 1%
+          </div>
+          <div className="w-[90%] p-2 rounded bg-red-400">
+            Ticket Promedio: $36.165{" "}
+            <strong className="text-red-100">(+% 10.3%)</strong>
+          </div>
+          <div className="w-[90%] flex items-center justify-center h-[200px] p-2 rounded bg-red-400">
+            <ResponsiveContainer width="90%" height="90%">
+              <BarChart
+                layout="vertical"
+                data={data2024}
+                margin={{ top: 5, right: 30, left: 10, bottom: 5 }}
+              >
+                <XAxis
+                  type="number"
+                  domain={[-35, 10]}
+                  tick={{ fontSize: 12, fill: "#fff" }}
+                />
+                <YAxis
+                  type="category"
+                  dataKey="name"
+                  width={150}
+                  tick={{ fontSize: 12, fill: "#fff" }}
+                />
+                <Tooltip contentStyle={{ fontSize: 12 }} />
+                <Bar
+                  dataKey="value"
+                  fill="#16a34a"
+                  label={{
+                    position: "right",
+                    fill: "#fff",
+                    fontSize: 12,
+                    formatter: (value) => `${value}%`,
+                    dx: 5,
+                  }}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-1/5 flex items-center justify-center">
+        <div className="px-8 py-2 rounded bg-green-600 font-semibold text-red-100 flex flex-col items-center justify-evenly">
+          <p className="text-lg">Inflación Interanual</p>
+          <p className="text-4xl">117.8%</p>
         </div>
       </div>
     </div>

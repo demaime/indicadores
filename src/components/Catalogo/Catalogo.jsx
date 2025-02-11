@@ -41,6 +41,13 @@ export default function Catalogo() {
           >
             OCTUBRE
           </Link>
+          <Link
+            target="_blank"
+            to="Noviembre/InformeMensual"
+            className="w-1/4 h-16 flex items-center justify-center text-center text-white cursor-pointer rounded-lg bg-gray-700 shadow shadow-gray-300 hover:shadow-yellow-300 hover:scale-105 hover:bg-gray-600 transition-all duration-300 tracking-wider"
+          >
+            NOVIEMBRE
+          </Link>
         </div>
       </div>
     </div>

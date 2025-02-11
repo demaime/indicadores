@@ -20,7 +20,7 @@ export default function InformeMensual() {
   };
 
   return (
-    <div className="section w-full h-full flex flex-col items-center justify-evenly relative bg-red-600 ">
+    <div className="section w-full h-full flex flex-col items-center justify-evenly relative bg-amber-200 ">
       <IoIosArrowBack
         onClick={handlePrev}
         size={35}
@@ -33,7 +33,7 @@ export default function InformeMensual() {
       ></IoIosArrowForward>
       <div className="w-[90%] h-[5%] border-2 border-black rounded-xl flex items-center justify-center text-center font-semibold text-lg bg-gray-200">
         Cámara Argentina de Comercio Electrónico (CACE)&nbsp;
-        <strong className="tracking-wider">- DICIEMBRE </strong>
+        <strong className="tracking-wider">- NOVIEMBRE </strong>
       </div>
       <div className="w-[90%] h-[90%] border-2 border-black rounded-xl overflow-hidden bg-gray-100">
         <div

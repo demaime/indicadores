@@ -5,8 +5,8 @@ export default function Slide1() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-around px-8">
       <div className="w-1/2 flex flex-col items-center justify-between h-16 tracking-wider">
-        <h1 className=" !text-5xl font-bold ">Conclusiones 🎅</h1>
-        <div className="w-3/4 h-2 rounded-xl bg-green-600 relative">
+        <h1 className=" !text-5xl font-bold ">Conclusiones</h1>
+        <div className="w-3/4 h-2 rounded-xl bg-amber-400 relative">
           <div className="rounded-full h-2 w-2 bg-gray-900 absolute right-4"></div>
           <div className="rounded-full h-4 w-4 bg-gray-900 absolute right-8 -top-1"></div>
           <div className="absolute left-8 -top-3 text-gray-900 font-black text-xl">
@@ -16,27 +16,28 @@ export default function Slide1() {
       </div>
 
       <p className="text-center text-3xl flex flex-col text-gray-600">
-        NAVIDAD: LAS VENTAS MINORISTAS&nbsp;
+        EL CYBERMONDAY GENERÓ&nbsp;
         <strong className="text-6xl m-2 text-gray-800">
-SUBIERON %1 INTERANUAL        </strong>
+          $493 MILLONES EN VENTAS
+        </strong>
       </p>
       <div className="w-full flex items-center justify-evenly">
         <div className="w-1/4 h-32 bg-slate-700 text-gray-200 text-xl rounded-xl shadow-lg shadow-black text-center flex flex-col items-center justify-end">
-          <p className="w-full h-1/2 text-6xl font-semibold">1 %</p>
+          <p className="w-full h-1/2 text-6xl font-semibold">213 %</p>
           <p className="w-full h-1/4 text-xs mt-2 tracking-wider">
-            <strong className="text-green-400">VARIACIÓN INTERANUAL 🎄</strong>
+            <strong className="text-amber-400">VARIACIÓN INTERANUAL</strong>
           </p>
         </div>
         <div className="w-1/4 h-32 bg-slate-700 text-gray-200 text-xl rounded-xl shadow-lg shadow-black text-center flex flex-col items-center justify-end">
-          <p className="w-full h-1/2 text-6xl font-semibold">$ 36.165</p>
+          <p className="w-full h-1/2 text-6xl font-semibold">29%</p>
           <p className="w-full h-1/4 text-xs mt-2 tracking-wider">
-            <strong className="text-green-400">TICKET PROMEDIO 🎄</strong>
+            <strong className="text-amber-400">DESCUENTO PROMEDIO</strong>
           </p>
         </div>{" "}
         <div className="w-1/4 h-32 bg-slate-700 text-gray-200 text-xl rounded-xl shadow-lg shadow-black text-center flex flex-col items-center justify-end">
-          <p className="w-full h-1/2 text-6xl font-semibold">86.2 %</p>
+          <p className="w-full h-1/2 text-6xl font-semibold">60.9 %</p>
           <p className="w-full h-1/4 text-xs mt-2 tracking-wider">
-            <strong className="text-green-400">REALIZARON PROMOCIONES 🎄</strong>
+            <strong className="text-amber-400">REALIZARON PROMOCIONES</strong>
           </p>
         </div>
       </div>

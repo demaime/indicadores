@@ -219,7 +219,7 @@ const dataNacion = [
   },
   {
     Diciembre: {
-      GENERAL: 2.1,
+      GENERAL: 2.7,
       "Bienes y servicios": 2.2,
       Transporte: 5.0,
       Comunicación: 2.8,
@@ -443,7 +443,7 @@ const dataCaba = [
   },
   {
     Diciembre: {
-      GENERAL: 5.8,
+      GENERAL: 3.3,
       "Bienes y servicios": 3.5,
       Transporte: 4.3,
       Comunicación: 2.3,
